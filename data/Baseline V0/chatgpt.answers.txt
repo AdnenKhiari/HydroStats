@@ -1,0 +1,1965 @@
+{
+    "items": [
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx473s4fvhaahrv5239dcws.response",
+            "createdAt": "2026-03-02T21:28:29.311Z",
+            "queryKey": "query_01khx473s4fvhaahrv5239dcws",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: The most energy-efficient way to transmit data between two underwater points depends on the distance, data rate, and environmental conditions, but generally the main options are:**\n\n1. **Acoustic Communication:** This is the most common method for underwater data transmission. It uses sound waves, which travel well through water. Acoustic modems are energy-efficient for moderate distances (up to several kilometers) but have limited bandwidth and slower data rates compared to electromagnetic methods[1][4].\n\n2. **Optical Communication:** Using light (typically lasers or LEDs), this method can provide very high data rates and low latency but is limited to short distances (tens of meters) due to absorption and scattering in water. It is energy-efficient for high data rates over short ranges[2].\n\n3. **Electromagnetic (Radio Frequency) Communication:** RF signals attenuate rapidly underwater, especially in saltwater, limiting range to just a few meters. It’s generally less energy-efficient for longer distances underwater[2].\n\n**Summary:**\n- For longer distances (hundreds of meters to kilometers), acoustic communication is usually the most energy-efficient[1][4].\n- For short-range, high-data-rate needs, optical communication is more energy-efficient[2].\n\nChoosing the best approach requires balancing energy consumption, data rate, and range based on the specific underwater scenario[1][2].\n\nIf you want, I can provide more detailed info on specific technologies or setups.",
+            "sources": [
+                {
+                    "url": "https://ieeexplore.ieee.org/document/8303864",
+                    "hostname": "ieeexplore.ieee.org",
+                    "title": "Underwater Acoustic Communications: Channel Models and System Design",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/2079-9292/9/10/1631",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Optical Wireless Communications: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0924424719304926",
+                    "hostname": "sciencedirect.com",
+                    "title": "A comprehensive review of underwater wireless communication technologies",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4fzsbeh7r8mamckqtgx08.response",
+            "createdAt": "2026-03-02T21:28:53.873Z",
+            "queryKey": "query_01khx4fzsbeh7r8mamckqtgx08",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Top-rated portable ROVs for rapid deployment in search and rescue (SAR)** are designed for quick setup, ease of transport, and effective underwater navigation and observation. Key options include:\n\n1. **[VideoRay](https://videoray.com/) Mission Specialist Series**: Includes models like **[Defender](https://videoray.com/)**, **[Pro 5](https://videoray.com/)**, Wraith, and **[Ally](https://videoray.com/)**. These ROVs feature modular designs, rapid setup, sonar, and grabber arms, widely used by authorities like the U.S. Coast Guard.[1][2][4]\n\n2. **[QYSEA](https://www.qysea.com/) FIFISH ROVs**: Compact, lightweight with 360° omnidirectional movement, 4K cameras, and powerful lighting. Some models have AI features for visual locking and diver tracking.[1]\n\n3. **[Deep Trekker](https://delektrekker.com/) ROVs**: Models like DTG3 (ultra-portable), **[PIVOT](https://delektrekker.com/)** (balanced power and size), and **[REVOLUTION](https://delektrekker.com/)** (powerful with modular add-ons such as multibeam sonar and grabber arms).[1][2][3][5]\n\n4. **[Chasing](https://chasing.com/) Gladius Mini S**: Fits into a backpack, offers a 12MP 4K camera and good maneuverability.[1][3]\n\n5. **SmartDive ROV**: Deployable within 5 minutes, features live video broadcast, strong lighting, and sonar.[1]\n\n6. **[Oceanbotics](https://oceanbotics.com/) SRV-8**: Inspection-class ROV with deployment under 3 minutes.[1][6]\n\nThese ROVs emphasize portability, quick setup, advanced imaging and lighting, sonar capabilities, maneuverability, manipulator arms, modular design, appropriate depth and tether lengths, and sufficient battery life for extended missions. They enhance the safety and efficiency of SAR by reducing the need for human divers in hazardous underwater environments.[1][2][3][5][6]\n\nIf you want, I can help you find suppliers or more detailed specs for any of these models.\n\nSources:\n- VideoRay official information\n- QYSEA FIFISH ROV descriptions\n- Deep Trekker product details\n- Various SAR equipment reviews",
+            "sources": [
+                {
+                    "url": "https://www.videoray.com",
+                    "hostname": "videoray.com",
+                    "title": "VideoRay Official Site",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.qysea.com",
+                    "hostname": "qysea.com",
+                    "title": "QYSEA FIFISH ROVs",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.deeptrekker.com",
+                    "hostname": "deeptrekker.com",
+                    "title": "Deep Trekker ROVs",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "VideoRay",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "Defender",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "Pro 5",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "Ally",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.qysea.com/",
+                    "hostname": "qysea.com",
+                    "title": "QYSEA",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://delektrekker.com/",
+                    "hostname": "delektrekker.com",
+                    "title": "Deep Trekker",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://delektrekker.com/",
+                    "hostname": "delektrekker.com",
+                    "title": "PIVOT",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://delektrekker.com/",
+                    "hostname": "delektrekker.com",
+                    "title": "REVOLUTION",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://chasing.com/",
+                    "hostname": "chasing.com",
+                    "title": "Chasing",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://oceanbotics.com/",
+                    "hostname": "oceanbotics.com",
+                    "title": "Oceanbotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 13
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxhrpjcfzxr7v7q0fk26985.response",
+            "createdAt": "2026-03-02T21:28:45.945Z",
+            "queryKey": "query_01khxhrpjcfzxr7v7q0fk26985",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: When considering subsea thrusters for ROVs with the **best thrust-to-volume ratio**, **hydraulic thrusters** generally provide higher power and more thrust in a compact design compared to **electric thrusters**. **Hydraulic thrusters** are favored for heavy-duty applications due to their efficiency and compactness.\n\nSome known thrusters with high thrust or compact designs include:\n\n- **Blue Robotics T200 and T500 Thrusters:** Compact, powerful electric thrusters with fully-flooded brushless motors. The T200 produces over 5 kgf of thrust; the T500 offers about three times that.[4][5]\n- **CrustCrawler 400HFS-L:** A compact hydraulic thruster (about 158mm long) delivering around 6.8 kgf thrust.[4]\n- **CubeMars DW Series:** Offers compact thrusters with thrust ranging from 10 to 20+ kgf for depths up to 350 meters.\n- **Innerspace Hydraulic Thrusters:** Highly efficient hydraulic thrusters with very low displacement, producing thrust up to around 499 kgf, suitable for demanding ROVs.[4]\n\nThe best choice depends on your specific ROV requirements such as size constraints, thrust needs, power availability, and operational depth. **Hydraulic thrusters** often offer the best **thrust-to-volume ratio** for heavy-duty ROVs, whereas electric thrusters are simpler and quieter but generally deliver less thrust per volume.[4]\n\nWould you like information on specific models or manufacturers to explore further?",
+            "sources": [
+                {
+                    "url": "https://bluerobotics.com/store/thrusters/t200-thruster/",
+                    "hostname": "bluerobotics.com",
+                    "title": "Blue Robotics T200 Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://crustcrawler.com/products/400-hydraulic-thruster/",
+                    "hostname": "crustcrawler.com",
+                    "title": "CrustCrawler 400HFS-L Hydraulic Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://cubemars.com/products/",
+                    "hostname": "cubemars.com",
+                    "title": "CubeMars DW Series Thrusters",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://innerspacetec.com/products/thrusters/",
+                    "hostname": "innerspacetec.com",
+                    "title": "Innerspace Hydraulic Thrusters",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 4
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx43k1reh7r8m98qymgneng.response",
+            "createdAt": "2026-03-02T21:28:29.638Z",
+            "queryKey": "query_01khx43k1reh7r8m98qymgneng",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Underwater optical communication is the key technology for high-bandwidth, short-range underwater data transmission, offering data rates from tens of Mbps to over 5 Gbps using blue-green lasers or LEDs, far exceeding acoustic methods limited to tens of kbps.** [1][2][4][5][6]\n\nThis approach leverages low absorption in the blue-green spectrum (around 450-550 nm) for higher bandwidth and low latency, though range is typically under 100-200 m due to scattering and absorption in water.[3][5] Recent advancements include MIT Lincoln Laboratory's eye-safe laser system for long-distance undersea links supporting high-definition video at rates over 5,000 times faster than acoustics, with low power and stealth features.[1] Kyocera demonstrated 5.2 Gbps short-range transmission for real-time video and sensor data in ocean exploration.[2]\n\n**Key comparisons:**\n\n| Technology | Typical Data Rate | Range | Advantages | Limitations |\n|------------|-------------------|-------|------------|-------------|\n| **Optical** | 10 Mbps–5+ Gbps[2][4][6][7] | Short (<100-200 m)[3][5] | High bandwidth, low latency, secure[1][3][5] | Attenuation by water turbidity[5] |\n| Acoustic | Tens of kbps[3][4][5] | Long (km+)[5] | Reliable over distance | Low bandwidth, high latency[3][4] |\n\nCompanies like Shimadzu offer commercial modems (e.g., MC series) achieving tens of Mbps full-duplex for offshore IoT, while Hamamatsu provides PMT modules enabling 1 Gbps for video streaming.[4][6] Ongoing research targets >1 Gbps over 100 m with compact blue-green systems for Navy and commercial use.[3]",
+            "sources": [
+                {
+                    "url": "https://www.nature.com/articles/s41598-020-67958-0",
+                    "hostname": "nature.com",
+                    "title": "Underwater optical wireless communications: Overview and recent advances",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/1424-8220/18/12/4239",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Optical Wireless Communication: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxjh8fge8grj7yqa94y52xv.response",
+            "createdAt": "2026-03-02T21:28:30.892Z",
+            "queryKey": "query_01khxjh8fge8grj7yqa94y52xv",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Underwater robots primarily communicate in real-time using acoustic methods, as sound waves propagate effectively over long distances underwater, unlike radio waves which attenuate rapidly due to seawater's conductivity.** [2][4]\n\n**Key aspects include:**\n- **Acoustic modems and signal processing:** Robots use acoustic modems to encode data into sound signals for transmission and decode received signals to extract commands, sensor data, or updates, enabling communication up to several kilometers despite challenges like temperature, salinity, noise, and multipath effects. [2][4]\n- **Networking protocols:** Specialized protocols handle data transmission, error correction (e.g., OFDM modulation for frequency-selective channels), and synchronization to support reliable robot-to-robot or robot-to-surface interactions. [2][4]\n- **Challenges:** Factors such as depth, obstacles, and environmental noise cause delays, distortion, or loss, limiting real-time performance compared to above-water systems. [1][2][4]\n\n**Alternatives exist for specific scenarios:**\n- Optical (visible light) communication for short-range, high-bandwidth needs, though limited by directionality and water clarity. [2][4]\n- Hybrid acoustic-optical systems to optimize energy and range. [2]\n- Surfacing for RF/satellite links or motion-based methods (e.g., RCVM kinemes) primarily for robot-to-human interaction, not robot-to-robot real-time comms. [1][2][3]\n- Fiber-optic for tethered high-speed but reduces mobility. [4]\n\nAcoustic remains the mainstay for untethered, real-time underwater robot networking, with ongoing research into hybrids and software-defined modems. [2][4]",
+            "sources": [
+                {
+                    "url": "https://en.wikipedia.org/wiki/Underwater_acoustic_communication",
+                    "hostname": "en.wikipedia.org",
+                    "title": "Underwater acoustic communication - Wikipedia",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.whoi.edu/what-we-do/explore/technology/underwater-robotics/",
+                    "hostname": "whoi.edu",
+                    "title": "Underwater Robotics - Woods Hole Oceanographic Institution",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4c12jecxbrt5j3nb1e6ar.response",
+            "createdAt": "2026-03-02T21:28:31.287Z",
+            "queryKey": "query_01khx4c12jecxbrt5j3nb1e6ar",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Reducing the cost of offshore oil and gas structural inspections can be achieved through several strategies, with strong evidence supporting the use of advanced technologies like drones, AI-driven analytics, and predictive monitoring.**\n\n### 1. **Use of Advanced Technologies**\nDrones and remotely operated vehicles (ROVs) enable inspections of hard-to-reach offshore areas, reducing personnel travel, safety risks, and costs by up to 50% while increasing efficiency by 33%[1][2][3]. Next-generation drones provide real-time HD video, ultrasonic testing, and 3D laser scanning with 2mm accuracy, minimizing onshore team sizes and enabling faster reporting[3].\n\n### 2. **Condition-Based Monitoring**\nSensors and real-time systems shift from scheduled to predictive inspections, using data analytics to anticipate failures, cut unplanned downtime, and lower maintenance frequency[5].\n\n### 3. **Data Analytics and AI**\nAI analyzes data to predict issues and optimize schedules, with cloud-based tools offering real-time cost views and efficiency gains[1][5].\n\n### 4. **Integrated Inspection Programs**\nCombining inspections with maintenance and using standardized designs reduces mobilization, procurement, and non-productive time[4][6].\n\n### 5. **Training and Certification**\nSpecialized training for personnel improves efficiency, though specific offshore cost data is limited in results[7].\n\n### 6. **Collaboration with Service Providers**\nLong-term contracts and strategic procurement, including total cost of ownership evaluation, incentivize productivity and cut unit costs by 20-25%[4][6].\n\n### 7. **Use of Digital Twins**\nDigital simulations for remote integrity assessment align with 3D scanning advancements, though not explicitly detailed[3].\n\n**EonCoat** offers modern corrosion prevention to further reduce inspection needs[1]. Would you like detailed information on any of these approaches or recommendations for specific technologies?",
+            "sources": [
+                {
+                    "url": "https://www.offshore-mag.com/rigs-vessels/article/14212187/innovations-in-offshore-structural-inspections",
+                    "hostname": "offshore-mag.com",
+                    "title": "Innovations in Offshore Structural Inspections",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.ogj.com/general-interest/economics-markets/article/14185020/cost-cutting-in-offshore-inspections",
+                    "hostname": "ogj.com",
+                    "title": "Cost Cutting in Offshore Inspections",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxkr0yfe05bwpbt7e4zc7bd.response",
+            "createdAt": "2026-03-02T21:28:44.054Z",
+            "queryKey": "query_01khxkr0yfe05bwpbt7e4zc7bd",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "I appreciate you sharing this information, but I need to clarify: this appears to be a statement rather than a question. You've provided detailed information about underwater thrusters with integrated controllers and offered to help find suppliers or technical details.\n\nBased on the search results provided to me, I can confirm that **some underwater thrusters do feature integrated controllers**, though the search results show mixed approaches:\n\n**Thrusters with integrated/built-in ESCs:**\nThe [ROVMAKER Underwater Brushless DC Motor Thruster][2] uses an \"open-space-waterproof\" design where water flows freely through the motor while running, and it's designed to work with brushless ESC systems for control.\n\n**Thrusters requiring external ESCs:**\nHowever, several models in the search results explicitly require external brushless ESCs. For example, the [T60E Underwater Thruster][3] is noted as \"a 2217 brushless motor that requires a brushless ESC to start the motor. It cannot be connected directly to the battery.\"\n\n**High-performance integrated options:**\nThe [R58 Pro Thruster][5] features a \"nested fully enclosed structure\" with a built-in brushless motor and patented design, suggesting an integrated approach suitable for complex underwater environments.\n\nThe search results don't specifically mention the U9, ApisQueen U22, or QX-Motor QC2221 models you referenced, so I cannot verify those claims from the provided sources. If you have a specific question about underwater thruster specifications or need help comparing models, I'd be happy to help with that.",
+            "sources": [
+                {
+                    "url": "https://www.u9thrusters.com/",
+                    "hostname": "u9thrusters.com",
+                    "title": "U9 Underwater Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.apisqueen.com/",
+                    "hostname": "apisqueen.com",
+                    "title": "ApisQueen U22 Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://qx-motor.com/",
+                    "hostname": "qx-motor.com",
+                    "title": "QX-Motor QC2221 Underwater Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.rov-maker.com/",
+                    "hostname": "rov-maker.com",
+                    "title": "ROVMAKER Underwater Brushless DC Motor Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 4
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxksa6nenarkcx5nrapv411.response",
+            "createdAt": "2026-03-02T21:28:30.085Z",
+            "queryKey": "query_01khxksa6nenarkcx5nrapv411",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Underwater optical wireless communication (UOWC or UWOC) enables high-speed optical data transfer for underwater docking stations of AUVs and ROVs, using blue-green light for transmission through water.** This technology outperforms acoustic methods with higher bandwidth, lower latency, and reduced interference, ideal for real-time data like video and sensor feeds during docking.[1][2][3]\n\n### Key Components and Features\n- **Light Sources**: Blue LEDs or lasers optimized for underwater propagation; e.g., Kyocera's proprietary PHY layer uses laser light with >1 GHz bandwidth for 5.2 Gbps short-range transfer.[1][2]\n- **Modulation and Detection**: Techniques like pre-emphasis extend LED bandwidth; receivers use photodetectors such as APDs for signals up to 135 Mbps at 10m with low BER.[2]\n- **System Design**: Watertight housings with optical windows (e.g., acrylic), alignment mechanisms for docking, and custom standards for stability in challenging environments.[1][2]\n- **Performance**: Achieves Gbps rates over tens of meters, secure directional beams, and minimal environmental impact compared to acoustics.[1][3]\n\n### Applications in Docking\nUWOC supports docking by enabling cable-free, high-volume data exchange for AUV/ROV control, imaging, and subsea infrastructure like oil/gas sensors—e.g., live video streaming and real-time robot operations.[1][3] Kyocera's tech, demonstrated at CES 2026 in booth **West Hall #6501**, targets ocean exploration.[1]",
+            "sources": [
+                {
+                    "url": "https://en.wikipedia.org/wiki/Underwater_optical_communication",
+                    "hostname": "en.wikipedia.org",
+                    "title": "Underwater optical communication - Wikipedia",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/1424-8220/19/14/3070",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Optical Wireless Communication: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx3wr25fvgs7m0t1672zv60.response",
+            "createdAt": "2026-03-02T21:28:40.675Z",
+            "queryKey": "query_01khx3wr25fvgs7m0t1672zv60",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query:** User query: Optical wireless modems can work in turbid water but face significant challenges due to light absorption and scattering, which reduce transmission range and data quality. Typically, in turbid water, these modems achieve shorter ranges—around **10 to 18 meters**—compared to over **100 meters** in clear water.\n\nKey factors and advances include:\n- Using sensitive photodetectors like silicon photomultipliers (**SiPMs**) to improve signal reception[1].\n- Selecting optimal wavelengths; while blue-green light is ideal in clear water, red light can sometimes perform better in highly turbid conditions[2].\n- Employing advanced modulation schemes such as phase shift keying (**PSK**) or quadrature amplitude modulation (**QAM**) to overcome signal degradation[1][2].\n- System designs using relay nodes or wavelength division multiplexing to extend range and reliability[4].\n\nFor practical use, optical wireless modems designed for turbid water often require increased transmitted optical power and specialized system designs tailored to the water's turbidity and composition[1][2].\n\nIf you want, I can help find specific products or research projects addressing optical wireless communication in turbid water.\n\n**Sources:**\n- Study on SiPM-based modems achieving 18m link in turbid harbor water[1]\n- Research on wavelength selection and modulation techniques for underwater optical communication[2]\n- Developments in relay systems and wavelength division multiplexing for underwater optical links[4]",
+            "sources": [
+                {
+                    "url": "https://ieeexplore.ieee.org/document/8932747",
+                    "hostname": "ieeexplore.ieee.org",
+                    "title": "Underwater Optical Wireless Communications in Turbid Water Using Silicon Photomultipliers",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/2079-9292/9/4/597",
+                    "hostname": "mdpi.com",
+                    "title": "Review of Underwater Wireless Optical Communication Technologies",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.osapublishing.org/oe/fulltext.cfm?uri=oe-27-11-15233&id=426769",
+                    "hostname": "osapublishing.org",
+                    "title": "Dual-hop underwater wireless optical communication systems with relay nodes",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxhsh6ce03vakbnt4re6k8f.response",
+            "createdAt": "2026-03-02T21:28:51.355Z",
+            "queryKey": "query_01khxhsh6ce03vakbnt4re6k8f",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: For high-reliability subsea applications, what are the most efficient hubless motors and their advantages?\n\n**Permanent Magnet Synchronous Motors (PMSMs)** are indeed the preferred choice for high-reliability subsea applications, offering several critical advantages supported by the search results.\n\n## Key Advantages of PMSMs for Subsea Use\n\n**Efficiency and Power Density**\nPMSMs can achieve maximum efficiencies exceeding 95% at full load for larger power motors[4], with high power density that allows them to deliver more power per unit weight[5]. This efficiency stems from their design: the rotor's magnetic field is generated by permanent magnets built during manufacturing, eliminating the need for external field induction and resulting in no slip losses like induction motors[5].\n\n**Reliability in Subsea Environments**\nFor subsea multiphase boosting applications, PMSMs provide significant advantages over traditional machinery[1]. The larger liquid-filled gap between rotor and stator results in significantly lower drag losses, enabling operation at higher speeds than liquid-filled asynchronous machines[1]. This design reduces failure points and maintenance needs compared to systems requiring gearboxes or mechanical transmissions.\n\n**Operational Performance**\nPMSMs demonstrate superior torque characteristics when controlled with vector control, enabling high pressure rise over a wide range of gas void fractions—essential for subsea boosting applications[1]. A 3MW permanent magnet motor-driven pump system improves system efficiency and reliability while lowering operator costs[1].\n\n**Control and Thermal Management**\nAll PMSMs operate with variable frequency drives (VFDs), enabling precise speed control and soft-start capabilities that reduce shock to electrical and piping systems[3]. Their high efficiency translates to lower operating temperatures, supporting passive cooling strategies in subsea environments.\n\nThe search results confirm that PMSMs are becoming the preferred choice for driving electric submersible pumps in oil and gas extraction applications[6].",
+            "sources": [
+                {
+                    "url": "https://www.ikm.no/products/subsea-motors/",
+                    "hostname": "ikm.no",
+                    "title": "IKM Subsea Motors - Barreleye and Fangtooth series",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.thingap.com/slotless-motors/",
+                    "hostname": "thingap.com",
+                    "title": "ThinGap Slotless Motor Kits for Direct Drive Thrusters",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marotechniek.nl/submersible-motors/",
+                    "hostname": "marotechniek.nl",
+                    "title": "Marotechniek Permanent Magnet Submersible Motors",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kc1eb6e3eh4a6hwchmbaaxrf.response",
+            "createdAt": "2026-03-02T21:28:41.574Z",
+            "queryKey": "query_01kc1eb6e3eh4a6hwchmbaaxrf",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: In Switzerland, you can find underwater drones for subsea inspection from several specialized companies and organizations, including:\n\n1. **[Tethys Robotics AG](https://www.top100startups.swiss/tethys-robotics)** - A Swiss company from ETH Zurich, offering the Tethys ONE underwater drone designed for autonomous inspection and 3D modeling in challenging underwater environments. Suitable for hydropower, offshore wind, oil and gas, and search and rescue.[1][2]\n\n2. **Hydromea** - Developer of the EXRAY underwater inspection robot, designed for confined spaces like ballast water tanks, emphasizing portable and autonomous underwater robotics.\n\n3. **Deepwave** - Provides ROV services for subsea inspection, maintenance, and repair, with extensive operational experience in pipelines and underwater infrastructure.\n\n4. **TAF Taucharbeiten AG** - Uses Deep Trekker Revolution ROVs for underwater inspections, object location, and cleaning tasks.\n\n5. **Willy Stäubli Ing. AG** - Employs ROV diving robots for inspection and maintenance in hydraulic engineering.\n\nThese companies provide advanced underwater drone technologies and services tailored to subsea inspections in various sectors. Would you like contact details or website links for any of these providers?",
+            "sources": [
+                {
+                    "url": "https://tethysrobotics.com/",
+                    "hostname": "tethysrobotics.com",
+                    "title": "Tethys Robotics AG",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://hydromea.ch/",
+                    "hostname": "hydromea.ch",
+                    "title": "Hydromea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://deepwave.ch/",
+                    "hostname": "deepwave.ch",
+                    "title": "Deepwave",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://deepsearov.com/",
+                    "hostname": "deepsearov.com",
+                    "title": "Deep Trekker Revolution ROV (used by TAF Taucharbeiten AG)",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://staeubli.ch/",
+                    "hostname": "staeubli.ch",
+                    "title": "Willy Stäubli Ing. AG",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.top100startups.swiss/tethys-robotics",
+                    "hostname": "top100startups.swiss",
+                    "title": "Tethys Robotics AG",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 6
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kc1eb6e3eh4a6hza9hx357jh.response",
+            "createdAt": "2026-03-02T21:28:32.748Z",
+            "queryKey": "query_01kc1eb6e3eh4a6hza9hx357jh",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Your explanation of underwater wireless optical communication (UWOC) modems is accurate and well-structured. The search results confirm the key technical principles you've outlined.\n\n**Light Source and Wavelength Selection**\n\nYour point about blue and green wavelengths is supported by research showing that \"with respect to the visible spectrum, seawater has a lower absorption in the blue/green zone.\"[1] LEDs and laser diodes are indeed the primary light sources used in these systems.[4]\n\n**Advantages**\n\nThe benefits you mention are well-documented. UWOC systems provide \"high rates of data transmission, secure links\" along with \"low installation and operational costs.\"[1] Additionally, \"the optical band is not included in the telecommunications regulations, it does not require payment of licensing fees and tariffs.\"[1] Compared to acoustic communication, UWOC offers \"more data rates, less power consumption, minimal packaging and smallest latency.\"[2]\n\n**Limitations and Challenges**\n\nYour acknowledgment of performance constraints is accurate. \"The main disadvantage of underwater optical communication is that the water is a medium that highly absorbs optical signals; the second problem is optical scattering due to the particles present in the sea.\"[1] These factors \"limit the link distance of a UWOC system,\" and \"scattering leads a reduction in the number of photons collected by the receiver.\"[1] In turbid environments, \"several photons may arrive at the receiver with delays and cause intersymbol interference (ISI) effects.\"[1]\n\nThe search results also note that \"the receiver must be present in a wide field of view to collect the optical signal,\"[4] emphasizing the line-of-sight requirement you mentioned. Additionally, optoelectronic components like \"LEDs, laser diodes and photodetectors are highly sensitive to temperature variations and have a limited lifetime operation.\"[4]\n\nYour explanation effectively captures both the operational principles and practical constraints of UWOC technology.",
+            "sources": [],
+            "stats": {
+                "position": -1,
+                "totalSources": 0
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxkv82vfk5ak1dtsbnkd936.response",
+            "createdAt": "2026-03-02T21:28:28.503Z",
+            "queryKey": "query_01khxkv82vfk5ak1dtsbnkd936",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Inspecting confined submerged spaces where a tether might get tangled or stuck requires careful planning and specialized techniques. Here are some approaches:\n\n1. **Use of Untethered Underwater Vehicles (AUVs)**: Autonomous Underwater Vehicles can navigate confined spaces without a tether, eliminating the risk of entanglement.\n\n2. **Tether Management Systems**: If a tethered vehicle is necessary, use a tether management system (TMS) that controls the tether and reduces snagging risks.[1][2][3][4][5][6]\n\n3. **Deploy ROVs with Short, Protected Tethers**: Remotely Operated Vehicles with short tethers enclosed in protective sheaths can minimize snagging.[1]\n\n4. **Pre-inspection Planning**: Study the confined space layout using blueprints or previous data to identify potential snag points.\n\n5. **Use of Cameras on Poles or Flexible Scopes**: Sometimes, a camera attached to a rigid or semi-rigid pole or a flexible endoscope can be inserted without tether issues.[4]\n\n6. **Manual Inspection with Proper Safety**: When safe, divers equipped with cutting tools and communication can perform inspections.\n\n7. **Advanced Sensor Technology**: Use sonar or other non-visual sensors that can map spaces without contact.\n\nWould you like information on specific equipment or techniques tailored to a particular type of confined space or inspection goal?",
+            "sources": [],
+            "stats": {
+                "position": -1,
+                "totalSources": 0
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxhr52menarkbw22qnygzdb.response",
+            "createdAt": "2026-03-02T21:28:40.489Z",
+            "queryKey": "query_01khxhr52menarkbw22qnygzdb",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: To reduce entanglement in underwater drones operating in debris-heavy environments, several propeller and propulsion system designs can be considered:\n\n1. **Weedless Propellers**: These have long, swept blades designed to resist snagging on weeds and debris, allowing debris to brush off while maintaining thrust.\n\n2. **Hub-less or Rim-driven Propellers**: These eliminate the central hub where debris commonly accumulates, enabling the drone to navigate through floating debris like plants and ropes.[1]\n\n3. **Propeller Guards**: Physical barriers around the propeller prevent debris from entangling and also reduce noise and vibration.\n\n4. **Biomimetic Propulsion Systems**: Inspired by natural aquatic life, these use fin or tail-like movements to propel, avoiding rotating blades and thus reducing entanglement risks.[4][5]\n\n5. **Toroidal Propellers**: Featuring a closed-loop blade design, these reduce tip vortices and lessen the chance of cutting or catching debris.[1][3]\n\n6. **Water-jet Propulsion Systems**: These systems use vectored water jets for propulsion, eliminating exposed rotating parts that can entangle debris.[2]\n\n7. **Rope Cutters**: Devices installed on the propeller shaft that cut entangling debris before it wraps around the propeller.\n\nChoosing among these options depends on your specific drone design and mission requirements. Hub-less or rim-driven thrusters and propeller guards are commonly used effective solutions for debris-heavy environments.[1]\n\nIf you want, I can help find suppliers or specific models of these propellers suitable for your underwater drone.\n\nSources: Research on underwater drone propulsion and entanglement reduction techniques.",
+            "sources": [
+                {
+                    "url": "https://www.mdpi.com/2504-446X/7/4/254",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Drones and Propeller Entanglement Strategies",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.sciencedirect.com/science/article/pii/S0029801821004725",
+                    "hostname": "sciencedirect.com",
+                    "title": "Experimental assessment of entanglement risk in propellers",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4ar6renerh4q8pgqv57mt.response",
+            "createdAt": "2026-03-02T21:28:47.717Z",
+            "queryKey": "query_01khx4ar6renerh4q8pgqv57mt",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: For inspecting potable water reservoirs, the best approach usually involves using underwater remotely operated vehicles (ROVs) for internal inspections and aerial drones for external inspections. Here are some recommended types and models:\n\nBased on the search results, **wet inspections using remotely operated vehicles (ROVs) are indeed a recognized method for internal water tank assessment**, though the search results do not provide specific product recommendations or models.[2]\n\nThe search results confirm that **wet inspections are conducted without draining the tank, where a disinfected diver or a remotely operated vehicle (ROV) enters the tank to assess its condition and identify potential issues**.[2] This approach allows inspectors to evaluate structural integrity, detect corrosion, sediment buildup, and biofilm formation while maintaining service continuity.[6]\n\nFor **external inspections, the search results note that some water utilities now use drones or other machines equipped with cameras rather than requiring staff to climb tall ladders or enter confined spaces**, citing safety and liability concerns.[6] **Visual inspection remains the most basic and widely used method, with inspectors examining external surfaces for signs of corrosion, leaks, or damage.**[7]\n\nHowever, the search results do not provide specific drone or ROV model recommendations, detailed specifications, or vendor information for the products you mentioned. The sources focus on inspection methodologies and general best practices rather than equipment specifications. For comprehensive information about specific ROV and drone models suitable for potable water tank inspection, you would need to consult manufacturer specifications, equipment vendors, or industry-specific equipment guides that are not included in these search results.",
+            "sources": [
+                {
+                    "url": "https://www.boxfish.com/",
+                    "hostname": "boxfish.com",
+                    "title": "Boxfish ROV - Underwater Inspection Drones",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.deeptrekker.com/",
+                    "hostname": "deeptrekker.com",
+                    "title": "Deep Trekker ROVs - Underwater Inspection Robots",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.blueye.no/",
+                    "hostname": "blueye.no",
+                    "title": "Blueye Underwater Drone",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://chasingshark.com/products/m2s-underwater-drone",
+                    "hostname": "chasingshark.com",
+                    "title": "CHASING M2 S Underwater Drone",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.dji.com/matrice-350-rtk",
+                    "hostname": "dji.com",
+                    "title": "DJI Matrice 350 RTK Drone",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 5
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4m85dfvpvdfc4m3kdk3m7.response",
+            "createdAt": "2026-03-02T21:28:47.762Z",
+            "queryKey": "query_01khx4m85dfvpvdfc4m3kdk3m7",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: Yes, there are hubless thrusters available for underwater vehicles, commonly known as rim-driven thrusters (RDTs).** These thrusters operate by having the propeller blades driven by an outer rim instead of a central hub, where the electric motor is integrated into the rim.[1][2][3][4] This design offers several advantages for underwater use, including:\n\n- Prevention of entanglement with underwater debris such as nets or vegetation.[1][2][3]\n- Enhanced efficiency due to reduced hydrodynamic losses.[1][2][4]\n- Low noise and vibration, making them ideal for stealth and sensitive marine research.[1][2]\n- Compact, space-saving design suited for small vehicles.[2][4]\n- High reliability and low maintenance, with fewer moving parts.[1][2]\n- Equal thrust in forward and reverse directions for precise maneuvering.[2]\n- Often pressure-proof and oil-free, suitable for deep-sea applications.[2][3][4]\n\nThese thrusters are used in remotely operated vehicles (**ROVs**), autonomous underwater vehicles (**AUVs**), submersibles, and as bow/stern thrusters on larger vessels.[1][2][3] Companies like **[TSL Technology](http://www.tsltechnology.com/marine/thrusters.htm)**, **[Alva Industries](https://www.alvaindustries.com/post/enhancing-the-performance-of-rim-drive-thrusters-by-employing-fiberprinted-tm-motor-technology)**, **[Fuber Propulsion](https://www.fuberpropulsion.com/?Knowledge-of-Electric-Boat-Outboards%2F386.html)** are actively developing and commercializing these types of thrusters.[2][3][4]\n\nIf you want, I can help find specific manufacturers or products that offer hubless thrusters for underwater vehicles. Would you like me to do that?",
+            "sources": [
+                {
+                    "url": "https://en.wikipedia.org/wiki/Rim-driven_thruster",
+                    "hostname": "en.wikipedia.org",
+                    "title": "Rim-driven thruster - Wikipedia",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://hydromea.com/products/rdt/",
+                    "hostname": "hydromea.com",
+                    "title": "DISKDRIVE™ Rim-Driven Thruster by Hydromea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "http://www.tsltechnology.com/marine/thrusters.htm",
+                    "hostname": "tsltechnology.com",
+                    "title": "TSL Technology",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.alvaindustries.com/post/enhancing-the-performance-of-rim-drive-thrusters-by-employing-fiberprinted-tm-motor-technology",
+                    "hostname": "alvaindustries.com",
+                    "title": "Alva Industries",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.fuberpropulsion.com/?Knowledge-of-Electric-Boat-Outboards%2F386.html",
+                    "hostname": "fuberpropulsion.com",
+                    "title": "Fuber Propulsion",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 2,
+                "totalSources": 5
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4p984fzxr7jxn9jntxjft.response",
+            "createdAt": "2026-03-02T21:28:44.406Z",
+            "queryKey": "query_01khx4p984fzxr7jxn9jntxjft",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: Underwater thrusters with the highest power-to-weight ratios are typically electric thrusters employing advanced motor technologies, such as brushless permanent magnet synchronous motors (PMSMs), especially frameless designs that reduce weight while enhancing thermal efficiency. These electric thrusters often use direct drive systems (eliminating gearboxes) to improve reliability and efficiency, and flooded designs allow water cooling for better performance.**\n\n**CubeMars** offers several electric underwater thrusters with high power-to-weight ratios, such as the **W30** model at approximately **1.14 W/g** (480W continuous power, 420g weight in air).[1] Other strong performers include the **DW10** (~0.64 W/g, 540W, 840g)[6] and **SW7** (~0.51 W/g, 360W, 700g).[2]\n\nThese thrusters feature lightweight aluminum alloy housings, corrosion-resistant seals, streamlined designs for efficiency, and water-immersed operation up to 350m depths, supporting ROVs, AUVs, and USVs.[1][2][4][6]\n\n| Model | Weight (air) | Power (continuous) | Thrust (max forward) | Depth | Power/Weight (W/g) |\n|-------|--------------|---------------------|-----------------------|-------|--------------------|\n| **W30** [1] | 420g | 480W | 7.7 kgf | 200m | **1.14** |\n| **DW10** [6] | 840g | 540W | 10 kgf | 350m | **0.64** |\n| **SW12** [3] | 1180g | 520W | 12 kgf | 30m | **0.44** |\n| **SW7** [2] | 700g | 360W | 7 kgf | 30m | **0.51** |\n| **DW15** [9] | 1260g | 750W | 15 kgf | 350m | **0.60** |\n| **SW17** [5] | 1350g | 870W | 17 kgf | 30m | **0.64** |\n| **DW20** [7] | 1630g | 910W | 20 kgf | 350m | **0.56** |\n| **DW25** [8] | 1790g | 1315W | 25 kgf | 350m | **0.73** |\n\n**Diamonddynamics (HobbyWater)** is noted for lightweight high-power models, though specific specs are unavailable here.\n\nHydraulic thrusters suit large ROVs for power but have lower effective ratios due to system weight.",
+            "sources": [
+                {
+                    "url": "https://www.cubemars.com/underwater-thrusters/",
+                    "hostname": "cubemars.com",
+                    "title": "CubeMars Underwater Thrusters",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.hobbywater.com/",
+                    "hostname": "hobbywater.com",
+                    "title": "Diamonddynamics (HobbyWater) Underwater Thrusters",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx44wpeenark5c6htxexdzp.response",
+            "createdAt": "2026-03-02T21:28:52.180Z",
+            "queryKey": "query_01khx44wpeenark5c6htxexdzp",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Yes, there are compact wireless modems specifically designed for small observation ROVs. These modems typically use underwater communication technologies such as acoustic or optical signals, which are suitable for underwater environments.\n\n**Types of Compact Wireless Modems for Small Observation ROVs:**\n\n1. **Acoustic Modems**\n   - Use sound waves to transmit data over long distances underwater.\n   - Examples include [Water Linked Modem M16](https://www.waterlinked.com/modem) (one of the smallest acoustic modems), EvoLogics S2C Tiny-Series, Teledyne Marine Ultra Compact Modem, [Blueprint Subsea Seatrac](https://bluerobotics.com/learn/a-smooth-operators-guide-to-underwater-sonars-and-acoustic-devices/), and NTT/DOCOMO acoustic modems for wireless ROVs.[1][2][6]\n   - These modems offer reliable communication over hundreds to thousands of meters but have lower data rates.[2][7]\n\n2. **Optical Modems**\n   - Use visible light (blue/green) for high-speed data transmission over short distances.\n   - Examples include [Hydromea LUMA](https://www.hydromea.com/luma-underwater-communication) series and Shimadzu MC100.[3]\n   - They offer high data rates (up to 10 Mbps) but are limited to short ranges (up to 50 meters) and require relatively clear water.[3]\n\n3. **Radio Frequency (RF) and Magnetic Induction (MI)**\n   - These methods have very limited range underwater (a few meters), so they are less common for ROVs.[5]\n\n**Considerations:**\n- Acoustic modems are better for longer ranges but lower data rates.\n- Optical modems provide high bandwidth but shorter range.\n- Environmental factors like water turbidity and salinity affect performance.\n- Compact modems are designed for low power consumption and easy integration with small ROVs.\n\nIf you need specific recommendations based on your ROV size, operational depth, and data needs, I can help you find the best options.\n\nSources:\n- [Water Linked Modem M16](https://www.waterlinked.com/modem)\n- EvoLogics Acoustic Modems\n- [Hydromea LUMA Optical Modems](https://www.hydromea.com/luma-underwater-communication)\n- Blueprint Subsea Seatrac\n\nWould you like detailed specs or vendor links for any of these modems?",
+            "sources": [
+                {
+                    "url": "https://www.waterlinked.com/products/modem-m16",
+                    "hostname": "waterlinked.com",
+                    "title": "Water Linked Modem M16",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://evologics.de/products/underwater-acoustic-modems/",
+                    "hostname": "evologics.de",
+                    "title": "EvoLogics Underwater Acoustic Modems",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.hydromea.ch/luma-series/",
+                    "hostname": "hydromea.ch",
+                    "title": "Hydromea LUMA Optical Underwater Modem Series",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.blueprintsubsea.com/en/products/seatrac-modem",
+                    "hostname": "blueprintsubsea.com",
+                    "title": "Blueprint Subsea Seatrac Acoustic Modem",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.waterlinked.com/modem",
+                    "hostname": "waterlinked.com",
+                    "title": "Water Linked Modem M16",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://bluerobotics.com/learn/a-smooth-operators-guide-to-underwater-sonars-and-acoustic-devices/",
+                    "hostname": "bluerobotics.com",
+                    "title": "Blueprint Subsea Seatrac",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.hydromea.com/luma-underwater-communication",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea LUMA",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.waterlinked.com/modem",
+                    "hostname": "waterlinked.com",
+                    "title": "Water Linked Modem M16",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.hydromea.com/luma-underwater-communication",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea LUMA Optical Modems",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 7,
+                "totalSources": 9
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kc1eb6e3eh4a6hyqgj9zefx5.response",
+            "createdAt": "2026-03-02T21:28:41.907Z",
+            "queryKey": "query_01kc1eb6e3eh4a6hyqgj9zefx5",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query:** User query: In **Switzerland**, you can find wireless underwater communication solutions from several innovative companies and research initiatives, including:\n\n1. **[Hydromea](https://www.hydromea.ch)** (Lausanne) – Specializes in high-speed wireless optical communication systems (**LUMA™** modems) for underwater use, capable of operating at depths up to 6,000 meters. They are also involved in setting global industry standards for wireless optical underwater communication.[1][2][3]\n\n2. **[Tethys Robotics](https://www.tethysrobotics.com)** (Zurich) – Develops underwater inspection robots using acoustic detection technology for navigation and positioning.\n\n3. **[Nautica Technologies](https://www.nauticatech.com)** (Zurich) – Creates autonomous underwater robots for ship hull maintenance, involving coordinated underwater communication.\n\n4. **[Subatron](https://www.subatron.com)** – Focuses on modular wireless underwater communication systems inspired by ultrasonic communication in nature.\n\n5. **[Slux](https://www.slux.ch)** – Offers underwater communication solutions using lightwave technologies with photons for data transmission through water.[7]\n\nThese companies leverage technologies such as optical, acoustic, and electromagnetic communication to overcome the challenges of underwater data transmission.\n\nWould you like contact details or help connecting with any of these companies?",
+            "sources": [
+                {
+                    "url": "https://www.hydromea.ch",
+                    "hostname": "hydromea.ch",
+                    "title": "Hydromea - Wireless Underwater Communication Solutions",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.tethysrobotics.com",
+                    "hostname": "tethysrobotics.com",
+                    "title": "Tethys Robotics - Underwater Inspection Robots",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.nauticatech.com",
+                    "hostname": "nauticatech.com",
+                    "title": "Nautica Technologies - Autonomous Underwater Robots",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.subatron.com",
+                    "hostname": "subatron.com",
+                    "title": "Subatron - Modular Wireless Underwater Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.slux.ch",
+                    "hostname": "slux.ch",
+                    "title": "Slux - Underwater Communication Solutions with Lightwave Technologies",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 5
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4kvbxenark5e62shdkj9d.response",
+            "createdAt": "2026-03-02T21:28:38.812Z",
+            "queryKey": "query_01khx4kvbxenark5e62shdkj9d",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: The most compact subsea thrusters suitable for micro-ROVs are typically under 15 cm in length and weigh less than 1 kg, providing between 0.8 kgf and 6 kgf of thrust. Some notable compact options include:\n\n- Jet Boat Motor Micro ROV Robot Underwater Thruster: Hull length 50mm, diameter 31mm, total length 76mm.\n- Hobbywater Small Underwater Thruster TD1.2: Dimensions 78mm x 112mm, made with corrosion-resistant nylon fiberglass composites.\n- **[Tianjin Haoye Technology Co., Ltd.](https://www.haoyetech.com/)** T530: Miniature brushless low noise thruster designed for ROVs and AUVs.\n- **[Blue Robotics](https://bluerobotics.com/)** T200: Popular compact thruster delivering 2.4 kgf thrust[7].\n- CrustCrawler 400HFS-L: 6.25 inches (158mm) long, noted for compact design.\n\nThese thrusters are brushless DC motor-based, designed for efficiency and long endurance, and fit the confined spaces typical of micro-ROVs[3][6].\n\nIf you want, I can provide direct links or more details on any of these models.\n\n\nToday is: Monday, March 02, 2026, 9 PM UTC. Do not include today's date in your response unless it is directly relevant and adds clear value to the given prompt.\nCurrent date: Monday, March 02, 2026, 9:28:36 PM UTC\nSearch results:\n[1]\nhttps://geo-matching.com/products/marinenav-oceanus-mini-rov-system\nMarineNAV Oceanus Mini ROV System - Geo-matching\nA compact ROV system that can fit in a 12-inch diameter pipe, with high-end",
+            "sources": [
+                {
+                    "url": "https://www.hobbywater.com/products/underwater-thrusters/",
+                    "hostname": "hobbywater.com",
+                    "title": "Hobbywater Small Underwater Thruster TD1.2",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://bluerobotics.com/product/t200-thruster/",
+                    "hostname": "bluerobotics.com",
+                    "title": "Blue Robotics T200 Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.crustcrawler.com/products/400hfs-l-thruster",
+                    "hostname": "crustcrawler.com",
+                    "title": "CrustCrawler 400HFS-L Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.haoyetech.com/",
+                    "hostname": "haoyetech.com",
+                    "title": "Tianjin Haoye Technology Co., Ltd.",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://bluerobotics.com/",
+                    "hostname": "bluerobotics.com",
+                    "title": "Blue Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://geo-matching.com/products/marinenav-oceanus-mini-rov-system",
+                    "hostname": "geo-matching.com",
+                    "title": "https://geo-matching.com/products/marinenav-oceanus-mini-rov-system",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 6
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxhq5kbenarkbvwtne1y2g4.response",
+            "createdAt": "2026-03-02T21:28:41.979Z",
+            "queryKey": "query_01khxhq5kbenarkbvwtne1y2g4",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: For inspecting ballast water tanks without sending a human inside, you can use specialized Remotely Operated Vehicles (ROVs). These ROVs are equipped with high-definition cameras and sensors that allow thorough visual inspections and measurements such as ultrasonic thickness testing.[1][2][3] They safely navigate confined and hazardous spaces within the tanks, providing detailed imagery and data without the need to drain or enter the tanks.[1][2][3][4]**\n\n**Key advantages of using ROVs for ballast water tank inspection include:[1][2][3][4][6]**\n- **Enhanced safety** by eliminating human entry into confined spaces.[1][2][3][4][6]\n- **Increased efficiency** and reduced downtime as inspections can be faster and sometimes done without de-ballasting.[1][2][3]\n- **Cost-effectiveness** by reducing preparation and labor costs.[1][2][3][4]\n- **Access to difficult-to-reach areas** within tanks.[2][4][8]\n- **Compliance** with major classification societies' inspection requirements.[1][2][3][7]\n\n**Some companies offering such ROV inspection services include [Vertech Group (Geo Oceans)](https://www.vertechgroup.com.au/projects/rov-ballast-tank-inspection/), [Oceaneering](https://www.oceaneering.com/), [Underwater Vision](https://www.underwatervision.com/), and [Air Control Entech](https://aircontrolentech.com/cms/resources/casestudies/rov-tank-inspection.pdf).[1][2][3][7]** Models like the [VideoRay](https://www.videoray.com/) Pro 4 and **EXRAY™** have been tested for this application.[1]\n\nIf you want, I can help you find specific ROV models or service providers suitable for your vessel's ballast tank inspection needs. Would you like me to do that?",
+            "sources": [
+                {
+                    "url": "https://www.vertech-group.com/solutions/rov-inspection/",
+                    "hostname": "vertech-group.com",
+                    "title": "Vertech Group - ROV Inspection Services",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceaneering.com/services/rov-inspection/",
+                    "hostname": "oceaneering.com",
+                    "title": "Oceaneering - ROV Inspection",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "VideoRay - Underwater ROVs",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.vertechgroup.com.au/projects/rov-ballast-tank-inspection/",
+                    "hostname": "vertechgroup.com.au",
+                    "title": "Vertech Group (Geo Oceans)",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceaneering.com/",
+                    "hostname": "oceaneering.com",
+                    "title": "Oceaneering",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.underwatervision.com/",
+                    "hostname": "underwatervision.com",
+                    "title": "Underwater Vision",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://aircontrolentech.com/cms/resources/casestudies/rov-tank-inspection.pdf",
+                    "hostname": "aircontrolentech.com",
+                    "title": "Air Control Entech",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 7
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx3tdh9fvpvdfa6zyqvavry.response",
+            "createdAt": "2026-03-02T21:28:30.010Z",
+            "queryKey": "query_01khx3tdh9fvpvdfa6zyqvavry",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: The best way to transfer data underwater without using tethered cables typically involves wireless communication methods. Here are some common approaches:**\n\n1. **[Acoustic Communication](https://arxiv.org/pdf/2203.02667):** This is the most widely used method for underwater wireless data transfer. It uses sound waves to transmit data over long distances underwater. Acoustic signals can travel several kilometers but have lower bandwidth and slower data rates compared to radio or optical methods.[1][2]\n\n2. **[Optical Communication](https://pmc.ncbi.nlm.nih.gov/articles/PMC7219055):** This method uses light (usually lasers or LEDs) to transmit data underwater. It offers higher data rates but is limited by water clarity, range (usually tens of meters), and requires a clear line of sight.[1][2]\n\n3. **[Radio Frequency (RF) Communication](https://arxiv.org/pdf/2203.02667):** RF waves can be used underwater but have very limited range due to high attenuation in water, especially saltwater. It is generally used for very short-range communication.[1][2]\n\n4. **[Magnetic Induction](https://arxiv.org/pdf/2203.02667):** This method uses magnetic fields to transfer data and power over short distances underwater. It is useful for communication between devices in close proximity.[1]\n\nFor most practical applications requiring untethered underwater data transmission, acoustic communication is the preferred solution due to its longer range despite its lower data rate.[1][2]\n\nWould you like information on specific devices or technologies that use these methods?",
+            "sources": [
+                {
+                    "url": "https://en.wikipedia.org/wiki/Underwater_acoustic_communication",
+                    "hostname": "en.wikipedia.org",
+                    "title": "Underwater acoustic communication - Wikipedia",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/2224-2708/7/4/63",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Wireless Optical Communication Systems: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://arxiv.org/pdf/2203.02667",
+                    "hostname": "arxiv.org",
+                    "title": "Acoustic Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7219055",
+                    "hostname": "pmc.ncbi.nlm.nih.gov",
+                    "title": "Optical Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://arxiv.org/pdf/2203.02667",
+                    "hostname": "arxiv.org",
+                    "title": "Radio Frequency (RF) Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://arxiv.org/pdf/2203.02667",
+                    "hostname": "arxiv.org",
+                    "title": "Magnetic Induction",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 6
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx47q6aeh7r8m9zmh3dhsc9.response",
+            "createdAt": "2026-03-02T21:28:31.246Z",
+            "queryKey": "query_01khx47q6aeh7r8m9zmh3dhsc9",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "I appreciate you sharing this detailed overview of wireless underwater valve control systems. However, I notice this appears to be a statement or informational text rather than a question seeking additional information.\n\nBased on the search results provided, I can confirm that **wireless underwater control systems do use similar component architectures** to what you've described, though the search results focus primarily on remotely operated vehicles (ROVs) rather than subsea valve control specifically.\n\nThe search results support several of your points:\n\n**Communication Technologies:** The sources confirm that underwater wireless systems employ various approaches. One ROV design uses **nRF24L01+ 2.4GHz wireless transceivers** for communication[2], while another mentions using **radio frequency (RF) modules** for control signals[1]. However, the search results don't specifically address acoustic modems or ultrasonic communication for subsea valve applications.\n\n**Control Architecture:** Your description of a surface control station communicating with subsea control modules aligns with the ROV designs documented. One system uses a **control station with an STM32 microcontroller that reads control data and transmits it wirelessly to an onboard ROV computer**[2], which then executes commands—similar to your valve control concept.\n\n**Sensors and Feedback:** The search results confirm that subsea systems include **pressure/temperature sensors and position feedback mechanisms** to monitor system status[2][3].\n\nIf you have specific questions about wireless underwater valve control—such as recommended communication protocols, power requirements, pressure ratings, or specific equipment manufacturers—I'd be happy to search for that information.",
+            "sources": [],
+            "stats": {
+                "position": -1,
+                "totalSources": 0
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4a9h4fzxr7jw8a4qwp24b.response",
+            "createdAt": "2026-03-02T21:28:48.662Z",
+            "queryKey": "query_01khx4a9h4fzxr7jw8a4qwp24b",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Yes, there are several types of underwater robots specifically designed to navigate complex piping systems.**\n\nThese include free-swimming ROVs for pipe centering and traversal, modular deformable designs mimicking eels, and snake-like robots for tight spaces[1][2][3].\n\n- **Free-swimming ROVs with sonar-based centering**: A BlueROV2 Heavy demonstrated stable centering and full traversal in a 46 cm-diameter submerged pipe using two sonars (Ping1D and Ping360), IMU, and pressure sensors, without Doppler logs or external tracking. A PD controller uses sonar ranges and a geometric model to minimize offsets amid flow and deformations[1].\n- **Modular deformable robots**: MIT's eel-like and hydrofoil designs use repeating voxel substructures of cast plastic with stiff-flexible blends, covered in neoprene skin. These enable efficient undulating motion and shape changes for navigation, outperforming rigid hulls[2].\n- **Snake-like UVMS**: Eelume from Eelume AS (Norway) features modular joints (each 2 DOF) for flexible configuration in narrow environments, supporting inspection and maintenance[3].\n\nAdditional examples include hybrid AUV/ROVs like Sabertooth for 3,000 m depths with 360° maneuverability, and soft manipulators with hydraulic bladders for depth-independent force and compact control[4][5]. These use sonar, IMUs, AI, and adaptive control for alignment in pipes, enhancing safety over manual methods[1][3]. Sources confirm ongoing advances but note limitations like known pipe radii[1].",
+            "sources": [
+                {
+                    "url": "https://www.kawasaki.com/en/business/robotics/spice",
+                    "hostname": "kawasaki.com",
+                    "title": "Kawasaki SPICE underwater robot",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.eelume.com/",
+                    "hostname": "eelume.com",
+                    "title": "Eelume - Snake-like underwater robots",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.utwente.nl/en/et/rob/people/pirate/",
+                    "hostname": "utwente.nl",
+                    "title": "PIRATE Pipe Inspection Robot at University of Twente",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khx4ndd1fvhaahzxp9xw0tgc.response",
+            "createdAt": "2026-03-02T21:28:34.440Z",
+            "queryKey": "query_01khx4ndd1fvhaahzxp9xw0tgc",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Improving the maneuverability of a custom-built **ROV** (Remotely Operated Vehicle) can be approached through several design and control enhancements. Here are some key strategies:\n\n1. **Optimize Thruster Placement and Number:**\n   - Use multiple thrusters positioned to provide balanced thrust in all directions (lateral, vertical, and longitudinal)[7][5].\n   - Consider vectored thrusters that can direct thrust at different angles for better agility[1].\n   - Lateral thrust combined with auto-heading features enhances responsiveness in currents[3].\n\n2. **Use Efficient Thrusters:**\n   - Select thrusters with high thrust-to-power ratios[2].\n   - Choose brushless motors for better efficiency and control[5].\n\n3. **Improve Hydrodynamics:**\n   - Streamline the **ROV**’s frame to reduce drag[7][3].\n   - Use smooth surfaces and avoid unnecessary protrusions[9].\n   - Lightweight materials like aluminum or composites improve buoyancy and agility[9].\n\n4. **Advanced Control Systems:**\n   - Implement **PID** controllers or other advanced control algorithms for precise movement[6].\n   - Use sensors such as gyroscopes, accelerometers (**IMU**), and depth sensors to improve stability and control[6][3].\n   - Integrate **auto-heading** or **AI** stabilization for maintaining position[3][5].\n\n5. **Weight Distribution and Buoyancy:**\n   - Ensure neutral buoyancy to reduce the load on thrusters[6].\n   - Properly balance the **ROV** to avoid unwanted tilting or drifting[7].\n\n6. **Software Enhancements:**\n   - Develop intuitive control interfaces for the operator.\n   - Include features like auto-stabilization, waypoint navigation, or **SLAM** for mapping[2][3].\n\n7. **Test and Iterate:**\n   - Conduct thorough testing in controlled environments.\n   - Collect data to identify maneuverability issues and refine design accordingly.\n\nAdditional strategies from recent innovations:\n- Enhanced **FOV** cameras or **sonar** for better situational awareness and obstacle avoidance[1][8][3].\n- Tether management with clump weights to reduce drag in currents[3].\n- **AI Vision Lock** or dynamic positioning for precision in complex environments[5].\n\nIf you provide more details about your current **ROV** design, such as thruster type and placement, control system, and typical operating conditions, I can offer more tailored advice. Would you like help with specific aspects?",
+            "sources": [],
+            "stats": {
+                "position": -1,
+                "totalSources": 0
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5favv0e0096hnzw6gvw5x3.response",
+            "createdAt": "2026-03-02T21:28:40.293Z",
+            "queryKey": "query_01kj5favv0e0096hnzw6gvw5x3",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: The smallest wireless ROV specifically designed for underwater confined space inspection is the Hydromea ExRay. It is known as the world's first wireless underwater drone and is compact enough to fit in a backpack, measuring about 70 cm in length and weighing 7 kg. Unlike traditional tethered ROVs, the ExRay uses optical communication via rapid light pulses, eliminating the risk of cables getting snagged in tight spaces. It is equipped with seven thrusters for maneuverability and can operate for 6 to 8 hours, sending HD video in real-time.**\n\n**This system is ideal for inspecting confined flooded spaces such as closed waterways, hydropower dams, and ship ballast tanks. It has a communication range of 50 meters in clear, dark water and is planned to operate at depths up to 100 meters.**\n\n**If you want to learn more or see detailed specs, I can help you find the official site or documentation for the [Hydromea](https://www.hydromea.com/exray-underwater-robot) ExRay.[1][2][4]**\n\n**Sources:**\n- Hydromea ExRay wireless underwater drone information",
+            "sources": [
+                {
+                    "url": "https://www.hydromea.com/exray",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea ExRay - Wireless Underwater Drone",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.hydromea.com/exray-underwater-robot",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e84dzeh18wys2za3hxk4k.response",
+            "createdAt": "2026-03-02T21:28:31.011Z",
+            "queryKey": "query_01kj5e84dzeh18wys2za3hxk4k",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: For simple visual inspections, alternatives to heavy work-class **ROVs** (Remotely Operated Vehicles) include:\n\n1. **Lightweight or Mini ROVs:** These are smaller, more portable, and cost-effective ROVs designed for simpler tasks such as visual inspections in confined spaces or shallow waters.[1][3][4]\n\n2. **Drones (Aerial or Underwater):** Aerial drones can inspect above-water structures, while small underwater drones (also called inspection drones) can perform visual checks underwater without the need for large, complex ROVs.[1][2][3][4]\n\n3. **Tethered Cameras:** Simple tethered camera systems can be lowered into structures like tanks, pipes, or underwater environments for visual inspection without requiring a full ROV system.[1][3]\n\n4. **Handheld or Pole Cameras:** For above-water inspections, handheld or pole-mounted cameras provide a straightforward solution for visual checks.[1]\n\n5. **Inspection Robots:** Smaller-scale inspection robots designed for specific environments (e.g., pipelines) offer an alternative for visual assessment.[1][2][3]\n\nThese alternatives are generally more affordable, easier to deploy, and require less operational support compared to heavy work-class ROVs, making them suitable for routine or simple visual inspections.[1][3][4]",
+            "sources": [
+                {
+                    "url": "https://www.oceanscience.com/blog/rov-work-class-vs-observational-rov",
+                    "hostname": "oceanscience.com",
+                    "title": "Work-Class vs Observational ROVs - Ocean Science",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.maritime-executive.com/editorials/are-mini-rov-s-the-future-of-underwater-inspections",
+                    "hostname": "maritime-executive.com",
+                    "title": "Are Mini ROVs the Future of Underwater Inspections?",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e1793e8gagc92ztjpzmb0.response",
+            "createdAt": "2026-03-02T21:28:30.279Z",
+            "queryKey": "query_01kj5e1793e8gagc92ztjpzmb0",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query:** User query: For underwater inspection in environments where GPS signals are unavailable and visibility is poor, the best options typically involve advanced technologies that do not rely on visual cues or satellite positioning. Some of the most effective methods include:\n\n1. **[Deep Trekker Inc.](https://www.deeptrekker.com/)** **Sonar Systems:** Sonar (Sound Navigation and Ranging) uses sound waves to detect and map underwater objects and structures. Multibeam and side-scan sonar provide detailed images and are widely used in poor visibility conditions.[1]\n\n2. **Underwater Robots (ROVs) with Sonar and Inertial Navigation:** Remotely Operated Vehicles equipped with sonar and inertial navigation systems can navigate and inspect areas without GPS. Inertial navigation helps track the robot's position relative to a starting point.[2][1]\n\n3. **[Underwater Mechanix](https://underwatermechanix.com/)** **Acoustic Positioning Systems:** These systems use a network of underwater acoustic beacons to triangulate the position of the inspection vehicle or diver, compensating for the lack of GPS.[2]\n\n4. **Laser Scanning and Imaging Sonar:** Emerging technologies that provide detailed 3D mapping of underwater environments even in turbid waters.[1][3]\n\nCombining these technologies often yields the best results, for example, using ROVs with sonar and inertial navigation supported by acoustic positioning.[1][2][3]\n\nIf you are looking for commercial or technical solutions, many companies specialize in underwater inspection technologies tailored for challenging environments.[1][2][3]\n\nWould you like recommendations for specific equipment or service providers?",
+            "sources": [
+                {
+                    "url": "https://www.nationalgeographic.org/encyclopedia/sonar/",
+                    "hostname": "nationalgeographic.org",
+                    "title": "Sonar | National Geographic",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceannews.com/news/underwater-robotics-and-sonar-technology",
+                    "hostname": "oceannews.com",
+                    "title": "Underwater Robotics and Sonar Technology",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.sciencedirect.com/topics/engineering/underwater-inspection",
+                    "hostname": "sciencedirect.com",
+                    "title": "Underwater Inspection - ScienceDirect Topics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.deeptrekker.com/",
+                    "hostname": "deeptrekker.com",
+                    "title": "Deep Trekker Inc.",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://underwatermechanix.com/",
+                    "hostname": "underwatermechanix.com",
+                    "title": "Underwater Mechanix",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 5
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e3695fq99jbzhneq73qsw.response",
+            "createdAt": "2026-03-02T21:28:43.946Z",
+            "queryKey": "query_01kj5e3695fq99jbzhneq73qsw",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "I appreciate you sharing this comprehensive overview, but I should clarify my role: I'm here to answer questions based on search results, not to validate or enhance existing information you've provided.\n\nIf you have a specific question about underwater inspection tools and technologies for industrial basins and flooded structures, I'd be happy to help. For example, I could answer:\n\n- Which inspection method is best for a particular application?\n- What are the advantages and limitations of specific technologies?\n- How do different inspection approaches compare in terms of cost, safety, or accuracy?\n- What regulatory requirements apply to underwater inspections?\n\nPlease feel free to ask a specific question, and I'll provide a detailed answer based on the search results and relevant information.",
+            "sources": [
+                {
+                    "url": "https://www.underwaterinspectiontoolsexample.com",
+                    "hostname": "underwaterinspectiontoolsexample.com",
+                    "title": "Underwater Inspection Tools Overview",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 1
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e4q6rfq99jbzwfdyq2dhv.response",
+            "createdAt": "2026-03-02T21:28:46.185Z",
+            "queryKey": "query_01kj5e4q6rfq99jbzwfdyq2dhv",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "I appreciate you sharing this detailed overview, but I should clarify what you've provided. This appears to be informational content rather than a question requiring a search-based answer.\n\nBased on the search results provided, I can confirm and expand on several points from your summary:\n\n**Compact propulsion designs** are indeed a focus for confined-space operations. The search results highlight several innovative approaches:\n\n**Magnetically coupled systems** reduce complexity and power consumption. One research project presents a **hybrid propulsion system using rare-earth magnets** to transmit torque from internal servo motors to external control fins without penetrating the hull, achieving full six-degree-of-freedom maneuverability with lower power than traditional multi-thruster designs[2].\n\n**Collaborative propulsion systems** combine multiple technologies. Researchers have developed systems integrating **Coanda effect-based primary propulsion with magnetic coupling-based auxiliary systems**, enabling vectorial thrust in multiple directions from a single water-jet while reducing weight and power consumption[3].\n\n**Specialized vehicles for confined spaces** demonstrate practical applications. ROUGHIE, an underwater glider developed at Purdue, achieves a **10-foot turning radius** (compared to 33 feet for conventional gliders) and operates in shallow water and confined environments like swimming pools, making it suitable for coastal and confined-space exploration[5].\n\n**Commercial solutions** address industry needs. Hydromea's portable underwater robotics systems are designed specifically for infrastructure-rich confined spaces like ballast water tanks, reducing inspection costs and eliminating the need for human entry into dangerous spaces[4].\n\n**Atmospheric diving systems** like Phoenix International's HARDSUIT provide an alternative approach, offering accessibility to confined spaces with longer working times and the ability to maneuver in any position[6].\n\nIs there a specific aspect of confined-space subsea propulsion you'd like me to explore further?",
+            "sources": [
+                {
+                    "url": "https://www.hydromea.ch/products/diskdrive",
+                    "hostname": "hydromea.ch",
+                    "title": "Hydromea DISKDRIVE Thruster",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceanscience.com/rov-thrusters",
+                    "hostname": "oceanscience.com",
+                    "title": "Compact ROV Thrusters for Confined Spaces",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.researchgate.net/publication/3356789_Compact_Thrusters_for_Small_AUVs",
+                    "hostname": "researchgate.net",
+                    "title": "Compact Thrusters for Small AUVs",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxkx7skecxarbync2vtzj13.response",
+            "createdAt": "2026-03-02T21:28:30.958Z",
+            "queryKey": "query_01khxkx7skecxarbync2vtzj13",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: Wireless video transmission through water for a portable inspection ROV (Remotely Operated Vehicle) presents unique challenges due to the high attenuation of radio frequency signals in water, especially saltwater. Here are some approaches and considerations:**\n\n1. **Acoustic Communication:**\n   - Most common method for underwater wireless communication.\n   - Uses sound waves which propagate better underwater.\n   - Can transmit video data but bandwidth is limited; suitable for low to moderate video quality.\n   - Requires acoustic modems and transducers.[1][2][4][7]\n\n2. **Optical Communication:**\n   - Uses LED or laser light to transmit data.\n   - Provides higher bandwidth than acoustic but requires clear water and line-of-sight.\n   - Range is limited (typically a few meters to tens of meters).[1][3][4][5]\n\n3. **Low-Frequency RF Communication:**\n   - Low frequency radio waves penetrate water better than high frequency.\n   - However, data rates are low and antenna sizes can be large.[3][4][5][6]\n\n4. **Hybrid Systems:**\n   - Combine acoustic for control signals and optical for video.\n   - Optimizes range and bandwidth.[3]\n\n5. **Tethered Systems as a Backup:**\n   - For reliable high-definition video, tethering with fiber optic cables is common.\n   - However, this reduces portability and maneuverability.[1][3]\n\n**Recommendations:**\n- For a portable inspection ROV, acoustic communication is often the most practical for wireless video but expect limited video quality or frame rate.[1][2][4]\n- If the inspection environment has clear water and short distances, consider optical communication for better video quality.[1][3]\n- Investigate commercial underwater modems and optical transceivers designed for ROV applications.[1][2]\n\nWould you like information on specific hardware options or suppliers for these technologies?",
+            "sources": [
+                {
+                    "url": "https://www.researchgate.net/publication/324828727_Underwater_Wireless_Communication_Technologies_and_Applications_A_Survey",
+                    "hostname": "researchgate.net",
+                    "title": "Underwater Wireless Communication Technologies and Applications: A Survey",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceansciencefoundation.org/2017/08/underwater-wireless-communication/",
+                    "hostname": "oceansciencefoundation.org",
+                    "title": "Underwater Wireless Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e94azexvsxrkxqmnrq3dr.response",
+            "createdAt": "2026-03-02T21:28:30.159Z",
+            "queryKey": "query_01kj5e94azexvsxrkxqmnrq3dr",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Achieving real-time Full HD (FHD) video streaming from an underwater asset involves several technical considerations and steps due to the challenging underwater environment. Here are the key points to consider:**\n\n1. **Camera Selection:** Use an underwater-rated FHD camera capable of operating at the desired depth and with good low-light performance.[1][4]\n\n2. **Lighting:** Underwater lighting conditions can be poor, so appropriate underwater lighting may be necessary to ensure clear video quality.[1]\n\n3. **Data Transmission:** Underwater wireless transmission is challenging due to signal attenuation:\n   - **Wired Connection:** The most reliable method is using a tethered cable (fiber optic or coaxial) from the underwater asset to the surface, providing high bandwidth and low latency.[2]\n   - **Acoustic Modems:** Useful for wireless transmission, but bandwidth is limited and latency is higher, typically not suitable for real-time FHD video.[3]\n   - **Optical Wireless Communication:** Emerging technologies using blue/green lasers can transmit higher bandwidth underwater but require line-of-sight and are sensitive to water conditions.\n\n4. **Compression:** Use efficient video compression (like H.264 or H.265) to reduce bandwidth while maintaining quality.[2][3]\n\n5. **Surface Receiving Equipment:** At the surface, the incoming signal (via cable or wireless receiver) is decoded and streamed in real time to your monitoring station.[2][5]\n\n6. **Power Supply:** Ensure the underwater asset has sufficient power for the camera, lighting, and transmission equipment.[1]\n\n7. **Environmental Protection:** Waterproof housings and pressure-resistant casings are essential.[2][4]\n\n**In summary, the most practical and reliable solution today for real-time FHD video streaming from underwater assets is a tethered fiber optic cable connection combined with a high-quality underwater camera and efficient compression.[2]**\n\nWould you like information on specific products or setups for this kind of system?",
+            "sources": [],
+            "stats": {
+                "position": -1,
+                "totalSources": 0
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxkywmkfk5ak1erddpew5z8.response",
+            "createdAt": "2026-03-02T21:28:35.946Z",
+            "queryKey": "query_01khxkywmkfk5ak1erddpew5z8",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: Here is a list of Swiss-engineered underwater robotics designed for high-precision offshore work:\n\n1. **[Tethys Robotics](https://tethysrobotics.com/)** (ETH Zurich spin-off) - Develops compact, highly automated underwater drones like the Tethys ONE, which can operate autonomously or via remote control to depths of 300 meters. It's used for inspection, mapping, and detection in sectors such as hydropower, offshore wind, and oil and gas, capable of creating interactive 3D maps of underwater environments.\n\n2. **[Hydromea](https://hydromea.ch/)** (EPFL spin-off) - Specializes in portable autonomous underwater robots and wireless high-bandwidth underwater communications. Their EXRAY inspection robot has DNV class approval for remote inspection of flooded spaces in offshore floating platforms, aiming to reduce inspection costs and CO2 emissions.\n\n3. **[Sensima Inspection](https://www.sensima.ch/)** - Develops advanced electromagnetic underwater scanning inspection systems for non-destructive testing and quality control, particularly for monitoring large underwater grids in harsh environments like oil and gas.\n\nThese companies exemplify Swiss precision engineering applied to underwater robotics for safe and efficient offshore inspections and maintenance.",
+            "sources": [
+                {
+                    "url": "https://tethysrobotics.com/",
+                    "hostname": "tethysrobotics.com",
+                    "title": "Tethys Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://hydromea.ch/",
+                    "hostname": "hydromea.ch",
+                    "title": "Hydromea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.sensima.ch/",
+                    "hostname": "sensima.ch",
+                    "title": "Sensima Inspection",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e1r5zexvsxrbzhamkh482.response",
+            "createdAt": "2026-03-02T21:28:41.870Z",
+            "queryKey": "query_01kj5e1r5zexvsxrbzhamkh482",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Yes, there are small **ROVs** (Remotely Operated Vehicles) designed specifically to handle tight spaces like pipes, culverts, narrow tunnels, and cooling water intake tunnels in power plants. These compact ROVs are built for maneuverability and equipped with high-definition cameras, lighting, and sonar to inspect confined and hazardous underwater environments safely and efficiently.\n\n**Key features and examples include:**\n- Designed for water-filled pipes with diameters as small as 300 mm, able to travel long distances (up to several kilometers).\n- Suitable for inspecting structural damage, blockages, sediment buildup, and joint integrity inside pipes and tunnels.\n- Used extensively in power plants for cooling water intake tunnel inspections, turbine blade checks, and sediment monitoring.\n- Examples include the **[HX-300-Mini](https://kordil.com/distributorships/ccrov/ccrov-mini-rov)** by [Charpie](https://kordil.com/distributorships/ccrov/ccrov-mini-rov), [Oceanus Mini](https://www.marinenav.com/) by [MarineNav Ltd.](https://www.marinenav.com/), [Deep Trekker](https://www.deeptrekker.com/) models like DTG3, and [VideoRay](https://www.videoray.com/)'s Mission Specialist series.\n- Equipped with advanced sonar systems and manipulators for detailed inspection and maintenance tasks.\n\nThese ROVs provide a safer alternative to human entry and are effective even in murky or strong current conditions.\n\nIf you want, I can help you find specific models or manufacturers that suit your exact needs.\n\nSources:\n- [Charpie](https://kordil.com/distributorships/ccrov/ccrov-mini-rov) ROV (HX-300-Mini)\n- [MarineNav Ltd.](https://www.marinenav.com/) ([Oceanus Mini](https://www.marinenav.com/))\n- [Deep Trekker](https://www.deeptrekker.com/) (DTG3, REVOLUTION)\n- [VideoRay](https://www.videoray.com/) (Mission Specialist Series)\n- [Blueye Robotics](https://www.blueyerobotics.com/) (Blueye X3)",
+            "sources": [
+                {
+                    "url": "https://www.charpierov.com/hx-300-mini",
+                    "hostname": "charpierov.com",
+                    "title": "HX-300-Mini by Charpie ROV",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marinenav.com/oceanus-mini",
+                    "hostname": "marinenav.com",
+                    "title": "Oceanus Mini by MarineNav Ltd.",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.deeptrekker.com/rov-models/dtg3",
+                    "hostname": "deeptrekker.com",
+                    "title": "DTG3 ROV by Deep Trekker",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.videoray.com/rov-models/mission-specialist-series/",
+                    "hostname": "videoray.com",
+                    "title": "Mission Specialist Series by VideoRay",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.blueyerobotics.com/rov-x3",
+                    "hostname": "blueyerobotics.com",
+                    "title": "Blueye X3 by Blueye Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://kordil.com/distributorships/ccrov/ccrov-mini-rov",
+                    "hostname": "kordil.com",
+                    "title": "HX-300-Mini",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://kordil.com/distributorships/ccrov/ccrov-mini-rov",
+                    "hostname": "kordil.com",
+                    "title": "Charpie",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marinenav.com/",
+                    "hostname": "marinenav.com",
+                    "title": "Oceanus Mini",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marinenav.com/",
+                    "hostname": "marinenav.com",
+                    "title": "MarineNav Ltd.",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.deeptrekker.com/",
+                    "hostname": "deeptrekker.com",
+                    "title": "Deep Trekker",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "VideoRay",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://kordil.com/distributorships/ccrov/ccrov-mini-rov",
+                    "hostname": "kordil.com",
+                    "title": "Charpie",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marinenav.com/",
+                    "hostname": "marinenav.com",
+                    "title": "MarineNav Ltd.",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marinenav.com/",
+                    "hostname": "marinenav.com",
+                    "title": "Oceanus Mini",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.deeptrekker.com/",
+                    "hostname": "deeptrekker.com",
+                    "title": "Deep Trekker",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.videoray.com/",
+                    "hostname": "videoray.com",
+                    "title": "VideoRay",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.blueyerobotics.com/",
+                    "hostname": "blueyerobotics.com",
+                    "title": "Blueye Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 17
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxm0geke8grj864xp71z474.response",
+            "createdAt": "2026-03-02T21:28:43.339Z",
+            "queryKey": "query_01khxm0geke8grj864xp71z474",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Thrusters designed for low-drag and high-efficiency subsea movement typically feature advanced design elements such as **rim-driven** and **hubless propellers**, electric propulsion systems, hydrodynamic optimization, seawater-lubricated bearings, and low acoustic signatures. Key examples include:\n\n- **Rim-driven and Hubless Designs**: These thrusters have ultra-slim, brushless motors with hubless propellers that prevent entanglement and reduce drag.[1][4][6] Companies such as **[Hydromea](https://www.hydromea.com)** (DISKDRIVE™ series),[4] **[Copenhagen Subsea](https://copenhagensubsea.com)** (rim-driven electric thrusters),[2] **[Rim Drive Technology](https://rimdrivetechnology.nl)** (subsea bow thrusters),[3] **[TSL Technology](http://www.tsltechnology.com)** (IntegratedThrusters™),[6] **[Kongsberg](https://www.kongsberg.com)** (AZ-PM and TT-PM thrusters),[5] and **[Alva Industries](https://www.alvaindustries.com)** (Hydra-100) use this design to enhance efficiency and reliability.[7]\n- **Electric Propulsion**: Brushless DC motors provide higher efficiency and better control compared to hydraulic systems.[1][2][6]\n- **Hydrodynamic Optimization**: Streamlined thruster bodies integrated with vehicle hulls minimize resistance and cavitation.[2][5]\n- **Seawater Lubricated Bearings**: Reduce friction and improve thruster longevity.[4]\n- **Low Acoustic Signature**: Important for stealth and minimal disturbance.[1][2][3]\n\nThese thrusters are especially suited for autonomous underwater vehicles (**AUVs**), remotely operated vehicles (**ROVs**), and other subsea platforms requiring efficient and low-drag propulsion.[1][2][6]\n\nIf you want, I can help find specific manufacturers or models suited for your application needs.",
+            "sources": [
+                {
+                    "url": "https://www.hydromea.ch/en/products/diskdrive",
+                    "hostname": "hydromea.ch",
+                    "title": "Hydromea DISKDRIVE™ Rim-Driven Thrusters",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://subseapropulsion.com/",
+                    "hostname": "subseapropulsion.com",
+                    "title": "Subsea Propulsion Solutions (SPS)",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.whoi.edu/",
+                    "hostname": "whoi.edu",
+                    "title": "Woods Hole Oceanographic Institution",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.hydromea.com",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://copenhagensubsea.com",
+                    "hostname": "copenhagensubsea.com",
+                    "title": "Copenhagen Subsea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://rimdrivetechnology.nl",
+                    "hostname": "rimdrivetechnology.nl",
+                    "title": "Rim Drive Technology",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "http://www.tsltechnology.com",
+                    "hostname": "tsltechnology.com",
+                    "title": "TSL Technology",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.kongsberg.com",
+                    "hostname": "kongsberg.com",
+                    "title": "Kongsberg",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.alvaindustries.com",
+                    "hostname": "alvaindustries.com",
+                    "title": "Alva Industries",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 4,
+                "totalSources": 9
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e43xwexvsxrc51ns3yk90.response",
+            "createdAt": "2026-03-02T21:28:43.164Z",
+            "queryKey": "query_01kj5e43xwexvsxrc51ns3yk90",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Robotic solutions that help reduce vessel inspection time include:\n\n1. **Underwater Inspection Robots (ROVs and AUVs)**: These remotely operated or autonomous underwater vehicles can inspect the hull without dry docking, performing visual and ultrasonic inspections quickly and safely.[5][7][2]\n\n2. **Aerial Drones**: Used to inspect above-water and hard-to-reach areas, drones capture high-resolution images and thermal data, allowing large areas like cargo and ballast tanks to be inspected much faster than manual methods. For example, drone inspections can reduce tank inspection times from weeks to just days.\n\n3. **Magnetic Crawlers and Snake-Arm Robots**: These robots inspect confined or hazardous spaces inside vessels, carrying cameras and sensors to detect cracks and corrosion, reducing the need for human entry and setup time.\n\nOverall, these robotic technologies reduce vessel downtime, speed up data acquisition, and allow more frequent inspections, enabling proactive maintenance and reducing total inspection time significantly.[1][3][4]\n\nIf you want, I can provide specific examples or vendors of these robotic systems.\n\nSources:\n- [Deep Trekker](https://deeptrekker.com/) ROVs\n- [Flyability](https://www.flyability.com/) Elios drone\n\nWould you like more details on any particular type of robotic inspection?",
+            "sources": [
+                {
+                    "url": "https://www.deeptrekker.com/underwater-robotics/rov-hull-inspections/",
+                    "hostname": "deeptrekker.com",
+                    "title": "Underwater ROV Hull Inspections - Deep Trekker",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.flyability.com/eliios-drone",
+                    "hostname": "flyability.com",
+                    "title": "Flyability Elios - Indoor Inspection Drone",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://deeptrekker.com/",
+                    "hostname": "deeptrekker.com",
+                    "title": "Deep Trekker",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.flyability.com/",
+                    "hostname": "flyability.com",
+                    "title": "Flyability",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 4
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5jqkgre8gages2pnxg0nqr.response",
+            "createdAt": "2026-03-02T21:28:31.156Z",
+            "queryKey": "query_01kj5jqkgre8gages2pnxg0nqr",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Using a wireless ROV (Remotely Operated Vehicle) for tank inspections offers several advantages over a tethered ROV:\n\n1. **Improved Mobility and Maneuverability:** Without a tether, the ROV can move more freely inside the tank, allowing it to reach tight or complex areas without the risk of the tether getting caught or tangled.[6]\n\n2. **Reduced Risk of Damage:** Tethers can snag on obstacles, potentially damaging the ROV or the tether itself. Wireless ROVs eliminate this risk, making operations smoother and safer.[6]\n\n3. **Easier Deployment and Retrieval:** Wireless ROVs can be deployed and retrieved more quickly since there is no need to manage a tether cable, which can be cumbersome, especially in confined spaces.[6]\n\n4. **Less Interference and Clutter:** The absence of a tether reduces clutter inside the tank, which can be critical in environments where space is limited or where the tether might interfere with inspection tasks.[6]\n\n5. **Enhanced Data Transmission Flexibility:** Modern wireless ROVs use advanced communication technologies to transmit data in real-time, potentially allowing for more flexible inspection setups.[6]\n\nHowever, it's important to consider that wireless ROVs may have limitations such as battery life and potential signal interference, which are less of an issue with tethered systems that can draw power and have reliable communication through the tether.\n\nOverall, wireless ROVs provide greater flexibility and operational ease for tank inspections, making them a preferred choice in many scenarios where mobility and ease of use are critical.",
+            "sources": [
+                {
+                    "url": "https://www.rovplanet.com/rov-tether-vs-wireless-rov/",
+                    "hostname": "rovplanet.com",
+                    "title": "ROV Tether vs Wireless ROV: Pros and Cons",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.tankinspection.com/advantages-wireless-rovs/",
+                    "hostname": "tankinspection.com",
+                    "title": "Advantages of Wireless ROVs in Tank Inspections",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5dxrtwe8gagc7je26297g5.response",
+            "createdAt": "2026-03-02T21:28:33.067Z",
+            "queryKey": "query_01kj5dxrtwe8gagc7je26297g5",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Yes, wireless underwater video transmission is possible primarily through acoustic and optical methods, with acoustic being the most common due to sound's propagation in water, though it faces bandwidth and latency limits.** [1][2]\n\n**Key methods include:**\n- **Acoustic communication**: Uses sound waves with modems achieving up to 150 kbps via high-efficiency modulation like 64-QAM at 75 kHz carrier frequency, enabling compressed real-time video over short vertical paths; prototype systems reached 30 kbps in deep water. Advanced techniques like 3D CNN autoencoders, LSTM-based encoding with OFDM, and analog schemes double frame rates under bandwidth constraints for submersibles and IoT. [1][2]\n- **Optical wireless**: Employs lasers or LEDs for higher bandwidth but needs clear line-of-sight and low-turbidity water; range-limited and degrades in murky conditions. [user text]\n- **RF communication**: Impractical beyond very short distances due to rapid signal attenuation in water. [user text]\n- **Hybrid systems**: Combine acoustic for range and optical for bandwidth. [user text]\n\n**Challenges and considerations**: Acoustic channels have limited bandwidth (e.g., 500–2000 bps typical modems, up to 15 kbps commercial over 1–2 km in deep water), high latency, multipath, and Doppler effects; video requires compression and efficient modulation. Optical suits clear water but not murky. Equipment like drop cameras often uses cables for real-time feed, not wireless. [2][3][4]\n\nPractical choice depends on distance, water clarity, and video needs; acoustic excels for range, optical for quality in ideal conditions. [1][2][3]",
+            "sources": [
+                {
+                    "url": "https://www.mdpi.com/2079-9292/8/9/1004",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Wireless Optical Communication: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.nature.com/articles/s41598-020-57898-6",
+                    "hostname": "nature.com",
+                    "title": "Underwater wireless communication technologies",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceanoptics.com/blog/underwater-optical-communication/",
+                    "hostname": "oceanoptics.com",
+                    "title": "Underwater Optical Communication Technologies",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5jrhqjf20scahr4xkafdtt.response",
+            "createdAt": "2026-03-02T21:28:37.570Z",
+            "queryKey": "query_01kj5jrhqjf20scahr4xkafdtt",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: The top Swiss companies specializing in underwater communication include:\n\n1. **[Hydromea](https://hydromea.com)** - A Swiss underwater robotics company known for underwater navigation and high-speed wireless optical communication technology. Their LUMA Optical Modem delivers data at up to 10 Mbps through modulated LED light pulses, operating at depths up to 6,000 meters. Hydromea also leads development of industry standards for underwater wireless optical communication.[1][3][6][7]\n\n2. **Slux** - This company offers stable and secure underwater communication solutions using lightwave technology. They use various light sources such as electric arcs and advanced LED systems to transmit data through water, overcoming the limitations of radio waves and GPS underwater.\n\n3. **Swiss Ocean Tech** - Although primarily focused on maritime safety and anchor monitoring, this Swiss startup has expertise in underwater communications as part of their diverse technological approach.\n\nThese companies represent the forefront of Swiss innovation in underwater communication technologies, focusing on optical and light-based data transmission methods.\n\nIf you want, I can provide more detailed information or links to their websites.\n\nSources:\n- Hydromea [hydromea.com](https://hydromea.com)\n- Slux and general Swiss underwater communication info",
+            "sources": [
+                {
+                    "url": "https://hydromea.com",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea - Underwater Communication and Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://hydromea.com",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea - Underwater Communication and Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5dy69ye8gagc86nkp2hqb5.response",
+            "createdAt": "2026-03-02T21:28:34.433Z",
+            "queryKey": "query_01kj5dy69ye8gagc86nkp2hqb5",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Your overview accurately captures the fundamental challenges and approaches for underwater communication networks. The search results confirm and expand on several key points:\n\n**Acoustic communication** is indeed the most established technology for underwater networks[2]. It achieves communication up to several kilometers because sound propagation loss in seawater is significantly smaller than electromagnetic waves[2]. However, the tradeoff is real: acoustic systems suffer from low bandwidth, high latency, and environmental noise sensitivity[1].\n\n**Optical communication** provides the high data rates you mentioned, with recent systems achieving data transmission at rates up to 23 Gbit/s[4]. The limitation to short-range, line-of-sight applications is confirmed—optical is best suited for high-speed local data transfer rather than long-range communication[1].\n\n**Electromagnetic (EM) communication** faces substantial seawater attenuation but shows promise for specific applications[1]. Rather than being limited to very low frequencies alone, recent advancements in compact antenna design and low-frequency optimization have expanded its use cases, particularly for short-range, high-data-rate exchanges and water-air interface transitions (such as communicating with surface buoys or satellites)[1].\n\n**Hybrid systems** represent an emerging best practice: acoustic links handle long-range communication, optical systems manage high-speed local transfers, and electromagnetic channels facilitate water-air transitions[1]. This multi-modal approach overcomes the individual limitations of each technology.\n\nYour mesh network topology recommendation aligns with current underwater sensor network design. The research emphasizes that fiber-optic cables with base stations will likely dominate future long-distance underwater communication infrastructure, with submersibles exchanging information through these networked stations[2].",
+            "sources": [
+                {
+                    "url": "https://en.wikipedia.org/wiki/Underwater_acoustic_communication",
+                    "hostname": "en.wikipedia.org",
+                    "title": "Underwater acoustic communication - Wikipedia",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://ieeexplore.ieee.org/document/7882926",
+                    "hostname": "ieeexplore.ieee.org",
+                    "title": "Underwater Wireless Sensor Networks: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0140366416303361",
+                    "hostname": "sciencedirect.com",
+                    "title": "Underwater wireless optical communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj59exf6e8gaga18tjr6q6mz.response",
+            "createdAt": "2026-03-02T21:28:28.372Z",
+            "queryKey": "query_01kj59exf6e8gaga18tjr6q6mz",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query:** User query: To get a real-time video feed from a subsea sensor to a control station, you typically need to consider the following components and steps:\n\n1. **Subsea Camera/Sensor:** A robust underwater camera or video sensor designed for subsea conditions.\n\n2. **Data Transmission:** Since subsea environments are challenging for wireless signals, you generally use an underwater cable system. Options include:\n   - **Fiber Optic Cable:** Provides high bandwidth and low latency for real-time video transmission.[1][4]\n   - **Subsea Ethernet or Coaxial Cable:** Sometimes used depending on distance and bandwidth requirements.[1][4][7]\n\n3. **Data Interface Equipment:** At the subsea end, equipment to convert camera output to a format suitable for transmission over the cable.[1][4]\n\n4. **Surface/Control Station Receiver:** Equipment to receive the video feed from the subsea cable, decode it, and make it available for monitoring.[1][2]\n\n5. **Control and Monitoring Software:** Software at the control station to display and possibly record the video feed.[2]\n\n6. **Power Supply:** Power for the subsea camera and transmission equipment, which can be provided through the cable or via a subsea power source.[6]\n\n7. **Installation and Maintenance:** Proper installation by specialized subsea engineers and maintenance plans to ensure continuous operation.\n\nIn practice, companies specializing in subsea video monitoring systems provide turnkey solutions that include cameras, cables, junction boxes, and control room interfaces.[2]\n\nWould you like information on specific equipment vendors or detailed technical standards for subsea video transmission?",
+            "sources": [],
+            "stats": {
+                "position": -1,
+                "totalSources": 0
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e6h48exvsxrkbavg4x27g.response",
+            "createdAt": "2026-03-02T21:28:28.398Z",
+            "queryKey": "query_01kj5e6h48exvsxrkbavg4x27g",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**User query: For high data rate underwater communication, the alternative to acoustic modems is typically optical communication, often referred to as underwater optical wireless communication (UOWC). Optical modems use light (usually blue or green lasers or LEDs) to transmit data through water, which can offer much higher bandwidth and data rates compared to traditional acoustic modems.[1][2][3][4]**\n\n**Key points about underwater optical communication:**\n- **Higher data rates:** Optical signals can achieve data rates in the range of **Mbps to Gbps**, significantly higher than acoustic modems.[1][2][3][4]\n- **Shorter range:** Optical communication generally works over shorter distances (**typically tens to a few hundred meters**) due to water absorption and scattering.[1][2][3][4]\n- **Low latency:** Optical signals travel faster than acoustic signals underwater, providing lower latency communication.[2][3][4]\n\nIn contrast, acoustic modems are more suited for longer-range but lower data rate communication due to the slower speed of sound in water and limited bandwidth.[1][3]\n\nIf you need high data rate underwater communication and the environment permits, underwater optical wireless communication is a leading alternative to acoustic modems.[1][2][3][4][5]",
+            "sources": [
+                {
+                    "url": "https://en.wikipedia.org/wiki/Underwater_optical_wireless_communication",
+                    "hostname": "en.wikipedia.org",
+                    "title": "Underwater optical wireless communication - Wikipedia",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/2076-3417/10/9/3154",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Optical Wireless Communication: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5dwc8ee8gagc7f3htc6hq7.response",
+            "createdAt": "2026-03-02T21:28:49.341Z",
+            "queryKey": "query_01kj5dwc8ee8gagc7f3htc6hq7",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: User query: Underwater communication products that support low-latency control signals mainly fall into three categories:\n\n1. **Underwater Optical Wireless Communication (UWOC):**\n   - Uses high-frequency light (lasers or LEDs) to achieve very high data rates and extremely low latency.\n   - Ideal for short to moderate ranges (typically under 100 meters) with line-of-sight.\n   - Examples include [Hydromea](https://hydromea.com) LUMA™ modems (up to 10 Mbit/s) and Kyocera's UWOC technology (up to 5.2 Gbps).\n   - Benefits: High speed, low latency, immune to acoustic noise.\n   - Limitations: Sensitive to water turbidity and environmental factors.\n\n2. **Underwater Acoustic Communication:**\n   - Uses sound waves, effective over long distances but generally has higher latency than optical methods.\n   - Some specialized acoustic modems reduce latency for control signals.\n   - Examples include [Teledyne Marine](https://www.teledynemarine.com) Benthos Acoustic Modems and [Water Linked](https://waterlinked.com) Acoustic Modems.\n   - Benefits: Long range, reliable.\n   - Limitations: Lower bandwidth, subject to noise and interference.\n\n3. **Underwater Wired Communication:**\n   - Wired systems (fiber optic or electrical cables) offer the most reliable, high-speed, and lowest latency communication.\n   - Typically used when physical tethering is possible (e.g., ROVs).\n   - Example: [Ocean Technology Systems](https://www.ots-systems.com) (OTS) hardwired diver communication.\n   - Benefits: Very low latency, secure, robust.\n   - Limitations: Mobility restricted by cables.\n\nFor low-latency control signals, underwater optical systems are preferred for short-range applications, while wired communication is best when tethering is feasible. Acoustic systems are used for longer ranges but with generally higher latency.\n\nIf you need recommendations for specific products or applications, I can help with that too!",
+            "sources": [
+                {
+                    "url": "https://www.hydromea.com/luma-modem",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea LUMA™ underwater optical wireless modems",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.teledynemarine.com",
+                    "hostname": "teledynemarine.com",
+                    "title": "Teledyne Marine Acoustic Modems",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.otscommunications.com",
+                    "hostname": "otscommunications.com",
+                    "title": "Ocean Technology Systems Wired Underwater Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://hydromea.com",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://waterlinked.com",
+                    "hostname": "waterlinked.com",
+                    "title": "Water Linked",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.ots-systems.com",
+                    "hostname": "ots-systems.com",
+                    "title": "Ocean Technology Systems",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 1,
+                "totalSources": 6
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e7gp3eh18wyqx30x2v6ap.response",
+            "createdAt": "2026-03-02T21:28:47.160Z",
+            "queryKey": "query_01kj5e7gp3eh18wyqx30x2v6ap",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "I appreciate you sharing this information, but I should clarify what I can verify from the search results provided.\n\nBased on the search results, I can confirm the following Swiss subsea technology companies:\n\n**Verified from search results:**\n\n- **Tethys Robotics** - A Swiss company developing compact, highly automated underwater drones for inspection and mapping in hydropower, offshore wind, and other sectors[1][3]\n- **Allseas** - A Swiss-based offshore contractor specializing in offshore pipe laying, offshore heavy lifts, and subsea construction, with involvement in deep sea mining services[2]\n- **Fischer Connectors SA** - A Swiss company designing and manufacturing high-performance connectors and cable assembly solutions for demanding environments[1]\n- **Daphne Technology** - A Swiss climate deep-tech company focused on greenhouse gas reduction in industrial sectors[3]\n- **Briese Schiffahrt (Schweiz) AG** - A Swiss company managing windmill transportation vessels[3]\n- **Accelleron** - A global company with Swiss operations providing turbocharging technologies for marine engines[4]\n- **Cavotec** - A cleantech company delivering connection and electrification solutions for port decarbonization[4]\n\n**Unable to verify from search results:**\n\nThe companies you mentioned—Deepwave, Hydromea, Swiss Ocean Tech, Sonardyne, Subsea Tech, and Imodco—do not appear in the provided search results. I cannot confirm their Swiss location, specializations, or product details without additional sources. If you'd like information about these companies, I would need different search results to verify the claims accurately.",
+            "sources": [
+                {
+                    "url": "https://www.allseas.com/",
+                    "hostname": "allseas.com",
+                    "title": "Allseas - Offshore Energy Contractor",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://deepwave.ch/",
+                    "hostname": "deepwave.ch",
+                    "title": "Deepwave - Underwater Services",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://hydromea.com/",
+                    "hostname": "hydromea.com",
+                    "title": "Hydromea - Marine Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://tethys-robotics.com/",
+                    "hostname": "tethys-robotics.com",
+                    "title": "Tethys Robotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://swissoceantech.ch/",
+                    "hostname": "swissoceantech.ch",
+                    "title": "Swiss Ocean Tech",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": 3,
+                "totalSources": 5
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5e55qrexvsxrcf48875e2e.response",
+            "createdAt": "2026-03-02T21:28:29.373Z",
+            "queryKey": "query_01kj5e55qrexvsxrcf48875e2e",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Encapsulated motors improve the maintenance cycle of underwater propulsion units primarily by enhancing protection and reliability.** Here’s how they contribute[1][4][5]:\n\n1. **Protection from Water Ingress:** Encapsulation seals the motor components, preventing water, moisture, and contaminants from entering. This reduces the risk of corrosion and electrical short circuits, common issues in underwater environments[1].\n\n2. **Reduced Wear and Tear:** By isolating the motor windings and other sensitive parts from harsh external conditions, encapsulated motors experience less mechanical and chemical degradation, extending their operational life[1][5].\n\n3. **Lower Maintenance Frequency:** With better protection, these motors require less frequent inspections, cleaning, and repairs, thus lengthening the intervals between maintenance cycles[1][4].\n\n4. **Enhanced Reliability:** Encapsulation helps maintain consistent motor performance, reducing unexpected failures and downtime[1][2][5].\n\n5. **Simplified Maintenance Procedures:** When maintenance is needed, encapsulated motors often allow for easier diagnostics and repairs since the encapsulation can be designed for modular replacement or easier access to components[4].\n\nOverall, encapsulated motors increase the durability and reliability of underwater propulsion units, leading to longer maintenance cycles and reduced operational costs[1][4].\n\nIf you want, I can provide more technical details or examples of encapsulation materials used in underwater motors.",
+            "sources": [
+                {
+                    "url": "https://www.sciencedirect.com/science/article/abs/pii/S1474667017363979",
+                    "hostname": "sciencedirect.com",
+                    "title": "Encapsulation of electric motors for underwater applications",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.marineinsight.com/marine-electrical/underwater-electric-motors/",
+                    "hostname": "marineinsight.com",
+                    "title": "Underwater Electric Motors: Types and Applications",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxkwqhjfzxr7x0nfhwdn55x.response",
+            "createdAt": "2026-03-02T21:28:31.838Z",
+            "queryKey": "query_01khxkwqhjfzxr7x0nfhwdn55x",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query: User query: For high-speed data offloading from a subsea sensor station, the best solutions typically involve a combination of robust subsea communication technologies and data handling strategies. Here are common approaches:**\n\n1. **Fiber Optic Cables:** The most reliable and high-bandwidth method is to use subsea fiber optic cables connecting the sensor station to an onshore facility or a surface buoy. Fiber optics support very high data rates and long-distance transmission with minimal loss[1].\n\n2. **Acoustic Modems:** For wireless communication underwater where cables are impractical, acoustic modems are used. However, their data rates are much lower compared to fiber optics, typically in the kbps range, making them less suitable for very high-speed offloading[1].\n\n3. **Hybrid Systems:** Combining fiber optic cables with local data storage and periodic data offloading via acoustic modems or surface communication (e.g., RF or satellite from a surface buoy) can optimize data transfer[1].\n\n4. **Data Compression and Edge Processing:** To manage bandwidth constraints, processing data locally at the sensor station to compress or pre-analyze data before transmission can reduce the amount of data that needs to be offloaded[4].\n\n5. **Surface Relay Stations:** Using subsea vehicles or surface buoys equipped with high-speed data links (e.g., RF or satellite) can serve as intermediaries for offloading data from subsea sensors[1][2][5].\n\n**In summary, if the priority is truly high-speed and large volume data offloading, subsea fiber optic cables are the best solution, often complemented by local processing to optimize data transmission[1].**\n\n**Would you like recommendations for specific fiber optic systems or suppliers for subsea applications?**",
+            "sources": [
+                {
+                    "url": "https://www.ocean-news.com/news/acoustic-vs-fiber-optic-communication-for-underwater-sensor-networks",
+                    "hostname": "ocean-news.com",
+                    "title": "Acoustic vs Fiber Optic Communication for Underwater Sensor Networks",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.oceanbotics.com/subsea-communications/",
+                    "hostname": "oceanbotics.com",
+                    "title": "Subsea Communications Solutions by OceanBotics",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.nature.com/articles/s41598-020-73045-0",
+                    "hostname": "nature.com",
+                    "title": "Advances in subsea fiber optic sensing for marine applications",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5eaevmfq99jc0ysccfp93z.response",
+            "createdAt": "2026-03-02T21:28:49.900Z",
+            "queryKey": "query_01kj5eaevmfq99jc0ysccfp93z",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Query:** User query: Underwater Wi-Fi using LED-based optical signals, also known as Underwater Wireless Optical Communication (UWOC), is an emerging technology that transmits data through visible light underwater, offering much higher data rates and lower latency than traditional acoustic or radio frequency methods.\n\n**Current State:**\n- Speeds demonstrated include up to 800 Mb/s over short distances (0.6 m) with blue micro-LEDs.[1][2]\n- Proposals and experiments suggest 165 Mbps at 37.7 m and 90 Mbps at 73.5 m using massive GaN micro-LED arrays.\n- **[Kyocera](https://www.kyocera.com/)** has demonstrated a short-range transmission of 5.2 Gbps in freshwater.\n- Real-time systems have achieved 135 Mbps at 10 m.[2]\n- Blue-green light is optimal for clear water; red light can be better in turbid water.[1][2]\n- Micro-LEDs are favored due to small size, high current density, and modulation bandwidth.\n- Hybrid systems combining LEDs and laser diodes are being explored for improved performance.[1][3]\n- A prototype called **[Aqua-Fi](https://techxplore.com/news/2020-06-aqua-fi-underwater-wifi-lasers.html)** allows divers to send multimedia underwater using LED or laser light.[1][3]\n\n**Challenges:**\n- Absorption and scattering limit range and data rate, worsened by water turbidity.[1][2][4]\n- Turbulence causes signal fading.\n- Precise alignment of transmitter and receiver is critical but difficult underwater.[1][3]\n- Water quality greatly affects performance.[2]\n\n**Applications:**\n- Marine exploration, environmental monitoring.\n- Communication with underwater vehicles (AUVs, ROVs).[4]\n- Seabed mapping and archaeological studies.\n- Military and scientific submarine communications.\n\nOverall, LED-based underwater Wi-Fi is promising for high-speed underwater communications but is still limited by environmental factors and alignment challenges.\n\nIf you'd like, I can provide more technical details or recent research insights on this topic!",
+            "sources": [
+                {
+                    "url": "https://www.ledinside.com/news/2023/10/kyocera_leds_5gbs_underwater_wireless_optical_communication",
+                    "hostname": "ledinside.com",
+                    "title": "Kyocera LEDs Achieve 5.2 Gbps Underwater Wireless Optical Communication",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/2076-3417/13/19/10032",
+                    "hostname": "mdpi.com",
+                    "title": "Real-Time Underwater Wireless Optical Communication Using LEDs",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.mdpi.com/1424-8220/21/20/6909",
+                    "hostname": "mdpi.com",
+                    "title": "Underwater Optical Wireless Communication: A Review",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.kyocera.com/",
+                    "hostname": "kyocera.com",
+                    "title": "Kyocera",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://techxplore.com/news/2020-06-aqua-fi-underwater-wifi-lasers.html",
+                    "hostname": "techxplore.com",
+                    "title": "Aqua-Fi",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 5
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5dwxckfq99jbjxn9171gcb.response",
+            "createdAt": "2026-03-02T21:28:35.688Z",
+            "queryKey": "query_01kj5dwxckfq99jbjxn9171gcb",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "Query: Downloading data from a subsea data logger without physically recovering the device typically involves remote communication methods. Here are some common approaches:\n\nYour summary accurately reflects the primary methods used in subsea data retrieval. Here's what the current technology landscape shows:\n\n**Acoustic Modem Communication** is the most established approach. Sonardyne's subsea Acoustic Data Logger systems use \"spread spectrum, high speed acoustic link to allow large volumes of data to be rapidly and accurately retrieved topside\" through a vessel, rig, or Uncrewed Surface Vehicle (USV)[4]. Water Linked acoustic modems similarly enable \"reliable underwater communication for ROVs, AUVs, and divers, transmitting data over long distances in tough conditions\"[3].\n\n**ROV-Based Data Transfer** is widely deployed in practice. ROVs equipped with optical data telemetry modems (such as LUMA modems) can provide significantly more reliable connections than acoustic alternatives in noisy installation environments. These modems \"transmit data at a much higher bandwidth than acoustic telemetry systems allowing multiple data set updates per second compared to one update every 3-5 seconds\"[1], with operating ranges of 7-50 meters depending on modem version[1].\n\n**Hybrid and Optical Systems** offer alternatives for specific conditions. Optical communications can \"provide high data rates\" but are \"limited by water clarity and only effective over short distances\"[5]. Hybrid systems combining acoustic and optical methods leverage the strengths of each—using acoustics for long-range communication and optical signals for high-bandwidth, short-range data transfer[5].\n\n**Tethered ROV Systems** remain standard for many operations, enabling \"high-bandwidth, real-time data transmission and power delivery\" with \"precise control and live video feedback\"[6].\n\nThe choice between these methods depends on water depth, visibility, distance from surface support, and whether the logger is stationary or mobile. Manufacturer specifications are essential, as different models support different communication protocols and interfaces.",
+            "sources": [
+                {
+                    "url": "https://www.oceanscience.com/blogs/news/how-to-download-data-from-underwater-data-loggers",
+                    "hostname": "oceanscience.com",
+                    "title": "How to Download Data from Underwater Data Loggers",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.ocean-innovations.com/underwater-acoustic-modems/",
+                    "hostname": "ocean-innovations.com",
+                    "title": "Underwater Acoustic Modems for Data Retrieval",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.geosense.co.uk/resources/remote-data-download-from-subsea-sensors/",
+                    "hostname": "geosense.co.uk",
+                    "title": "Remote Data Download from Subsea Sensors",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 3
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01kj5dzys0fq99jbyn8wdsnk0m.response",
+            "createdAt": "2026-03-02T21:28:42.258Z",
+            "queryKey": "query_01kj5dzys0fq99jbyn8wdsnk0m",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Yes, untethered underwater robots like Autonomous Underwater Vehicles (AUVs) exist for ship hull inspections, operating without tethers using onboard sensors for navigation and data collection in low-visibility conditions.[1][2][4][7]**\n\n**Key examples include:**\n- **Bluefin HAUV** from General Dynamics Mission Systems (now Huntington Ingalls Industries): A portable hovering AUV for hull inspection with high-resolution imaging sonar, achieving 2-meter precision contact relocation, rapid deployment in under 30 minutes, and real-time data processing.[1]\n- Research versions of **Bluefin HAUV** used in projects like CMU's Autonomous Hull Inspection, integrating SLAM for mapping in turbid waters, though some tests used tethers for development.[2]\n- **Seasam HullScan** from Delair Marine (Seasam): An autonomous ROV (often categorized under UUVs) for hull scanning with DVL for position locking, wall servoing, and long transects in low visibility.[3]\n\n**Capabilities and benefits:** These vehicles use sonar, cameras, and SLAM for 3D modeling, defect detection, and full coverage, reducing diver risks, costs, and time compared to traditional methods.[1][2][4][5][6] Challenges include navigation drift without GPS and ensuring complete autonomy.[2][4][6]\n\n**Companies and models:** \n- **GDMissionSystems.com** offers the **Bluefin HAUV**.[1]\n- **DelairMarine.com** provides **Seasam HullScan**.[3]\n- **BlueyeRobotics.com** supplies ROVs for hull inspections, though typically tethered.[5]\n\nFor more on specific models or companies like Schmidt Ocean Institute's AUVs, additional details are available.[7]",
+            "sources": [
+                {
+                    "url": "https://www.mdpi.com/2504-446X/7/3/152",
+                    "hostname": "mdpi.com",
+                    "title": "Autonomous Underwater Vehicles for Ship Hull Inspection: Advances and Challenges",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 1
+            }
+        },
+        {
+            "key": "visibility_report_01kjr77f0cexs8mt8a556ky6m2.query_01khxkwf9qenarkd2qgn97x5cs.response",
+            "createdAt": "2026-03-02T21:28:29.046Z",
+            "queryKey": "query_01khxkwf9qenarkd2qgn97x5cs",
+            "visibilityReportKey": "visibility_report_01kjr77f0cexs8mt8a556ky6m2",
+            "provider": "OPENAI",
+            "text": "**Yes, several companies and research projects offer untethered underwater drones or AUVs for ballast tank inspections, focusing on autonomous navigation, video capture, and sensor data collection without tethers.**[1][3][4]\n\nThese systems enhance safety by eliminating confined space entry and physical connections, using technologies like LiDAR, SLAM, high-definition cameras, and ultrasonic testing for mapping and visual assessment.[1][2][4]\n\nKey examples include:\n- **RMF aerial robot** from Kostas Alexis's team, which autonomously explores and inspects multiple ballast tank compartments in an FPSO vessel using multi-modal SLAM and path planning, completing missions in under 4 minutes without prior CAD models.[1]\n- **Scout 137 Drone System** by ScoutDI (part of CWL Group with Geo Oceans, Sonomatic, and AUAV), used in the iCOT method for fully robotic cargo oil tank (COT) and ballast tank inspections on Shell's Turritella FPSO, achieving 100% remote operation accredited by ABS.[4]\n- Experimental autonomous underwater robots from research at Autonomous Robots Lab, adapting aerial systems for semantic-oriented navigation and inspection in water-filled ballast tanks.[3]\n\nNote that some related inspections, like Oceaneering's, use tethered ROVs (VideoRay Pro 5) rather than fully untethered AUVs.[2] Other results discuss AUV ballast systems for buoyancy but not inspections.[5][6][7] For commercial availability, **ScoutDI** provides deployable solutions like the Scout 137.[4]",
+            "sources": [
+                {
+                    "url": "https://www.marinetechnologynews.com/news/untethered-robotic-inspection-ballast-597924",
+                    "hostname": "marinetechnologynews.com",
+                    "title": "Untethered robotic inspection for ballast tanks",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                },
+                {
+                    "url": "https://www.underwaterrobotics.com/auv-inspection",
+                    "hostname": "underwaterrobotics.com",
+                    "title": "Autonomous Underwater Vehicles for Inspection",
+                    "iconUrl": "",
+                    "category": "OTHER"
+                }
+            ],
+            "stats": {
+                "position": -1,
+                "totalSources": 2
+            }
+        }
+    ]
+}

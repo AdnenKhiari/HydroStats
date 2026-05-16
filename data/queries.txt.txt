@@ -1,0 +1,361 @@
+{
+    "items": [
+        {
+            "key": "query_01khx4fzsbeh7r8mamckqtgx08",
+            "query": "What are the top-rated portable ROVs for rapid deployment in search and rescue?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T09:01:04.683Z"
+        },
+        {
+            "key": "query_01khxhrpjcfzxr7v7q0fk26985",
+            "query": "Which subsea thrusters offer the best thrust-to-volume ratio for ROVs?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T12:53:01.644Z"
+        },
+        {
+            "key": "query_01khx473s4fvhaahrv5239dcws",
+            "query": "What is the most energy-efficient way to transmit data between two underwater points?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:56:13.860Z"
+        },
+        {
+            "key": "query_01kc1eb6e3eh4a6hyqgj9zefx5",
+            "query": "Where can I get wireless underwater communication solutions in Switzerland?",
+            "branded": false,
+            "intent": "PURCHASING",
+            "createdAt": "2025-12-09T11:36:00.195Z"
+        },
+        {
+            "key": "query_01kc1eb6e3eh4a6hwchmbaaxrf",
+            "query": "Where to find underwater drones for subsea inspection in Switzerland?",
+            "branded": false,
+            "intent": "PURCHASING",
+            "createdAt": "2025-12-09T11:36:00.195Z"
+        },
+        {
+            "key": "query_01khxksa6nenarkcx5nrapv411",
+            "query": "What technology enables optical data transfer for underwater \"docking\" stations?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:28:18.901Z"
+        },
+        {
+            "key": "query_01khx4ndd1fvhaahzxp9xw0tgc",
+            "query": "How can I improve the maneuverability of a custom-built ROV?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T09:04:02.465Z"
+        },
+        {
+            "key": "query_01khx4c12jecxbrt5j3nb1e6ar",
+            "query": "How can I reduce the cost of offshore oil and gas structural inspections?",
+            "branded": false,
+            "intent": "PURCHASING",
+            "createdAt": "2026-02-20T08:58:54.930Z"
+        },
+        {
+            "key": "query_01khx4kvbxenark5e62shdkj9d",
+            "query": "What is the most compact subsea thruster for a micro-ROV?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T09:03:11.230Z"
+        },
+        {
+            "key": "query_01khxhsh6ce03vakbnt4re6k8f",
+            "query": "What are the most efficient hubless motors for high-reliability subsea applications?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T12:53:28.908Z"
+        },
+        {
+            "key": "query_01khxhq5kbenarkbvwtne1y2g4",
+            "query": "What ROV can I use to inspect a ballast water tank without sending a human inside?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T12:52:11.499Z"
+        },
+        {
+            "key": "query_01khx4p984fzxr7jxn9jntxjft",
+            "query": "Which underwater thrusters have the highest power-to-weight ratio?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T09:04:30.980Z"
+        },
+        {
+            "key": "query_01khx4ar6renerh4q8pgqv57mt",
+            "query": "What is the best drone for inspecting potable water reservoirs?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:58:13.080Z"
+        },
+        {
+            "key": "query_01khxkv82vfk5ak1dtsbnkd936",
+            "query": "How can I inspect confined submerged spaces where a tether would likely get tangled or stuck?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:29:22.267Z"
+        },
+        {
+            "key": "query_01khxkr0yfe05bwpbt7e4zc7bd",
+            "query": "Are there underwater thrusters that use an integrated controller to eliminate external housings?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:27:36.655Z"
+        },
+        {
+            "key": "query_01kc1eb6e3eh4a6hza9hx357jh",
+            "query": "How do underwater wireless optical communication modems work?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2025-12-09T11:36:00.195Z"
+        },
+        {
+            "key": "query_01khx47q6aeh7r8m9zmh3dhsc9",
+            "query": "What equipment is needed for wireless underwater control of subsea valves?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:56:33.738Z"
+        },
+        {
+            "key": "query_01khx4m85dfvpvdfc4m3kdk3m7",
+            "query": "Are there any hubless thrusters available for underwater vehicles?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T09:03:24.333Z"
+        },
+        {
+            "key": "query_01khxhr52menarkbw22qnygzdb",
+            "query": "What propeller can I use to reduce entanglement in underwater drones used in debris-heavy environments?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T12:52:43.732Z"
+        },
+        {
+            "key": "query_01khx3tdh9fvpvdfa6zyqvavry",
+            "query": "What is the best way to transfer data underwater without using tethered cables?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:49:17.865Z"
+        },
+        {
+            "key": "query_01khxjh8fge8grj7yqa94y52xv",
+            "query": "How can underwater robots communicate with each other in real-time?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:06:26.416Z"
+        },
+        {
+            "key": "query_01khx44wpeenark5c6htxexdzp",
+            "query": "Are there any compact wireless modems for small observation ROVs?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:55:01.070Z"
+        },
+        {
+            "key": "query_01khx43k1reh7r8m98qymgneng",
+            "query": "What technology allows for high-bandwidth underwater communication over short ranges?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:54:18.424Z"
+        },
+        {
+            "key": "query_01khx3wr25fvgs7m0t1672zv60",
+            "query": "Is there an optical wireless modem that works in turbid water?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:50:34.181Z"
+        },
+        {
+            "key": "query_01khx4a9h4fzxr7jw8a4qwp24b",
+            "query": "Are there any underwater robots that can navigate complex piping systems?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T08:57:58.052Z"
+        },
+        {
+            "key": "query_01kj5dwxckfq99jbjxn9171gcb",
+            "query": "How can I download data from a subsea data logger without recovering the device?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:19:20.851Z"
+        },
+        {
+            "key": "query_01kj5e94azexvsxrkxqmnrq3dr",
+            "query": "How can I achieve real-time FHD video streaming from an underwater asset?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:26:01.183Z"
+        },
+        {
+            "key": "query_01kj5e6h48exvsxrkbavg4x27g",
+            "query": "What’s the alternative to acoustic modems when you need a high data rate underwater?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:24:35.976Z"
+        },
+        {
+            "key": "query_01khxkwqhjfzxr7x0nfhwdn55x",
+            "query": "What is the best solution for high-speed data offloading from a subsea sensor station?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:30:10.866Z"
+        },
+        {
+            "key": "query_01kj5dy69ye8gagc86nkp2hqb5",
+            "query": "How can I create an underwater Wi-Fi-like network for a bunch of underwater robots?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:20:02.750Z"
+        },
+        {
+            "key": "query_01kj5e4q6rfq99jbzwfdyq2dhv",
+            "query": "Which subsea propulsion systems are designed for operation in confined spaces?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:23:36.664Z"
+        },
+        {
+            "key": "query_01kj5dxrtwe8gagc7je26297g5",
+            "query": "Is there a way to send video underwater without running a cable?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:19:48.956Z"
+        },
+        {
+            "key": "query_01kj5eaevmfq99jc0ysccfp93z",
+            "query": "What is the current state for underwater Wi-Fi using LED-based optical signals?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:26:44.724Z"
+        },
+        {
+            "key": "query_01kj5e1r5zexvsxrbzhamkh482",
+            "query": "Is there a small ROV that can handle tight spaces like pipes, culverts, or narrow tunnels, and cooling water intake tunnels for a power plant??",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:21:59.359Z"
+        },
+        {
+            "key": "query_01khxkx7skecxarbync2vtzj13",
+            "query": "How can I achieve wireless video transmission through water for a portable inspection ROV?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:30:27.507Z"
+        },
+        {
+            "key": "query_01kj5e7gp3eh18wyqx30x2v6ap",
+            "query": "What are the top Swiss companies specializing in subsea technology?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:25:08.291Z"
+        },
+        {
+            "key": "query_01kj5jrhqjf20scahr4xkafdtt",
+            "query": "What are the top Swiss companies in underwater communication?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T15:44:20.722Z"
+        },
+        {
+            "key": "query_01kj5e84dzeh18wys2za3hxk4k",
+            "query": "What are the alternatives to heavy work-class ROVs for simple visual checks?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:25:28.511Z"
+        },
+        {
+            "key": "query_01kj5favv0e0096hnzw6gvw5x3",
+            "query": "What is the smallest wireless ROV available for underwater confined space inspection?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:44:26.592Z"
+        },
+        {
+            "key": "query_01kj5e55qrexvsxrcf48875e2e",
+            "query": "How do encapsulated motors improve the maintenance cycle of underwater propulsion units?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:23:51.544Z"
+        },
+        {
+            "key": "query_01kj5dzys0fq99jbyn8wdsnk0m",
+            "query": "Are there underwater robots that can do hull inspections without needing a tether and big setup?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:21:00.576Z"
+        },
+        {
+            "key": "query_01khxkwf9qenarkd2qgn97x5cs",
+            "query": "What is a way to perform ballast tank inspections without using a tethered cable?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:30:02.423Z"
+        },
+        {
+            "key": "query_01kj5e43xwexvsxrc51ns3yk90",
+            "query": "We want to reduce vessel time for inspections. What robotic solutions help with that?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:23:16.924Z"
+        },
+        {
+            "key": "query_01kj5e3695fq99jbzhneq73qsw",
+            "query": "What underwater inspection tools work well for industrial basins, and flooded structures?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:22:46.565Z"
+        },
+        {
+            "key": "query_01khxkywmkfk5ak1erddpew5z8",
+            "query": "Give me a list of Swiss-engineered underwater robotics for high-precision offshore work",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:31:21.619Z"
+        },
+        {
+            "key": "query_01khxm0geke8grj864xp71z474",
+            "query": "What thrusters are designed for low-drag and high-efficiency subsea movement?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-20T13:32:14.675Z"
+        },
+        {
+            "key": "query_01kj5e1793e8gagc92ztjpzmb0",
+            "query": "What’s the best option for underwater inspection in places where GPS doesn’t work and visibility is poor?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:21:42.051Z"
+        },
+        {
+            "key": "query_01kj5dwc8ee8gagc7f3htc6hq7",
+            "query": "What underwater communication products support low‑latency control signals?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T14:19:03.310Z"
+        },
+        {
+            "key": "query_01kj5jqkgre8gages2pnxg0nqr",
+            "query": "How is using a wireless ROV better than a tethered one for tank inspections?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T15:43:49.784Z"
+        },
+        {
+            "key": "query_01kj59exf6e8gaga18tjr6q6mz",
+            "query": "How can I get real-time video feed from a subsea sensor to a control station?",
+            "branded": false,
+            "intent": "RESEARCHING",
+            "createdAt": "2026-02-23T13:01:47.878Z"
+        }
+    ],
+    "pagingMetadata": {
+        "count": 50,
+        "offset": 0,
+        "total": 50,
+        "hasNext": false
+    },
+    "queryListKey": "query_list_01kc1eb6dkeh4a6hvd6ywc3sda"
+}
