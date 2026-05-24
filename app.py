@@ -90,6 +90,12 @@ section[data-testid="stSidebar"] { min-width: 320px; }
 .badge-theme-t4    { background: #fce7f3; color: #9d174d; }
 
 /* ── Provider column headers ── */
+/* Allow sticky to propagate through Streamlit's column wrappers */
+[data-testid="column"],
+[data-testid="column"] > div,
+[data-testid="stVerticalBlock"] {
+    overflow: visible !important;
+}
 .provider-header {
     display: flex;
     align-items: center;
@@ -100,6 +106,9 @@ section[data-testid="stSidebar"] { min-width: 320px; }
     font-weight: 700;
     letter-spacing: .02em;
     margin-bottom: 0;
+    position: sticky;
+    top: 3.5rem;   /* clear Streamlit's top toolbar */
+    z-index: 999;
 }
 .provider-openai      { background: #d8f5ed; color: #0a6b4e; border-bottom: 3px solid #10a37f; }
 .provider-perplexity  { background: #ede9fe; color: #4c1d95; border-bottom: 3px solid #7c3aed; }
@@ -694,13 +703,13 @@ if _PAGE == "📊 Hydromea Stats":
                 st.plotly_chart(fig2, use_container_width=True)
 
     # ── Numeric metrics chart ──────────────────────────────────────────────────
-    st.markdown("**Citation Count**")
+    st.markdown("**Sourced Count**")
     _num_rows, _num_delta_rows = [], []
     for r in summary:
-        _num_rows.append({"Provider": r["label"], "Metric": "Total citations", "Value": r["citation_count_sum"]})
+        _num_rows.append({"Provider": r["label"], "Metric": "Total Sourced Count", "Value": r["citation_count_sum"]})
         if _show_delta:
             _bl_cc = _baseline_counts.get(r["provider"], {}).get("citation_count_sum", 0)
-            _num_delta_rows.append({"Provider": r["label"], "Metric": "Total citations", "Δ vs Baseline": r["citation_count_sum"] - _bl_cc})
+            _num_delta_rows.append({"Provider": r["label"], "Metric": "Total Sourced Count", "Δ vs Baseline": r["citation_count_sum"] - _bl_cc})
     if _show_delta:
         _nc_l, _nc_r = st.columns(2, gap="large")
     else:
@@ -709,7 +718,7 @@ if _PAGE == "📊 Hydromea Stats":
         st.markdown("Absolute counts")
         _fig_num = px.bar(pd.DataFrame(_num_rows), x="Provider", y="Value",
                           color="Metric", barmode="group",
-                          color_discrete_map={"Total citations": "#6366f1"},
+                          color_discrete_map={"Total Sourced Count": "#6366f1"},
                           height=300, text="Value")
         _fig_num.update_traces(textposition="outside")
         _fig_num.update_layout(plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
@@ -720,13 +729,170 @@ if _PAGE == "📊 Hydromea Stats":
             st.markdown("Change vs Baseline V0")
             _fig_nd = px.bar(pd.DataFrame(_num_delta_rows), x="Provider", y="Δ vs Baseline",
                              color="Metric", barmode="group",
-                             color_discrete_map={"Total citations": "#6366f1"},
+                             color_discrete_map={"Total Sourced Count": "#6366f1"},
                              height=300, text="Δ vs Baseline")
             _fig_nd.update_traces(textposition="outside")
             _fig_nd.add_hline(y=0, line_width=1, line_dash="dash", line_color="#94a3b8")
             _fig_nd.update_layout(plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
                                   legend_title_text="", margin=dict(l=0, r=0, t=10, b=0), yaxis_title="Δ Count")
             st.plotly_chart(_fig_nd, use_container_width=True)
+
+    # ── Answers Corpus Table ───────────────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("### Answers Corpus")
+    st.caption(
+        "One row per Version × AI Model combination. "
+        "**All 3** is a virtual chatbot that concatenates the answers of all three models."
+    )
+
+    _corpus_rows: list = []
+    for _exp in EXPERIMENTS:
+        _exp_corpus = _load(_exp)
+        _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
+
+        _all3_parts: list[str] = []
+        for _prod in _exp_products:
+            _pm = PRODUCT_META.get(_prod, _DMETA)
+            _parts: list[str] = []
+            for _aid in _exp_corpus.by_product.get(_prod, []):
+                _resp = _exp_corpus.answers[_aid].response
+                if _resp and _resp.strip():
+                    _parts.append(_resp.strip())
+            _joined = "\n\n---\n\n".join(_parts)
+            _all3_parts.extend(_parts)
+            _corpus_rows.append({
+                "Version":  _exp,
+                "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "Answers":  _joined,
+            })
+
+        # Virtual "All 3" row
+        _corpus_rows.append({
+            "Version":  _exp,
+            "AI Model": "🤖 All 3",
+            "Answers":  "\n\n---\n\n".join(_all3_parts),
+        })
+
+    _corpus_df = pd.DataFrame(_corpus_rows, columns=["Version", "AI Model", "Answers"])
+    st.dataframe(
+        _corpus_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Version":  st.column_config.TextColumn("Version",  width="small"),
+            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
+            "Answers":  st.column_config.TextColumn("Answers",  width="large"),
+        },
+    )
+
+    # ── Excel export ───────────────────────────────────────────────────────────
+    import io as _io
+    _xl_buf = _io.BytesIO()
+    with pd.ExcelWriter(_xl_buf, engine="openpyxl") as _xl_writer:
+        _corpus_df.to_excel(_xl_writer, index=False, sheet_name="Answers Corpus")
+        _ws = _xl_writer.sheets["Answers Corpus"]
+        _ws.column_dimensions["A"].width = 14
+        _ws.column_dimensions["B"].width = 16
+        _ws.column_dimensions["C"].width = 120
+        for _row in _ws.iter_rows(min_row=2):
+            _row[2].alignment = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
+    st.download_button(
+        label="⬇️ Export as Excel",
+        data=_xl_buf.getvalue(),
+        file_name="answers_corpus.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
+
+    # ── Answers by Category Table ──────────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("### Answers by Category")
+    st.caption(
+        "One row per Version × AI Model. Each category column contains the concatenation "
+        "of all answers for questions belonging to that theme."
+    )
+
+    # Ordered theme names: ["T1 – …", "T2 – …", ...]
+    _theme_col_names: list[str] = [
+        f"{code} – {name}" for code, name in _THEME_CODES.items()
+    ]
+
+    _cat_rows: list = []
+    for _exp in EXPERIMENTS:
+        _exp_corpus = _load(_exp)
+        _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
+
+        # Build a lookup: answer_id → theme name (via its query text)
+        def _answer_theme(_corpus, _aid: str) -> str:
+            _a = _corpus.answers[_aid]
+            _q = _corpus.queries.get(_a.query_id or "", None)
+            if _q is None:
+                return ""
+            _code = _TEXT_TO_THEME.get(_q.text.strip().lower(), "")
+            # Convert full name back to "Tx – Full name" format
+            for _c, _n in _THEME_CODES.items():
+                if _n == _code:
+                    return f"{_c} – {_n}"
+            return _code  # fallback (already full name or empty)
+
+        _all3_by_theme: dict[str, list[str]] = {t: [] for t in _theme_col_names}
+
+        for _prod in _exp_products:
+            _pm = PRODUCT_META.get(_prod, _DMETA)
+            _by_theme: dict[str, list[str]] = {t: [] for t in _theme_col_names}
+
+            for _aid in _exp_corpus.by_product.get(_prod, []):
+                _t = _answer_theme(_exp_corpus, _aid)
+                _resp = _exp_corpus.answers[_aid].response
+                if _t in _by_theme and _resp and _resp.strip():
+                    _by_theme[_t].append(_resp.strip())
+                    _all3_by_theme[_t].append(_resp.strip())
+
+            _cat_row: dict = {"Version": _exp, "AI Model": f'{_pm["icon"]} {_pm["label"]}'}
+            for _t in _theme_col_names:
+                _cat_row[_t] = "\n\n---\n\n".join(_by_theme[_t])
+            _cat_rows.append(_cat_row)
+
+        # "All 3" virtual row
+        _all3_row: dict = {"Version": _exp, "AI Model": "🤖 All 3"}
+        for _t in _theme_col_names:
+            _all3_row[_t] = "\n\n---\n\n".join(_all3_by_theme[_t])
+        _cat_rows.append(_all3_row)
+
+    _cat_df = pd.DataFrame(_cat_rows, columns=["Version", "AI Model"] + _theme_col_names)
+    st.dataframe(
+        _cat_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Version":  st.column_config.TextColumn("Version",  width="small"),
+            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
+            **{t: st.column_config.TextColumn(t, width="large") for t in _theme_col_names},
+        },
+    )
+
+    # Excel export for category table
+    _xl_cat_buf = _io.BytesIO()
+    with pd.ExcelWriter(_xl_cat_buf, engine="openpyxl") as _xl_cat_writer:
+        _cat_df.to_excel(_xl_cat_writer, index=False, sheet_name="By Category")
+        _ws2 = _xl_cat_writer.sheets["By Category"]
+        _ws2.column_dimensions["A"].width = 14
+        _ws2.column_dimensions["B"].width = 16
+        _openpyxl_styles = __import__("openpyxl").styles
+        _col_letters = [
+            __import__("openpyxl").utils.get_column_letter(i + 3)
+            for i in range(len(_theme_col_names))
+        ]
+        for _cl in _col_letters:
+            _ws2.column_dimensions[_cl].width = 80
+        for _row2 in _ws2.iter_rows(min_row=2):
+            for _cell in _row2[2:]:
+                _cell.alignment = _openpyxl_styles.Alignment(wrap_text=True, vertical="top")
+    st.download_button(
+        label="⬇️ Export by Category as Excel",
+        data=_xl_cat_buf.getvalue(),
+        file_name="answers_by_category.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
 
     st.stop()  # Don't render the explorer below
 
@@ -848,7 +1014,7 @@ for col, product in zip(cols, active_products):
     <div class="stat-pill">📅 <strong>{ans_date}</strong></div>
     <div class="stat-pill">📚 <strong>{total_src}</strong> sources</div>
     <div class="stat-pill">📍 Source Position <strong>{source_position_str}</strong></div>
-    <div class="stat-pill">🔢 Citations <strong>{citation_count}</strong></div>
+    <div class="stat-pill">🔢 Sourced Count <strong>{citation_count}</strong></div>
   </div>
   <hr style="border:none;border-top:1px solid #f3f4f6;margin:.6rem 0 .9rem">
   <div class="response-body">
