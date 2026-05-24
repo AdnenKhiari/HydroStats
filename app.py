@@ -758,11 +758,12 @@ if _PAGE == "📊 Hydromea Stats":
                 _resp = _exp_corpus.answers[_aid].response
                 if _resp and _resp.strip():
                     _parts.append(_resp.strip())
-            _joined = "\n\n---\n\n".join(_parts)
+            _joined = "\n<--><--><-->\n".join(_parts)
             _all3_parts.extend(_parts)
             _corpus_rows.append({
                 "Version":  _exp,
                 "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "# Answers": len(_parts),
                 "Answers":  _joined,
             })
 
@@ -770,18 +771,20 @@ if _PAGE == "📊 Hydromea Stats":
         _corpus_rows.append({
             "Version":  _exp,
             "AI Model": "🤖 All 3",
-            "Answers":  "\n\n---\n\n".join(_all3_parts),
+            "# Answers": len(_all3_parts),
+            "Answers":  "\n<--><--><-->\n".join(_all3_parts),
         })
 
-    _corpus_df = pd.DataFrame(_corpus_rows, columns=["Version", "AI Model", "Answers"])
+    _corpus_df = pd.DataFrame(_corpus_rows, columns=["Version", "AI Model", "# Answers", "Answers"])
     st.dataframe(
         _corpus_df,
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Version":  st.column_config.TextColumn("Version",  width="small"),
-            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
-            "Answers":  st.column_config.TextColumn("Answers",  width="large"),
+            "Version":   st.column_config.TextColumn("Version",    width="small"),
+            "AI Model":  st.column_config.TextColumn("AI Model",   width="small"),
+            "# Answers": st.column_config.NumberColumn("# Answers", width="small"),
+            "Answers":   st.column_config.TextColumn("Answers",    width="large"),
         },
     )
 
@@ -793,9 +796,10 @@ if _PAGE == "📊 Hydromea Stats":
         _ws = _xl_writer.sheets["Answers Corpus"]
         _ws.column_dimensions["A"].width = 14
         _ws.column_dimensions["B"].width = 16
-        _ws.column_dimensions["C"].width = 120
+        _ws.column_dimensions["C"].width = 10
+        _ws.column_dimensions["D"].width = 120
         for _row in _ws.iter_rows(min_row=2):
-            _row[2].alignment = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
+            _row[3].alignment = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
     st.download_button(
         label="⬇️ Export as Excel",
         data=_xl_buf.getvalue(),
@@ -821,52 +825,62 @@ if _PAGE == "📊 Hydromea Stats":
         _exp_corpus = _load(_exp)
         _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
 
-        # Build a lookup: answer_id → theme name (via its query text)
+        # Build a lookup: answer_id → column key ("Tx – Full name" or "❓ Unmatched")
+        _UNMATCHED_COL = "❓ Unmatched"
+        _all_cat_cols = _theme_col_names + [_UNMATCHED_COL]
+
         def _answer_theme(_corpus, _aid: str) -> str:
             _a = _corpus.answers[_aid]
             _q = _corpus.queries.get(_a.query_id or "", None)
             if _q is None:
-                return ""
-            _code = _TEXT_TO_THEME.get(_q.text.strip().lower(), "")
-            # Convert full name back to "Tx – Full name" format
+                return _UNMATCHED_COL
+            _full_name = _TEXT_TO_THEME.get(_q.text.strip().lower(), "")
             for _c, _n in _THEME_CODES.items():
-                if _n == _code:
+                if _n == _full_name:
                     return f"{_c} – {_n}"
-            return _code  # fallback (already full name or empty)
+            return _UNMATCHED_COL  # query exists but not in theme mapping
 
-        _all3_by_theme: dict[str, list[str]] = {t: [] for t in _theme_col_names}
+        _all3_by_theme: dict[str, list[str]] = {t: [] for t in _all_cat_cols}
 
         for _prod in _exp_products:
             _pm = PRODUCT_META.get(_prod, _DMETA)
-            _by_theme: dict[str, list[str]] = {t: [] for t in _theme_col_names}
+            _by_theme: dict[str, list[str]] = {t: [] for t in _all_cat_cols}
 
             for _aid in _exp_corpus.by_product.get(_prod, []):
                 _t = _answer_theme(_exp_corpus, _aid)
                 _resp = _exp_corpus.answers[_aid].response
-                if _t in _by_theme and _resp and _resp.strip():
+                if _resp and _resp.strip():
                     _by_theme[_t].append(_resp.strip())
                     _all3_by_theme[_t].append(_resp.strip())
 
-            _cat_row: dict = {"Version": _exp, "AI Model": f'{_pm["icon"]} {_pm["label"]}'}
-            for _t in _theme_col_names:
-                _cat_row[_t] = "\n\n---\n\n".join(_by_theme[_t])
+            _total_cat = sum(len(v) for v in _by_theme.values())
+            _cat_row: dict = {
+                "Version": _exp,
+                "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "# Answers": _total_cat,
+            }
+            for _t in _all_cat_cols:
+                _cat_row[_t] = "\n<--><--><-->\n".join(_by_theme[_t])
             _cat_rows.append(_cat_row)
 
         # "All 3" virtual row
-        _all3_row: dict = {"Version": _exp, "AI Model": "🤖 All 3"}
-        for _t in _theme_col_names:
-            _all3_row[_t] = "\n\n---\n\n".join(_all3_by_theme[_t])
+        _all3_total = sum(len(v) for v in _all3_by_theme.values())
+        _all3_row: dict = {"Version": _exp, "AI Model": "🤖 All 3", "# Answers": _all3_total}
+        for _t in _all_cat_cols:
+            _all3_row[_t] = "\n<--><--><-->\n".join(_all3_by_theme[_t])
         _cat_rows.append(_all3_row)
 
-    _cat_df = pd.DataFrame(_cat_rows, columns=["Version", "AI Model"] + _theme_col_names)
+    _all_cat_cols_final = _theme_col_names + ["❓ Unmatched"]
+    _cat_df = pd.DataFrame(_cat_rows, columns=["Version", "AI Model", "# Answers"] + _all_cat_cols_final)
     st.dataframe(
         _cat_df,
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Version":  st.column_config.TextColumn("Version",  width="small"),
-            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
-            **{t: st.column_config.TextColumn(t, width="large") for t in _theme_col_names},
+            "Version":   st.column_config.TextColumn("Version",    width="small"),
+            "AI Model":  st.column_config.TextColumn("AI Model",   width="small"),
+            "# Answers": st.column_config.NumberColumn("# Answers", width="small"),
+            **{t: st.column_config.TextColumn(t, width="large") for t in _all_cat_cols_final},
         },
     )
 
@@ -877,15 +891,16 @@ if _PAGE == "📊 Hydromea Stats":
         _ws2 = _xl_cat_writer.sheets["By Category"]
         _ws2.column_dimensions["A"].width = 14
         _ws2.column_dimensions["B"].width = 16
+        _ws2.column_dimensions["C"].width = 10
         _openpyxl_styles = __import__("openpyxl").styles
         _col_letters = [
-            __import__("openpyxl").utils.get_column_letter(i + 3)
-            for i in range(len(_theme_col_names))
+            __import__("openpyxl").utils.get_column_letter(i + 4)
+            for i in range(len(_all_cat_cols_final))
         ]
         for _cl in _col_letters:
             _ws2.column_dimensions[_cl].width = 80
         for _row2 in _ws2.iter_rows(min_row=2):
-            for _cell in _row2[2:]:
+            for _cell in _row2[3:]:
                 _cell.alignment = _openpyxl_styles.Alignment(wrap_text=True, vertical="top")
     st.download_button(
         label="⬇️ Export by Category as Excel",
