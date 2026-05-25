@@ -763,7 +763,6 @@ if _PAGE == "📊 Hydromea Stats":
             _corpus_rows.append({
                 "Version":  _exp,
                 "AI Model": f'{_pm["icon"]} {_pm["label"]}',
-                "# Answers": len(_parts),
                 "Answers":  _joined,
             })
 
@@ -771,20 +770,18 @@ if _PAGE == "📊 Hydromea Stats":
         _corpus_rows.append({
             "Version":  _exp,
             "AI Model": "🤖 All 3",
-            "# Answers": len(_all3_parts),
             "Answers":  "\n<--><--><-->\n".join(_all3_parts),
         })
 
-    _corpus_df = pd.DataFrame(_corpus_rows, columns=["Version", "AI Model", "# Answers", "Answers"])
+    _corpus_df = pd.DataFrame(_corpus_rows, columns=["Version", "AI Model", "Answers"])
     st.dataframe(
         _corpus_df,
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Version":   st.column_config.TextColumn("Version",    width="small"),
-            "AI Model":  st.column_config.TextColumn("AI Model",   width="small"),
-            "# Answers": st.column_config.NumberColumn("# Answers", width="small"),
-            "Answers":   st.column_config.TextColumn("Answers",    width="large"),
+            "Version":  st.column_config.TextColumn("Version",  width="small"),
+            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
+            "Answers":  st.column_config.TextColumn("Answers",  width="large"),
         },
     )
 
@@ -796,10 +793,9 @@ if _PAGE == "📊 Hydromea Stats":
         _ws = _xl_writer.sheets["Answers Corpus"]
         _ws.column_dimensions["A"].width = 14
         _ws.column_dimensions["B"].width = 16
-        _ws.column_dimensions["C"].width = 10
-        _ws.column_dimensions["D"].width = 120
+        _ws.column_dimensions["C"].width = 120
         for _row in _ws.iter_rows(min_row=2):
-            _row[3].alignment = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
+            _row[2].alignment = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
     st.download_button(
         label="⬇️ Export as Excel",
         data=_xl_buf.getvalue(),
@@ -853,33 +849,29 @@ if _PAGE == "📊 Hydromea Stats":
                     _by_theme[_t].append(_resp.strip())
                     _all3_by_theme[_t].append(_resp.strip())
 
-            _total_cat = sum(len(v) for v in _by_theme.values())
             _cat_row: dict = {
                 "Version": _exp,
                 "AI Model": f'{_pm["icon"]} {_pm["label"]}',
-                "# Answers": _total_cat,
             }
             for _t in _all_cat_cols:
                 _cat_row[_t] = "\n<--><--><-->\n".join(_by_theme[_t])
             _cat_rows.append(_cat_row)
 
         # "All 3" virtual row
-        _all3_total = sum(len(v) for v in _all3_by_theme.values())
-        _all3_row: dict = {"Version": _exp, "AI Model": "🤖 All 3", "# Answers": _all3_total}
+        _all3_row: dict = {"Version": _exp, "AI Model": "🤖 All 3"}
         for _t in _all_cat_cols:
             _all3_row[_t] = "\n<--><--><-->\n".join(_all3_by_theme[_t])
         _cat_rows.append(_all3_row)
 
     _all_cat_cols_final = _theme_col_names + ["❓ Unmatched"]
-    _cat_df = pd.DataFrame(_cat_rows, columns=["Version", "AI Model", "# Answers"] + _all_cat_cols_final)
+    _cat_df = pd.DataFrame(_cat_rows, columns=["Version", "AI Model"] + _all_cat_cols_final)
     st.dataframe(
         _cat_df,
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Version":   st.column_config.TextColumn("Version",    width="small"),
-            "AI Model":  st.column_config.TextColumn("AI Model",   width="small"),
-            "# Answers": st.column_config.NumberColumn("# Answers", width="small"),
+            "Version":  st.column_config.TextColumn("Version",  width="small"),
+            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
             **{t: st.column_config.TextColumn(t, width="large") for t in _all_cat_cols_final},
         },
     )
@@ -891,16 +883,15 @@ if _PAGE == "📊 Hydromea Stats":
         _ws2 = _xl_cat_writer.sheets["By Category"]
         _ws2.column_dimensions["A"].width = 14
         _ws2.column_dimensions["B"].width = 16
-        _ws2.column_dimensions["C"].width = 10
         _openpyxl_styles = __import__("openpyxl").styles
         _col_letters = [
-            __import__("openpyxl").utils.get_column_letter(i + 4)
+            __import__("openpyxl").utils.get_column_letter(i + 3)
             for i in range(len(_all_cat_cols_final))
         ]
         for _cl in _col_letters:
             _ws2.column_dimensions[_cl].width = 80
         for _row2 in _ws2.iter_rows(min_row=2):
-            for _cell in _row2[3:]:
+            for _cell in _row2[2:]:
                 _cell.alignment = _openpyxl_styles.Alignment(wrap_text=True, vertical="top")
     st.download_button(
         label="⬇️ Export by Category as Excel",
