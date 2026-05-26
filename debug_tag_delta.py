@@ -32,22 +32,16 @@ tag_baseline_df, tag_baseline_meta = _build_tag_partition_rows(corpus_bl, _BL_EX
 print(f"\nCurrent ({_cur_exp}): {len(tag_current_df)} answers")
 print(f"Baseline ({_BL_EXP}): {len(tag_baseline_df)} answers")
 
-# Identify baseline-mentioned and current-mentioned queries (union)
-baseline_mentioned_qids = set(
-    tag_baseline_df.loc[tag_baseline_df["hydromea_mentioned"], "query_id"].tolist()
+# Identify answers where hydromea was mentioned in current version only
+current_mentioned_aids = set(
+    tag_current_df.loc[tag_current_df["hydromea_mentioned"], "answer_id"].tolist()
 )
-current_mentioned_qids = set(
-    tag_current_df.loc[tag_current_df["hydromea_mentioned"], "query_id"].tolist()
-)
-hydromea_mentioned_qids = baseline_mentioned_qids | current_mentioned_qids
 
-print(f"Baseline-mentioned query IDs: {len(baseline_mentioned_qids)}")
-print(f"Current-mentioned query IDs: {len(current_mentioned_qids)}")
-print(f"Union (Hydromea Mentioned): {len(hydromea_mentioned_qids)}")
+print(f"Current-mentioned answer IDs: {len(current_mentioned_aids)}")
 
-# Filter to mentioned queries
-tag_current_mentioned = tag_current_df[tag_current_df["query_id"].isin(hydromea_mentioned_qids)].copy()
-tag_baseline_mentioned = tag_baseline_df[tag_baseline_df["query_id"].isin(hydromea_mentioned_qids)].copy()
+# Filter to answers mentioned in current, show baseline for same answers
+tag_current_mentioned = tag_current_df[tag_current_df["answer_id"].isin(current_mentioned_aids)].copy()
+tag_baseline_mentioned = tag_baseline_df[tag_baseline_df["answer_id"].isin(current_mentioned_aids)].copy()
 
 print(f"Current answers in mentioned queries: {len(tag_current_mentioned)}")
 print(f"Baseline answers in mentioned queries: {len(tag_baseline_mentioned)}")

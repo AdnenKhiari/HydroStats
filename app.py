@@ -670,6 +670,10 @@ def _aggregate_tag_partition(df: pd.DataFrame, key_col: str, categories: List[st
     """Aggregate tag category counts by a breakdown key and return long format."""
     if df.empty:
         return pd.DataFrame(columns=[key_col, "Category", "Count"])
+    # Ensure categories are numeric before aggregation
+    for cat in categories:
+        if cat in df.columns:
+            df[cat] = pd.to_numeric(df[cat], errors='coerce').fillna(0).astype(int)
     grouped = df.groupby(key_col, dropna=False)[categories].sum().reset_index()
     long_df = grouped.melt(id_vars=[key_col], var_name="Category", value_name="Count")
     return long_df
@@ -959,19 +963,11 @@ if _PAGE == "📊 Hydromea Stats":
     if not selected_tag_categories:
         st.info("Select at least one tag category to render partition charts.")
     else:
-        if cohort_scope == "Hydromea Mentioned" and not tag_baseline_df.empty:
-            # Union of queries where hydromea was mentioned in either version
-            baseline_mentioned_qids = set(
-                tag_baseline_df.loc[tag_baseline_df["hydromea_mentioned"], "query_id"].tolist()
-            )
-            current_mentioned_qids = set(
-                tag_current_df.loc[tag_current_df["hydromea_mentioned"], "query_id"].tolist()
-            )
-            hydromea_mentioned_qids = baseline_mentioned_qids | current_mentioned_qids
-            tag_current_view = tag_current_df[tag_current_df["query_id"].isin(hydromea_mentioned_qids)].copy()
-            tag_baseline_view = tag_baseline_df[tag_baseline_df["query_id"].isin(hydromea_mentioned_qids)].copy()
+        if cohort_scope == "Hydromea Mentioned" and not tag_current_df.empty:
+            # Mentioned-only comparison in each version independently.
+            tag_current_view = tag_current_df[tag_current_df["hydromea_mentioned"]].copy()
+            tag_baseline_view = tag_baseline_df[tag_baseline_df["hydromea_mentioned"]].copy()
         else:
-            hydromea_mentioned_qids = set()
             tag_current_view = tag_current_df.copy()
             tag_baseline_view = tag_baseline_df.copy()
 
@@ -979,14 +975,24 @@ if _PAGE == "📊 Hydromea Stats":
             tag_current_view = tag_current_view[tag_current_view["provider_label"].isin(selected_providers)]
             tag_baseline_view = tag_baseline_view[tag_baseline_view["provider_label"].isin(selected_providers)]
 
+        if cohort_scope == "Hydromea Mentioned":
+            st.info(
+                "Hydromea Mentioned compares current answers where hydromea is mentioned "
+                "against baseline answers where hydromea is mentioned."
+            )
+
+        # Ensure tag categories are numeric
+        for cat in TAG_PARTITION_CATEGORIES:
+            if cat in tag_current_view.columns:
+                tag_current_view[cat] = pd.to_numeric(tag_current_view[cat], errors='coerce').fillna(0).astype(int)
+            if cat in tag_baseline_view.columns:
+                tag_baseline_view[cat] = pd.to_numeric(tag_baseline_view[cat], errors='coerce').fillna(0).astype(int)
+
         # Analysis bucket semantics depend on selected cohort scope.
         if cohort_scope == "Hydromea Mentioned":
-            tag_current_view["analysis_mention_bucket"] = tag_current_view["query_id"].isin(hydromea_mentioned_qids).map(
-                {True: "Mentioned", False: "Not Mentioned"}
-            )
-            tag_baseline_view["analysis_mention_bucket"] = tag_baseline_view["query_id"].isin(hydromea_mentioned_qids).map(
-                {True: "Mentioned", False: "Not Mentioned"}
-            )
+            # Already filtered to answers where hydromea was mentioned, so all are "Mentioned"
+            tag_current_view["analysis_mention_bucket"] = "Mentioned"
+            tag_baseline_view["analysis_mention_bucket"] = "Mentioned"
         else:
             tag_current_view["analysis_mention_bucket"] = tag_current_view["mention_bucket"]
             tag_baseline_view["analysis_mention_bucket"] = tag_baseline_view["mention_bucket"]
@@ -1048,9 +1054,13 @@ if _PAGE == "📊 Hydromea Stats":
             st.plotly_chart(fig_overall, use_container_width=True)
             
             st.markdown("Proportion (%)")
+            overall_current["Count"] = pd.to_numeric(overall_current["Count"], errors='coerce').fillna(0).astype(int)
             total_count = overall_current["Count"].sum()
             if total_count > 0:
-                overall_current["Proportion"] = (overall_current["Count"] / total_count * 100).round(1)
+                overall_current["Proportion"] = pd.to_numeric(
+                    (overall_current["Count"] / total_count * 100),
+                    errors='coerce'
+                ).fillna(0).astype(float).round(1)
             else:
                 overall_current["Proportion"] = 0.0
             
@@ -1116,11 +1126,15 @@ if _PAGE == "📊 Hydromea Stats":
                         how="outer",
                         suffixes=("_cur", "_base")
                     ).fillna(0)
+                    # Ensure Count columns are numeric
+                    overall_delta_prop["Count_cur"] = pd.to_numeric(overall_delta_prop["Count_cur"], errors='coerce').fillna(0).astype(int)
+                    overall_delta_prop["Count_base"] = pd.to_numeric(overall_delta_prop["Count_base"], errors='coerce').fillna(0).astype(int)
                     # Relative percentage change on absolute counts
-                    overall_delta_prop["DeltaProportion"] = (
+                    overall_delta_prop["DeltaProportion"] = pd.to_numeric(
                         (overall_delta_prop["Count_cur"] - overall_delta_prop["Count_base"]) / 
-                        overall_delta_prop["Count_base"].replace(0, pd.NA) * 100
-                    ).fillna(0).round(1)
+                        overall_delta_prop["Count_base"].replace(0, pd.NA) * 100,
+                        errors='coerce'
+                    ).fillna(0).astype(float).round(1)
                     
                     fig_overall_delta_prop = px.bar(
                         overall_delta_prop,
@@ -1174,14 +1188,18 @@ if _PAGE == "📊 Hydromea Stats":
             )
 
             cur_prop = cur_long.merge(_cur_totals, on=[key_col], how="left")
-            cur_prop["Proportion"] = (
-                (cur_prop["Count"] / cur_prop["CurrentBucketTotal"].replace(0, pd.NA)) * 100
-            ).fillna(0).round(1)
+            cur_prop["Count"] = pd.to_numeric(cur_prop["Count"], errors='coerce').fillna(0).astype(int)
+            cur_prop["Proportion"] = pd.to_numeric(
+                (cur_prop["Count"] / cur_prop["CurrentBucketTotal"].replace(0, pd.NA)) * 100,
+                errors='coerce'
+            ).fillna(0).astype(float).round(1)
 
             base_prop = base_long.merge(_base_totals, on=[key_col], how="left")
-            base_prop["BaselineProportion"] = (
-                (base_prop["Count"] / base_prop["BaselineBucketTotal"].replace(0, pd.NA)) * 100
-            ).fillna(0).round(1)
+            base_prop["Count"] = pd.to_numeric(base_prop["Count"], errors='coerce').fillna(0).astype(int)
+            base_prop["BaselineProportion"] = pd.to_numeric(
+                (base_prop["Count"] / base_prop["BaselineBucketTotal"].replace(0, pd.NA)) * 100,
+                errors='coerce'
+            ).fillna(0).astype(float).round(1)
 
             delta_prop = cur_long[[key_col, "Category", "Count"]].merge(
                 base_long[[key_col, "Category", "Count"]],
@@ -1189,11 +1207,15 @@ if _PAGE == "📊 Hydromea Stats":
                 how="outer",
                 suffixes=("_cur", "_base")
             ).fillna(0)
+            # Ensure Count columns are numeric before calculation
+            delta_prop["Count_cur"] = pd.to_numeric(delta_prop["Count_cur"], errors='coerce').fillna(0).astype(int)
+            delta_prop["Count_base"] = pd.to_numeric(delta_prop["Count_base"], errors='coerce').fillna(0).astype(int)
             # Relative percentage change on absolute counts
-            delta_prop["DeltaProportion"] = (
+            delta_prop["DeltaProportion"] = pd.to_numeric(
                 (delta_prop["Count_cur"] - delta_prop["Count_base"]) / 
-                delta_prop["Count_base"].replace(0, pd.NA) * 100
-            ).fillna(0).round(1)
+                delta_prop["Count_base"].replace(0, pd.NA) * 100,
+                errors='coerce'
+            ).fillna(0).astype(float).round(1)
 
             if _show_delta and not _is_baseline:
                 _lcol, _rcol = st.columns(2, gap="large")
