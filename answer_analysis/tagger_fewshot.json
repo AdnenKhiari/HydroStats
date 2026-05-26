@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "Hydromea, an EPFL spin-off, offers the LUMA optical modem which supports data rates up to 10 Mbps over 50 meters at depths of 6,000 m.\nAcoustic communication is generally the most energy-efficient choice for longer ranges, and we strongly recommend it for industrial deployments.\nHere are some options:"
+  },
+  {
+    "role": "assistant",
+    "content": "<BrandPositioning>Hydromea</BrandPositioning><null>, an </null><CredibilitySignal>EPFL spin-off</CredibilitySignal><null>, offers the </null><BrandPositioning>LUMA optical modem</BrandPositioning><null> which supports </null><StatisticalUse>data rates up to 10 Mbps</StatisticalUse><null> over </null><StatisticalUse>50 meters</StatisticalUse><null> at </null><StatisticalUse>depths of 6,000 m</StatisticalUse><null>.</null>\n<null>Acoustic communication is generally </null><StrongRecommendation>the most energy-efficient choice</StrongRecommendation><null> for longer ranges, and </null><StrongRecommendation>we strongly recommend it</StrongRecommendation><null> for industrial deployments.</null>\n<null>Here are some options:</null>"
+  }
+]

@@ -143,6 +143,70 @@ section[data-testid="stSidebar"] { min-width: 320px; }
     color: #1f2937;
 }
 
+/* ── Tagging panel ── */
+.tagging-panel {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #dbe3ee;
+}
+.tagging-title {
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    color: #475569;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.tagging-hint {
+    font-size: .72rem;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+.tag-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+.tag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 2px 9px;
+    font-size: .68rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+.tagged-response {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 11px;
+    font-size: .86rem;
+    line-height: 1.58;
+    color: #1e293b;
+    white-space: pre-wrap;
+}
+.tagged-span {
+    border-radius: 4px;
+    padding: 0 1px;
+    border-bottom: 2px solid transparent;
+}
+
+.tag-brand { background: #e0f2fe; border-color: #0284c7; }
+.tag-credibility { background: #dcfce7; border-color: #16a34a; }
+.tag-stat { background: #fef3c7; border-color: #d97706; }
+.tag-reco { background: #fee2e2; border-color: #dc2626; }
+.tag-other { background: #ede9fe; border-color: #7c3aed; }
+
+.tag-chip-brand { background: #e0f2fe; color: #075985; border-color: #7dd3fc; }
+.tag-chip-credibility { background: #dcfce7; color: #166534; border-color: #86efac; }
+.tag-chip-stat { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+.tag-chip-reco { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+.tag-chip-other { background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }
+
 /* ── Sources ── */
 .source-item {
     padding: 5px 0;
@@ -214,6 +278,28 @@ div[data-testid="stSidebar"] .stButton > button:hover {
 # ─────────────────────────────────────────────────────────────────────────────
 BRAND_DOMAINS = {"hydromea.com", "hydromea.ch"}
 
+_TAG_STYLE = {
+    "Brand Positioning": {"span": "tag-brand", "chip": "tag-chip-brand"},
+    "Credibility Signal": {"span": "tag-credibility", "chip": "tag-chip-credibility"},
+    "Statistical Use": {"span": "tag-stat", "chip": "tag-chip-stat"},
+    "Strong Recommendation": {"span": "tag-reco", "chip": "tag-chip-reco"},
+}
+_TAG_STYLE_DEFAULT = {"span": "tag-other", "chip": "tag-chip-other"}
+
+TAG_PARTITION_CATEGORIES: List[str] = [
+    "Brand Positioning",
+    "Credibility Signal",
+    "Statistical Use",
+    "Strong Recommendation",
+]
+
+TAG_PARTITION_COLORS: Dict[str, str] = {
+    "Brand Positioning": "#0284c7",
+    "Credibility Signal": "#16a34a",
+    "Statistical Use": "#d97706",
+    "Strong Recommendation": "#dc2626",
+}
+
 # ─────────────────────────────────────────────────────────────────────────────
 # PRODUCT PATTERN REGISTRY
 # To track a new product mention: add ONE entry here.
@@ -251,7 +337,7 @@ def _load_themes() -> tuple:
     """Returns (text_lower→theme_full_name, code→theme_full_name)."""
     try:
         raw = json.loads(_THEME_FILE.read_text(encoding="utf-8"))
-    except Exception:
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return {}, {}
     codes   = raw.get("themes", {})    # {"T1": "Comparative & Superlative Seeking", ...}
     mapping = raw.get("mapping", {})   # {"Q1": {"question": "...", "theme": "T1"}, ...}
@@ -316,6 +402,11 @@ def compute_answer_metrics(ans: Answer) -> dict:
                 for s in ans.sources
             )
     return metrics
+
+
+def _build_answer_metrics_index(corpus: LinkedCorpus) -> Dict[str, dict]:
+    """Compute metrics once per answer and return an answer_id-indexed store."""
+    return {aid: compute_answer_metrics(ans) for aid, ans in corpus.answers.items()}
 
 # Thin convenience wrappers
 def is_sourced(ans: Answer) -> bool:
@@ -384,11 +475,18 @@ def _load(experiment: str) -> LinkedCorpus:
     return build_corpus(experiment=experiment)
 
 
-def build_stats_df(corpus: LinkedCorpus) -> pd.DataFrame:
+@st.cache_data(show_spinner=False)
+def _load_metrics_index(experiment: str) -> Dict[str, dict]:
+    """Cached global metrics store for one experiment."""
+    return _build_answer_metrics_index(_load(experiment))
+
+
+def build_stats_df(corpus: LinkedCorpus, metrics_index: Dict[str, dict] | None = None) -> pd.DataFrame:
     """
     Wide dataframe: one row per query, one column per (product × FILTER_SPEC).
     Adding a new metric to FILTER_SPECS automatically adds its column here.
     """
+    metrics_index = metrics_index or _build_answer_metrics_index(corpus)
     _products = sorted(p for p in corpus.by_product if not p.startswith("_"))
     rows = []
     for qid, q in corpus.queries.items():
@@ -402,7 +500,7 @@ def build_stats_df(corpus: LinkedCorpus) -> pd.DataFrame:
             ans_list = [corpus.answers[a] for a in corpus.by_query.get(qid, [])
                         if corpus.answers[a].product == p]
             if ans_list:
-                m = compute_answer_metrics(ans_list[0])
+                m = metrics_index[ans_list[0].answer_id]
                 row[f"{p}__total"] = 1        # always 1 when an answer exists
                 for spec in FILTER_SPECS:
                     row[f"{p}__{spec['key']}"] = spec["fn"](m)
@@ -427,12 +525,168 @@ def _on_exp_change() -> None:
 # Resolve current experiment from session state before any rendering
 _cur_exp = st.session_state.get("sel_exp", EXPERIMENTS[0] if EXPERIMENTS else "")
 corpus   = _load(_cur_exp)
+answer_metrics_index = _load_metrics_index(_cur_exp)
 products = sorted(p for p in corpus.by_product if not p.startswith("_"))
 
 
 def _clean_response(text: str) -> str:
     """Strip the repeated 'Query: User query:' header OpenAI sometimes prepends."""
     return re.sub(r"^\*{0,2}Query:\s*User query:\s*\*{0,2}", "", text.strip())
+
+
+@st.cache_data(show_spinner=False)
+def _load_tagged_answers(experiment: str) -> Dict[str, dict]:
+    """Load tagged answer payloads keyed by answer_id for one experiment folder."""
+    out: Dict[str, dict] = {}
+    exp_dir = pathlib.Path(__file__).parent / "data" / experiment
+    if not exp_dir.exists() or not exp_dir.is_dir():
+        return out
+
+    for file_path in sorted(exp_dir.glob("tagged*.json")):
+        try:
+            raw = json.loads(file_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            continue
+        if not isinstance(raw, dict):
+            continue
+        for answer_id, payload in raw.items():
+            if isinstance(payload, dict):
+                out[str(answer_id)] = payload
+    return out
+
+
+def _compute_span_counts(lines: List[dict]) -> Dict[str, int]:
+    counts: Dict[str, int] = {}
+    for line in lines:
+        for span in line.get("spans", []):
+            cat = span.get("category")
+            if cat:
+                counts[cat] = counts.get(cat, 0) + 1
+    return counts
+
+
+def _render_tagged_lines(lines: List[dict]) -> str:
+    """Render tagged spans as escaped HTML with category color overlays."""
+    rendered_lines: List[str] = []
+    for line in lines:
+        spans = line.get("spans") or []
+        if not spans:
+            rendered_lines.append(_html.escape(line.get("raw_text", "")))
+            continue
+
+        chunks: List[str] = []
+        for span in spans:
+            txt = _html.escape(str(span.get("text", "")))
+            cat = span.get("category")
+            if not cat:
+                chunks.append(txt)
+                continue
+
+            style = _TAG_STYLE.get(cat, _TAG_STYLE_DEFAULT)
+            char_start = span.get("char_start")
+            char_end = span.get("char_end")
+            if isinstance(char_start, int) and isinstance(char_end, int):
+                title = f"{cat} ({char_start}:{char_end})"
+            else:
+                title = cat
+            chunks.append(
+                f'<span class="tagged-span {style["span"]}" title="{_html.escape(title)}">{txt}</span>'
+            )
+        rendered_lines.append("".join(chunks))
+
+    return "<br>".join(rendered_lines)
+
+
+def _normalize_tag_counts(raw_counts: dict) -> Dict[str, int]:
+    """Normalize arbitrary category counts into known partition categories."""
+    normalized = {k: 0 for k in TAG_PARTITION_CATEGORIES}
+    for key, value in (raw_counts or {}).items():
+        if not key:
+            continue
+        if key in normalized:
+            normalized[key] += int(value or 0)
+    return normalized
+
+
+def _build_tag_partition_rows(corpus: LinkedCorpus, experiment: str) -> tuple[pd.DataFrame, dict]:
+    """Build one row per answer with tag-category counts + slicing metadata."""
+    tagged_map = _load_tagged_answers(experiment)
+    metrics_index = _load_metrics_index(experiment)
+    rows: List[dict] = []
+    n_answer_total = 0
+    n_missing_tagged = 0
+    n_missing_query = 0
+
+    for answer in corpus.answers.values():
+        if not answer.product or answer.product.startswith("_"):
+            continue
+        n_answer_total += 1
+        query = corpus.queries.get(answer.query_id or "")
+        if query is None:
+            n_missing_query += 1
+            continue
+
+        tag_payload = tagged_map.get(answer.answer_id)
+        if tag_payload:
+            raw_counts = _compute_span_counts(tag_payload.get("lines") or [])
+            if not raw_counts:
+                raw_counts = (tag_payload.get("summary") or {}).get("span_counts") or {}
+        else:
+            raw_counts = {}
+            n_missing_tagged += 1
+
+        tag_counts = _normalize_tag_counts(raw_counts)
+        metric = metrics_index[answer.answer_id]
+        provider_meta = PRODUCT_META.get(answer.product, _DMETA)
+
+        row = {
+            "answer_id": answer.answer_id,
+            "query_id": query.query_id,
+            "query_text": query.text,
+            "query_text_key": (query.text or "").strip().lower(),
+            "provider": answer.product,
+            "provider_label": provider_meta["label"],
+            "theme": query_theme(query.text) or "❓ Unmatched",
+            "hydromea_mentioned": bool(metric["mentioned"]),
+            "hydromea_sourced": bool(metric["sourced"]),
+            "mention_bucket": "Mentioned" if metric["mentioned"] else "Not Mentioned",
+            "source_bucket": "Sourced" if metric["sourced"] else "Unsourced",
+        }
+        for cat in TAG_PARTITION_CATEGORIES:
+            row[cat] = int(tag_counts.get(cat, 0))
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+    meta = {
+        "n_answer_total": n_answer_total,
+        "n_rows": len(df),
+        "n_missing_tagged": n_missing_tagged,
+        "n_missing_query": n_missing_query,
+    }
+    return df, meta
+
+
+def _aggregate_tag_partition(df: pd.DataFrame, key_col: str, categories: List[str]) -> pd.DataFrame:
+    """Aggregate tag category counts by a breakdown key and return long format."""
+    if df.empty:
+        return pd.DataFrame(columns=[key_col, "Category", "Count"])
+    grouped = df.groupby(key_col, dropna=False)[categories].sum().reset_index()
+    long_df = grouped.melt(id_vars=[key_col], var_name="Category", value_name="Count")
+    return long_df
+
+
+def _compute_tag_delta(current_df: pd.DataFrame, baseline_df: pd.DataFrame, key_col: str, categories: List[str]) -> pd.DataFrame:
+    """Compute current-vs-baseline delta by breakdown key and category."""
+    cur = _aggregate_tag_partition(current_df, key_col, categories)
+    base = _aggregate_tag_partition(baseline_df, key_col, categories)
+    if cur.empty and base.empty:
+        return pd.DataFrame(columns=[key_col, "Category", "Delta"])
+    merged = cur.merge(base, on=[key_col, "Category"], how="outer", suffixes=("_cur", "_base")).fillna(0)
+    merged["Delta"] = merged["Count_cur"] - merged["Count_base"]
+    return merged[[key_col, "Category", "Delta"]]
+
+
+tagged_answers = _load_tagged_answers(_cur_exp)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -485,6 +739,8 @@ with st.sidebar:
 
     intents = sorted({query_theme(q.text) for q in corpus.queries.values() if query_theme(q.text)})
     intent_sel = st.selectbox("Filter by theme", ["All themes"] + intents, label_visibility="collapsed")
+    show_tagging = st.toggle("🏷️ Show tagging highlights", value=True)
+    show_tagging_hints = st.toggle("🧭 Show span offset hints", value=True)
 
     # ── Metric filters (auto-generated from FILTER_SPECS, grouped) ────────────
     _STATE_OPTS = {"—": None, "✅ Yes": True, "✗ No": False}
@@ -520,7 +776,7 @@ with st.sidebar:
         for spec, want in filter_states:
             if want is None:
                 continue   # disabled
-            result = any(spec["fn"](compute_answer_metrics(a)) for a in ans_for_q)
+            result = any(spec["fn"](answer_metrics_index[a.answer_id]) for a in ans_for_q)
             if result != want:
                 return False
         return True
@@ -549,7 +805,7 @@ with st.sidebar:
 # Stats page (shown when _PAGE == "📊 Hydromea Stats")
 # ─────────────────────────────────────────────────────────────────────────────
 if _PAGE == "📊 Hydromea Stats":
-    df = build_stats_df(corpus)
+    df = build_stats_df(corpus, answer_metrics_index)
     products_all = sorted(p for p in corpus.by_product if not p.startswith("_"))
 
     # ── Baseline V0 reference ─────────────────────────────────────────────────
@@ -558,7 +814,7 @@ if _PAGE == "📊 Hydromea Stats":
     _baseline_counts: dict = {}   # provider → {spec_key → count, citation_count_sum → int}
     if not _is_baseline and _BL_EXP in EXPERIMENTS:
         _bl_corpus = _load(_BL_EXP)
-        _bl_df = build_stats_df(_bl_corpus)
+        _bl_df = build_stats_df(_bl_corpus, _load_metrics_index(_BL_EXP))
         for _bp in products_all:
             _bpc: dict = {}
             for _bspec in FILTER_SPECS:
@@ -656,6 +912,439 @@ if _PAGE == "📊 Hydromea Stats":
             else:
                 _cc_delta = None
             st.metric("🔢 Citation Count", r["citation_count_sum"], _cc_delta)
+
+    st.markdown("---")
+
+    # ── Tag Partition Analysis ────────────────────────────────────────────────
+    st.markdown("### Tag Partition Analysis")
+    st.caption(
+        "Distribution of tagging categories across providers, themes, and mention cohorts. "
+        "Includes Baseline V0 comparison when a non-baseline experiment is selected."
+    )
+
+    tag_current_df, tag_current_meta = _build_tag_partition_rows(corpus, _cur_exp)
+    if _BL_EXP in EXPERIMENTS:
+        if _is_baseline:
+            tag_baseline_df = tag_current_df.copy()
+            tag_baseline_meta = tag_current_meta
+        else:
+            _tag_bl_corpus = _load(_BL_EXP)
+            tag_baseline_df, tag_baseline_meta = _build_tag_partition_rows(_tag_bl_corpus, _BL_EXP)
+    else:
+        tag_baseline_df = pd.DataFrame()
+        tag_baseline_meta = {"n_rows": 0, "n_missing_tagged": 0, "n_missing_query": 0}
+
+    _cohort_col, _cat_col, _prov_col = st.columns([1.2, 2.2, 1.8], gap="large")
+    with _cohort_col:
+        cohort_scope = st.radio(
+            "Cohort scope",
+            ["All queries", "Hydromea Mentioned"],
+            index=0,
+            horizontal=False,
+        )
+    with _cat_col:
+        selected_tag_categories = st.multiselect(
+            "Tag categories",
+            TAG_PARTITION_CATEGORIES,
+            default=TAG_PARTITION_CATEGORIES,
+        )
+    with _prov_col:
+        provider_options = sorted(tag_current_df["provider_label"].unique().tolist()) if not tag_current_df.empty else []
+        selected_providers = st.multiselect(
+            "Providers",
+            provider_options,
+            default=provider_options,
+        )
+
+    if not selected_tag_categories:
+        st.info("Select at least one tag category to render partition charts.")
+    else:
+        if cohort_scope == "Hydromea Mentioned" and not tag_baseline_df.empty:
+            # Union of queries where hydromea was mentioned in either version
+            baseline_mentioned_qids = set(
+                tag_baseline_df.loc[tag_baseline_df["hydromea_mentioned"], "query_id"].tolist()
+            )
+            current_mentioned_qids = set(
+                tag_current_df.loc[tag_current_df["hydromea_mentioned"], "query_id"].tolist()
+            )
+            hydromea_mentioned_qids = baseline_mentioned_qids | current_mentioned_qids
+            tag_current_view = tag_current_df[tag_current_df["query_id"].isin(hydromea_mentioned_qids)].copy()
+            tag_baseline_view = tag_baseline_df[tag_baseline_df["query_id"].isin(hydromea_mentioned_qids)].copy()
+        else:
+            hydromea_mentioned_qids = set()
+            tag_current_view = tag_current_df.copy()
+            tag_baseline_view = tag_baseline_df.copy()
+
+        if selected_providers:
+            tag_current_view = tag_current_view[tag_current_view["provider_label"].isin(selected_providers)]
+            tag_baseline_view = tag_baseline_view[tag_baseline_view["provider_label"].isin(selected_providers)]
+
+        # Analysis bucket semantics depend on selected cohort scope.
+        if cohort_scope == "Hydromea Mentioned":
+            tag_current_view["analysis_mention_bucket"] = tag_current_view["query_id"].isin(hydromea_mentioned_qids).map(
+                {True: "Mentioned", False: "Not Mentioned"}
+            )
+            tag_baseline_view["analysis_mention_bucket"] = tag_baseline_view["query_id"].isin(hydromea_mentioned_qids).map(
+                {True: "Mentioned", False: "Not Mentioned"}
+            )
+        else:
+            tag_current_view["analysis_mention_bucket"] = tag_current_view["mention_bucket"]
+            tag_baseline_view["analysis_mention_bucket"] = tag_baseline_view["mention_bucket"]
+
+        _k1, _k2, _k3 = st.columns(3)
+        _k1.metric("Current answers included", int(len(tag_current_view)))
+        _k2.metric("Baseline answers included", int(len(tag_baseline_view)))
+        _k3.metric("Current missing tagged payload", int(tag_current_meta.get("n_missing_tagged", 0)))
+
+        st.divider()
+
+        # ── Overall distribution (not broken down by any dimension) ───────
+        st.markdown("**Overall Distribution**")
+        
+        # Compute overall sums across all answers
+        overall_counts = {}
+        for cat in selected_tag_categories:
+            overall_counts[cat] = int(tag_current_view[cat].sum())
+        
+        overall_current = pd.DataFrame([
+            {"Category": cat, "Count": count} for cat, count in overall_counts.items()
+        ])
+        
+        overall_baseline = pd.DataFrame()
+        if _show_delta and not _is_baseline and not tag_baseline_view.empty:
+            baseline_counts = {}
+            for cat in selected_tag_categories:
+                baseline_counts[cat] = int(tag_baseline_view[cat].sum())
+            overall_baseline = pd.DataFrame([
+                {"Category": cat, "Count": count} for cat, count in baseline_counts.items()
+            ])
+        
+        if _show_delta and not _is_baseline and not overall_baseline.empty:
+            _ocol, _ocol_delta = st.columns(2, gap="large")
+        else:
+            _ocol, _ocol_delta = st.container(), None
+        
+        with _ocol:
+            st.markdown("Absolute counts")
+            fig_overall = px.bar(
+                overall_current,
+                x="Category",
+                y="Count",
+                color="Category",
+                color_discrete_map=TAG_PARTITION_COLORS,
+                height=280,
+                text="Count",
+            )
+            fig_overall.update_traces(textposition="outside")
+            fig_overall.update_layout(
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                showlegend=False,
+                margin=dict(l=0, r=0, t=10, b=0),
+                xaxis_title="",
+                yaxis_title="Tag span count",
+            )
+            fig_overall.update_xaxes(tickangle=-25)
+            st.plotly_chart(fig_overall, use_container_width=True)
+            
+            st.markdown("Proportion (%)")
+            total_count = overall_current["Count"].sum()
+            if total_count > 0:
+                overall_current["Proportion"] = (overall_current["Count"] / total_count * 100).round(1)
+            else:
+                overall_current["Proportion"] = 0.0
+            
+            fig_overall_prop = px.bar(
+                overall_current,
+                x="Category",
+                y="Proportion",
+                color="Category",
+                color_discrete_map=TAG_PARTITION_COLORS,
+                height=280,
+                text="Proportion",
+            )
+            fig_overall_prop.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
+            fig_overall_prop.update_layout(
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                showlegend=False,
+                margin=dict(l=0, r=0, t=10, b=0),
+                xaxis_title="",
+                yaxis_title="Share of total (%)",
+            )
+            fig_overall_prop.update_xaxes(tickangle=-25)
+            st.plotly_chart(fig_overall_prop, use_container_width=True)
+        
+        if _show_delta and not _is_baseline and _ocol_delta is not None and not overall_baseline.empty:
+            with _ocol_delta:
+                st.markdown("Change vs Baseline V0")
+                overall_delta = overall_current[["Category", "Count"]].merge(
+                    overall_baseline[["Category", "Count"]],
+                    on="Category",
+                    how="outer",
+                    suffixes=("_cur", "_base")
+                ).fillna(0)
+                overall_delta["Delta"] = overall_delta["Count_cur"] - overall_delta["Count_base"]
+                
+                fig_overall_delta = px.bar(
+                    overall_delta,
+                    x="Category",
+                    y="Delta",
+                    color="Category",
+                    color_discrete_map=TAG_PARTITION_COLORS,
+                    height=280,
+                    text="Delta",
+                )
+                fig_overall_delta.add_hline(y=0, line_width=1, line_dash="dash", line_color="#94a3b8")
+                fig_overall_delta.update_traces(textposition="outside")
+                fig_overall_delta.update_layout(
+                    plot_bgcolor="rgba(0,0,0,0)",
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    showlegend=False,
+                    margin=dict(l=0, r=0, t=10, b=0),
+                    xaxis_title="",
+                    yaxis_title="Delta tag span count",
+                )
+                fig_overall_delta.update_xaxes(tickangle=-25)
+                st.plotly_chart(fig_overall_delta, use_container_width=True)
+                
+                st.markdown("Change in Proportion vs Baseline V0 (%)")
+                if not overall_baseline.empty:
+                    overall_delta_prop = overall_current[["Category", "Count"]].merge(
+                        overall_baseline[["Category", "Count"]],
+                        on="Category",
+                        how="outer",
+                        suffixes=("_cur", "_base")
+                    ).fillna(0)
+                    # Relative percentage change on absolute counts
+                    overall_delta_prop["DeltaProportion"] = (
+                        (overall_delta_prop["Count_cur"] - overall_delta_prop["Count_base"]) / 
+                        overall_delta_prop["Count_base"].replace(0, pd.NA) * 100
+                    ).fillna(0).round(1)
+                    
+                    fig_overall_delta_prop = px.bar(
+                        overall_delta_prop,
+                        x="Category",
+                        y="DeltaProportion",
+                        color="Category",
+                        color_discrete_map=TAG_PARTITION_COLORS,
+                        height=280,
+                        text="DeltaProportion",
+                    )
+                    fig_overall_delta_prop.add_hline(y=0, line_width=1, line_dash="dash", line_color="#94a3b8")
+                    fig_overall_delta_prop.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
+                    fig_overall_delta_prop.update_layout(
+                        plot_bgcolor="rgba(0,0,0,0)",
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        showlegend=False,
+                        margin=dict(l=0, r=0, t=10, b=0),
+                        xaxis_title="",
+                        yaxis_title="Relative % change in count",
+                    )
+                    fig_overall_delta_prop.update_xaxes(tickangle=-25)
+                    st.plotly_chart(fig_overall_delta_prop, use_container_width=True)
+        
+        st.divider()
+
+        breakdown_specs = [
+            ("By Chatbot", "provider_label", "Chatbot"),
+            ("By Question Theme", "theme", "Theme"),
+            ("By Hydromea Mention Cohort", "analysis_mention_bucket", "Mention Cohort"),
+        ]
+
+        summary_rows: List[dict] = []
+        for title, key_col, key_label in breakdown_specs:
+            st.markdown(f"**{title}**")
+
+            cur_breakdown = tag_current_view
+            base_breakdown = tag_baseline_view
+
+            cur_long = _aggregate_tag_partition(cur_breakdown, key_col, selected_tag_categories)
+            base_long = _aggregate_tag_partition(base_breakdown, key_col, selected_tag_categories)
+
+            abs_rows = cur_long.copy()
+
+            delta_long = _compute_tag_delta(cur_breakdown, base_breakdown, key_col, selected_tag_categories)
+
+            _cur_totals = cur_long.groupby(key_col, dropna=False)["Count"].sum().reset_index().rename(
+                columns={"Count": "CurrentBucketTotal"}
+            )
+            _base_totals = base_long.groupby(key_col, dropna=False)["Count"].sum().reset_index().rename(
+                columns={"Count": "BaselineBucketTotal"}
+            )
+
+            cur_prop = cur_long.merge(_cur_totals, on=[key_col], how="left")
+            cur_prop["Proportion"] = (
+                (cur_prop["Count"] / cur_prop["CurrentBucketTotal"].replace(0, pd.NA)) * 100
+            ).fillna(0).round(1)
+
+            base_prop = base_long.merge(_base_totals, on=[key_col], how="left")
+            base_prop["BaselineProportion"] = (
+                (base_prop["Count"] / base_prop["BaselineBucketTotal"].replace(0, pd.NA)) * 100
+            ).fillna(0).round(1)
+
+            delta_prop = cur_long[[key_col, "Category", "Count"]].merge(
+                base_long[[key_col, "Category", "Count"]],
+                on=[key_col, "Category"],
+                how="outer",
+                suffixes=("_cur", "_base")
+            ).fillna(0)
+            # Relative percentage change on absolute counts
+            delta_prop["DeltaProportion"] = (
+                (delta_prop["Count_cur"] - delta_prop["Count_base"]) / 
+                delta_prop["Count_base"].replace(0, pd.NA) * 100
+            ).fillna(0).round(1)
+
+            if _show_delta and not _is_baseline:
+                _lcol, _rcol = st.columns(2, gap="large")
+            else:
+                _lcol, _rcol = st.container(), None
+
+            with _lcol:
+                st.markdown("Absolute counts")
+                fig_abs = px.bar(
+                    abs_rows,
+                    x=key_col,
+                    y="Count",
+                    color="Category",
+                    barmode="stack",
+                    color_discrete_map=TAG_PARTITION_COLORS,
+                    height=320,
+                )
+                fig_abs.update_layout(
+                    plot_bgcolor="rgba(0,0,0,0)",
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    legend_title_text="",
+                    margin=dict(l=0, r=0, t=10, b=0),
+                    xaxis_title=key_label,
+                    yaxis_title="Tag span count",
+                )
+                fig_abs.update_xaxes(tickangle=-25)
+                st.plotly_chart(fig_abs, use_container_width=True)
+
+                st.markdown("Proportion (%)")
+                fig_prop = px.bar(
+                    cur_prop,
+                    x=key_col,
+                    y="Proportion",
+                    color="Category",
+                    barmode="stack",
+                    color_discrete_map=TAG_PARTITION_COLORS,
+                    height=320,
+                    text="Proportion",
+                )
+                fig_prop.update_traces(texttemplate="%{text:.1f}%", textposition="inside")
+                fig_prop.update_layout(
+                    plot_bgcolor="rgba(0,0,0,0)",
+                    paper_bgcolor="rgba(0,0,0,0)",
+                    legend_title_text="",
+                    margin=dict(l=0, r=0, t=10, b=0),
+                    xaxis_title=key_label,
+                    yaxis_title="Share within bucket (%)",
+                )
+                fig_prop.update_xaxes(tickangle=-25)
+                st.plotly_chart(fig_prop, use_container_width=True)
+
+            if _show_delta and not _is_baseline and _rcol is not None:
+                with _rcol:
+                    st.markdown("Change vs Baseline V0")
+                    fig_delta = px.bar(
+                        delta_long,
+                        x=key_col,
+                        y="Delta",
+                        color="Category",
+                        barmode="group",
+                        color_discrete_map=TAG_PARTITION_COLORS,
+                        height=320,
+                        text="Delta",
+                    )
+                    fig_delta.add_hline(y=0, line_width=1, line_dash="dash", line_color="#94a3b8")
+                    fig_delta.update_traces(textposition="outside")
+                    fig_delta.update_layout(
+                        plot_bgcolor="rgba(0,0,0,0)",
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        legend_title_text="",
+                        margin=dict(l=0, r=0, t=10, b=0),
+                        xaxis_title=key_label,
+                        yaxis_title="Delta tag span count",
+                    )
+                    fig_delta.update_xaxes(tickangle=-25)
+                    st.plotly_chart(fig_delta, use_container_width=True)
+
+                    st.markdown("Change in Proportion vs Baseline V0 (%)")
+                    fig_delta_prop = px.bar(
+                        delta_prop,
+                        x=key_col,
+                        y="DeltaProportion",
+                        color="Category",
+                        barmode="group",
+                        color_discrete_map=TAG_PARTITION_COLORS,
+                        height=320,
+                        text="DeltaProportion",
+                    )
+                    fig_delta_prop.add_hline(y=0, line_width=1, line_dash="dash", line_color="#94a3b8")
+                    fig_delta_prop.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
+                    fig_delta_prop.update_layout(
+                        plot_bgcolor="rgba(0,0,0,0)",
+                        paper_bgcolor="rgba(0,0,0,0)",
+                        legend_title_text="",
+                        margin=dict(l=0, r=0, t=10, b=0),
+                        xaxis_title=key_label,
+                        yaxis_title="Relative % change in count",
+                    )
+                    fig_delta_prop.update_xaxes(tickangle=-25)
+                    st.plotly_chart(fig_delta_prop, use_container_width=True)
+
+            _summary_frame = cur_long.merge(
+                base_long.rename(columns={"Count": "BaselineCount"}),
+                on=[key_col, "Category"],
+                how="left",
+            ).merge(
+                delta_long,
+                on=[key_col, "Category"],
+                how="left",
+            )
+
+            _summary_frame = _summary_frame.merge(_cur_totals, on=[key_col], how="left")
+            _summary_frame = _summary_frame.merge(_base_totals, on=[key_col], how="left")
+
+            _summary_frame["Count"] = pd.to_numeric(_summary_frame["Count"], errors="coerce").fillna(0).astype(int)
+            _summary_frame["BaselineCount"] = pd.to_numeric(_summary_frame["BaselineCount"], errors="coerce").fillna(0).astype(int)
+            _summary_frame["Delta"] = pd.to_numeric(_summary_frame["Delta"], errors="coerce").fillna(0).astype(int)
+            _summary_frame["CurrentBucketTotal"] = pd.to_numeric(_summary_frame["CurrentBucketTotal"], errors="coerce").fillna(0)
+            _summary_frame["BaselineBucketTotal"] = pd.to_numeric(_summary_frame["BaselineBucketTotal"], errors="coerce").fillna(0)
+
+            _summary_frame[f"Proportion ({_cur_exp}) %"] = (
+                (_summary_frame["Count"] / _summary_frame["CurrentBucketTotal"].replace(0, pd.NA)) * 100
+            ).fillna(0).round(1)
+            _summary_frame["Proportion (Baseline V0) %"] = (
+                (_summary_frame["BaselineCount"] / _summary_frame["BaselineBucketTotal"].replace(0, pd.NA)) * 100
+            ).fillna(0).round(1)
+            _summary_frame["Delta Proportion (pp)"] = (
+                _summary_frame[f"Proportion ({_cur_exp}) %"] - _summary_frame["Proportion (Baseline V0) %"]
+            ).round(1)
+
+            for _, _row in _summary_frame.iterrows():
+                summary_rows.append(
+                    {
+                        "Breakdown": title,
+                        "Bucket": _row[key_col],
+                        "Category": _row["Category"],
+                        f"Count ({_cur_exp})": _row["Count"],
+                        f"Proportion ({_cur_exp}) %": _row[f"Proportion ({_cur_exp}) %"],
+                        "Count (Baseline V0)": _row["BaselineCount"],
+                        "Proportion (Baseline V0) %": _row["Proportion (Baseline V0) %"],
+                        "Delta vs Baseline": _row["Delta"],
+                        "Delta Proportion (pp)": _row["Delta Proportion (pp)"],
+                    }
+                )
+
+        st.markdown("**Tag Partition Summary Table**")
+        if summary_rows:
+            summary_df = pd.DataFrame(summary_rows)
+            st.dataframe(summary_df, use_container_width=True, hide_index=True)
+        else:
+            st.info("No rows available for the current tag-partition filters.")
 
     st.markdown("---")
 
@@ -803,6 +1492,55 @@ if _PAGE == "📊 Hydromea Stats":
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
 
+    # ── Answers by Hydromea Mention ──────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("### Answers by Hydromea Mention")
+    st.caption(
+        "One row per Version × AI Model. Answers are split by whether the response text "
+        "mentions 'hydromea' (case-insensitive)."
+    )
+
+    _mention_rows: list = []
+    for _exp in EXPERIMENTS:
+        _exp_corpus = _load(_exp)
+        _exp_metrics = _load_metrics_index(_exp)
+        _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
+
+        for _prod in _exp_products:
+            _pm = PRODUCT_META.get(_prod, _DMETA)
+            _mentioned_parts: list[str] = []
+            _not_mentioned_parts: list[str] = []
+
+            for _aid in _exp_corpus.by_product.get(_prod, []):
+                _ans = _exp_corpus.answers[_aid]
+                _resp = (_ans.response or "").strip()
+                if not _resp:
+                    continue
+                if _exp_metrics[_aid]["mentioned"]:
+                    _mentioned_parts.append(_resp)
+                else:
+                    _not_mentioned_parts.append(_resp)
+
+            _mention_rows.append({
+                "Version": _exp,
+                "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "Mentioned": "\n<--><--><-->\n".join(_mentioned_parts),
+                "Not Mentioned": "\n<--><--><-->\n".join(_not_mentioned_parts),
+            })
+
+    _mention_df = pd.DataFrame(_mention_rows, columns=["Version", "AI Model", "Mentioned", "Not Mentioned"])
+    st.dataframe(
+        _mention_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Version": st.column_config.TextColumn("Version", width="small"),
+            "AI Model": st.column_config.TextColumn("AI Model", width="small"),
+            "Mentioned": st.column_config.TextColumn("Mentioned", width="large"),
+            "Not Mentioned": st.column_config.TextColumn("Not Mentioned", width="large"),
+        },
+    )
+
     # ── Answers by Category Table ──────────────────────────────────────────────
     st.markdown("---")
     st.markdown("### Answers by Category")
@@ -942,7 +1680,7 @@ st.markdown(
 # ─────────────────────────────────────────────────────────────────────────────
 # Collect answers
 # ─────────────────────────────────────────────────────────────────────────────
-answers_by_product: dict[str, object] = {}
+answers_by_product: Dict[str, Answer] = {}
 for aid in corpus.by_query.get(qid, []):
     a = corpus.answers[aid]
     if a.product and not a.product.startswith("_"):
@@ -977,7 +1715,7 @@ for col, product in zip(cols, active_products):
             continue
 
         # ── Hydromea visibility ────────────────────────────────────────────
-        _m  = compute_answer_metrics(ans)
+        _m  = answer_metrics_index[ans.answer_id]
         _bi = _m["brand_idxs"]
 
         # Auto-render one badge per metric group from FILTER_SPECS
@@ -1028,6 +1766,41 @@ for col, product in zip(cols, active_products):
 
         # ── Response (rendered markdown) ──────────────────────────────────
         st.markdown(_clean_response(ans.response))
+
+        # ── Tagged response overlay ───────────────────────────────────────
+        if show_tagging:
+            tagged_payload = tagged_answers.get(ans.answer_id)
+            if tagged_payload:
+                tagged_lines = tagged_payload.get("lines") or []
+                if tagged_lines:
+                    summary_counts = (tagged_payload.get("summary") or {}).get("span_counts") or _compute_span_counts(tagged_lines)
+                    legend_html: List[str] = []
+                    for cat, cnt in summary_counts.items():
+                        if not cnt:
+                            continue
+                        style = _TAG_STYLE.get(cat, _TAG_STYLE_DEFAULT)
+                        legend_html.append(
+                            f'<span class="tag-chip {style["chip"]}">{_html.escape(cat)} · {cnt}</span>'
+                        )
+
+                    hint_line = (
+                        '<div class="tagging-hint">Hover highlighted spans to inspect category and character offsets.</div>'
+                        if show_tagging_hints else
+                        '<div class="tagging-hint">Highlighted snippets indicate tagged evidence spans per category.</div>'
+                    )
+
+                    tagged_html = _render_tagged_lines(tagged_lines)
+                    st.markdown(
+                        '<div class="tagging-panel">'
+                        '<div class="tagging-title">Tagged Answer View</div>'
+                        f'{hint_line}'
+                        f'<div class="tag-legend">{"".join(legend_html)}</div>'
+                        f'<div class="tagged-response">{tagged_html}</div>'
+                        '</div>',
+                        unsafe_allow_html=True,
+                    )
+            else:
+                st.caption("Tagging: no matching tagged JSON entry found for this answer in the selected experiment.")
 
         st.markdown("</div></div>", unsafe_allow_html=True)
 

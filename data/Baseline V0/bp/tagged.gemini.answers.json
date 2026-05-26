@@ -1,0 +1,1246 @@
+{
+  "visibility_report_01kjr77f28enbaacfzme11gh36.query_01khxhq5kbenarkbvwtne1y2g4.response": {
+    "answer_id": "visibility_report_01kjr77f28enbaacfzme11gh36.query_01khxhq5kbenarkbvwtne1y2g4.response",
+    "query_id": "query_01khxhq5kbenarkbvwtne1y2g4",
+    "model": null,
+    "provider": "GEMINI",
+    "lines": [
+      {
+        "line_index": 0,
+        "raw_text": "For inspecting ballast water tanks without sending a human inside, **mini ROVs (Remotely Operated Vehicles)** and **observation-class ROVs** are highly suitable. These specialized underwater drones offer a safe, efficient, and cost-effective alternative to traditional manned inspections, eliminating the risks associated with human entry into confined spaces.",
+        "tagged_text": "<null>For inspecting ballast water tanks without sending a human inside, **mini ROVs (Remotely Operated Vehicles)** and **observation-class ROVs** are highly suitable. These specialized underwater drones offer a safe, efficient, and cost-effective alternative to traditional manned inspections, eliminating the risks associated with human entry into confined spaces.</null>",
+        "spans": [
+          {
+            "text": "For inspecting ballast water tanks without sending a human inside, **mini ROVs (Remotely Operated Vehicles)** and **observation-class ROVs** are highly suitable. These specialized underwater drones offer a safe, efficient, and cost-effective alternative to traditional manned inspections, eliminating the risks associated with human entry into confined spaces.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 360
+          }
+        ]
+      },
+      {
+        "line_index": 1,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 2,
+        "raw_text": "### Why Use ROVs for Ballast Water Tank Inspection?",
+        "tagged_text": "<null>### Why Use ROVs for Ballast Water Tank Inspection?</null>",
+        "spans": [
+          {
+            "text": "### Why Use ROVs for Ballast Water Tank Inspection?",
+            "category": null,
+            "char_start": 0,
+            "char_end": 51
+          }
+        ]
+      },
+      {
+        "line_index": 3,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 4,
+        "raw_text": "Using ROVs for ballast tank inspections provides numerous advantages:",
+        "tagged_text": "<null>Using ROVs for ballast tank inspections provides numerous advantages:</null>",
+        "spans": [
+          {
+            "text": "Using ROVs for ballast tank inspections provides numerous advantages:",
+            "category": null,
+            "char_start": 0,
+            "char_end": 69
+          }
+        ]
+      },
+      {
+        "line_index": 5,
+        "raw_text": "*   **Enhanced Safety** The primary benefit is the elimination of human entry into potentially hazardous confined spaces, which can contain noxious gases or pose risks of falls and entrapment.",
+        "tagged_text": "<null>*   **Enhanced Safety** The primary benefit is the elimination of human entry into potentially hazardous confined spaces, which can contain noxious gases or pose risks of falls and entrapment.</null>",
+        "spans": [
+          {
+            "text": "*   **Enhanced Safety** The primary benefit is the elimination of human entry into potentially hazardous confined spaces, which can contain noxious gases or pose risks of falls and entrapment.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 192
+          }
+        ]
+      },
+      {
+        "line_index": 6,
+        "raw_text": "*   **Reduced Downtime and Costs** ROVs can be deployed quickly, often without the need to drain the ballast tanks, significantly reducing vessel downtime and operational costs. They also require fewer personnel compared to manned inspections.",
+        "tagged_text": "<null>*   **Reduced Downtime and Costs** ROVs can be deployed quickly, often without the need to drain the ballast tanks, significantly reducing vessel downtime and operational costs. They also require fewer personnel compared to manned inspections.</null>",
+        "spans": [
+          {
+            "text": "*   **Reduced Downtime and Costs** ROVs can be deployed quickly, often without the need to drain the ballast tanks, significantly reducing vessel downtime and operational costs. They also require fewer personnel compared to manned inspections.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 243
+          }
+        ]
+      },
+      {
+        "line_index": 7,
+        "raw_text": "*   **High-Quality Data** Equipped with high-resolution cameras (often HD or 4K) and powerful LED lights, ROVs provide clear, real-time visual footage of the tank's interior. This allows for detailed assessment of coatings, structures, and potential damage.",
+        "tagged_text": "<null>*   **High-Quality Data** Equipped with high-resolution cameras (often HD or </null><StatisticalUse>4K</StatisticalUse><null>) and powerful LED lights, ROVs provide clear, real-time visual footage of the tank's interior. This allows for detailed assessment of coatings, structures, and potential damage.</null>",
+        "spans": [
+          {
+            "text": "*   **High-Quality Data** Equipped with high-resolution cameras (often HD or ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 77
+          },
+          {
+            "text": "4K",
+            "category": "Statistical Use",
+            "char_start": 77,
+            "char_end": 79
+          },
+          {
+            "text": ") and powerful LED lights, ROVs provide clear, real-time visual footage of the tank's interior. This allows for detailed assessment of coatings, structures, and potential damage.",
+            "category": null,
+            "char_start": 79,
+            "char_end": 257
+          }
+        ]
+      },
+      {
+        "line_index": 8,
+        "raw_text": "*   **Comprehensive Inspection Capabilities** Many ROVs can be fitted with additional sensors, such as Ultrasonic Thickness (UT) probes for measuring material thickness and Cathodic Protection (CP) probes to assess corrosion levels. They can detect corrosion, cracks, and sediment buildup.",
+        "tagged_text": "<null>*   **Comprehensive Inspection Capabilities** Many ROVs can be fitted with additional sensors, such as Ultrasonic Thickness (UT) probes for measuring material thickness and Cathodic Protection (CP) probes to assess corrosion levels. They can detect corrosion, cracks, and sediment buildup.</null>",
+        "spans": [
+          {
+            "text": "*   **Comprehensive Inspection Capabilities** Many ROVs can be fitted with additional sensors, such as Ultrasonic Thickness (UT) probes for measuring material thickness and Cathodic Protection (CP) probes to assess corrosion levels. They can detect corrosion, cracks, and sediment buildup.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 289
+          }
+        ]
+      },
+      {
+        "line_index": 9,
+        "raw_text": "*   **Maneuverability in Confined Spaces** Mini and observation-class ROVs are designed to be compact and agile, allowing them to navigate the tight and complex geometries within ballast tanks, providing a 360-degree view.",
+        "tagged_text": "<null>*   **Maneuverability in Confined Spaces** Mini and observation-class ROVs are designed to be compact and agile, allowing them to navigate the tight and complex geometries within ballast tanks, providing a </null><StatisticalUse>360-degree</StatisticalUse><null> view.</null>",
+        "spans": [
+          {
+            "text": "*   **Maneuverability in Confined Spaces** Mini and observation-class ROVs are designed to be compact and agile, allowing them to navigate the tight and complex geometries within ballast tanks, providing a ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 206
+          },
+          {
+            "text": "360-degree",
+            "category": "Statistical Use",
+            "char_start": 206,
+            "char_end": 216
+          },
+          {
+            "text": " view.",
+            "category": null,
+            "char_start": 216,
+            "char_end": 222
+          }
+        ]
+      },
+      {
+        "line_index": 10,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 11,
+        "raw_text": "### Key Features to Look For in a Ballast Tank Inspection ROV",
+        "tagged_text": "<null>### Key Features to Look For in a Ballast Tank Inspection ROV</null>",
+        "spans": [
+          {
+            "text": "### Key Features to Look For in a Ballast Tank Inspection ROV",
+            "category": null,
+            "char_start": 0,
+            "char_end": 61
+          }
+        ]
+      },
+      {
+        "line_index": 12,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 13,
+        "raw_text": "When selecting an ROV for this purpose, consider the following features:",
+        "tagged_text": "<null>When selecting an ROV for this purpose, consider the following features:</null>",
+        "spans": [
+          {
+            "text": "When selecting an ROV for this purpose, consider the following features:",
+            "category": null,
+            "char_start": 0,
+            "char_end": 72
+          }
+        ]
+      },
+      {
+        "line_index": 14,
+        "raw_text": "*   **Compact Size and Portability** The ROV should be small enough to easily enter through tank openings and maneuver within constricted areas.",
+        "tagged_text": "<null>*   **Compact Size and Portability** The ROV should be small enough to easily enter through tank openings and maneuver within constricted areas.</null>",
+        "spans": [
+          {
+            "text": "*   **Compact Size and Portability** The ROV should be small enough to easily enter through tank openings and maneuver within constricted areas.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 144
+          }
+        ]
+      },
+      {
+        "line_index": 15,
+        "raw_text": "*   **Powerful Thrusters** Vectorized thrusters provide precise control and maneuverability in water, allowing the ROV to move horizontally, vertically, and laterally.",
+        "tagged_text": "<null>*   **Powerful Thrusters** Vectorized thrusters provide precise control and maneuverability in water, allowing the ROV to move horizontally, vertically, and laterally.</null>",
+        "spans": [
+          {
+            "text": "*   **Powerful Thrusters** Vectorized thrusters provide precise control and maneuverability in water, allowing the ROV to move horizontally, vertically, and laterally.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 167
+          }
+        ]
+      },
+      {
+        "line_index": 16,
+        "raw_text": "*   **High-Resolution Camera and Lighting** Essential for clear visual inspection, especially in dark and potentially murky tank environments.",
+        "tagged_text": "<null>*   **High-Resolution Camera and Lighting** Essential for clear visual inspection, especially in dark and potentially murky tank environments.</null>",
+        "spans": [
+          {
+            "text": "*   **High-Resolution Camera and Lighting** Essential for clear visual inspection, especially in dark and potentially murky tank environments.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 142
+          }
+        ]
+      },
+      {
+        "line_index": 17,
+        "raw_text": "*   **Depth Rating** Ensure the ROV's depth rating is sufficient for the maximum depth of your ballast tanks.",
+        "tagged_text": "<null>*   **Depth Rating** Ensure the ROV's depth rating is sufficient for the maximum depth of your ballast tanks.</null>",
+        "spans": [
+          {
+            "text": "*   **Depth Rating** Ensure the ROV's depth rating is sufficient for the maximum depth of your ballast tanks.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 109
+          }
+        ]
+      },
+      {
+        "line_index": 18,
+        "raw_text": "*   **Accessory Integration** Look for models that can integrate additional tools like UT and CP probes for a more thorough inspection.",
+        "tagged_text": "<null>*   **Accessory Integration** Look for models that can integrate additional tools like UT and CP probes for a more thorough inspection.</null>",
+        "spans": [
+          {
+            "text": "*   **Accessory Integration** Look for models that can integrate additional tools like UT and CP probes for a more thorough inspection.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 135
+          }
+        ]
+      },
+      {
+        "line_index": 19,
+        "raw_text": "*   **Tethered or Tetherless Options** While most inspection ROVs are tethered for real-time control and power, some advanced models offer tetherless options for even greater maneuverability and to eliminate snagging risks.",
+        "tagged_text": "<null>*   **Tethered or Tetherless Options** While most inspection ROVs are tethered for real-time control and power, some advanced models offer tetherless options for even greater maneuverability and to eliminate snagging risks.</null>",
+        "spans": [
+          {
+            "text": "*   **Tethered or Tetherless Options** While most inspection ROVs are tethered for real-time control and power, some advanced models offer tetherless options for even greater maneuverability and to eliminate snagging risks.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 223
+          }
+        ]
+      },
+      {
+        "line_index": 20,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 21,
+        "raw_text": "### Examples of ROVs and Providers for Ballast Tank Inspection",
+        "tagged_text": "<null>### Examples of ROVs and Providers for Ballast Tank Inspection</null>",
+        "spans": [
+          {
+            "text": "### Examples of ROVs and Providers for Ballast Tank Inspection",
+            "category": null,
+            "char_start": 0,
+            "char_end": 62
+          }
+        ]
+      },
+      {
+        "line_index": 22,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 23,
+        "raw_text": "Several companies offer ROVs and services specifically for ballast water tank inspections:",
+        "tagged_text": "<null>Several companies offer ROVs and services specifically for ballast water tank inspections:</null>",
+        "spans": [
+          {
+            "text": "Several companies offer ROVs and services specifically for ballast water tank inspections:",
+            "category": null,
+            "char_start": 0,
+            "char_end": 90
+          }
+        ]
+      },
+      {
+        "line_index": 24,
+        "raw_text": "*   **MarineNav Ltd.** offers the **Oceanus Mini**, designed for confined areas like tanks and pipelines. It features six vectorized thrusters and a depth rating of 305 meters.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>MarineNav Ltd.</BrandPositioning><null>** offers the **</null><BrandPositioning>Oceanus Mini</BrandPositioning><null>**, designed for confined areas like tanks and pipelines. It features </null><StatisticalUse>six</StatisticalUse><null> vectorized thrusters and a depth rating of </null><StatisticalUse>305 meters</StatisticalUse><null>.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "MarineNav Ltd.",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 20
+          },
+          {
+            "text": "** offers the **",
+            "category": null,
+            "char_start": 20,
+            "char_end": 36
+          },
+          {
+            "text": "Oceanus Mini",
+            "category": "Brand Positioning",
+            "char_start": 36,
+            "char_end": 48
+          },
+          {
+            "text": "**, designed for confined areas like tanks and pipelines. It features ",
+            "category": null,
+            "char_start": 48,
+            "char_end": 118
+          },
+          {
+            "text": "six",
+            "category": "Statistical Use",
+            "char_start": 118,
+            "char_end": 121
+          },
+          {
+            "text": " vectorized thrusters and a depth rating of ",
+            "category": null,
+            "char_start": 121,
+            "char_end": 165
+          },
+          {
+            "text": "305 meters",
+            "category": "Statistical Use",
+            "char_start": 165,
+            "char_end": 175
+          },
+          {
+            "text": ".",
+            "category": null,
+            "char_start": 175,
+            "char_end": 176
+          }
+        ]
+      },
+      {
+        "line_index": 25,
+        "raw_text": "*   **Vertech Group** and **Geo Oceans** utilize asset-deployed mini-ROVs for ballast tank inspections on offshore facilities, satisfying class society requirements without human intervention.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Vertech Group</BrandPositioning><null>** and **</null><BrandPositioning>Geo Oceans</BrandPositioning><null>** utilize asset-deployed mini-ROVs for ballast tank inspections on offshore facilities, satisfying class society requirements without human intervention.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Vertech Group",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 19
+          },
+          {
+            "text": "** and **",
+            "category": null,
+            "char_start": 19,
+            "char_end": 28
+          },
+          {
+            "text": "Geo Oceans",
+            "category": "Brand Positioning",
+            "char_start": 28,
+            "char_end": 38
+          },
+          {
+            "text": "** utilize asset-deployed mini-ROVs for ballast tank inspections on offshore facilities, satisfying class society requirements without human intervention.",
+            "category": null,
+            "char_start": 38,
+            "char_end": 192
+          }
+        ]
+      },
+      {
+        "line_index": 26,
+        "raw_text": "*   **Underwater Vision** specializes in ROV inspection services for offshore environments, including ballast tanks, using advanced \"suitcase ROV systems.\"",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Underwater Vision</BrandPositioning><null>** specializes in ROV inspection services for offshore environments, including ballast tanks, using advanced \"suitcase ROV systems.\"</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Underwater Vision",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 23
+          },
+          {
+            "text": "** specializes in ROV inspection services for offshore environments, including ballast tanks, using advanced \"suitcase ROV systems.\"",
+            "category": null,
+            "char_start": 23,
+            "char_end": 155
+          }
+        ]
+      },
+      {
+        "line_index": 27,
+        "raw_text": "*   The **U.S. Navy** has tested the **VideoRay Pro 4 ROV** for inspecting ballast tanks without draining them.",
+        "tagged_text": "<null>*   The **</null><CredibilitySignal>U.S. Navy</CredibilitySignal><null>** has tested the **</null><BrandPositioning>VideoRay Pro 4 ROV</BrandPositioning><null>** for inspecting ballast tanks without draining them.</null>",
+        "spans": [
+          {
+            "text": "*   The **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 10
+          },
+          {
+            "text": "U.S. Navy",
+            "category": "Credibility Signal",
+            "char_start": 10,
+            "char_end": 19
+          },
+          {
+            "text": "** has tested the **",
+            "category": null,
+            "char_start": 19,
+            "char_end": 39
+          },
+          {
+            "text": "VideoRay Pro 4 ROV",
+            "category": "Brand Positioning",
+            "char_start": 39,
+            "char_end": 57
+          },
+          {
+            "text": "** for inspecting ballast tanks without draining them.",
+            "category": null,
+            "char_start": 57,
+            "char_end": 111
+          }
+        ]
+      },
+      {
+        "line_index": 28,
+        "raw_text": "*   **Hydromea SA** offers ROVs like the **Exray**, which can be tethered or tetherless, enhancing maneuverability and reducing snagging risks.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Hydromea SA</BrandPositioning><null>** offers ROVs like the **</null><BrandPositioning>Exray</BrandPositioning><null>**, which can be tethered or tetherless, enhancing maneuverability and reducing snagging risks.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Hydromea SA",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 17
+          },
+          {
+            "text": "** offers ROVs like the **",
+            "category": null,
+            "char_start": 17,
+            "char_end": 43
+          },
+          {
+            "text": "Exray",
+            "category": "Brand Positioning",
+            "char_start": 43,
+            "char_end": 48
+          },
+          {
+            "text": "**, which can be tethered or tetherless, enhancing maneuverability and reducing snagging risks.",
+            "category": null,
+            "char_start": 48,
+            "char_end": 143
+          }
+        ]
+      },
+      {
+        "line_index": 29,
+        "raw_text": "*   **Blueye Robotics** provides the **Blueye X3**, a professional mini ROV known for its portability, stability, and ease of deployment for inspections.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Blueye Robotics</BrandPositioning><null>** provides the **</null><BrandPositioning>Blueye X3</BrandPositioning><null>**, a professional mini ROV known for its portability, stability, and ease of deployment for inspections.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Blueye Robotics",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 21
+          },
+          {
+            "text": "** provides the **",
+            "category": null,
+            "char_start": 21,
+            "char_end": 39
+          },
+          {
+            "text": "Blueye X3",
+            "category": "Brand Positioning",
+            "char_start": 39,
+            "char_end": 48
+          },
+          {
+            "text": "**, a professional mini ROV known for its portability, stability, and ease of deployment for inspections.",
+            "category": null,
+            "char_start": 48,
+            "char_end": 153
+          }
+        ]
+      },
+      {
+        "line_index": 30,
+        "raw_text": "*   **Charpie ROV** offers the **HX-300-Mini**, a compact ROV engineered for inspections in confined underwater environments.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Charpie ROV</BrandPositioning><null>** offers the **</null><BrandPositioning>HX-300-Mini</BrandPositioning><null>**, a compact ROV engineered for inspections in confined underwater environments.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Charpie ROV",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 17
+          },
+          {
+            "text": "** offers the **",
+            "category": null,
+            "char_start": 17,
+            "char_end": 33
+          },
+          {
+            "text": "HX-300-Mini",
+            "category": "Brand Positioning",
+            "char_start": 33,
+            "char_end": 44
+          },
+          {
+            "text": "**, a compact ROV engineered for inspections in confined underwater environments.",
+            "category": null,
+            "char_start": 44,
+            "char_end": 125
+          }
+        ]
+      },
+      {
+        "line_index": 31,
+        "raw_text": "*   Companies like **Applied Technical Services (ATS)** and **Sonomatic** also provide ROV inspection services for water tanks and subsea assets, emphasizing their ability to conduct thorough assessments while keeping tanks in service.",
+        "tagged_text": "<null>*   Companies like **</null><BrandPositioning>Applied Technical Services (ATS)</BrandPositioning><null>** and **</null><BrandPositioning>Sonomatic</BrandPositioning><null>** also provide ROV inspection services for water tanks and subsea assets, emphasizing their ability to conduct thorough assessments while keeping tanks in service.</null>",
+        "spans": [
+          {
+            "text": "*   Companies like **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 21
+          },
+          {
+            "text": "Applied Technical Services (ATS)",
+            "category": "Brand Positioning",
+            "char_start": 21,
+            "char_end": 53
+          },
+          {
+            "text": "** and **",
+            "category": null,
+            "char_start": 53,
+            "char_end": 62
+          },
+          {
+            "text": "Sonomatic",
+            "category": "Brand Positioning",
+            "char_start": 62,
+            "char_end": 71
+          },
+          {
+            "text": "** also provide ROV inspection services for water tanks and subsea assets, emphasizing their ability to conduct thorough assessments while keeping tanks in service.",
+            "category": null,
+            "char_start": 71,
+            "char_end": 235
+          }
+        ]
+      },
+      {
+        "line_index": 32,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 33,
+        "raw_text": "These mini and observation-class ROVs are game-changers for maintaining the integrity and safety of ballast water tanks, providing detailed insights remotely and efficiently.",
+        "tagged_text": "<null>These mini and observation-class ROVs are game-changers for maintaining the integrity and safety of ballast water tanks, providing detailed insights remotely and efficiently.</null>",
+        "spans": [
+          {
+            "text": "These mini and observation-class ROVs are game-changers for maintaining the integrity and safety of ballast water tanks, providing detailed insights remotely and efficiently.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 174
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "answer_id": "visibility_report_01kjr77f28enbaacfzme11gh36.query_01khxhq5kbenarkbvwtne1y2g4.response",
+      "model": null,
+      "total_lines": 34,
+      "span_counts": {
+        "Statistical Use": 4,
+        "Credibility Signal": 1,
+        "Strong Recommendation": 0,
+        "Brand Positioning": 14
+      }
+    }
+  },
+  "visibility_report_01kjr77f28enbaacfzme11gh36.query_01khx44wpeenark5c6htxexdzp.response": {
+    "answer_id": "visibility_report_01kjr77f28enbaacfzme11gh36.query_01khx44wpeenark5c6htxexdzp.response",
+    "query_id": "query_01khx44wpeenark5c6htxexdzp",
+    "model": null,
+    "provider": "GEMINI",
+    "lines": [
+      {
+        "line_index": 0,
+        "raw_text": "Yes, there are compact wireless modems available for small observation Remotely Operated Vehicles (ROVs). The choice between different types of wireless modems for underwater use largely depends on the specific requirements for range, data rate, and environmental conditions. The two primary technologies for underwater wireless communication are acoustic modems and optical modems.",
+        "tagged_text": "<null>Yes, there are compact wireless modems available for small observation Remotely Operated Vehicles (ROVs). The choice between different types of wireless modems for underwater use largely depends on the specific requirements for range, data rate, and environmental conditions. The two primary technologies for underwater wireless communication are acoustic modems and optical modems.</null>",
+        "spans": [
+          {
+            "text": "Yes, there are compact wireless modems available for small observation Remotely Operated Vehicles (ROVs). The choice between different types of wireless modems for underwater use largely depends on the specific requirements for range, data rate, and environmental conditions. The two primary technologies for underwater wireless communication are acoustic modems and optical modems.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 382
+          }
+        ]
+      },
+      {
+        "line_index": 1,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 2,
+        "raw_text": "### **Acoustic Modems**",
+        "tagged_text": "<null>### **Acoustic Modems**</null>",
+        "spans": [
+          {
+            "text": "### **Acoustic Modems**",
+            "category": null,
+            "char_start": 0,
+            "char_end": 23
+          }
+        ]
+      },
+      {
+        "line_index": 3,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 4,
+        "raw_text": "Acoustic modems use sound waves to transmit data underwater and are generally preferred for longer-range communication.",
+        "tagged_text": "<null>Acoustic modems use sound waves to transmit data underwater and are generally preferred for longer-range communication.</null>",
+        "spans": [
+          {
+            "text": "Acoustic modems use sound waves to transmit data underwater and are generally preferred for longer-range communication.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 119
+          }
+        ]
+      },
+      {
+        "line_index": 5,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 6,
+        "raw_text": "*   **Water Linked Modem M16**: This is a miniature acoustic modem designed for challenging underwater environments. It offers a range of up to 1,000 meters and is depth-rated to 600 meters. The M16 prioritizes reliable communication over high data rates, transmitting 16 bits per package, and features low power consumption, making it suitable for ROVs.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Water Linked Modem M16</BrandPositioning><null>**: This is a miniature acoustic modem designed for challenging underwater environments. It offers a range of </null><StatisticalUse>up to 1,000 meters</StatisticalUse><null> and is depth-rated to </null><StatisticalUse>600 meters</StatisticalUse><null>. The </null><BrandPositioning>M16</BrandPositioning><null> prioritizes reliable communication over high data rates, transmitting </null><StatisticalUse>16 bits per package</StatisticalUse><null>, and features low power consumption, making it suitable for ROVs.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Water Linked Modem M16",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 28
+          },
+          {
+            "text": "**: This is a miniature acoustic modem designed for challenging underwater environments. It offers a range of ",
+            "category": null,
+            "char_start": 28,
+            "char_end": 138
+          },
+          {
+            "text": "up to 1,000 meters",
+            "category": "Statistical Use",
+            "char_start": 138,
+            "char_end": 156
+          },
+          {
+            "text": " and is depth-rated to ",
+            "category": null,
+            "char_start": 156,
+            "char_end": 179
+          },
+          {
+            "text": "600 meters",
+            "category": "Statistical Use",
+            "char_start": 179,
+            "char_end": 189
+          },
+          {
+            "text": ". The ",
+            "category": null,
+            "char_start": 189,
+            "char_end": 195
+          },
+          {
+            "text": "M16",
+            "category": "Brand Positioning",
+            "char_start": 195,
+            "char_end": 198
+          },
+          {
+            "text": " prioritizes reliable communication over high data rates, transmitting ",
+            "category": null,
+            "char_start": 198,
+            "char_end": 269
+          },
+          {
+            "text": "16 bits per package",
+            "category": "Statistical Use",
+            "char_start": 269,
+            "char_end": 288
+          },
+          {
+            "text": ", and features low power consumption, making it suitable for ROVs.",
+            "category": null,
+            "char_start": 288,
+            "char_end": 354
+          }
+        ]
+      },
+      {
+        "line_index": 7,
+        "raw_text": "*   **EvoLogics Mini- and Tiny-Series**: EvoLogics offers compact and lightweight acoustic modems in their \"Mini-Series\" and \"Tiny-Series.\" These are designed for size- and weight-sensitive applications, including small AUVs and ROVs. They provide full-duplex digital communication and can be integrated into existing systems.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>EvoLogics Mini- and Tiny-Series</BrandPositioning><null>**: </null><BrandPositioning>EvoLogics</BrandPositioning><null> offers compact and lightweight acoustic modems in their \"</null><BrandPositioning>Mini-Series</BrandPositioning><null>\" and \"</null><BrandPositioning>Tiny-Series</BrandPositioning><null>.\" These are designed for size- and weight-sensitive applications, including small AUVs and ROVs. They provide full-duplex digital communication and can be integrated into existing systems.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "EvoLogics Mini- and Tiny-Series",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 37
+          },
+          {
+            "text": "**: ",
+            "category": null,
+            "char_start": 37,
+            "char_end": 41
+          },
+          {
+            "text": "EvoLogics",
+            "category": "Brand Positioning",
+            "char_start": 41,
+            "char_end": 50
+          },
+          {
+            "text": " offers compact and lightweight acoustic modems in their \"",
+            "category": null,
+            "char_start": 50,
+            "char_end": 108
+          },
+          {
+            "text": "Mini-Series",
+            "category": "Brand Positioning",
+            "char_start": 108,
+            "char_end": 119
+          },
+          {
+            "text": "\" and \"",
+            "category": null,
+            "char_start": 119,
+            "char_end": 126
+          },
+          {
+            "text": "Tiny-Series",
+            "category": "Brand Positioning",
+            "char_start": 126,
+            "char_end": 137
+          },
+          {
+            "text": ".\" These are designed for size- and weight-sensitive applications, including small AUVs and ROVs. They provide full-duplex digital communication and can be integrated into existing systems.",
+            "category": null,
+            "char_start": 137,
+            "char_end": 326
+          }
+        ]
+      },
+      {
+        "line_index": 8,
+        "raw_text": "*   **General Characteristics**: Acoustic modems are the most common method for long-range underwater wireless data transmission. However, their data transmission rates are typically lower compared to optical modems.",
+        "tagged_text": "<null>*   **General Characteristics**: Acoustic modems are the most common method for long-range underwater wireless data transmission. However, their data transmission rates are typically lower compared to optical modems.</null>",
+        "spans": [
+          {
+            "text": "*   **General Characteristics**: Acoustic modems are the most common method for long-range underwater wireless data transmission. However, their data transmission rates are typically lower compared to optical modems.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 216
+          }
+        ]
+      },
+      {
+        "line_index": 9,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 10,
+        "raw_text": "### **Optical Modems**",
+        "tagged_text": "<null>### **Optical Modems**</null>",
+        "spans": [
+          {
+            "text": "### **Optical Modems**",
+            "category": null,
+            "char_start": 0,
+            "char_end": 22
+          }
+        ]
+      },
+      {
+        "line_index": 11,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 12,
+        "raw_text": "Optical modems use light pulses (often blue LED light) to transmit data. They offer much higher data rates, enabling real-time HD video streaming, but are limited to shorter ranges and are affected by water clarity.",
+        "tagged_text": "<null>Optical modems use light pulses (often blue LED light) to transmit data. They offer much higher data rates, enabling real-time HD video streaming, but are limited to shorter ranges and are affected by water clarity.</null>",
+        "spans": [
+          {
+            "text": "Optical modems use light pulses (often blue LED light) to transmit data. They offer much higher data rates, enabling real-time HD video streaming, but are limited to shorter ranges and are affected by water clarity.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 215
+          }
+        ]
+      },
+      {
+        "line_index": 13,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 14,
+        "raw_text": "*   **Hydromea LUMA Series**: Hydromea produces a line of compact and power-efficient optical modems under the LUMA brand (e.g., LUMA X). These modems can achieve data transfer rates of up to 10 Mbit/s over distances up to 50 meters and are depth-rated to 6,000 meters. The LUMA modems are designed for easy integration and are particularly well-suited for short-range \"WiFi\" coverage underwater. Hydromea's ExRay wireless underwater drone utilizes this LUMA optical communication system.",
+        "tagged_text": "<null>*   **</null><BrandPositioning>Hydromea LUMA Series</BrandPositioning><null>**: </null><BrandPositioning>Hydromea</BrandPositioning><null> produces a line of compact and power-efficient optical modems under the </null><BrandPositioning>LUMA</BrandPositioning><null> brand (e.g., </null><BrandPositioning>LUMA X</BrandPositioning><null>). These modems can achieve data transfer rates of </null><StatisticalUse>up to 10 Mbit/s</StatisticalUse><null> over distances </null><StatisticalUse>up to 50 meters</StatisticalUse><null> and are depth-rated to </null><StatisticalUse>6,000 meters</StatisticalUse><null>. The </null><BrandPositioning>LUMA</BrandPositioning><null> modems are designed for easy integration and are </null><StrongRecommendation>particularly well-suited for</StrongRecommendation><null> short-range \"WiFi\" coverage underwater. </null><BrandPositioning>Hydromea</BrandPositioning><null>'s </null><BrandPositioning>ExRay</BrandPositioning><null> wireless underwater drone utilizes this </null><BrandPositioning>LUMA</BrandPositioning><null> optical communication system.</null>",
+        "spans": [
+          {
+            "text": "*   **",
+            "category": null,
+            "char_start": 0,
+            "char_end": 6
+          },
+          {
+            "text": "Hydromea LUMA Series",
+            "category": "Brand Positioning",
+            "char_start": 6,
+            "char_end": 26
+          },
+          {
+            "text": "**: ",
+            "category": null,
+            "char_start": 26,
+            "char_end": 30
+          },
+          {
+            "text": "Hydromea",
+            "category": "Brand Positioning",
+            "char_start": 30,
+            "char_end": 38
+          },
+          {
+            "text": " produces a line of compact and power-efficient optical modems under the ",
+            "category": null,
+            "char_start": 38,
+            "char_end": 111
+          },
+          {
+            "text": "LUMA",
+            "category": "Brand Positioning",
+            "char_start": 111,
+            "char_end": 115
+          },
+          {
+            "text": " brand (e.g., ",
+            "category": null,
+            "char_start": 115,
+            "char_end": 129
+          },
+          {
+            "text": "LUMA X",
+            "category": "Brand Positioning",
+            "char_start": 129,
+            "char_end": 135
+          },
+          {
+            "text": "). These modems can achieve data transfer rates of ",
+            "category": null,
+            "char_start": 135,
+            "char_end": 186
+          },
+          {
+            "text": "up to 10 Mbit/s",
+            "category": "Statistical Use",
+            "char_start": 186,
+            "char_end": 201
+          },
+          {
+            "text": " over distances ",
+            "category": null,
+            "char_start": 201,
+            "char_end": 217
+          },
+          {
+            "text": "up to 50 meters",
+            "category": "Statistical Use",
+            "char_start": 217,
+            "char_end": 232
+          },
+          {
+            "text": " and are depth-rated to ",
+            "category": null,
+            "char_start": 232,
+            "char_end": 256
+          },
+          {
+            "text": "6,000 meters",
+            "category": "Statistical Use",
+            "char_start": 256,
+            "char_end": 268
+          },
+          {
+            "text": ". The ",
+            "category": null,
+            "char_start": 268,
+            "char_end": 274
+          },
+          {
+            "text": "LUMA",
+            "category": "Brand Positioning",
+            "char_start": 274,
+            "char_end": 278
+          },
+          {
+            "text": " modems are designed for easy integration and are ",
+            "category": null,
+            "char_start": 278,
+            "char_end": 328
+          },
+          {
+            "text": "particularly well-suited for",
+            "category": "Strong Recommendation",
+            "char_start": 328,
+            "char_end": 356
+          },
+          {
+            "text": " short-range \"WiFi\" coverage underwater. ",
+            "category": null,
+            "char_start": 356,
+            "char_end": 397
+          },
+          {
+            "text": "Hydromea",
+            "category": "Brand Positioning",
+            "char_start": 397,
+            "char_end": 405
+          },
+          {
+            "text": "'s ",
+            "category": null,
+            "char_start": 405,
+            "char_end": 408
+          },
+          {
+            "text": "ExRay",
+            "category": "Brand Positioning",
+            "char_start": 408,
+            "char_end": 413
+          },
+          {
+            "text": " wireless underwater drone utilizes this ",
+            "category": null,
+            "char_start": 413,
+            "char_end": 454
+          },
+          {
+            "text": "LUMA",
+            "category": "Brand Positioning",
+            "char_start": 454,
+            "char_end": 458
+          },
+          {
+            "text": " optical communication system.",
+            "category": null,
+            "char_start": 458,
+            "char_end": 488
+          }
+        ]
+      },
+      {
+        "line_index": 15,
+        "raw_text": "*   **General Characteristics**: Optical modems are ideal for applications requiring high-bandwidth communication, such as streaming high-definition video, within a limited range. Their performance can be impacted by turbidity and ambient light levels.",
+        "tagged_text": "<null>*   **General Characteristics**: Optical modems are </null><StrongRecommendation>ideal for</StrongRecommendation><null> applications requiring high-bandwidth communication, such as streaming high-definition video, within a limited range. Their performance can be impacted by turbidity and ambient light levels.</null>",
+        "spans": [
+          {
+            "text": "*   **General Characteristics**: Optical modems are ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 52
+          },
+          {
+            "text": "ideal for",
+            "category": "Strong Recommendation",
+            "char_start": 52,
+            "char_end": 61
+          },
+          {
+            "text": " applications requiring high-bandwidth communication, such as streaming high-definition video, within a limited range. Their performance can be impacted by turbidity and ambient light levels.",
+            "category": null,
+            "char_start": 61,
+            "char_end": 252
+          }
+        ]
+      },
+      {
+        "line_index": 16,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 17,
+        "raw_text": "### **Other Considerations**",
+        "tagged_text": "<null>### **Other Considerations**</null>",
+        "spans": [
+          {
+            "text": "### **Other Considerations**",
+            "category": null,
+            "char_start": 0,
+            "char_end": 28
+          }
+        ]
+      },
+      {
+        "line_index": 18,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 19,
+        "raw_text": "*   **Radio Frequency (RF)**: Traditional radio waves do not penetrate water well, making RF communication largely unsuitable for underwater ROVs beyond very shallow depths (e.g., a few centimeters).",
+        "tagged_text": "<null>*   **Radio Frequency (RF)**: Traditional radio waves do not penetrate water well, making RF communication largely unsuitable for underwater ROVs beyond very shallow depths (e.g., </null><StatisticalUse>a few centimeters</StatisticalUse><null>).</null>",
+        "spans": [
+          {
+            "text": "*   **Radio Frequency (RF)**: Traditional radio waves do not penetrate water well, making RF communication largely unsuitable for underwater ROVs beyond very shallow depths (e.g., ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 180
+          },
+          {
+            "text": "a few centimeters",
+            "category": "Statistical Use",
+            "char_start": 180,
+            "char_end": 197
+          },
+          {
+            "text": ").",
+            "category": null,
+            "char_start": 197,
+            "char_end": 199
+          }
+        ]
+      },
+      {
+        "line_index": 20,
+        "raw_text": "*   **Hybrid Systems**: Some advanced ROVs and communication systems are exploring hybrid approaches that combine acoustic communication for long-range control and optical communication for high-bandwidth data transfer over shorter distances.",
+        "tagged_text": "<null>*   **Hybrid Systems**: Some advanced ROVs and communication systems are exploring hybrid approaches that combine acoustic communication for long-range control and optical communication for high-bandwidth data transfer over shorter distances.</null>",
+        "spans": [
+          {
+            "text": "*   **Hybrid Systems**: Some advanced ROVs and communication systems are exploring hybrid approaches that combine acoustic communication for long-range control and optical communication for high-bandwidth data transfer over shorter distances.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 242
+          }
+        ]
+      },
+      {
+        "line_index": 21,
+        "raw_text": "*   **Tethered vs. Wireless**: While wireless modems offer greater mobility and freedom for ROVs by eliminating the need for an umbilical cable, traditional tethered systems still provide the most reliable, high-speed data transmission and continuous power for many applications.",
+        "tagged_text": "<null>*   **Tethered vs. Wireless**: While wireless modems offer greater mobility and freedom for ROVs by eliminating the need for an umbilical cable, traditional tethered systems still provide the most reliable, high-speed data transmission and continuous power for many applications.</null>",
+        "spans": [
+          {
+            "text": "*   **Tethered vs. Wireless**: While wireless modems offer greater mobility and freedom for ROVs by eliminating the need for an umbilical cable, traditional tethered systems still provide the most reliable, high-speed data transmission and continuous power for many applications.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 279
+          }
+        ]
+      },
+      {
+        "line_index": 22,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 23,
+        "raw_text": "For small observation ROVs, compact acoustic modems like those from Water Linked or EvoLogics would be suitable for general control and sensor data transmission over longer distances, while optical modems like Hydromea's LUMA series would be excellent for tasks requiring high-bandwidth data, such as real-time video streaming, within a closer operational range.",
+        "tagged_text": "<null>For small observation ROVs, compact acoustic modems like those from </null><BrandPositioning>Water Linked</BrandPositioning><null> or </null><BrandPositioning>EvoLogics</BrandPositioning><null> would be suitable for general control and sensor data transmission over longer distances, while optical modems like </null><BrandPositioning>Hydromea</BrandPositioning><null>'s </null><BrandPositioning>LUMA series</BrandPositioning><null> </null><StrongRecommendation>would be excellent for</StrongRecommendation><null> tasks requiring high-bandwidth data, such as real-time video streaming, within a closer operational range.</null>",
+        "spans": [
+          {
+            "text": "For small observation ROVs, compact acoustic modems like those from ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 68
+          },
+          {
+            "text": "Water Linked",
+            "category": "Brand Positioning",
+            "char_start": 68,
+            "char_end": 80
+          },
+          {
+            "text": " or ",
+            "category": null,
+            "char_start": 80,
+            "char_end": 84
+          },
+          {
+            "text": "EvoLogics",
+            "category": "Brand Positioning",
+            "char_start": 84,
+            "char_end": 93
+          },
+          {
+            "text": " would be suitable for general control and sensor data transmission over longer distances, while optical modems like ",
+            "category": null,
+            "char_start": 93,
+            "char_end": 210
+          },
+          {
+            "text": "Hydromea",
+            "category": "Brand Positioning",
+            "char_start": 210,
+            "char_end": 218
+          },
+          {
+            "text": "'s ",
+            "category": null,
+            "char_start": 218,
+            "char_end": 221
+          },
+          {
+            "text": "LUMA series",
+            "category": "Brand Positioning",
+            "char_start": 221,
+            "char_end": 232
+          },
+          {
+            "text": " ",
+            "category": null,
+            "char_start": 232,
+            "char_end": 233
+          },
+          {
+            "text": "would be excellent for",
+            "category": "Strong Recommendation",
+            "char_start": 233,
+            "char_end": 255
+          },
+          {
+            "text": " tasks requiring high-bandwidth data, such as real-time video streaming, within a closer operational range.",
+            "category": null,
+            "char_start": 255,
+            "char_end": 362
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "answer_id": "visibility_report_01kjr77f28enbaacfzme11gh36.query_01khx44wpeenark5c6htxexdzp.response",
+      "model": null,
+      "total_lines": 24,
+      "span_counts": {
+        "Statistical Use": 7,
+        "Credibility Signal": 0,
+        "Strong Recommendation": 3,
+        "Brand Positioning": 18
+      }
+    }
+  }
+}

@@ -1,0 +1,637 @@
+{
+  "visibility_report_01kjr77f0ke8m8jy9kd7pefvsh.query_01khx473s4fvhaahrv5239dcws.response": {
+    "answer_id": "visibility_report_01kjr77f0ke8m8jy9kd7pefvsh.query_01khx473s4fvhaahrv5239dcws.response",
+    "query_id": "query_01khx473s4fvhaahrv5239dcws",
+    "model": null,
+    "provider": "PERPLEXITY",
+    "lines": [
+      {
+        "line_index": 0,
+        "raw_text": "**AI-driven adaptive acoustic communications using software-defined radio (SDR) stands out as the most energy-efficient method for transmitting data between two underwater points, by performing local data processing and dynamically optimizing transmission parameters.**",
+        "tagged_text": "<null>**AI-driven adaptive acoustic communications using software-defined radio (SDR) </null><StrongRecommendation>stands out as the most energy-efficient method for transmitting data between two underwater points</StrongRecommendation><null>, by performing local data processing and dynamically optimizing transmission parameters.**</null>",
+        "spans": [
+          {
+            "text": "**AI-driven adaptive acoustic communications using software-defined radio (SDR) ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 80
+          },
+          {
+            "text": "stands out as the most energy-efficient method for transmitting data between two underwater points",
+            "category": "Strong Recommendation",
+            "char_start": 80,
+            "char_end": 178
+          },
+          {
+            "text": ", by performing local data processing and dynamically optimizing transmission parameters.**",
+            "category": null,
+            "char_start": 178,
+            "char_end": 269
+          }
+        ]
+      },
+      {
+        "line_index": 1,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 2,
+        "raw_text": "### Why This Approach Excels",
+        "tagged_text": "<null>### Why This Approach Excels</null>",
+        "spans": [
+          {
+            "text": "### Why This Approach Excels",
+            "category": null,
+            "char_start": 0,
+            "char_end": 28
+          }
+        ]
+      },
+      {
+        "line_index": 3,
+        "raw_text": "Traditional underwater communication faces severe challenges: radio waves attenuate rapidly in water, limiting range; optical methods (like VLC) work short distances but struggle across air-water boundaries or deeper waters; acoustic waves dominate due to better propagation but suffer low bandwidth, high latency, and high energy use for raw data transmission[1][3].",
+        "tagged_text": "<null>Traditional underwater communication faces severe challenges: radio waves attenuate rapidly in water, limiting range; optical methods (like VLC) work short distances but struggle across air-water boundaries or deeper waters; acoustic waves dominate due to better propagation but suffer low bandwidth, high latency, and high energy use for raw data transmission[1][3].</null>",
+        "spans": [
+          {
+            "text": "Traditional underwater communication faces severe challenges: radio waves attenuate rapidly in water, limiting range; optical methods (like VLC) work short distances but struggle across air-water boundaries or deeper waters; acoustic waves dominate due to better propagation but suffer low bandwidth, high latency, and high energy use for raw data transmission[1][3].",
+            "category": null,
+            "char_start": 0,
+            "char_end": 367
+          }
+        ]
+      },
+      {
+        "line_index": 4,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 5,
+        "raw_text": "The leading solution from recent research integrates **lightweight AI models** (e.g., CNNs) directly on underwater sensor nodes for tasks like marine species classification. Instead of sending raw sensor data—which consumes massive energy—the nodes transmit only compact results (e.g., classifications), slashing data volume[1].",
+        "tagged_text": "<null>The </null><StrongRecommendation>leading solution</StrongRecommendation><null> from recent research integrates **lightweight AI models** (e.g., CNNs) directly on underwater sensor nodes for tasks like marine species classification. Instead of sending raw sensor data—which consumes massive energy—the nodes transmit only compact results (e.g., classifications), slashing data volume[1].</null>",
+        "spans": [
+          {
+            "text": "The ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 4
+          },
+          {
+            "text": "leading solution",
+            "category": "Strong Recommendation",
+            "char_start": 4,
+            "char_end": 20
+          },
+          {
+            "text": " from recent research integrates **lightweight AI models** (e.g., CNNs) directly on underwater sensor nodes for tasks like marine species classification. Instead of sending raw sensor data—which consumes massive energy—the nodes transmit only compact results (e.g., classifications), slashing data volume[1].",
+            "category": null,
+            "char_start": 20,
+            "char_end": 328
+          }
+        ]
+      },
+      {
+        "line_index": 6,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 7,
+        "raw_text": "### Key Energy-Saving Mechanisms",
+        "tagged_text": "<null>### Key Energy-Saving Mechanisms</null>",
+        "spans": [
+          {
+            "text": "### Key Energy-Saving Mechanisms",
+            "category": null,
+            "char_start": 0,
+            "char_end": 32
+          }
+        ]
+      },
+      {
+        "line_index": 8,
+        "raw_text": "- **Localized Inference**: AI processes data onboard, reducing transmission needs by up to orders of magnitude[1].",
+        "tagged_text": "<null>- **Localized Inference**: AI processes data onboard, reducing transmission needs by up to orders of magnitude[1].</null>",
+        "spans": [
+          {
+            "text": "- **Localized Inference**: AI processes data onboard, reducing transmission needs by up to orders of magnitude[1].",
+            "category": null,
+            "char_start": 0,
+            "char_end": 114
+          }
+        ]
+      },
+      {
+        "line_index": 9,
+        "raw_text": "- **Adaptive Transmission via SDR**: Dynamically adjusts **modulation schemes**, **packet length**, and **power** based on data semantics, channel conditions, and environmental impact. GNU Radio simulations confirm lower energy use, bit error rate (BER), and delay compared to fixed-parameter systems[1].",
+        "tagged_text": "<null>- **Adaptive Transmission via SDR**: Dynamically adjusts **modulation schemes**, **packet length**, and **power** based on data semantics, channel conditions, and environmental impact. </null><BrandPositioning>GNU Radio</BrandPositioning><null> simulations confirm lower energy use, bit error rate (BER), and delay compared to fixed-parameter systems[1].</null>",
+        "spans": [
+          {
+            "text": "- **Adaptive Transmission via SDR**: Dynamically adjusts **modulation schemes**, **packet length**, and **power** based on data semantics, channel conditions, and environmental impact. ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 185
+          },
+          {
+            "text": "GNU Radio",
+            "category": "Brand Positioning",
+            "char_start": 185,
+            "char_end": 194
+          },
+          {
+            "text": " simulations confirm lower energy use, bit error rate (BER), and delay compared to fixed-parameter systems[1].",
+            "category": null,
+            "char_start": 194,
+            "char_end": 304
+          }
+        ]
+      },
+      {
+        "line_index": 10,
+        "raw_text": "- **Performance Validation**: Balances throughput, reliability, and sustainability; outperforms non-adaptive acoustics[1][3].",
+        "tagged_text": "<null>- **Performance Validation**: Balances throughput, reliability, and sustainability; </null><StrongRecommendation>outperforms non-adaptive acoustics</StrongRecommendation><null>[1][3].</null>",
+        "spans": [
+          {
+            "text": "- **Performance Validation**: Balances throughput, reliability, and sustainability; ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 84
+          },
+          {
+            "text": "outperforms non-adaptive acoustics",
+            "category": "Strong Recommendation",
+            "char_start": 84,
+            "char_end": 118
+          },
+          {
+            "text": "[1][3].",
+            "category": null,
+            "char_start": 118,
+            "char_end": 125
+          }
+        ]
+      },
+      {
+        "line_index": 11,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 12,
+        "raw_text": "| Method | Pros for Energy Efficiency | Cons/Limitations | Best Use Case |",
+        "tagged_text": "<null>| Method | Pros for Energy Efficiency | Cons/Limitations | Best Use Case |</null>",
+        "spans": [
+          {
+            "text": "| Method | Pros for Energy Efficiency | Cons/Limitations | Best Use Case |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 74
+          }
+        ]
+      },
+      {
+        "line_index": 13,
+        "raw_text": "|--------|----------------------------|------------------|---------------|",
+        "tagged_text": "<null>|--------|----------------------------|------------------|---------------|</null>",
+        "spans": [
+          {
+            "text": "|--------|----------------------------|------------------|---------------|",
+            "category": null,
+            "char_start": 0,
+            "char_end": 74
+          }
+        ]
+      },
+      {
+        "line_index": 14,
+        "raw_text": "| **AI-SDR Acoustics** [1] | Local AI cuts data volume; adaptive params minimize power | Requires onboard compute | Long-term sensor networks (e.g., monitoring) |",
+        "tagged_text": "<null>| **AI-SDR Acoustics** [1] | Local AI cuts data volume; adaptive params minimize power | Requires onboard compute | Long-term sensor networks (e.g., monitoring) |</null>",
+        "spans": [
+          {
+            "text": "| **AI-SDR Acoustics** [1] | Local AI cuts data volume; adaptive params minimize power | Requires onboard compute | Long-term sensor networks (e.g., monitoring) |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 162
+          }
+        ]
+      },
+      {
+        "line_index": 15,
+        "raw_text": "| **Air-Water VLC** [2] | Optimizes LED power/UAV height (up to 47% savings at 10m depth) | Short range; not pure underwater-to-underwater | Surface-to-subsurface links |",
+        "tagged_text": "<null>| **Air-Water VLC** [2] | Optimizes LED power/UAV height (</null><StatisticalUse>up to 47% savings</StatisticalUse><null> at </null><StatisticalUse>10m depth</StatisticalUse><null>) | Short range; not pure underwater-to-underwater | Surface-to-subsurface links |</null>",
+        "spans": [
+          {
+            "text": "| **Air-Water VLC** [2] | Optimizes LED power/UAV height (",
+            "category": null,
+            "char_start": 0,
+            "char_end": 58
+          },
+          {
+            "text": "up to 47% savings",
+            "category": "Statistical Use",
+            "char_start": 58,
+            "char_end": 75
+          },
+          {
+            "text": " at ",
+            "category": null,
+            "char_start": 75,
+            "char_end": 79
+          },
+          {
+            "text": "10m depth",
+            "category": "Statistical Use",
+            "char_start": 79,
+            "char_end": 88
+          },
+          {
+            "text": ") | Short range; not pure underwater-to-underwater | Surface-to-subsurface links |",
+            "category": null,
+            "char_start": 88,
+            "char_end": 170
+          }
+        ]
+      },
+      {
+        "line_index": 16,
+        "raw_text": "| **Standard Acoustics** [3] | Reliable propagation | High energy for raw data; low bandwidth | Basic short bursts |",
+        "tagged_text": "<null>| **Standard Acoustics** [3] | Reliable propagation | High energy for raw data; low bandwidth | Basic short bursts |</null>",
+        "spans": [
+          {
+            "text": "| **Standard Acoustics** [3] | Reliable propagation | High energy for raw data; low bandwidth | Basic short bursts |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 116
+          }
+        ]
+      },
+      {
+        "line_index": 17,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 18,
+        "raw_text": "### Practical Considerations",
+        "tagged_text": "<null>### Practical Considerations</null>",
+        "spans": [
+          {
+            "text": "### Practical Considerations",
+            "category": null,
+            "char_start": 0,
+            "char_end": 28
+          }
+        ]
+      },
+      {
+        "line_index": 19,
+        "raw_text": "This AI-SDR framework is simulated and validated for real-time deployment on SDR platforms like GNU Radio, making it scalable for battery-constrained nodes in wireless underwater sensor networks (UWSNs)[1]. For pure point-to-point (no air interface), it outperforms alternatives by addressing the intertwined issues of reliability and energy[3].",
+        "tagged_text": "<null>This AI-SDR framework is simulated and validated for real-time deployment on SDR platforms like </null><BrandPositioning>GNU Radio</BrandPositioning><null>, making it scalable for battery-constrained nodes in wireless underwater sensor networks (UWSNs)[1]. For pure point-to-point (no air interface), </null><StrongRecommendation>it outperforms alternatives</StrongRecommendation><null> by addressing the intertwined issues of reliability and energy[3].</null>",
+        "spans": [
+          {
+            "text": "This AI-SDR framework is simulated and validated for real-time deployment on SDR platforms like ",
+            "category": null,
+            "char_start": 0,
+            "char_end": 96
+          },
+          {
+            "text": "GNU Radio",
+            "category": "Brand Positioning",
+            "char_start": 96,
+            "char_end": 105
+          },
+          {
+            "text": ", making it scalable for battery-constrained nodes in wireless underwater sensor networks (UWSNs)[1]. For pure point-to-point (no air interface), ",
+            "category": null,
+            "char_start": 105,
+            "char_end": 251
+          },
+          {
+            "text": "it outperforms alternatives",
+            "category": "Strong Recommendation",
+            "char_start": 251,
+            "char_end": 278
+          },
+          {
+            "text": " by addressing the intertwined issues of reliability and energy[3].",
+            "category": null,
+            "char_start": 278,
+            "char_end": 345
+          }
+        ]
+      },
+      {
+        "line_index": 20,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 21,
+        "raw_text": "No single method is universally \"most efficient\" without specifics like distance, data rate, or depth—acoustics with AI adaptations lead current research for general underwater links[1]. What distance or data type are you targeting?",
+        "tagged_text": "<null>No single method is universally \"most efficient\" without specifics like distance, data rate, or depth—acoustics with AI adaptations lead current research for general underwater links[1]. What distance or data type are you targeting?</null>",
+        "spans": [
+          {
+            "text": "No single method is universally \"most efficient\" without specifics like distance, data rate, or depth—acoustics with AI adaptations lead current research for general underwater links[1]. What distance or data type are you targeting?",
+            "category": null,
+            "char_start": 0,
+            "char_end": 232
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "answer_id": "visibility_report_01kjr77f0ke8m8jy9kd7pefvsh.query_01khx473s4fvhaahrv5239dcws.response",
+      "model": null,
+      "total_lines": 22,
+      "span_counts": {
+        "Statistical Use": 2,
+        "Credibility Signal": 0,
+        "Strong Recommendation": 4,
+        "Brand Positioning": 2
+      }
+    }
+  },
+  "visibility_report_01kjr77f0ke8m8jy9kd7pefvsh.query_01khxhsh6ce03vakbnt4re6k8f.response": {
+    "answer_id": "visibility_report_01kjr77f0ke8m8jy9kd7pefvsh.query_01khxhsh6ce03vakbnt4re6k8f.response",
+    "query_id": "query_01khxhsh6ce03vakbnt4re6k8f",
+    "model": null,
+    "provider": "PERPLEXITY",
+    "lines": [
+      {
+        "line_index": 0,
+        "raw_text": "**ThinGap's slotless brushless DC motors (LS and TG Series) stand out as among the most efficient hubless (slotless) options for high-reliability subsea applications, thanks to their high torque-to-diameter ratio, zero-cogging design, and passive cooling via ambient seawater.** These motors enable direct-drive thrusters without gearboxes, minimizing failure points, weight, and complexity in ROVs, UUVs, and manned submersibles.[1]",
+        "tagged_text": "<null>**ThinGap's slotless brushless DC motors (LS and TG Series) stand out as among the most efficient hubless (slotless) options for high-reliability subsea applications, thanks to their high torque-to-diameter ratio, zero-cogging design, and passive cooling via ambient seawater.** These motors enable direct-drive thrusters without gearboxes, minimizing failure points, weight, and complexity in ROVs, UUVs, and manned submersibles.[1]</null>",
+        "spans": [
+          {
+            "text": "**ThinGap's slotless brushless DC motors (LS and TG Series) stand out as among the most efficient hubless (slotless) options for high-reliability subsea applications, thanks to their high torque-to-diameter ratio, zero-cogging design, and passive cooling via ambient seawater.** These motors enable direct-drive thrusters without gearboxes, minimizing failure points, weight, and complexity in ROVs, UUVs, and manned submersibles.[1]",
+            "category": null,
+            "char_start": 0,
+            "char_end": 433
+          }
+        ]
+      },
+      {
+        "line_index": 1,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 2,
+        "raw_text": "### Key Features of ThinGap Slotless Motors for Subsea Use",
+        "tagged_text": "<null>### Key Features of ThinGap Slotless Motors for Subsea Use</null>",
+        "spans": [
+          {
+            "text": "### Key Features of ThinGap Slotless Motors for Subsea Use",
+            "category": null,
+            "char_start": 0,
+            "char_end": 58
+          }
+        ]
+      },
+      {
+        "line_index": 3,
+        "raw_text": "- **Efficiency and Design**: Ironless stator provides lightweight construction, low drag in liquids, and ring-shaped geometry for flexible impeller/propeller integration. Customizable diameters from 25 mm to 393 mm suit various depths and pressures.[1]",
+        "tagged_text": "<null>- **Efficiency and Design**: Ironless stator provides lightweight construction, low drag in liquids, and ring-shaped geometry for flexible impeller/propeller integration. Customizable diameters from 25 mm to 393 mm suit various depths and pressures.[1]</null>",
+        "spans": [
+          {
+            "text": "- **Efficiency and Design**: Ironless stator provides lightweight construction, low drag in liquids, and ring-shaped geometry for flexible impeller/propeller integration. Customizable diameters from 25 mm to 393 mm suit various depths and pressures.[1]",
+            "category": null,
+            "char_start": 0,
+            "char_end": 252
+          }
+        ]
+      },
+      {
+        "line_index": 4,
+        "raw_text": "- **Reliability**: Proven in commercial and defense marine systems over two decades, with no cogging for smooth operation and reduced mechanical wear.[1]",
+        "tagged_text": "<null>- **Reliability**: Proven in commercial and defense marine systems over two decades, with no cogging for smooth operation and reduced mechanical wear.[1]</null>",
+        "spans": [
+          {
+            "text": "- **Reliability**: Proven in commercial and defense marine systems over two decades, with no cogging for smooth operation and reduced mechanical wear.[1]",
+            "category": null,
+            "char_start": 0,
+            "char_end": 153
+          }
+        ]
+      },
+      {
+        "line_index": 5,
+        "raw_text": "- **Underwater Advantages**: High power density eliminates gearboxes; passive cooling leverages seawater, ideal for compact, maintenance-free setups.[1]",
+        "tagged_text": "<null>- **Underwater Advantages**: High power density eliminates gearboxes; passive cooling leverages seawater, ideal for compact, maintenance-free setups.[1]</null>",
+        "spans": [
+          {
+            "text": "- **Underwater Advantages**: High power density eliminates gearboxes; passive cooling leverages seawater, ideal for compact, maintenance-free setups.[1]",
+            "category": null,
+            "char_start": 0,
+            "char_end": 152
+          }
+        ]
+      },
+      {
+        "line_index": 6,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 7,
+        "raw_text": "### Comparison to Other High-Reliability Subsea Motors",
+        "tagged_text": "<null>### Comparison to Other High-Reliability Subsea Motors</null>",
+        "spans": [
+          {
+            "text": "### Comparison to Other High-Reliability Subsea Motors",
+            "category": null,
+            "char_start": 0,
+            "char_end": 54
+          }
+        ]
+      },
+      {
+        "line_index": 8,
+        "raw_text": "While no search results explicitly label other motors as \"hubless\" (a term synonymous with slotless/ironless designs that avoid traditional rotor hubs for better efficiency), brushless DC (BLDC) motors dominate subsea recommendations for their efficiency, brushless durability, and pressure tolerance. Here's a breakdown:",
+        "tagged_text": "<null>While no search results explicitly label other motors as \"hubless\" (a term synonymous with slotless/ironless designs that avoid traditional rotor hubs for better efficiency), brushless DC (BLDC) motors dominate subsea recommendations for their efficiency, brushless durability, and pressure tolerance. Here's a breakdown:</null>",
+        "spans": [
+          {
+            "text": "While no search results explicitly label other motors as \"hubless\" (a term synonymous with slotless/ironless designs that avoid traditional rotor hubs for better efficiency), brushless DC (BLDC) motors dominate subsea recommendations for their efficiency, brushless durability, and pressure tolerance. Here's a breakdown:",
+            "category": null,
+            "char_start": 0,
+            "char_end": 321
+          }
+        ]
+      },
+      {
+        "line_index": 9,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 10,
+        "raw_text": "| Manufacturer/Product | Motor Type | Key Subsea Strengths | Hubless/Slotless? | Max Depth/Notes |",
+        "tagged_text": "<null>| Manufacturer/Product | Motor Type | Key Subsea Strengths | Hubless/Slotless? | Max Depth/Notes |</null>",
+        "spans": [
+          {
+            "text": "| Manufacturer/Product | Motor Type | Key Subsea Strengths | Hubless/Slotless? | Max Depth/Notes |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 98
+          }
+        ]
+      },
+      {
+        "line_index": 11,
+        "raw_text": "|----------------------|------------|----------------------|-------------------|-----------------|",
+        "tagged_text": "<null>|----------------------|------------|----------------------|-------------------|-----------------|</null>",
+        "spans": [
+          {
+            "text": "|----------------------|------------|----------------------|-------------------|-----------------|",
+            "category": null,
+            "char_start": 0,
+            "char_end": 98
+          }
+        ]
+      },
+      {
+        "line_index": 12,
+        "raw_text": "| **ThinGap LS/TG Series** [1] | Slotless BLDC | Highest torque-to-diameter; passive cooling; direct-drive | **Yes** | Tailored for depth; 25-393 mm OD |",
+        "tagged_text": "<null>| **ThinGap LS/TG Series** [1] | Slotless BLDC | Highest torque-to-diameter; passive cooling; direct-drive | **Yes** | Tailored for depth; 25-393 mm OD |</null>",
+        "spans": [
+          {
+            "text": "| **ThinGap LS/TG Series** [1] | Slotless BLDC | Highest torque-to-diameter; passive cooling; direct-drive | **Yes** | Tailored for depth; 25-393 mm OD |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 153
+          }
+        ]
+      },
+      {
+        "line_index": 13,
+        "raw_text": "| **Hydrospace Group** [6] | Permanent-magnet BLDC (1–100 HP) | Superior power density, efficiency, thermal management; pressure-tolerant controllers | Not specified | Deep-sea; vertically integrated systems |",
+        "tagged_text": "<null>| **Hydrospace Group** [6] | Permanent-magnet BLDC (1–100 HP) | Superior power density, efficiency, thermal management; pressure-tolerant controllers | Not specified | Deep-sea; vertically integrated systems |</null>",
+        "spans": [
+          {
+            "text": "| **Hydrospace Group** [6] | Permanent-magnet BLDC (1–100 HP) | Superior power density, efficiency, thermal management; pressure-tolerant controllers | Not specified | Deep-sea; vertically integrated systems |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 209
+          }
+        ]
+      },
+      {
+        "line_index": 14,
+        "raw_text": "| **maxon Propeller Drives** [7] | Watertight BLDC | Compact, corrosion-free (titanium/plastic); up to 600 bar | Not specified | 6000 m immersion; modular/custom |",
+        "tagged_text": "<null>| **maxon Propeller Drives** [7] | Watertight BLDC | Compact, corrosion-free (titanium/plastic); up to 600 bar | Not specified | 6000 m immersion; modular/custom |</null>",
+        "spans": [
+          {
+            "text": "| **maxon Propeller Drives** [7] | Watertight BLDC | Compact, corrosion-free (titanium/plastic); up to 600 bar | Not specified | 6000 m immersion; modular/custom |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 163
+          }
+        ]
+      },
+      {
+        "line_index": 15,
+        "raw_text": "| **KDE Direct** [3] | BLDC | High efficiency, zero-vibration; strong IP ratings vs. salt/water | Not specified | Marine/oceanographic; US-engineered |",
+        "tagged_text": "<null>| **KDE Direct** [3] | BLDC | High efficiency, zero-vibration; strong IP ratings vs. salt/water | Not specified | Marine/oceanographic; US-engineered |</null>",
+        "spans": [
+          {
+            "text": "| **KDE Direct** [3] | BLDC | High efficiency, zero-vibration; strong IP ratings vs. salt/water | Not specified | Marine/oceanographic; US-engineered |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 151
+          }
+        ]
+      },
+      {
+        "line_index": 16,
+        "raw_text": "| **ElectroCraft RPX Series** [4][5] | BLDC | Efficient propulsion, precise positioning for UUVs | Not specified | Pairs with drives for robotic arms |",
+        "tagged_text": "<null>| **ElectroCraft RPX Series** [4][5] | BLDC | Efficient propulsion, precise positioning for UUVs | Not specified | Pairs with drives for robotic arms |</null>",
+        "spans": [
+          {
+            "text": "| **ElectroCraft RPX Series** [4][5] | BLDC | Efficient propulsion, precise positioning for UUVs | Not specified | Pairs with drives for robotic arms |",
+            "category": null,
+            "char_start": 0,
+            "char_end": 151
+          }
+        ]
+      },
+      {
+        "line_index": 17,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 18,
+        "raw_text": "BLDC motors generally outperform alternatives like stepper or AC induction motors in subsea environments due to reduced wear, higher efficiency, and better cooling—critical for high-reliability ops where maintenance is challenging.[2][6]",
+        "tagged_text": "<null>BLDC motors generally outperform alternatives like stepper or AC induction motors in subsea environments due to reduced wear, higher efficiency, and better cooling—critical for high-reliability ops where maintenance is challenging.[2][6]</null>",
+        "spans": [
+          {
+            "text": "BLDC motors generally outperform alternatives like stepper or AC induction motors in subsea environments due to reduced wear, higher efficiency, and better cooling—critical for high-reliability ops where maintenance is challenging.[2][6]",
+            "category": null,
+            "char_start": 0,
+            "char_end": 237
+          }
+        ]
+      },
+      {
+        "line_index": 19,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 20,
+        "raw_text": "**Note on Hubless Specificity**: Hubless motors prioritize low-inertia, high-efficiency designs (e.g., slotless for minimal cogging). ThinGap explicitly matches this profile; others are efficient BLDCs but may use slotted stators. Data is current as of available sources, focused on commercially deployed tech—no single \"most efficient\" benchmark across all due to application-specific testing.[1][2][6]",
+        "tagged_text": "<null>**Note on Hubless Specificity**: Hubless motors prioritize low-inertia, high-efficiency designs (e.g., slotless for minimal cogging). ThinGap explicitly matches this profile; others are efficient BLDCs but may use slotted stators. Data is current as of available sources, focused on commercially deployed tech—no single \"most efficient\" benchmark across all due to application-specific testing.[1][2][6]</null>",
+        "spans": [
+          {
+            "text": "**Note on Hubless Specificity**: Hubless motors prioritize low-inertia, high-efficiency designs (e.g., slotless for minimal cogging). ThinGap explicitly matches this profile; others are efficient BLDCs but may use slotted stators. Data is current as of available sources, focused on commercially deployed tech—no single \"most efficient\" benchmark across all due to application-specific testing.[1][2][6]",
+            "category": null,
+            "char_start": 0,
+            "char_end": 403
+          }
+        ]
+      },
+      {
+        "line_index": 21,
+        "raw_text": "",
+        "tagged_text": "",
+        "spans": []
+      },
+      {
+        "line_index": 22,
+        "raw_text": "For your project in Renens (VD), CH, are you targeting a specific depth, power range, or vehicle type like AUV/ROV? I can refine recommendations further.",
+        "tagged_text": "<null>For your project in Renens (VD), CH, are you targeting a specific depth, power range, or vehicle type like AUV/ROV? I can refine recommendations further.</null>",
+        "spans": [
+          {
+            "text": "For your project in Renens (VD), CH, are you targeting a specific depth, power range, or vehicle type like AUV/ROV? I can refine recommendations further.",
+            "category": null,
+            "char_start": 0,
+            "char_end": 153
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "answer_id": "visibility_report_01kjr77f0ke8m8jy9kd7pefvsh.query_01khxhsh6ce03vakbnt4re6k8f.response",
+      "model": null,
+      "total_lines": 23,
+      "span_counts": {
+        "Statistical Use": 0,
+        "Credibility Signal": 0,
+        "Strong Recommendation": 0,
+        "Brand Positioning": 0
+      }
+    }
+  }
+}
