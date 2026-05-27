@@ -519,8 +519,11 @@ def build_stats_df(corpus: LinkedCorpus, metrics_index: Dict[str, dict] | None =
 
 
 def _on_exp_change() -> None:
-    """Called by the selectbox on_change — clears stale query id before the rerun."""
-    st.session_state.pop("qid", None)
+    """Called by the selectbox on_change.
+
+    Keep the selected query id stable across experiment switches.
+    """
+    return
 
 # Resolve current experiment from session state before any rendering
 _cur_exp = st.session_state.get("sel_exp", EXPERIMENTS[0] if EXPERIMENTS else "")
@@ -942,7 +945,7 @@ if _PAGE == "📊 Hydromea Stats":
     with _cohort_col:
         cohort_scope = st.radio(
             "Cohort scope",
-            ["All queries", "Hydromea Mentioned"],
+            ["All queries", "Hydromea Mentioned", "Direct Relevance to page changes"],
             index=0,
             horizontal=False,
         )
@@ -960,6 +963,12 @@ if _PAGE == "📊 Hydromea Stats":
             default=provider_options,
         )
 
+    _page_change_sourced_keys = [
+        "product_diskdrive_sourced",
+        "product_luma_sourced",
+        "product_exray_sourced",
+    ]
+
     if not selected_tag_categories:
         st.info("Select at least one tag category to render partition charts.")
     else:
@@ -967,6 +976,23 @@ if _PAGE == "📊 Hydromea Stats":
             # Mentioned-only comparison in each version independently.
             tag_current_view = tag_current_df[tag_current_df["hydromea_mentioned"]].copy()
             tag_baseline_view = tag_baseline_df[tag_baseline_df["hydromea_mentioned"]].copy()
+        elif cohort_scope == "Direct Relevance to page changes":
+            _cur_metrics = _load_metrics_index(_cur_exp)
+            _base_metrics = _load_metrics_index(_BL_EXP) if _BL_EXP in EXPERIMENTS else {}
+
+            def _is_page_change_relevant(_m: dict) -> bool:
+                return any(bool(_m.get(_k, False)) for _k in _page_change_sourced_keys)
+
+            _cur_ids = [
+                _aid for _aid in tag_current_df["answer_id"].tolist()
+                if _is_page_change_relevant(_cur_metrics.get(_aid, {}))
+            ]
+            _base_ids = [
+                _aid for _aid in tag_baseline_df["answer_id"].tolist()
+                if _is_page_change_relevant(_base_metrics.get(_aid, {}))
+            ]
+            tag_current_view = tag_current_df[tag_current_df["answer_id"].isin(_cur_ids)].copy()
+            tag_baseline_view = tag_baseline_df[tag_baseline_df["answer_id"].isin(_base_ids)].copy()
         else:
             tag_current_view = tag_current_df.copy()
             tag_baseline_view = tag_baseline_df.copy()
@@ -979,6 +1005,11 @@ if _PAGE == "📊 Hydromea Stats":
             st.info(
                 "Hydromea Mentioned compares current answers where hydromea is mentioned "
                 "against baseline answers where hydromea is mentioned."
+            )
+        elif cohort_scope == "Direct Relevance to page changes":
+            st.info(
+                "Direct Relevance to page changes keeps only answers whose sources include at least one "
+                "of these pages: DiskDrive, Luma, or Exray."
             )
 
         # Ensure tag categories are numeric
@@ -1473,14 +1504,14 @@ if _PAGE == "📊 Hydromea Stats":
             _all3_parts.extend(_parts)
             _corpus_rows.append({
                 "Version":  _exp,
-                "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "AI Model": _pm["label"],
                 "Answers":  _joined,
             })
 
         # Virtual "All 3" row
         _corpus_rows.append({
             "Version":  _exp,
-            "AI Model": "🤖 All 3",
+            "AI Model": "All 3",
             "Answers":  "\n<--><--><-->\n".join(_all3_parts),
         })
 
@@ -1545,7 +1576,7 @@ if _PAGE == "📊 Hydromea Stats":
 
             _mention_rows.append({
                 "Version": _exp,
-                "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "AI Model": _pm["label"],
                 "Mentioned": "\n<--><--><-->\n".join(_mentioned_parts),
                 "Not Mentioned": "\n<--><--><-->\n".join(_not_mentioned_parts),
             })
@@ -1611,14 +1642,14 @@ if _PAGE == "📊 Hydromea Stats":
 
             _cat_row: dict = {
                 "Version": _exp,
-                "AI Model": f'{_pm["icon"]} {_pm["label"]}',
+                "AI Model": _pm["label"],
             }
             for _t in _all_cat_cols:
                 _cat_row[_t] = "\n<--><--><-->\n".join(_by_theme[_t])
             _cat_rows.append(_cat_row)
 
         # "All 3" virtual row
-        _all3_row: dict = {"Version": _exp, "AI Model": "🤖 All 3"}
+        _all3_row: dict = {"Version": _exp, "AI Model": "All 3"}
         for _t in _all_cat_cols:
             _all3_row[_t] = "\n<--><--><-->\n".join(_all3_by_theme[_t])
         _cat_rows.append(_all3_row)
