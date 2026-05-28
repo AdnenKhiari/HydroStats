@@ -831,7 +831,7 @@ if _PAGE == "🗂️ Aggregated Tags":
         "Open a card to view full content."
     )
 
-    _agg: Dict[tuple, List[str]] = {}
+    _agg: Dict[tuple, List[dict]] = {}
     for _exp in EXPERIMENTS:
         _exp_corpus = _load(_exp)
         _tagged_map = _load_tagged_answers(_exp)
@@ -844,6 +844,10 @@ if _PAGE == "🗂️ Aggregated Tags":
                 continue
 
             _provider_label = PRODUCT_META.get(_ans.product, _DMETA)["label"]
+            # Prefer query_id from the tagged payload (always populated); fall back to corpus
+            _qid = _payload.get("query_id") or (_ans.query_id or "")
+            _query_obj = _exp_corpus.queries.get(_qid)
+            _query_text = (_query_obj.text if _query_obj else "") or _qid
             _lines = _payload.get("lines") or []
             _snips_by_cat = _extract_tag_snippets(_lines)
             for _cat in TAG_PARTITION_CATEGORIES:
@@ -851,7 +855,15 @@ if _PAGE == "🗂️ Aggregated Tags":
                 if not _snips:
                     continue
                 _k = (_exp, _provider_label, _cat)
-                _agg.setdefault(_k, []).extend(_snips)
+                _agg.setdefault(_k, []).extend(
+                    {
+                        "text": _s,
+                        "answer_id": _aid,
+                        "query_id": _qid,
+                        "query_text": _query_text,
+                    }
+                    for _s in _snips
+                )
 
     if not _agg:
         st.info("No aggregated tags available.")
@@ -870,14 +882,52 @@ if _PAGE == "🗂️ Aggregated Tags":
                     _k = (_exp, _prov, _cat)
                     if _k not in _agg:
                         continue
-                    _snips = [s for s in _agg[_k] if s]
-                    if not _snips:
+                    _items = [x for x in _agg[_k] if x.get("text")]
+                    if not _items:
                         continue
-                    _section_text = "\n".join(_snips)
-                    _title = f"{_prov} · {_cat} ({len(_snips)} tags)"
+                    _section_text = "\n".join(x["text"] for x in _items)
+                    _title = f"{_prov} · {_cat} ({len(_items)} tags)"
                     with st.expander(_title, expanded=False):
                         st.code(_section_text, language="text")
-                        st.caption("Use the copy button in the code block to copy this section.")
+                        _preview_html: List[str] = []
+                        for _it in _items:
+                            _tip = _it["query_text"].replace("'", "&#39;").replace('"', "&quot;")
+                            _txt = _html.escape(_it["text"])
+                            _preview_html.append(
+                                f"<div style='margin:3px 0;line-height:1.6;'>"
+                                f"<span class='snip-tip' data-tip='{_tip}' "
+                                f"style='color:#111827;cursor:help;"
+                                f"border-bottom:1px dotted #94a3b8;'>{_txt}</span>"
+                                f"</div>"
+                            )
+                        st.markdown(
+                            """<style>
+.snip-tip { position: relative; }
+.snip-tip::after {
+  content: attr(data-tip);
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 0;
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  max-width: 420px;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+.snip-tip:hover::after { display: block; }
+</style>
+<div style='font-size:11px;color:#94a3b8;margin:6px 0 4px;'>"""
+                            "Hover over a snippet to see its source query."
+                            "</div>"
+                            + "".join(_preview_html),
+                            unsafe_allow_html=True,
+                        )
 
             st.divider()
 
