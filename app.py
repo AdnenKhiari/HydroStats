@@ -600,6 +600,19 @@ def _render_tagged_lines(lines: List[dict]) -> str:
     return "<br>".join(rendered_lines)
 
 
+def _extract_tag_snippets(lines: List[dict]) -> Dict[str, List[str]]:
+    """Extract plain-text tagged snippets grouped by category."""
+    out: Dict[str, List[str]] = {k: [] for k in TAG_PARTITION_CATEGORIES}
+    for line in lines or []:
+        for span in line.get("spans", []) or []:
+            cat = span.get("category")
+            txt = (span.get("text") or "").strip()
+            if not cat or not txt or cat not in out:
+                continue
+            out[cat].append(txt)
+    return out
+
+
 def _normalize_tag_counts(raw_counts: dict) -> Dict[str, int]:
     """Normalize arbitrary category counts into known partition categories."""
     normalized = {k: 0 for k in TAG_PARTITION_CATEGORIES}
@@ -736,7 +749,7 @@ with st.sidebar:
     st.divider()
 
     _PAGE = st.radio(
-        "nav", ["📋 Explorer", "📊 Hydromea Stats"],
+        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags"],
         key="nav_page",
         label_visibility="collapsed",
     )
@@ -811,6 +824,65 @@ with st.sidebar:
 # ─────────────────────────────────────────────────────────────────────────────
 # Stats page (shown when _PAGE == "📊 Hydromea Stats")
 # ─────────────────────────────────────────────────────────────────────────────
+if _PAGE == "🗂️ Aggregated Tags":
+    st.markdown("### Aggregated Tags")
+    st.caption(
+        "Stacked extracted tag snippets grouped by Version × ChatBot × Tag. "
+        "Open a card to view full content."
+    )
+
+    _agg: Dict[tuple, List[str]] = {}
+    for _exp in EXPERIMENTS:
+        _exp_corpus = _load(_exp)
+        _tagged_map = _load_tagged_answers(_exp)
+
+        for _aid, _payload in _tagged_map.items():
+            _ans = _exp_corpus.answers.get(_aid)
+            if _ans is None:
+                continue
+            if not _ans.product or _ans.product.startswith("_"):
+                continue
+
+            _provider_label = PRODUCT_META.get(_ans.product, _DMETA)["label"]
+            _lines = _payload.get("lines") or []
+            _snips_by_cat = _extract_tag_snippets(_lines)
+            for _cat in TAG_PARTITION_CATEGORIES:
+                _snips = _snips_by_cat.get(_cat, [])
+                if not _snips:
+                    continue
+                _k = (_exp, _provider_label, _cat)
+                _agg.setdefault(_k, []).extend(_snips)
+
+    if not _agg:
+        st.info("No aggregated tags available.")
+    else:
+        for _exp in EXPERIMENTS:
+            st.markdown(f"**{_exp}**")
+            _exp_keys = [k for k in _agg.keys() if k[0] == _exp]
+            if not _exp_keys:
+                st.caption("No tagged snippets for this version.")
+                continue
+
+            _providers = sorted({k[1] for k in _exp_keys})
+            for _prov in _providers:
+                _prov_keys = [k for k in _exp_keys if k[1] == _prov]
+                for _cat in TAG_PARTITION_CATEGORIES:
+                    _k = (_exp, _prov, _cat)
+                    if _k not in _agg:
+                        continue
+                    _snips = [s for s in _agg[_k] if s]
+                    if not _snips:
+                        continue
+                    _section_text = "\n".join(_snips)
+                    _title = f"{_prov} · {_cat} ({len(_snips)} tags)"
+                    with st.expander(_title, expanded=False):
+                        st.code(_section_text, language="text")
+                        st.caption("Use the copy button in the code block to copy this section.")
+
+            st.divider()
+
+    st.stop()
+
 if _PAGE == "📊 Hydromea Stats":
     df = build_stats_df(corpus, answer_metrics_index)
     products_all = sorted(p for p in corpus.by_product if not p.startswith("_"))
