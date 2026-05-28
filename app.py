@@ -5,10 +5,12 @@ import html as _html
 import json
 import pathlib
 import re
+import urllib.parse
 from typing import Dict, List
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import streamlit.components.v1 as _components
 from main import Answer, LinkedCorpus, build_corpus, list_experiments
 
 
@@ -519,11 +521,29 @@ def build_stats_df(corpus: LinkedCorpus, metrics_index: Dict[str, dict] | None =
 
 
 def _on_exp_change() -> None:
-    """Called by the selectbox on_change.
+    """Called by the selectbox on_change."""
+    pass
 
-    Keep the selected query id stable across experiment switches.
-    """
-    return
+_PAGE_URL_MAP = {
+    "explorer": "📋 Explorer",
+    "stats":    "📊 Hydromea Stats",
+    "tags":     "🗂️ Aggregated Tags",
+}
+_PAGE_KEY_MAP = {v: k for k, v in _PAGE_URL_MAP.items()}
+
+# ── Bootstrap session state from URL query params (first load only) ───────────
+_qp = st.query_params
+if "sel_exp" not in st.session_state:
+    # Prefer URL param, fall back to first experiment
+    _exp_from_url = _qp.get("exp", "")
+    st.session_state["sel_exp"] = (
+        _exp_from_url if _exp_from_url in EXPERIMENTS
+        else (EXPERIMENTS[0] if EXPERIMENTS else "")
+    )
+if "qid" not in st.session_state and "qid" in _qp:
+    st.session_state["qid"] = _qp["qid"]
+if "nav_page" not in st.session_state:
+    st.session_state["nav_page"] = _PAGE_URL_MAP.get(_qp.get("page", ""), "📋 Explorer")
 
 # Resolve current experiment from session state before any rendering
 _cur_exp = st.session_state.get("sel_exp", EXPERIMENTS[0] if EXPERIMENTS else "")
@@ -731,7 +751,6 @@ with st.sidebar:
     st.selectbox(
         "exp",
         EXPERIMENTS,
-        index=EXPERIMENTS.index(_cur_exp) if _cur_exp in EXPERIMENTS else 0,
         key="sel_exp",
         on_change=_on_exp_change,
         label_visibility="collapsed",
@@ -821,6 +840,15 @@ with st.sidebar:
             st.session_state.qid = q.query_id
             st.rerun()
 
+# ── Sync current state → URL (single authoritative point) ────────────────────
+_url_params: dict = {
+    "exp":  _cur_exp,
+    "page": _PAGE_KEY_MAP.get(_PAGE, "explorer"),
+}
+if st.session_state.get("qid"):
+    _url_params["qid"] = st.session_state.qid
+st.query_params.from_dict(_url_params)
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Stats page (shown when _PAGE == "📊 Hydromea Stats")
 # ─────────────────────────────────────────────────────────────────────────────
@@ -889,43 +917,51 @@ if _PAGE == "🗂️ Aggregated Tags":
                     _title = f"{_prov} · {_cat} ({len(_items)} tags)"
                     with st.expander(_title, expanded=False):
                         st.code(_section_text, language="text")
-                        _preview_html: List[str] = []
+                        _snip_parts: List[str] = []
                         for _it in _items:
-                            _tip = _it["query_text"].replace("'", "&#39;").replace('"', "&quot;")
-                            _txt = _html.escape(_it["text"])
-                            _preview_html.append(
+                            _qs = urllib.parse.urlencode({
+                                "exp": _exp,
+                                "qid": _it["query_id"],
+                                "page": "explorer",
+                            })
+                            _href = f"?{_qs}"
+                            _tip  = _it["query_text"].replace("'", "&#39;").replace('"', "&quot;")
+                            _txt  = _html.escape(_it["text"])
+                            _snip_parts.append(
                                 f"<div style='margin:3px 0;line-height:1.6;'>"
-                                f"<span class='snip-tip' data-tip='{_tip}' "
-                                f"style='color:#111827;cursor:help;"
-                                f"border-bottom:1px dotted #94a3b8;'>{_txt}</span>"
+                                f"<a href='{_href}' data-tip='{_tip}' "
+                                f"style='color:#111827;text-decoration:none;"
+                                f"border-bottom:1px dotted #94a3b8;cursor:pointer;'>"
+                                f"{_txt}</a>"
                                 f"</div>"
                             )
                         st.markdown(
                             """<style>
-.snip-tip { position: relative; }
-.snip-tip::after {
-  content: attr(data-tip);
-  display: none;
-  position: absolute;
-  bottom: calc(100% + 4px);
-  left: 0;
-  background: #1e293b;
-  color: #f1f5f9;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: pre-wrap;
-  max-width: 420px;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  pointer-events: none;
+a[data-tip]{position:relative;}
+a[data-tip]::after{
+  content:attr(data-tip);
+  display:none;
+  position:absolute;
+  bottom:calc(100% + 4px);
+  left:0;
+  background:#1e293b;
+  color:#f1f5f9;
+  padding:5px 10px;
+  border-radius:6px;
+  font-size:11px;
+  white-space:pre-wrap;
+  max-width:420px;
+  z-index:9999;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  pointer-events:none;
 }
-.snip-tip:hover::after { display: block; }
+a[data-tip]:hover::after{display:block;}
+a[data-tip]:hover{color:#3b82f6;}
 </style>
-<div style='font-size:11px;color:#94a3b8;margin:6px 0 4px;'>"""
-                            "Hover over a snippet to see its source query."
+<div style='font-size:11px;color:#94a3b8;margin:4px 0;'>"""
+                            "Hover for source query &nbsp;·&nbsp; Click to open in Explorer"
                             "</div>"
-                            + "".join(_preview_html),
+                            + "".join(_snip_parts),
                             unsafe_allow_html=True,
                         )
 
