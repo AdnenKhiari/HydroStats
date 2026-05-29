@@ -863,6 +863,7 @@ if _PAGE == "🗂️ Aggregated Tags":
     for _exp in EXPERIMENTS:
         _exp_corpus = _load(_exp)
         _tagged_map = _load_tagged_answers(_exp)
+        _exp_metrics = _load_metrics_index(_exp)  # cached — no recalculation
 
         for _aid, _payload in _tagged_map.items():
             _ans = _exp_corpus.answers.get(_aid)
@@ -889,6 +890,7 @@ if _PAGE == "🗂️ Aggregated Tags":
                         "answer_id": _aid,
                         "query_id": _qid,
                         "query_text": _query_text,
+                        "mentioned": bool(_exp_metrics.get(_aid, {}).get("mentioned", False)),
                     }
                     for _s in _snips
                 )
@@ -896,6 +898,17 @@ if _PAGE == "🗂️ Aggregated Tags":
     if not _agg:
         st.info("No aggregated tags available.")
     else:
+        _mention_filter = st.radio(
+            "Filter by Hydromea mention",
+            ["All", "Mentioned only", "Not mentioned only"],
+            horizontal=True,
+            key="agg_mention_filter",
+            label_visibility="collapsed",
+        )
+        st.caption(
+            "**Mentioned only** — snippets from answers where Hydromea is cited &nbsp;·&nbsp; "
+            "**Not mentioned only** — snippets from answers where Hydromea is not cited"
+        )
         for _exp in EXPERIMENTS:
             st.markdown(f"**{_exp}**")
             _exp_keys = [k for k in _agg.keys() if k[0] == _exp]
@@ -903,40 +916,39 @@ if _PAGE == "🗂️ Aggregated Tags":
                 st.caption("No tagged snippets for this version.")
                 continue
 
-            _providers = sorted({k[1] for k in _exp_keys})
-            for _prov in _providers:
-                _prov_keys = [k for k in _exp_keys if k[1] == _prov]
-                for _cat in TAG_PARTITION_CATEGORIES:
-                    _k = (_exp, _prov, _cat)
-                    if _k not in _agg:
-                        continue
-                    _items = [x for x in _agg[_k] if x.get("text")]
-                    if not _items:
-                        continue
-                    _section_text = "\n".join(x["text"] for x in _items)
-                    _title = f"{_prov} · {_cat} ({len(_items)} tags)"
-                    with st.expander(_title, expanded=False):
-                        st.code(_section_text, language="text")
-                        _snip_parts: List[str] = []
-                        for _it in _items:
-                            _qs = urllib.parse.urlencode({
-                                "exp": _exp,
-                                "qid": _it["query_id"],
-                                "page": "explorer",
-                            })
-                            _href = f"?{_qs}"
-                            _tip  = _it["query_text"].replace("'", "&#39;").replace('"', "&quot;")
-                            _txt  = _html.escape(_it["text"])
-                            _snip_parts.append(
-                                f"<div style='margin:3px 0;line-height:1.6;'>"
-                                f"<a href='{_href}' data-tip='{_tip}' "
-                                f"style='color:#111827;text-decoration:none;"
-                                f"border-bottom:1px dotted #94a3b8;cursor:pointer;'>"
-                                f"{_txt}</a>"
-                                f"</div>"
-                            )
-                        st.markdown(
-                            """<style>
+            def _apply_mention_filter(items):
+                if _mention_filter == "Mentioned only":
+                    return [x for x in items if x.get("mentioned")]
+                if _mention_filter == "Not mentioned only":
+                    return [x for x in items if not x.get("mentioned")]
+                return items
+
+            def _render_snippet_expander(title, items, exp):
+                if not items:
+                    return
+                _section_text = "\n".join(x["text"] for x in items)
+                with st.expander(title, expanded=False):
+                    st.code(_section_text, language="text")
+                    _snip_parts: List[str] = []
+                    for _it in items:
+                        _qs = urllib.parse.urlencode({
+                            "exp": exp,
+                            "qid": _it["query_id"],
+                            "page": "explorer",
+                        })
+                        _href = f"?{_qs}"
+                        _tip  = _it["query_text"].replace("'", "&#39;").replace('"', "&quot;")
+                        _txt  = _html.escape(_it["text"])
+                        _snip_parts.append(
+                            f"<div style='margin:3px 0;line-height:1.6;'>"
+                            f"<a href='{_href}' data-tip='{_tip}' "
+                            f"style='color:#111827;text-decoration:none;"
+                            f"border-bottom:1px dotted #94a3b8;cursor:pointer;'>"
+                            f"{_txt}</a>"
+                            f"</div>"
+                        )
+                    st.markdown(
+                        """<style>
 a[data-tip]{position:relative;}
 a[data-tip]::after{
   content:attr(data-tip);
@@ -959,11 +971,44 @@ a[data-tip]:hover::after{display:block;}
 a[data-tip]:hover{color:#3b82f6;}
 </style>
 <div style='font-size:11px;color:#94a3b8;margin:4px 0;'>"""
-                            "Hover for source query &nbsp;·&nbsp; Click to open in Explorer"
-                            "</div>"
-                            + "".join(_snip_parts),
-                            unsafe_allow_html=True,
-                        )
+                        "Hover for source query &nbsp;·&nbsp; Click to open in Explorer"
+                        "</div>"
+                        + "".join(_snip_parts),
+                        unsafe_allow_html=True,
+                    )
+
+            # ── All Chatbots combined ─────────────────────────────────────────
+            st.markdown(
+                "<div style='font-size:12px;font-weight:700;color:#64748b;"
+                "letter-spacing:.5px;margin:6px 0 2px;'>🌐 All Chatbots</div>",
+                unsafe_allow_html=True,
+            )
+            for _cat in TAG_PARTITION_CATEGORIES:
+                _combined = []
+                for _k in _exp_keys:
+                    if _k[2] == _cat:
+                        _combined.extend(_agg[_k])
+                _combined = _apply_mention_filter(_combined)
+                _render_snippet_expander(
+                    f"All · {_cat} ({len(_combined)} tags)", _combined, _exp
+                )
+
+            # ── Per-chatbot breakdown ─────────────────────────────────────────
+            st.markdown(
+                "<div style='font-size:12px;font-weight:700;color:#64748b;"
+                "letter-spacing:.5px;margin:10px 0 2px;'>🤖 By Chatbot</div>",
+                unsafe_allow_html=True,
+            )
+            _providers = sorted({k[1] for k in _exp_keys})
+            for _prov in _providers:
+                for _cat in TAG_PARTITION_CATEGORIES:
+                    _k = (_exp, _prov, _cat)
+                    if _k not in _agg:
+                        continue
+                    _items = _apply_mention_filter([x for x in _agg[_k] if x.get("text")])
+                    _render_snippet_expander(
+                        f"{_prov} · {_cat} ({len(_items)} tags)", _items, _exp
+                    )
 
             st.divider()
 
@@ -1361,6 +1406,17 @@ if _PAGE == "📊 Hydromea Stats":
 
             cur_breakdown = tag_current_view
             base_breakdown = tag_baseline_view
+
+            # For the chatbot breakdown, inject a synthetic "All Chatbots" group
+            # by appending a copy of all rows with provider_label overwritten.
+            if key_col == "provider_label":
+                _all_cur = cur_breakdown.copy()
+                _all_cur["provider_label"] = "All Chatbots"
+                cur_breakdown = pd.concat([cur_breakdown, _all_cur], ignore_index=True)
+                if not base_breakdown.empty:
+                    _all_base = base_breakdown.copy()
+                    _all_base["provider_label"] = "All Chatbots"
+                    base_breakdown = pd.concat([base_breakdown, _all_base], ignore_index=True)
 
             cur_long = _aggregate_tag_partition(cur_breakdown, key_col, selected_tag_categories)
             base_long = _aggregate_tag_partition(base_breakdown, key_col, selected_tag_categories)
