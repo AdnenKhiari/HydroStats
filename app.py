@@ -1407,17 +1407,6 @@ if _PAGE == "📊 Hydromea Stats":
             cur_breakdown = tag_current_view
             base_breakdown = tag_baseline_view
 
-            # For the chatbot breakdown, inject a synthetic "All Chatbots" group
-            # by appending a copy of all rows with provider_label overwritten.
-            if key_col == "provider_label":
-                _all_cur = cur_breakdown.copy()
-                _all_cur["provider_label"] = "All Chatbots"
-                cur_breakdown = pd.concat([cur_breakdown, _all_cur], ignore_index=True)
-                if not base_breakdown.empty:
-                    _all_base = base_breakdown.copy()
-                    _all_base["provider_label"] = "All Chatbots"
-                    base_breakdown = pd.concat([base_breakdown, _all_base], ignore_index=True)
-
             cur_long = _aggregate_tag_partition(cur_breakdown, key_col, selected_tag_categories)
             base_long = _aggregate_tag_partition(base_breakdown, key_col, selected_tag_categories)
 
@@ -1773,6 +1762,9 @@ if _PAGE == "📊 Hydromea Stats":
         _exp_metrics = _load_metrics_index(_exp)
         _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
 
+        _all3_mentioned_parts: list[str] = []
+        _all3_not_mentioned_parts: list[str] = []
+
         for _prod in _exp_products:
             _pm = PRODUCT_META.get(_prod, _DMETA)
             _mentioned_parts: list[str] = []
@@ -1785,8 +1777,10 @@ if _PAGE == "📊 Hydromea Stats":
                     continue
                 if _exp_metrics[_aid]["mentioned"]:
                     _mentioned_parts.append(_resp)
+                    _all3_mentioned_parts.append(_resp)
                 else:
                     _not_mentioned_parts.append(_resp)
+                    _all3_not_mentioned_parts.append(_resp)
 
             _mention_rows.append({
                 "Version": _exp,
@@ -1794,6 +1788,14 @@ if _PAGE == "📊 Hydromea Stats":
                 "Mentioned": "\n<--><--><-->\n".join(_mentioned_parts),
                 "Not Mentioned": "\n<--><--><-->\n".join(_not_mentioned_parts),
             })
+
+        # Virtual "All 3" row — combines all chatbots for this version
+        _mention_rows.append({
+            "Version": _exp,
+            "AI Model": "All 3",
+            "Mentioned": "\n<--><--><-->\n".join(_all3_mentioned_parts),
+            "Not Mentioned": "\n<--><--><-->\n".join(_all3_not_mentioned_parts),
+        })
 
     _mention_df = pd.DataFrame(_mention_rows, columns=["Version", "AI Model", "Mentioned", "Not Mentioned"])
     st.dataframe(
