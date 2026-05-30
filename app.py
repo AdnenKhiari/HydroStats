@@ -396,13 +396,19 @@ def compute_answer_metrics(ans: Answer) -> dict:
         "brand_idxs":      _bi,
     }
     for p in _PRODUCT_PATTERNS:
-        metrics[f'product_{p["key"]}'] = bool(p["pattern"].search(_text))
+        _matches = p["pattern"].findall(_text)
+        metrics[f'product_{p["key"]}'] = bool(_matches)
+        metrics[f'product_{p["key"]}_count'] = len(_matches)
         if "source_url" in p:
             needle = p["source_url"].lower()
             metrics[f'product_{p["key"]}_sourced'] = any(
                 needle in s.get("url", "").lower()
                 for s in ans.sources
             )
+    # Total occurrences of any product mention across all patterns
+    metrics["product_mention_count"] = sum(
+        metrics[f'product_{p["key"]}_count'] for p in _PRODUCT_PATTERNS
+    )
     return metrics
 
 
@@ -1808,6 +1814,177 @@ if _PAGE == "📊 Hydromea Stats":
             "Mentioned": st.column_config.TextColumn("Mentioned", width="large"),
             "Not Mentioned": st.column_config.TextColumn("Not Mentioned", width="large"),
         },
+    )
+
+    # ── Per-Question × Chatbot × Version detail table ─────────────────────────
+    st.markdown("---")
+    st.markdown("### Per-Question Detail Table")
+    st.caption(
+        "One row per Question × AI Model × Version. "
+        "All signals read from the cached metrics index — no recomputation."
+    )
+
+    # Build product-level column specs once from FILTER_SPECS
+    _pq_prod_specs = [
+        s for s in FILTER_SPECS
+        if s["group"] in ("Products — Mentioned", "Products — Page Sourced")
+    ]
+
+    _pq_rows: list = []
+    for _exp in EXPERIMENTS:
+        _exp_corpus = _load(_exp)
+        _exp_metrics = _load_metrics_index(_exp)
+        _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
+
+        for _prod in _exp_products:
+            _pm = PRODUCT_META.get(_prod, _DMETA)
+            for _aid in _exp_corpus.by_product.get(_prod, []):
+                _ans = _exp_corpus.answers[_aid]
+                _q   = _exp_corpus.queries.get(_ans.query_id or "")
+                _m   = _exp_metrics[_aid]
+                _row: dict = {
+                    "Version":            _exp,
+                    "AI Model":           _pm["label"],
+                    "Question":           _q.text if _q else "",
+                    "Answer":             (_ans.response or "").strip(),
+                    "Hydromea Mentioned": 1 if _m["mentioned"] else 0,
+                    "Hydromea Sourced":   1 if _m["sourced"]   else 0,
+                }
+                for _s in _pq_prod_specs:
+                    _row[_s["label"]] = 1 if _s["fn"](_m) else 0
+                _pq_rows.append(_row)
+
+    _pq_fixed_cols  = ["Version", "AI Model", "Question", "Answer",
+                        "Hydromea Mentioned", "Hydromea Sourced"]
+    _pq_prod_cols   = [s["label"] for s in _pq_prod_specs]
+    _pq_all_cols    = _pq_fixed_cols + _pq_prod_cols
+    _pq_df = pd.DataFrame(_pq_rows, columns=_pq_all_cols)
+
+    st.dataframe(
+        _pq_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Version":            st.column_config.TextColumn("Version",  width="small"),
+            "AI Model":           st.column_config.TextColumn("AI Model", width="small"),
+            "Question":           st.column_config.TextColumn("Question", width="medium"),
+            "Answer":             st.column_config.TextColumn("Answer",   width="large"),
+            "Hydromea Mentioned": st.column_config.TextColumn("Hydromea Cited",   width="small"),
+            "Hydromea Sourced":   st.column_config.TextColumn("Hydromea Sourced", width="small"),
+            **{s["label"]: st.column_config.TextColumn(s["label"], width="small") for s in _pq_prod_specs},
+        },
+    )
+
+    # Excel export
+    import io as _io2
+    _pq_xl_buf = _io2.BytesIO()
+    with pd.ExcelWriter(_pq_xl_buf, engine="openpyxl") as _pq_xl_writer:
+        _pq_df.to_excel(_pq_xl_writer, index=False, sheet_name="Per-Question Detail")
+        _pq_ws = _pq_xl_writer.sheets["Per-Question Detail"]
+        _pq_ws.column_dimensions["A"].width = 14   # Version
+        _pq_ws.column_dimensions["B"].width = 14   # AI Model
+        _pq_ws.column_dimensions["C"].width = 50   # Question
+        _pq_ws.column_dimensions["D"].width = 100  # Answer
+        for _pq_row in _pq_ws.iter_rows(min_row=2):
+            _pq_row[3].alignment = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
+    st.download_button(
+        label="⬇️ Export as Excel",
+        data=_pq_xl_buf.getvalue(),
+        file_name="per_question_detail.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
+
+    # ── Per-Question Features Table ───────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("### Per-Question Features Table")
+    st.caption(
+        "One row per Question × AI Model × Version. "
+        "Focuses on product mentions, Hydromea source count, and source URLs."
+    )
+
+    _feat_rows: list = []
+    for _exp in EXPERIMENTS:
+        _exp_corpus = _load(_exp)
+        _exp_metrics = _load_metrics_index(_exp)
+        _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
+
+        for _prod in _exp_products:
+            _pm = PRODUCT_META.get(_prod, _DMETA)
+            for _aid in _exp_corpus.by_product.get(_prod, []):
+                _ans = _exp_corpus.answers[_aid]
+                _q   = _exp_corpus.queries.get(_ans.query_id or "")
+                _m   = _exp_metrics[_aid]
+
+                # Which product names were matched
+                _prod_names = ", ".join(
+                    p["label"].split()[0]           # e.g. "DiskDrive", "Luma", "Exray"
+                    for p in _PRODUCT_PATTERNS
+                    if _m.get(f'product_{p["key"]}')
+                )
+
+                # Hydromea source URLs via brand_idxs (1-based)
+                _hydro_urls = " | ".join(
+                    _ans.sources[i - 1].get("url", "")
+                    for i in (_m.get("brand_idxs") or [])
+                    if i <= len(_ans.sources)
+                )
+
+                _feat_rows.append({
+                    "Version":               _exp,
+                    "AI Model":              _pm["label"],
+                    "Question":              _q.text if _q else "",
+                    "Answer":                (_ans.response or "").strip(),
+                    "Hydromea Mentioned":    1 if _m.get("mentioned") else 0,
+                    "Products Mentioned":    _prod_names,
+                    "Num Products Mentioned": _m.get("product_mention_count", 0),
+                    "Hydromea Source Count": _m.get("citation_count", 0),
+                    "Hydromea Sources":      _hydro_urls,
+                })
+
+    _feat_cols = [
+        "Version", "AI Model", "Question", "Answer",
+        "Hydromea Mentioned",
+        "Products Mentioned", "Num Products Mentioned",
+        "Hydromea Source Count", "Hydromea Sources",
+    ]
+    _feat_df = pd.DataFrame(_feat_rows, columns=_feat_cols)
+
+    st.dataframe(
+        _feat_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Version":               st.column_config.TextColumn("Version",   width="small"),
+            "AI Model":              st.column_config.TextColumn("AI Model",  width="small"),
+            "Question":              st.column_config.TextColumn("Question",  width="medium"),
+            "Answer":                st.column_config.TextColumn("Answer",    width="large"),
+            "Hydromea Mentioned":    st.column_config.NumberColumn("Hydromea Mentioned", width="small"),
+            "Products Mentioned":    st.column_config.TextColumn("Products Mentioned",     width="small"),
+            "Num Products Mentioned":st.column_config.NumberColumn("# Products",           width="small"),
+            "Hydromea Source Count": st.column_config.NumberColumn("Hydromea Src Count",   width="small"),
+            "Hydromea Sources":      st.column_config.TextColumn("Hydromea Sources",       width="medium"),
+        },
+    )
+
+    import io as _io3
+    _feat_xl_buf = _io3.BytesIO()
+    with pd.ExcelWriter(_feat_xl_buf, engine="openpyxl") as _feat_xl_writer:
+        _feat_df.to_excel(_feat_xl_writer, index=False, sheet_name="Per-Question Features")
+        _feat_ws = _feat_xl_writer.sheets["Per-Question Features"]
+        _feat_ws.column_dimensions["A"].width = 14
+        _feat_ws.column_dimensions["B"].width = 14
+        _feat_ws.column_dimensions["C"].width = 50
+        _feat_ws.column_dimensions["D"].width = 100
+        _feat_ws.column_dimensions["H"].width = 60
+        _opx = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
+        for _feat_row in _feat_ws.iter_rows(min_row=2):
+            _feat_row[3].alignment = _opx
+            _feat_row[7].alignment = _opx
+    st.download_button(
+        label="⬇️ Export as Excel",
+        data=_feat_xl_buf.getvalue(),
+        file_name="per_question_features.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
 
     # ── Answers by Category Table ──────────────────────────────────────────────
