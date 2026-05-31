@@ -1,0 +1,2183 @@
+VERSION: V1
+QUESTION COUNT: 47
+CODE COUNT: 542
+
+STEP 2 CODEBOOK ENTRIES
+======================
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_1
+CODE_NAME: UWOC_Definition_Overview
+DESCRIPTION: General introduction and definition of Underwater Wireless Optical Communication (UWOC), its core concept, and its primary role in underwater data transfer.
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_2
+CODE_NAME: UWOC_Technical_Principles
+DESCRIPTION: Explanations of the fundamental mechanisms, components, and operational aspects of UWOC, including specific light properties (wavelengths, absorption, scattering), system components (transmitters, receivers, modulation schemes), and critical operational requirements (beam alignment).
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_3
+CODE_NAME: UWOC_Advantages
+DESCRIPTION: Benefits and superior performance characteristics of UWOC, such as high data rates, low latency, real-time capabilities, and security, often highlighted in comparison to other communication methods.
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_4
+CODE_NAME: UWOC_Applications_Docking
+DESCRIPTION: Specific uses and importance of UWOC technology within the context of underwater docking stations, including high-bandwidth data offload, real-time command and control, navigation, and enabling extended mission durations for AUVs.
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_5
+CODE_NAME: UWOC_Challenges_Limitations
+DESCRIPTION: Difficulties, constraints, and inherent limitations faced by UWOC technology, such as signal attenuation, scattering, turbulence, environmental factors, and the requirement for a clear line of sight.
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_6
+CODE_NAME: Commercial_Research_Implementations
+DESCRIPTION: Mentions of specific companies, commercial products, or research institutions actively involved in developing, implementing, or offering UWOC solutions, often accompanied by performance metrics like data rates or operational ranges.
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_7
+CODE_NAME: Comparative_Analysis
+DESCRIPTION: Direct comparisons of UWOC with alternative underwater communication technologies (e.g., acoustic, RF), highlighting the relative strengths and weaknesses in terms of speed, range, latency, or other performance aspects.
+
+CODE_ID: query_01khxksa6nenarkcx5nrapv411::Code_8
+CODE_NAME: Future_Development_Efforts
+DESCRIPTION: References to ongoing research, advancements, or strategies being pursued to overcome the challenges and limitations of UWOC technology, such as adaptive algorithms or hybrid systems.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_1
+CODE_NAME: Underwater Communication Challenges
+DESCRIPTION: Describes the inherent difficulties, critical considerations, and unique properties of the aquatic environment that impact data transmission and energy efficiency.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_2
+CODE_NAME: Communication Method Overview
+DESCRIPTION: Introduces or lists the primary methods for underwater data transmission.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_3
+CODE_NAME: Optical Communication Characteristics
+DESCRIPTION: Details the energy efficiency, advantages, limitations, and typical use cases of Underwater Optical Wireless Communication (UOWC/VLC).
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_4
+CODE_NAME: Acoustic Communication Characteristics
+DESCRIPTION: Details the energy efficiency, advantages, limitations, and typical use cases of Acoustic Communication.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_5
+CODE_NAME: Radio Frequency Communication Characteristics
+DESCRIPTION: Details the energy efficiency, advantages, limitations, and typical use cases of Radio Frequency (RF) Communication.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_6
+CODE_NAME: Key Factors for Energy Optimization
+DESCRIPTION: Identifies various environmental, operational, and design factors that significantly influence and can be optimized for energy efficiency in underwater communication.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_7
+CODE_NAME: Emerging and Advanced Solutions
+DESCRIPTION: Describes innovative and cutting-edge technologies or frameworks designed to enhance energy efficiency and capabilities in underwater communication.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_8
+CODE_NAME: Concluding Recommendations and Trade-offs
+DESCRIPTION: Provides a summary of the best communication methods for specific scenarios (e.g., short-range, long-range) and highlights the importance of optimization strategies.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_9
+CODE_NAME: Comparative Summary Table
+DESCRIPTION: Presents a structured comparison of different underwater transmission methods based on key attributes like energy efficiency, range, limitations, and best use cases, often in a table format.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_10
+CODE_NAME: Specific Technology Emphasis (Backscatter)
+DESCRIPTION: Highlights a particular technology, like acoustic backscatter, explaining its unique advantages and how it achieves high energy efficiency.
+
+CODE_ID: query_01khx473s4fvhaahrv5239dcws::Code_11
+CODE_NAME: User Contextualization Prompt
+DESCRIPTION: The chatbot prompts the user for more specific details about their scenario to provide a tailored recommendation.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_1
+CODE_NAME: Core Motor Technology Identification
+DESCRIPTION: Identifies and names specific motor types or overarching motor technologies recommended for subsea applications.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_2
+CODE_NAME: Specialized Motor Configuration
+DESCRIPTION: Describes specific design configurations or architectural variations of motors that enhance their suitability for subsea use.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_3
+CODE_NAME: Performance Benefit - Efficiency
+DESCRIPTION: Highlights the energy efficiency of the motor, often with quantitative data or implications for operational cost/consumption.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_4
+CODE_NAME: Performance Benefit - Reliability & Durability
+DESCRIPTION: Emphasizes the motor's robustness, extended operational life, reduced failure points, or ability to withstand demanding conditions.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_5
+CODE_NAME: Performance Benefit - Power/Torque Density & Compactness
+DESCRIPTION: Describes the motor's ability to deliver high power or torque within a compact or lightweight design, crucial for space-constrained subsea equipment.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_6
+CODE_NAME: Performance Benefit - Controllability & Smoothness
+DESCRIPTION: Focuses on the motor's precision, dynamic response, smooth operation, or absence of undesirable effects like cogging torque.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_7
+CODE_NAME: Subsea Environmental Adaptation Features
+DESCRIPTION: Details specific design considerations and materials that enable motors to function reliably in harsh subsea environments, such as pressure, corrosion, and water ingress.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_8
+CODE_NAME: Quantitative Performance Data
+DESCRIPTION: Provides specific numerical values or metrics related to motor performance, such as efficiency percentages, depth ratings, service intervals, or endurance.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_9
+CODE_NAME: Manufacturer/Brand Mention
+DESCRIPTION: Refers to specific companies or brands that produce or specialize in the discussed motor technologies or subsea solutions.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_10
+CODE_NAME: Application Context & Use Cases
+DESCRIPTION: Describes the specific types of subsea equipment or tasks where these motors are utilized.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_11
+CODE_NAME: Source Citation/Attribution
+DESCRIPTION: Indicates the presence of references, citations, or a list of sources used to compile the information.
+
+CODE_ID: query_01khxhsh6ce03vakbnt4re6k8f::Code_12
+CODE_NAME: Chatbot Interaction/Offer
+DESCRIPTION: Text where the chatbot offers further assistance, asks a clarifying question, or provides a concluding remark about its capabilities.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_1
+CODE_NAME: Primary Technology Identification
+DESCRIPTION: Identifies Underwater Optical Wireless Communication (UOWC/UWOC) as the leading or most prominent technology for high-bandwidth, short-range underwater communication.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_2
+CODE_NAME: Quantitative Performance Metrics
+DESCRIPTION: Provides specific numerical values for data rates (bandwidth), ranges, or other measurable performance indicators of the technologies, without attributing them to a specific company or research entity.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_3
+CODE_NAME: Technological Limitations
+DESCRIPTION: Describes the inherent constraints, environmental dependencies, and challenges that limit the effectiveness, range, or applicability of the technologies, such as water clarity, absorption, scattering, or attenuation.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_4
+CODE_NAME: Specific Technology Examples & Attributions
+DESCRIPTION: Mentions specific companies, research laboratories, or prototype systems that are developing, demonstrating, or offering the technologies, often in conjunction with specific performance metrics.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_5
+CODE_NAME: Comparative Technology Analysis
+DESCRIPTION: Compares the primary technology (UOWC/UWOC) with alternative underwater communication methods (e.g., acoustic, RF, ultrasonic), highlighting their respective strengths, weaknesses, typical ranges, and data rates in relation to each other.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_6
+CODE_NAME: Core Technical Description
+DESCRIPTION: Explains the fundamental principles, mechanisms, or key components of how a specific underwater communication technology operates (e.g., uses light, blue-green spectrum, lasers).
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_7
+CODE_NAME: Emerging Technology & Advancements
+DESCRIPTION: Refers to new, developing, or advanced technologies, research efforts, or future improvements in underwater communication.
+
+CODE_ID: query_01khx43k1reh7r8m98qymgneng::Code_8
+CODE_NAME: Application Use Cases
+DESCRIPTION: Describes practical scenarios, specific tasks, or industries where the underwater communication technologies are applied or are ideal for use.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_1
+CODE_NAME: Commercial_Availability
+DESCRIPTION: Confirms the existence and market availability of hubless/rim-driven thrusters for underwater vehicles.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_2
+CODE_NAME: Definition_Nomenclature
+DESCRIPTION: Provides the primary and alternative names for the technology, clarifying terminology.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_3
+CODE_NAME: Operational_Mechanism
+DESCRIPTION: Explains the fundamental design and working principle of hubless/rim-driven thrusters.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_4
+CODE_NAME: Tangle_Free_Benefit
+DESCRIPTION: Highlights the advantage of the design in preventing entanglement with marine debris.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_5
+CODE_NAME: Efficiency_Benefit
+DESCRIPTION: Describes how the design leads to improved energy use and reduced hydrodynamic losses.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_6
+CODE_NAME: Compact_Design_Benefit
+DESCRIPTION: Emphasizes the small, low-profile nature of the thrusters, making them suitable for space-constrained applications.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_7
+CODE_NAME: Reliability_Maintenance_Benefit
+DESCRIPTION: Covers aspects related to the technology's durability, fewer moving parts, and reduced need for upkeep.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_8
+CODE_NAME: Noise_Vibration_Benefit
+DESCRIPTION: Focuses on the reduced acoustic output and mechanical disturbances, beneficial for sensitive operations.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_9
+CODE_NAME: Maneuverability_Benefit
+DESCRIPTION: Points to the enhanced control and ability for rapid directional changes offered by the thrusters.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_10
+CODE_NAME: Manufacturer_Product_Identification
+DESCRIPTION: Identifies specific companies that develop or offer hubless/rim-driven thrusters and their product lines.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_11
+CODE_NAME: Product_Specifics
+DESCRIPTION: Provides detailed technical specifications, unique features, or performance metrics for specific products.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_12
+CODE_NAME: Application_Context
+DESCRIPTION: Lists the types of underwater vehicles or operational scenarios where the technology is currently employed or suitable.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_13
+CODE_NAME: Source_Attribution
+DESCRIPTION: Refers to the citations, references, or direct links provided to support the information.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_14
+CODE_NAME: User_Engagement_Offer
+DESCRIPTION: Represents the chatbot's proactive offer to assist the user further with specific queries or guidance.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_15
+CODE_NAME: Conventional_Technology_Contrast
+DESCRIPTION: Mentions traditional or hubbed thrusters to highlight the differences or superiority of the hubless design.
+
+CODE_ID: query_01khx4m85dfvpvdfc4m3kdk3m7::Code_16
+CODE_NAME: Key_Advantages_Summary
+DESCRIPTION: A concise, high-level enumeration of multiple benefits without detailed explanation for each.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_1
+CODE_NAME: ROV_SAR_VALUE
+DESCRIPTION: Describes the fundamental value and utility of ROVs in Search and Rescue operations, highlighting their benefits over traditional methods and overall contribution to SAR efficiency and safety.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_2
+CODE_NAME: CORE_ROV_CAPABILITIES
+DESCRIPTION: Encompasses the fundamental technical features and functionalities common to effective SAR ROVs, such as imaging, lighting, sonar, depth rating, and general operational environment adaptability.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_3
+CODE_NAME: RAPID_DEPLOYMENT_PORTABILITY
+DESCRIPTION: Highlights the critical importance of quick setup, launch, and ease of transport for ROVs in time-sensitive SAR missions, including aspects like lightweight and compact designs.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_4
+CODE_NAME: BRAND_MODEL_RECOMMENDATION
+DESCRIPTION: Identifies the direct mention and listing of specific ROV manufacturers and their product models as recommendations for SAR applications.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_5
+CODE_NAME: PRODUCT_FEATURE_DETAIL
+DESCRIPTION: Provides specific technical specifications, unique features, and performance characteristics for individual ROV models, differentiating them from others.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_6
+CODE_NAME: OPERATIONAL_CONTEXT
+DESCRIPTION: Defines the specific types of underwater environments (e.g., murky, strong currents, lakes, rivers) and operational scenarios (e.g., object retrieval, reconnaissance) where the ROVs are intended for use.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_7
+CODE_NAME: USER_FRIENDLINESS
+DESCRIPTION: Emphasizes the design aspects that make ROVs easy to operate, user-friendly, and accessible to a broader range of first responders without extensive specialized training.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_8
+CODE_NAME: MODULARITY_CUSTOMIZATION
+DESCRIPTION: Highlights the capability of ROVs to be customized or integrated with various add-ons and attachments (e.g., grabber arms, sonar systems) to enhance their functionality for specific SAR tasks.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_9
+CODE_NAME: CHALLENGING_CONDITIONS_PERFORMANCE
+DESCRIPTION: Describes the ROV's ability to maintain stability, maneuverability, and effectiveness in difficult underwater conditions such as strong currents, harsh environments, or complex terrains.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_10
+CODE_NAME: EVALUATIVE_ASSESSMENT
+DESCRIPTION: Provides general positive judgments, endorsements, or qualitative assessments about the quality, reliability, or suitability of ROVs for SAR missions.
+
+CODE_ID: query_01khx4fzsbeh7r8mamckqtgx08::Code_11
+CODE_NAME: COMPARATIVE_SUMMARY
+DESCRIPTION: Presents information in a structured, comparative format (e.g., table) to highlight key differences and strengths of various ROV models for SAR, facilitating quick comparison.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_1
+CODE_NAME: ROV_Solution_Introduction
+DESCRIPTION: Introduces Remotely Operated Vehicles (ROVs) as the primary solution for inspecting ballast water tanks without human entry, highlighting their core purpose and initial benefits.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_2
+CODE_NAME: Technical_Capabilities
+DESCRIPTION: Details the essential technical specifications, features, or equipment required for effective ROV inspections, such as camera quality, measurement tools (UT, CP), maneuverability, and data transmission.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_3
+CODE_NAME: Operational_Benefits
+DESCRIPTION: Describes the practical advantages and efficiencies gained from using ROVs for inspections, focusing on outcomes like enhanced safety, reduced downtime, cost-effectiveness, and comprehensive data collection.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_4
+CODE_NAME: Specific_ROV_Models
+DESCRIPTION: Identifies and often describes specific ROV models or product lines that are recommended or noted for ballast tank inspections.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_5
+CODE_NAME: Service_Providers
+DESCRIPTION: Lists companies or organizations that specialize in providing ROV inspection services or equipment.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_6
+CODE_NAME: Compliance_Standards
+DESCRIPTION: Mentions adherence to industry standards, regulations, or the requirements of classification societies that ROV inspections must meet.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_7
+CODE_NAME: Performance_Evidence
+DESCRIPTION: Provides quantifiable results, specific deployment examples, or metrics demonstrating the effectiveness, efficiency, or successful application of ROVs in real-world scenarios.
+
+CODE_ID: query_01khxhq5kbenarkbvwtne1y2g4::Code_8
+CODE_NAME: Informational_Guidance
+DESCRIPTION: Refers to the way information is structured, presented, or how the chatbot offers further assistance or asks clarifying questions to guide the user. This includes concluding remarks and interactive prompts.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_1
+CODE_NAME: Introduction to Communication Modalities
+DESCRIPTION: General introductory statements that set the context for real-time underwater communication, often listing the primary methods.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_2
+CODE_NAME: Acoustic Communication Principle
+DESCRIPTION: Explanations of the fundamental mechanism and operational aspects of acoustic communication.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_3
+CODE_NAME: Acoustic Communication Advantages
+DESCRIPTION: Benefits and strengths of acoustic communication, often related to long range and reliability in marine environments.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_4
+CODE_NAME: Acoustic Communication Limitations
+DESCRIPTION: Drawbacks and weaknesses of acoustic communication, such as low data rates, high latency, and power consumption.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_5
+CODE_NAME: Optical Communication Principle
+DESCRIPTION: Explanations of the fundamental mechanism and operational aspects of optical communication.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_6
+CODE_NAME: Optical Communication Advantages
+DESCRIPTION: Benefits and strengths of optical communication, often related to high bandwidth, high data rates, and low latency.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_7
+CODE_NAME: Optical Communication Limitations
+DESCRIPTION: Drawbacks and weaknesses of optical communication, such as limited range, line-of-sight requirements, and alignment challenges.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_8
+CODE_NAME: RF Communication Infeasibility
+DESCRIPTION: Explanations of the general ineffectiveness and rapid attenuation of radio frequency waves underwater, making them unsuitable for most real-time applications.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_9
+CODE_NAME: RF Communication Niche & Constraints
+DESCRIPTION: Descriptions of specific, highly limited applications of RF (e.g., VLF/ELF) and their severe practical constraints, or emerging RF-based solutions.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_10
+CODE_NAME: Comparative Performance & Trade-offs
+DESCRIPTION: Direct comparisons of communication methods, highlighting their relative strengths, weaknesses, and application-specific suitability (e.g., range vs. bandwidth).
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_11
+CODE_NAME: Hybrid & Integrated Systems
+DESCRIPTION: Descriptions of combining different communication methods or integrating them for enhanced performance and overcoming individual limitations.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_12
+CODE_NAME: Environmental & Technical Challenges
+DESCRIPTION: General obstacles and factors in the underwater environment (e.g., temperature, salinity, turbidity, noise, multipath propagation) that degrade communication performance across methods.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_13
+CODE_NAME: Specific Technical Details & Metrics
+DESCRIPTION: Quantitative data, specific technologies, modulation techniques, or performance metrics (e.g., Mbps, meters, specific modem types, sensor types).
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_14
+CODE_NAME: Application Contexts
+DESCRIPTION: Examples of how these communication methods are used in real-world scenarios, including specific tasks, research areas, or operational needs.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_15
+CODE_NAME: Emerging Solutions & Future Directions
+DESCRIPTION: Mentions of ongoing research, new technologies, AI-driven systems, or advancements aimed at overcoming current limitations and improving capabilities.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_16
+CODE_NAME: Alternative/Non-Standard Methods
+DESCRIPTION: Communication approaches mentioned beyond the primary acoustic, optical, and RF methods, such as visual gestures or kinemes.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_17
+CODE_NAME: Source Citation
+DESCRIPTION: References to external sources, including academic papers, industry websites, or research institutions, often indicated by bracketed numbers or full URLs.
+
+CODE_ID: query_01khxjh8fge8grj7yqa94y52xv::Code_18
+CODE_NAME: Chatbot Conversational Element
+DESCRIPTION: Direct interactive elements from the chatbot, such as questions posed to the user.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_1
+CODE_NAME: Company_Identification_and_Location
+DESCRIPTION: Identifies specific companies based in Switzerland that offer solutions or components for wireless underwater communication, often including their location within Switzerland. It also covers general statements about the availability of such solutions in Switzerland.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_2
+CODE_NAME: Technological_Specialization_and_Offerings
+DESCRIPTION: Details the primary technological approach (e.g., optical, acoustic, lightwave, connectors, robotics) and the specific products, systems, or services a company provides in the context of underwater communication. It also includes general descriptions of solution types.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_3
+CODE_NAME: Performance_and_Application_Details
+DESCRIPTION: Provides concrete specifications such as data rates, range, depth capabilities, and outlines the practical applications or environments where the technology is effective.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_4
+CODE_NAME: Industry_Credibility_and_Innovation
+DESCRIPTION: Highlights aspects that reinforce a company's authority, innovation, or role in the industry, such as academic spin-off status, involvement in setting industry standards, or patented technologies.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_5
+CODE_NAME: General_Technology_Explanation
+DESCRIPTION: Provides a broader educational context by describing the various methods of wireless underwater communication (e.g., optical, acoustic, electromagnetic) and their general characteristics, strengths, and limitations.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_6
+CODE_NAME: Solution_Selection_Guidance
+DESCRIPTION: Offers criteria or factors for users to consider when choosing an underwater communication solution, such as application requirements, environmental conditions, performance needs, or practical advice for engagement.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_7
+CODE_NAME: External_Resource_Reference
+DESCRIPTION: Provides direct links to company websites or other external resources, and may include notes about the status or accessibility of these resources.
+
+CODE_ID: query_01kc1eb6e3eh4a6hyqgj9zefx5::Code_8
+CODE_NAME: Chatbot_Meta_Elements
+DESCRIPTION: Includes elements related to the chatbot's conversational flow, such as introductory/concluding remarks, prompts for further interaction, and numerical citations/attributions.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_1
+CODE_NAME: Problem Context & Challenge
+DESCRIPTION: Introduces the core problem of propeller entanglement in debris-heavy underwater environments and the general need for solutions.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_2
+CODE_NAME: Physical Barrier Solutions
+DESCRIPTION: Describes solutions that involve adding physical structures or enclosures around propellers to prevent entanglement and damage.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_3
+CODE_NAME: Hub-less/Rim-Driven Propeller Design
+DESCRIPTION: Focuses on propeller designs that eliminate a central hub or mount blades on an outer ring, allowing debris to pass through without snagging.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_4
+CODE_NAME: Toroidal Propeller Design
+DESCRIPTION: Describes propellers characterized by a donut or looped shape, highlighting their benefits for entanglement reduction, noise, and efficiency.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_5
+CODE_NAME: Biomimetic Propeller Design
+DESCRIPTION: Explains propeller designs inspired by natural aquatic forms, aiming for efficiency and potentially reduced entanglement.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_6
+CODE_NAME: Surface Treatment/Coating
+DESCRIPTION: Covers solutions that involve applying coatings to propeller surfaces to prevent marine growth and reduce debris adhesion.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_7
+CODE_NAME: Traditional Propeller Limitations
+DESCRIPTION: Discusses the inherent vulnerabilities and susceptibility of conventional propeller designs to entanglement, providing context for the need for alternative solutions.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_8
+CODE_NAME: Enhanced Operational Benefits
+DESCRIPTION: Highlights secondary advantages of the described propeller designs beyond just entanglement prevention, such as improved efficiency, reduced noise, increased durability, or ease of maintenance.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_9
+CODE_NAME: Specific Product/Brand Example
+DESCRIPTION: Identifies instances where a particular product or brand name is mentioned as a concrete example of a solution.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_10
+CODE_NAME: External Citation/Reference
+DESCRIPTION: Marks explicit numerical citations or references to external sources within the chatbot's response.
+
+CODE_ID: query_01khxhr52menarkbw22qnygzdb::Code_11
+CODE_NAME: Chatbot Query/Offer
+DESCRIPTION: Captures instances where the chatbot asks a follow-up question or offers further assistance to the user.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_1
+CODE_NAME: Subsea Environmental Adaptation
+DESCRIPTION: Equipment design and features specifically addressing the harsh underwater conditions (pressure, corrosion, biofouling, contaminants).
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_2
+CODE_NAME: Wireless Communication Modalities
+DESCRIPTION: Describes the different types of wireless communication technologies employed for subsea valve control (e.g., acoustic, optical, inductive), outlining their principles and general applications.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_3
+CODE_NAME: Acoustic Communication Details
+DESCRIPTION: Specific components, functionalities, and performance characteristics of acoustic communication systems for subsea applications.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_4
+CODE_NAME: Optical Communication Details
+DESCRIPTION: Specific components, functionalities, and performance characteristics of optical communication systems for subsea applications, including data rates and alignment challenges.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_5
+CODE_NAME: Inductive Coupling Details
+DESCRIPTION: Specific components, functionalities, and benefits of inductive coupling systems for robust underwater power and data transfer.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_6
+CODE_NAME: Subsea Valve Actuation Hardware
+DESCRIPTION: Equipment responsible for physically operating the subsea valves, including the valves themselves and the actuators that convert signals into mechanical motion.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_7
+CODE_NAME: Subsea Monitoring & Control Units
+DESCRIPTION: Electronic units and sensors used for processing commands, providing feedback on valve status, and monitoring environmental parameters.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_8
+CODE_NAME: Tethered Support & Intervention
+DESCRIPTION: Describes the role of tethered systems, such as Remotely Operated Vehicles (ROVs) and umbilical cables, for deployment, maintenance, and physical interaction with subsea equipment, even when valve control is wireless.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_9
+CODE_NAME: Brand & Product Specific Examples
+DESCRIPTION: Mentions of specific companies, proprietary products, or named technologies that exemplify the discussed concepts, serving as concrete industry solutions.
+
+CODE_ID: query_01khx47q6aeh7r8m9zmh3dhsc9::Code_10
+CODE_NAME: System Integration & Components Overview
+DESCRIPTION: General statements about the overall system architecture, the combination of various components, or the necessity of ruggedized parts for a complete solution.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_1
+CODE_NAME: Propulsion System Design
+DESCRIPTION: Encompasses all aspects related to thrusters, their number, placement, type (vectored), and efficiency for precise movement and control.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_2
+CODE_NAME: Hydrodynamic Optimization
+DESCRIPTION: Focuses on the physical shape and structure of the ROV to minimize drag and enhance movement efficiency through water.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_3
+CODE_NAME: Buoyancy and Stability Control
+DESCRIPTION: Addresses the management of buoyancy, ballast, and trim to ensure ROV stability and efficient vertical/horizontal movement.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_4
+CODE_NAME: Advanced Control & Sensor Integration
+DESCRIPTION: Covers the use of sophisticated algorithms, real-time feedback from various sensors, and intuitive interfaces for precise and responsive ROV operation.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_5
+CODE_NAME: Umbilical Cable Management
+DESCRIPTION: Pertains to strategies and design considerations for the tether to prevent entanglement and minimize its negative impact on ROV maneuverability.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_6
+CODE_NAME: Material & Structural Considerations
+DESCRIPTION: Relates to the selection of materials for ROV construction, impacting weight, durability, and performance.
+
+CODE_ID: query_01khx4ndd1fvhaahzxp9xw0tgc::Code_7
+CODE_NAME: Operational Tuning & Environmental Adaptation
+DESCRIPTION: Includes practical aspects like testing, tuning, and adapting ROV operation to specific environmental conditions or tasks.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_1
+CODE_NAME: Technical Challenges & Mechanisms
+DESCRIPTION: Describes the physical phenomena (e.g., absorption, scattering) and their impact on optical communication performance in turbid water, explaining why it's challenging.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_2
+CODE_NAME: Research & Experimental Solutions
+DESCRIPTION: Details ongoing scientific research, experimental techniques, and theoretical approaches being developed to mitigate the challenges of optical wireless communication in turbid water.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_3
+CODE_NAME: Commercial Product Identification
+DESCRIPTION: Explicitly names and identifies specific commercial products or product lines designed for optical wireless communication in turbid water.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_4
+CODE_NAME: Company & Brand Attribution
+DESCRIPTION: Mentions the companies or brands that manufacture or are associated with the commercial products discussed.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_5
+CODE_NAME: Product Performance Specifications
+DESCRIPTION: Provides specific numerical or descriptive performance data for commercial products, such as range, data rate, wavelengths used, beam angle, or unique features.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_6
+CODE_NAME: Comparative Performance & Context
+DESCRIPTION: Compares the performance of optical modems across different water conditions (e.g., clear vs. turbid) or provides broader context on their market status, limitations, or advantages relative to other technologies (e.g., acoustics).
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_7
+CODE_NAME: General Feasibility & Existence
+DESCRIPTION: Statements that confirm the general existence or feasibility of optical wireless modems operating in turbid water, often serving as an introduction or summary.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_8
+CODE_NAME: Structured Product Data
+DESCRIPTION: Presents commercial product information in a structured format, such as a table, for easy comparison and overview.
+
+CODE_ID: query_01khx3wr25fvgs7m0t1672zv60::Code_9
+CODE_NAME: Practical Application & Benefits
+DESCRIPTION: Mentions the real-world use cases, practical benefits, or operational advantages of deploying optical wireless modems in underwater projects.
+
+CODE_ID: query_01khx4ar6renerh4q8pgqv57mt::Code_1
+CODE_NAME: Inspection_Environment_Categorization
+DESCRIPTION: Differentiates drone/ROV requirements based on the inspection location (e.g., external/aerial vs. internal/submerged/confined spaces).
+
+CODE_ID: query_01khx4ar6renerh4q8pgqv57mt::Code_2
+CODE_NAME: Operational_Benefits
+DESCRIPTION: Highlights the advantages of using drones/ROVs for reservoir inspection, such as enhanced safety, cost reduction, increased efficiency, and minimized operational disruption.
+
+CODE_ID: query_01khx4ar6renerh4q8pgqv57mt::Code_3
+CODE_NAME: Technical_Features_Capabilities
+DESCRIPTION: Details the specific technical specifications and functionalities required for drones/ROVs to perform effective reservoir inspections, including camera quality, navigation, durability, and specialized sensors.
+
+CODE_ID: query_01khx4ar6renerh4q8pgqv57mt::Code_4
+CODE_NAME: Specific_Product_Recommendation
+DESCRIPTION: Provides examples of particular drone or ROV models and brands that are suitable for different types of potable water reservoir inspections.
+
+CODE_ID: query_01khx4ar6renerh4q8pgqv57mt::Code_5
+CODE_NAME: Regulatory_Compliance_Standards
+DESCRIPTION: Refers to the adherence to industry regulations, safety standards, and best practices, including hygiene requirements for potable water environments.
+
+CODE_ID: query_01khx4ar6renerh4q8pgqv57mt::Code_6
+CODE_NAME: Data_Management_Analysis
+DESCRIPTION: Describes the processes and tools for collecting, transmitting, recording, and analyzing inspection data.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_1
+CODE_NAME: Fundamental_Challenge_Context
+DESCRIPTION: Describes the inherent difficulties and physical principles (e.g., attenuation by water) that make untethered underwater communication challenging.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_2
+CODE_NAME: Primary_Communication_Methods
+DESCRIPTION: Introduces, lists, or broadly describes the main technologies used for untethered underwater data transfer (e.g., acoustic, optical, electromagnetic, magnetic induction).
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_3
+CODE_NAME: Technical_Mechanism_Description
+DESCRIPTION: Explains the operational principles or "how it works" for a specific underwater communication technology.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_4
+CODE_NAME: Performance_Attributes_Benefits
+DESCRIPTION: Highlights the advantages, strengths, or positive performance characteristics of a communication method, such as long range, high data rates, reliability, or security.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_5
+CODE_NAME: Performance_Constraints_Limitations
+DESCRIPTION: Details the disadvantages, drawbacks, or negative performance characteristics of a communication method, such as low data rates, short range, high latency, or infrastructure requirements.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_6
+CODE_NAME: Application_Use_Cases
+DESCRIPTION: Provides examples of practical scenarios, industries, or devices where a specific underwater communication method is utilized.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_7
+CODE_NAME: Environmental_Impact_Factors
+DESCRIPTION: Discusses how various environmental conditions (e.g., water type, turbidity, pressure, temperature, ambient light, marine life noise) specifically affect the performance or signal propagation of underwater communication.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_8
+CODE_NAME: Comparative_Selection_Guidance
+DESCRIPTION: Offers criteria, recommendations, or a comparative analysis to guide the selection of the most suitable communication method based on specific application requirements (e.g., range, data rate, environment).
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_9
+CODE_NAME: Emerging_Innovation_Trends
+DESCRIPTION: Mentions new research, experimental technologies, or future developments in the field of underwater wireless communication.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_10
+CODE_NAME: External_Authority_Referencing
+DESCRIPTION: Refers to specific companies, research institutions, or uses numbered citations to provide examples, lend credibility, or indicate the source of information.
+
+CODE_ID: query_01khx3tdh9fvpvdfa6zyqvavry::Code_11
+CODE_NAME: Chatbot_Interactive_Element
+DESCRIPTION: Instances where the chatbot directly engages the user, asks clarifying questions, or offers to provide more detailed information.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_1
+CODE_NAME: Problem_Framing_and_Solution_Overview
+DESCRIPTION: Introduces the core challenge of inspecting confined, submerged spaces with entanglement risks and broadly positions advanced robotics as the solution.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_2
+CODE_NAME: Untethered_Robotics_Primary_Solution
+DESCRIPTION: Emphasizes untethered or wireless robots as the main method to eliminate entanglement risks, sometimes including trade-offs.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_3
+CODE_NAME: Specific_Untethered_Technology_Detail
+DESCRIPTION: Provides detailed explanations of distinct untethered communication or propulsion technologies, often including their mechanisms and specific features.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_4
+CODE_NAME: Specialized_Robot_Design_and_Capabilities
+DESCRIPTION: Describes unique robot designs (e.g., snake-like, crawlers, specialized cameras) and their inherent capabilities for navigating complex or tight spaces, including aspects like flexibility, maneuverability, and autonomy.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_5
+CODE_NAME: Application_Contexts_and_Use_Cases
+DESCRIPTION: Identifies specific environments, industries, or tasks where the described robotic inspection methods are particularly useful.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_6
+CODE_NAME: Brand_Product_Specific_Examples
+DESCRIPTION: Mentions specific companies, product names, or research projects as concrete examples of the technologies discussed.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_7
+CODE_NAME: Operational_Guidance_and_Best_Practices
+DESCRIPTION: Offers practical advice, strategies, or considerations for the effective deployment and management of inspection systems, including pre-planning, operator skills, and equipment design.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_8
+CODE_NAME: Benefits_and_Risk_Reduction
+DESCRIPTION: Highlights the advantages of using advanced robotic inspection, such as improved safety, cost savings, and data quality, often by mitigating entanglement risks.
+
+CODE_ID: query_01khxkv82vfk5ak1dtsbnkd936::Code_9
+CODE_NAME: Tethered_System_Alternative_with_Management
+DESCRIPTION: Acknowledges that tethered systems can still be used in confined spaces but requires rigorous management and specific strategies to mitigate entanglement risks.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_1
+CODE_NAME: Wireless_Communication_Context
+DESCRIPTION: Initial framing of wireless communication challenges and general categories for underwater ROVs, including the limitations of traditional radio waves in water.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_2
+CODE_NAME: Acoustic_Technology_Details
+DESCRIPTION: Comprehensive description of acoustic modems, including their principles of operation, general capabilities (e.g., bi-directional data, positioning), and overall performance characteristics.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_3
+CODE_NAME: Optical_Technology_Details
+DESCRIPTION: Comprehensive description of optical modems, including their principles of operation, general capabilities (e.g., high-bandwidth, real-time video), and overall performance characteristics.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_4
+CODE_NAME: Alternative_Communication_Methods
+DESCRIPTION: Introduction and details of wireless communication methods other than acoustic and optical, such as RF-based systems, cellular, or satellite communication, often for surface or near-surface applications.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_5
+CODE_NAME: Product_Specific_Attributes
+DESCRIPTION: Detailed features and specifications of named products, focusing on design aspects (e.g., compactness, miniaturization, omnidirectionality), ease of integration, power efficiency, and quantifiable performance metrics (e.g., data rates, ranges, depths) when tied to a specific product.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_6
+CODE_NAME: Environmental_Application_Fit
+DESCRIPTION: Description of the specific conditions, environments, or use cases where a technology or product is most effective, suitable, or intended for use (e.g., turbid water, clear water, shallow waters, deep-water research, surface vessels, confined environments).
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_7
+CODE_NAME: Technological_Constraints
+DESCRIPTION: Explicit discussion of the inherent limitations, drawbacks, or susceptibilities of a communication technology, such as lower data rates, limited range, or susceptibility to environmental factors.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_8
+CODE_NAME: Research_Development_Focus
+DESCRIPTION: Information about ongoing research, future advancements, or key players driving innovation in the field of wireless communication for ROVs, often including demonstrated progress or future goals.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_9
+CODE_NAME: Comparative_Summary_Overview
+DESCRIPTION: Sections that synthesize and compare the different communication technologies, often highlighting their trade-offs, advantages, and limitations in a summarized or comparative format (e.g., tables, concluding remarks).
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_10
+CODE_NAME: Direct_Brand_Product_Mention
+DESCRIPTION: Explicit naming of companies and their specific product lines or models as examples, leading options, or recommendations within the context of the discussed technologies.
+
+CODE_ID: query_01khx44wpeenark5c6htxexdzp::Code_11
+CODE_NAME: Chatbot_Interaction_Elements
+DESCRIPTION: Any parts of the response where the chatbot directly addresses the user, acknowledges their input, asks clarifying questions, or provides conversational framing for the information presented.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_1
+CODE_NAME: Introduction_and_Context
+DESCRIPTION: Initial statements setting the stage, defining the problem, or providing an overview of the solutions for reducing inspection costs.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_2
+CODE_NAME: Remote_Inspection_Technologies
+DESCRIPTION: Discussion of advanced technologies like drones, ROVs, and AUVs for inspection, including their general benefits and applications in minimizing human intervention and enhancing safety.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_3
+CODE_NAME: Specific_Remote_Tech_Capabilities
+DESCRIPTION: Detailed descriptions of the specific functionalities, tools, and advantages of different remote inspection tools (e.g., ultrasonic testing by drones, NDT tools on ROVs, real-time footage, 3D scanning).
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_4
+CODE_NAME: Risk_Based_Inspection_Methodology
+DESCRIPTION: Explanation of Risk-Based Inspection (RBI) principles, its definition, and how it prioritizes inspection efforts based on the risk of failure.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_5
+CODE_NAME: RBI_Benefits_and_Application
+DESCRIPTION: The advantages and practical applications of RBI, such as targeted inspections, optimized schedules, resource allocation, and overall cost reduction.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_6
+CODE_NAME: Data_Analytics_and_Digitalization
+DESCRIPTION: The role of advanced data analytics, artificial intelligence (AI), machine learning, and digital tools in transforming inspection practices for more accurate, predictive, and efficient asset management.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_7
+CODE_NAME: Predictive_Maintenance_and_Digital_Twins
+DESCRIPTION: Specific applications of digitalization, including predictive maintenance, real-time monitoring systems, and the use of digital twins for continuous assessment and proactive asset management.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_8
+CODE_NAME: Optimized_Planning_and_Data_Management
+DESCRIPTION: How data analytics and integrated systems optimize future inspection strategies, streamline data collection, analysis, and reporting, leading to efficiencies in scheduling and reduced administrative costs.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_9
+CODE_NAME: System_Integration_and_Workflow_Efficiency
+DESCRIPTION: Strategies for integrating multiple functions into single, user-friendly systems and streamlining data handling processes to enhance efficiency and reduce labor costs.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_10
+CODE_NAME: Proactive_Maintenance_and_Prevention
+DESCRIPTION: The overarching strategy of preventing failures before they occur, including continuous monitoring, early detection of anomalies, and calculating optimal inspection intervals based on cost-benefit analysis.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_11
+CODE_NAME: Operational_Cost_Optimization
+DESCRIPTION: Strategies focused on managing and reducing operational expenses, particularly related to vessel utilization, grouping inspections, and optimizing deployment.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_12
+CODE_NAME: Strategic_Considerations_and_Cautions
+DESCRIPTION: Discussions about balancing cost reduction with safety and integrity, warnings against counterproductive measures (e.g., delaying maintenance, reducing skilled personnel), and the importance of collaboration.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_13
+CODE_NAME: Specific_Prevention_Measures
+DESCRIPTION: Concrete examples of preventative investments, such as cathodic protection systems, aimed at avoiding costly unscheduled maintenance and downtime.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_14
+CODE_NAME: Broader_Organizational_Strategies
+DESCRIPTION: Other organizational or procedural strategies mentioned, such as outsourcing, collaboration with specialized service providers, training, and standardization of inspection procedures.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_15
+CODE_NAME: Chatbot_Interaction_Elements
+DESCRIPTION: Phrases where the chatbot offers further assistance, asks a question to the user, or prompts for more detailed information.
+
+CODE_ID: query_01khx4c12jecxbrt5j3nb1e6ar::Code_16
+CODE_NAME: RBI_Industry_Standards
+DESCRIPTION: Mentions of specific industry frameworks or standards (e.g., API RP, DNVGL) that guide the implementation of Risk-Based Inspection.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_1
+CODE_NAME: Query Acknowledgment & Scope Setting
+DESCRIPTION: The AI acknowledges the user's query, defines the scope of the answer, and addresses potential subjectivity in terms like 'most compact'.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_2
+CODE_NAME: Introductory Statement for Product Listing
+DESCRIPTION: A direct statement introducing a list of recommended products or solutions.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_3
+CODE_NAME: Specific Product Details & Features
+DESCRIPTION: Detailed information about individual thruster models, including specifications, design features, materials, and suitability for specific applications.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_4
+CODE_NAME: Holistic Selection Criteria
+DESCRIPTION: Advice on additional factors beyond the primary query (compactness) that users should consider when selecting a product, such as thrust force, power, and integrated features.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_5
+CODE_NAME: Chatbot Identifier
+DESCRIPTION: A label indicating which chatbot generated the following response.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_6
+CODE_NAME: Compactness Feature Explanation
+DESCRIPTION: Explanation of general design principles or key features that contribute to a thruster's compact size, rather than specific product details.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_7
+CODE_NAME: Application Contextualization & Justification
+DESCRIPTION: Explaining the relevance of compactness for the target application (micro-ROVs) and providing context on their use.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_8
+CODE_NAME: User Query Validation & Confirmation
+DESCRIPTION: The AI confirms or validates aspects of the user's implied query or previously mentioned specifications, often by aligning them with available products.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_9
+CODE_NAME: Information Gap & Search Limitations
+DESCRIPTION: The AI identifies specific information it could not find in its search results, indicating limitations in its knowledge base or retrieval capabilities.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_10
+CODE_NAME: External Information Recommendation
+DESCRIPTION: The AI recommends consulting external sources, such as manufacturer documentation, for more accurate or current information.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_11
+CODE_NAME: Chatbot Identifier
+DESCRIPTION: A label indicating which chatbot generated the following response.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_12
+CODE_NAME: Direct Recommendation & Justification
+DESCRIPTION: The AI directly recommends a specific product as the 'most compact' and provides a brief justification based on available descriptions.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_13
+CODE_NAME: Section Header for Details
+DESCRIPTION: A heading that introduces a section providing key details about a specific product.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_14
+CODE_NAME: Section Header for Comparison
+DESCRIPTION: A heading that introduces a section comparing different products or alternatives.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_15
+CODE_NAME: Comparative Product Analysis
+DESCRIPTION: A structured comparison of multiple products, often in a table format, highlighting their compactness notes, thrust, and target use.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_16
+CODE_NAME: Section Header for Context
+DESCRIPTION: A heading that introduces a section providing broader context or background information related to the query.
+
+CODE_ID: query_01khx4kvbxenark5e62shdkj9d::Code_17
+CODE_NAME: User Clarification Request
+DESCRIPTION: The AI asks the user for more specific details or constraints to provide a more refined recommendation.
+
+CODE_ID: query_01khx4a9h4fzxr7jw8a4qwp24b::Code_1
+CODE_NAME: Affirmative_Response
+DESCRIPTION: The initial direct confirmation that underwater robots for complex piping systems exist.
+
+CODE_ID: query_01khx4a9h4fzxr7jw8a4qwp24b::Code_2
+CODE_NAME: Robot_Type_Identification
+DESCRIPTION: The explicit naming and introduction of a specific category or type of underwater robot.
+
+CODE_ID: query_01khx4a9h4fzxr7jw8a4qwp24b::Code_3
+CODE_NAME: Functional_Purpose_and_Impact
+DESCRIPTION: Describes the primary tasks, applications, and the overall positive outcomes or benefits of using these robots, including improved safety, efficiency, and prevention of failures.
+
+CODE_ID: query_01khx4a9h4fzxr7jw8a4qwp24b::Code_4
+CODE_NAME: Robot_Design_and_Navigation
+DESCRIPTION: Details the physical characteristics, locomotion methods, control mechanisms, and how robots are designed to navigate and operate within challenging environments like confined or complex piping systems.
+
+CODE_ID: query_01khx4a9h4fzxr7jw8a4qwp24b::Code_5
+CODE_NAME: Sensor_and_Data_Capabilities
+DESCRIPTION: Specifies the types of sensors, data collection methods, and data processing technologies (e.g., cameras, sonar, AI, real-time data) integrated into the robots for inspection and monitoring.
+
+CODE_ID: query_01khx4a9h4fzxr7jw8a4qwp24b::Code_6
+CODE_NAME: Specific_Robot_Examples
+DESCRIPTION: Provides concrete named examples of robots, research projects, or companies that illustrate the different types and their applications.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_1
+CODE_NAME: Query_Context_Setting
+DESCRIPTION: The AI's initial interpretation of the user's request and the framing of the answer's scope.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_2
+CODE_NAME: Recommendation_Introduction
+DESCRIPTION: General statements introducing the recommended entities or solutions, often summarizing the main providers.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_3
+CODE_NAME: Company_Identification
+DESCRIPTION: Explicit naming and listing of specific companies or service providers.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_4
+CODE_NAME: Product_Service_Description
+DESCRIPTION: Detailed explanation of the core products, services, or solutions offered by a company.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_5
+CODE_NAME: Technical_Operational_Capabilities
+DESCRIPTION: Specific features, technical specifications, operational environments, or performance metrics of the products/services.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_6
+CODE_NAME: Application_Use_Cases
+DESCRIPTION: Examples of industries, infrastructure types, or specific tasks where the products/services are utilized.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_7
+CODE_NAME: Credibility_Authority_Signals
+DESCRIPTION: Information that establishes the expertise, reliability, or reputation of a company (e.g., academic affiliations, certifications, experience metrics, partnerships).
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_8
+CODE_NAME: Geographic_Relevance
+DESCRIPTION: Information indicating the location, operational area, or regional focus of the companies or their services.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_9
+CODE_NAME: Direct_Resource_Link
+DESCRIPTION: Provision of direct URLs to company websites or relevant resources.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_10
+CODE_NAME: Market_Scope_Expansion
+DESCRIPTION: Introduction of alternative or broader market segments beyond the primary industrial providers (e.g., consumer-grade drones, specialized equipment).
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_11
+CODE_NAME: User_Guidance_Selection
+DESCRIPTION: Advice, considerations, or questions posed to the user to aid in decision-making or clarify needs.
+
+CODE_ID: query_01kc1eb6e3eh4a6hwchmbaaxrf::Code_12
+CODE_NAME: Summary_Reinforcement
+DESCRIPTION: Concluding statements that summarize key information or reinforce the main recommendations provided in the answer.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_1
+CODE_NAME: Existence_Confirmation
+DESCRIPTION: General statement confirming the availability or existence of underwater thrusters with integrated controllers.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_2
+CODE_NAME: Integration_Benefit_Compactness
+DESCRIPTION: Describes the advantages of integration, particularly regarding size, weight, simplicity, efficiency, and improved protection.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_3
+CODE_NAME: Brand_Product_Example
+DESCRIPTION: Mentions specific manufacturers or product series as concrete examples of integrated thrusters.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_4
+CODE_NAME: Integrated_Design_Mechanism
+DESCRIPTION: Explains the technical approaches or components used for integration, such as embedded ESCs, fully sealed designs, or fully-flooded motors.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_5
+CODE_NAME: Target_Application
+DESCRIPTION: Identifies the intended uses or environments for these integrated thrusters, such as ROVs, AUVs, boats, or wearable devices.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_6
+CODE_NAME: Performance_Specification
+DESCRIPTION: Details specific performance metrics or characteristics of the thrusters, such as thrust, depth rating, voltage, or stability.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_7
+CODE_NAME: Information_Verification_Discrepancy
+DESCRIPTION: AI's explicit statements about confirming or being unable to verify information, often highlighting differences in underlying data sources or search results.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_8
+CODE_NAME: External_Source_Citation
+DESCRIPTION: Presence of numerical citations linking to external sources, indicating reliance on verifiable information.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_9
+CODE_NAME: Design_Comparison_Nuance
+DESCRIPTION: Provides comparative context, distinguishes between fully integrated and partially integrated systems, or contrasts with external controller designs.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_10
+CODE_NAME: User_Context_Query
+DESCRIPTION: Chatbot asks questions to understand the user's specific project or needs for a more tailored and relevant response.
+
+CODE_ID: query_01khxkr0yfe05bwpbt7e4zc7bd::Code_11
+CODE_NAME: Chatbot_Interaction_Management
+DESCRIPTION: Chatbot's self-referential comments about the interaction, clarifying its role, the nature of the input, or managing the conversation flow.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_1
+CODE_NAME: General_Overview
+DESCRIPTION: Initial statements providing a broad introduction or context to the topic of underwater thrusters and power-to-weight ratios.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_2
+CODE_NAME: Electric_Thruster_Superiority
+DESCRIPTION: Highlights the general advantages and preferred status of electric thrusters, especially for achieving high power-to-weight ratios.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_3
+CODE_NAME: Electric_Propulsion_Technology
+DESCRIPTION: Details specific electric thruster technologies, designs, or components that contribute to their performance, such as brushless motors, direct drive, or rim-driven designs.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_4
+CODE_NAME: Specific_Product_Identification
+DESCRIPTION: Mentions specific manufacturers, brands, or product models of thrusters, often accompanied by their characteristics or performance.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_5
+CODE_NAME: Performance_Metrics_Detail
+DESCRIPTION: Provides quantitative data, specifications, or numerical evidence related to thruster performance, such as thrust, power, weight, or depth ratings.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_6
+CODE_NAME: Application_Contextualization
+DESCRIPTION: Links thruster types, features, or recommendations to specific use cases, operational environments, or vehicle types (e.g., ROVs, AUVs, deep-sea operations).
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_7
+CODE_NAME: Hydraulic_Thruster_Niche
+DESCRIPTION: Describes the specific role, advantages, or application areas where hydraulic thrusters excel, typically for high thrust/torque despite higher system weight.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_8
+CODE_NAME: Design_Innovation_Factors
+DESCRIPTION: Discusses general design principles, materials, or innovative features that influence the power-to-weight ratio, efficiency, or reliability of thrusters (e.g., cooling, materials, propeller design).
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_9
+CODE_NAME: Concluding_Summary
+DESCRIPTION: Final statements that summarize the main findings, recommendations, or comparative insights presented in the answer.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_10
+CODE_NAME: Structured_Data_Presentation
+DESCRIPTION: Refers to the use of tables or other structured formats to organize and display comparative data or specifications.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_11
+CODE_NAME: Calculation_Method_Explanation
+DESCRIPTION: Explains the methodology or criteria used for calculating or comparing power-to-weight ratios, often specifying the metrics used (e.g., power ÷ weight in water).
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_12
+CODE_NAME: Tailored_Recommendation_Prompt
+DESCRIPTION: Instances where the AI model asks the user for more specific details to provide a more customized or relevant recommendation.
+
+CODE_ID: query_01khx4p984fzxr7jxn9jntxjft::Code_13
+CODE_NAME: Comparative_Assessment
+DESCRIPTION: Sections that explicitly compare different thruster types or models, highlighting their relative strengths, weaknesses, or suitability for different scenarios.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_1
+CODE_NAME: UWOC_Overview_and_Purpose
+DESCRIPTION: Defines Underwater Wireless Optical Communication (UWOC) and states its primary function and the medium it uses.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_2
+CODE_NAME: Comparative_Advantages
+DESCRIPTION: Highlights the benefits and superior performance of UWOC compared to alternative underwater communication technologies (e.g., acoustic, RF).
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_3
+CODE_NAME: System_Architecture_Components
+DESCRIPTION: Describes the fundamental structural elements of a UWOC system (transmitter, channel, receiver) and specific hardware components involved in signal generation and reception.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_4
+CODE_NAME: Signal_Encoding_Modulation
+DESCRIPTION: Explains the process by which data is encoded onto light signals for transmission, including specific light sources and modulation techniques.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_5
+CODE_NAME: Wavelength_Optimization_Principle
+DESCRIPTION: Details the scientific principle behind selecting specific light wavelengths (blue-green spectrum) for optimal underwater transmission due to water's absorption and scattering properties.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_6
+CODE_NAME: Environmental_Transmission_Challenges
+DESCRIPTION: Identifies and describes the natural obstacles and physical phenomena in the underwater environment that degrade optical signal transmission.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_7
+CODE_NAME: Challenge_Mitigation_Strategies
+DESCRIPTION: Describes the engineering solutions, techniques, and design choices implemented in UWOC systems to counteract the adverse effects of the underwater environment.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_8
+CODE_NAME: Signal_Reception_Demodulation
+DESCRIPTION: Explains the process and components involved in detecting the optical signal and converting it back into electrical data at the receiver end.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_9
+CODE_NAME: Applications_Use_Cases
+DESCRIPTION: Lists and describes the practical scenarios and industries where UWOC technology is or can be applied.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_10
+CODE_NAME: Performance_Metrics_Data
+DESCRIPTION: Provides quantitative information about UWOC system capabilities, such as data rates, transmission range, and power efficiency, often in a comparative context.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_11
+CODE_NAME: Specific_Examples_Research
+DESCRIPTION: Mentions particular companies, products, research initiatives, or specific modulation schemes/technologies by name, providing concrete instances of UWOC implementation or development.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_12
+CODE_NAME: Source_Attribution
+DESCRIPTION: Refers to the citation of external sources or references used to compile the information, typically found at the end of the response.
+
+CODE_ID: query_01kc1eb6e3eh4a6hza9hx357jh::Code_13
+CODE_NAME: Conversational_Engagement
+DESCRIPTION: Instances where the chatbot directly addresses the user or asks a follow-up question to guide further interaction, indicating a more interactive response style.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_1
+CODE_NAME: Thrust-to-Volume Ratio Definition & Importance
+DESCRIPTION: Defines the thrust-to-volume ratio and explains its critical role in ROV design, particularly for compactness and maneuverability.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_2
+CODE_NAME: Thruster Technology Comparison (Electric vs. Hydraulic)
+DESCRIPTION: Compares and contrasts electric and hydraulic thrusters, detailing their operational characteristics, advantages, disadvantages, and suitability for different ROV classes.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_3
+CODE_NAME: Thruster Design Features & Optimization
+DESCRIPTION: Describes specific design elements and engineering choices (e.g., ducted/non-ducted, motor types, flooded designs, propeller pitch, power density) that contribute to a thruster's efficiency, compactness, and overall performance.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_4
+CODE_NAME: Specific Product & Manufacturer Mentions
+DESCRIPTION: Identifies and lists particular thruster models, series, or manufacturers that are presented as relevant examples or recommendations.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_5
+CODE_NAME: Product Performance Specifications & Details
+DESCRIPTION: Provides concrete numerical data, dimensions, weight, thrust values, or unique design descriptions for specific thruster models.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_6
+CODE_NAME: Challenges in Quantitative Comparison
+DESCRIPTION: Acknowledges the difficulty or lack of publicly available, precise quantitative data (e.g., exact volume measurements) for direct comparison of thrust-to-volume ratios across different products or manufacturers.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_7
+CODE_NAME: Contextual Factors for Thruster Selection
+DESCRIPTION: Emphasizes that the optimal thruster choice is highly dependent on specific ROV requirements, such as depth rating, power source, operational environment, size constraints, and intended tasks.
+
+CODE_ID: query_01khxhrpjcfzxr7v7q0fk26985::Code_8
+CODE_NAME: Qualitative Assessment & Recognition
+DESCRIPTION: Uses descriptive, non-numerical terms and phrases to qualitatively assess, recognize, or highlight certain products, designs, or characteristics as superior, optimal, or well-suited for achieving a high thrust-to-volume ratio.
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_1
+CODE_NAME: Product Introduction & Unique Value Proposition
+DESCRIPTION: How the Hydromea ExRay is introduced, its primary function, and its core unique selling points or market positioning (e.g., 'smallest wireless,' 'leading candidate,' 'excellent choice').
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_2
+CODE_NAME: Core Technology & Innovation
+DESCRIPTION: Details about the specific wireless communication technology (optical, light-based) and its innovative nature, distinguishing it from traditional methods.
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_3
+CODE_NAME: Key Features & Technical Specifications
+DESCRIPTION: Factual details about the ROV's design, capabilities, and performance, including dimensions, weight, propulsion, camera, battery life, and range.
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_4
+CODE_NAME: Application & Use Case Specificity
+DESCRIPTION: The specific environments and scenarios where the ExRay is intended to be used, particularly challenging confined flooded spaces.
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_5
+CODE_NAME: Problem-Solution & Benefit Framing
+DESCRIPTION: How the ExRay addresses existing problems or limitations (e.g., risks of human inspection, cable snagging, impracticality of tethered systems) and the resulting benefits (safety, efficiency, cost reduction).
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_6
+CODE_NAME: Competitive Differentiation & Market Comparison
+DESCRIPTION: Explicit comparisons with other ROV types (especially tethered systems) to highlight the ExRay's advantages and unique position in the market. This includes tables or direct statements about how it stands out.
+
+CODE_ID: query_01kj5favv0e0096hnzw6gvw5x3::Code_7
+CODE_NAME: External Resource/Call to Action
+DESCRIPTION: Providing a link to the official website for more information.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_1
+CODE_NAME: Problem Framing & Core Challenge
+DESCRIPTION: Describes the inherent difficulties and unique challenges of achieving real-time Full HD video streaming from underwater assets due to water properties.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_2
+CODE_NAME: Fiber Optic Solution - Overview & Mechanism
+DESCRIPTION: Introduces fiber optic cables as the primary reliable solution and explains their working principle for underwater video transmission.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_3
+CODE_NAME: Fiber Optic - Advantages
+DESCRIPTION: Lists the specific benefits and strengths of using fiber optic cables for underwater video streaming, such as high bandwidth and low latency.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_4
+CODE_NAME: Fiber Optic - Disadvantages & Operational Complexity
+DESCRIPTION: Details the drawbacks, practical challenges, and vulnerabilities associated with deploying and managing fiber optic cables in underwater environments.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_5
+CODE_NAME: Fiber Optic - System Components
+DESCRIPTION: Describes the typical hardware setup and components required for both the underwater and surface segments of a fiber optic streaming system.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_6
+CODE_NAME: Wireless Communication - General Limitations
+DESCRIPTION: Provides an overview of why wireless options are generally more challenging for real-time FHD underwater streaming due to signal attenuation.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_7
+CODE_NAME: Optical Wireless Communication (OWC) - Details
+DESCRIPTION: Explains the mechanism, advantages, disadvantages, and specific applications of Underwater Optical Wireless Communication (OWC).
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_8
+CODE_NAME: Acoustic Communication - Details
+DESCRIPTION: Explains the mechanism, advantages, severe bandwidth/latency disadvantages, and limited applications of underwater acoustic communication for video streaming.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_9
+CODE_NAME: Radio Frequency (RF) - Limitations
+DESCRIPTION: Explains why Radio Frequency (RF) signals are unsuitable for practical underwater video streaming due to rapid attenuation and extremely low bandwidth at penetrable frequencies.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_10
+CODE_NAME: Video Compression & Codecs
+DESCRIPTION: Discusses the necessity of video compression for FHD streaming, mentions specific codecs (H.264, H.265), and notes its impact on latency.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_11
+CODE_NAME: Latency Management
+DESCRIPTION: Emphasizes the criticality of latency for real-time streaming and breaks down its various sources, including propagation, encoding/decoding, and network delays.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_12
+CODE_NAME: Power & Environmental Factors
+DESCRIPTION: Covers the importance of power consumption for underwater assets and lists environmental factors (depth, water clarity, temperature) that affect system performance.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_13
+CODE_NAME: Essential Hardware Components
+DESCRIPTION: Lists the general and specific hardware components required for an underwater video streaming system, from cameras to connectors and surface stations.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_14
+CODE_NAME: Networking & Streaming Protocols
+DESCRIPTION: Mentions specific protocols (e.g., RTSP, WebRTC) and software platforms essential for managing and optimizing real-time video streams.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_15
+CODE_NAME: Solution Synthesis & Recommendation
+DESCRIPTION: Provides a conclusive summary, reiterating the most practical and recommended solutions (e.g., fiber optics) and highlighting the unsuitability of others for real-time FHD.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_16
+CODE_NAME: Brand/Product Specific Examples
+DESCRIPTION: Mentions specific companies, product series, or platforms as examples of hardware or software solutions for underwater video streaming.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_17
+CODE_NAME: Comparative Solution Analysis
+DESCRIPTION: Presents a structured comparison of different solutions, often in a table format, detailing their specifications, connectivity, use cases, and other relevant metrics.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_18
+CODE_NAME: Real-world Application/Proof
+DESCRIPTION: Provides examples or case studies of successful field deployments or operational benefits derived from implementing these solutions.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_19
+CODE_NAME: Attribution & References
+DESCRIPTION: Includes citations, links, or references to external sources that support the information provided.
+
+CODE_ID: query_01kj5e94azexvsxrkxqmnrq3dr::Code_20
+CODE_NAME: User Interaction/Clarification
+DESCRIPTION: Represents instances where the chatbot asks follow-up questions or offers further assistance to the user.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_1
+CODE_NAME: UWOC_Overview
+DESCRIPTION: General introduction, definition, and high-level benefits of Underwater Optical Wireless Communication, often including its potential for high-speed, low-latency, and high-bandwidth data transmission.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_2
+CODE_NAME: Technology_Description
+DESCRIPTION: Details about the core UWOC technology, specific components (e.g., LEDs, Laser Diodes), and characteristics of the optimal light spectrum (e.g., blue-green light) for underwater transmission.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_3
+CODE_NAME: Comparative_Benefits
+DESCRIPTION: Advantages of UWOC over traditional underwater communication methods (e.g., acoustic, radio frequency), highlighting its superior data rates, lower latency, and immunity to marine noise.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_4
+CODE_NAME: Performance_Data
+DESCRIPTION: Specific quantitative results from experiments or prototypes, including achieved data rates, communication distances, and operational depths.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_5
+CODE_NAME: Environmental_Impacts
+DESCRIPTION: How water conditions (e.g., absorption, scattering, turbidity) affect UWOC performance and the strategies for wavelength optimization to mitigate these effects.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_6
+CODE_NAME: Operational_Challenges
+DESCRIPTION: Technical and environmental difficulties and limitations in implementing UWOC, such as signal attenuation, misalignment, turbulence, ambient light interference, biofouling, and the lack of a single standard theoretical model.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_7
+CODE_NAME: Research_Focus
+DESCRIPTION: Areas of ongoing research, development, and future trends aimed at improving UWOC capabilities, including channel modeling, modulation techniques, and turbulence mitigation.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_8
+CODE_NAME: Application_Areas
+DESCRIPTION: Specific fields, devices, and use cases where UWOC can be practically applied, such as communication with AUVs/ROVs, environmental monitoring, and underwater imaging.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_9
+CODE_NAME: Hybrid_Integration
+DESCRIPTION: Discussion of combining UWOC with other communication technologies (e.g., acoustic systems, Laser Diodes) to overcome limitations, enhance reliability, or leverage the strengths of multiple technologies.
+
+CODE_ID: query_01kj5eaevmfq99jc0ysccfp93z::Code_10
+CODE_NAME: Commercial_Maturity
+DESCRIPTION: The current stage of UWOC deployment, indicating whether it is experimental, prototype-based, or has achieved widespread commercial adoption.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_1
+CODE_NAME: Introduction & Importance
+DESCRIPTION: Initial framing of the topic, emphasizing the significance and benefits of remote data retrieval from subsea loggers, or providing a general overview of methods.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_2
+CODE_NAME: Wireless Acoustic Communication
+DESCRIPTION: Detailed explanation of acoustic modems, including their operational principles, applications, advantages, and the specific challenges encountered in underwater environments.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_3
+CODE_NAME: Electromagnetic & Inductive Methods
+DESCRIPTION: Describes data transfer technologies utilizing electromagnetic fields or inductive coupling, outlining their mechanisms, specific applications, and inherent benefits or limitations.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_4
+CODE_NAME: ROV/AUV Data Interface
+DESCRIPTION: Explains the role of Remotely Operated Vehicles (ROVs) and Autonomous Underwater Vehicles (AUVs) as platforms for interfacing with subsea loggers to retrieve data, including their operational modes and logistical considerations.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_5
+CODE_NAME: Wired & Direct Physical Connections
+DESCRIPTION: Methods involving direct physical connections or cables for data transfer, such as Surface Readout Units (SRUs), RS485 interfaces, or cabled observatory systems, often mentioning specific products.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_6
+CODE_NAME: Operational Advantages
+DESCRIPTION: Highlights the positive aspects, efficiencies, or specific benefits (e.g., cost-effectiveness, robustness, real-time data) offered by the described data retrieval technologies.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_7
+CODE_NAME: Technical & Environmental Limitations
+DESCRIPTION: Discusses the inherent difficulties, constraints, or environmental factors (e.g., signal attenuation, distance limits, turbid water) that can affect the performance or applicability of remote data transfer methods.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_8
+CODE_NAME: Specific Product/Program Examples
+DESCRIPTION: Mentions of particular commercial products, software, or established scientific/industry programs that serve as concrete illustrations of the technologies in use.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_9
+CODE_NAME: User Guidance & Recommendations
+DESCRIPTION: Direct advice, recommendations, or interactive questions posed to the user to guide their next steps, encourage checking specifications, or elicit more specific information.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_10
+CODE_NAME: Auxiliary Remote Features
+DESCRIPTION: Describes additional functionalities of subsea loggers that enable remote interaction, status checks, or reconfiguration beyond the primary data download.
+
+CODE_ID: query_01kj5dwxckfq99jbjxn9171gcb::Code_11
+CODE_NAME: General Wireless & Emerging Tech
+DESCRIPTION: Broader mentions of wireless communication concepts or newer, less detailed technologies like Bluetooth or general optical communication, often presented as possibilities.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_1
+CODE_NAME: Technology Overview & Purpose
+DESCRIPTION: Introduces the primary underwater communication technologies discussed and their general purpose related to low-latency control signals, often setting the stage for detailed explanations.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_2
+CODE_NAME: UWOC Core Characteristics
+DESCRIPTION: Describes the fundamental properties and general advantages of Underwater Wireless Optical Communication (UWOC), focusing on its speed, data rates, and latency in a broad sense.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_3
+CODE_NAME: UWOC Specific Features & Performance
+DESCRIPTION: Provides detailed specifications, performance metrics (e.g., ultra-low latency, high data rates), and specific applications for UWOC, often with numerical evidence or concrete use cases.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_4
+CODE_NAME: UWOC Product Examples & Innovations
+DESCRIPTION: Lists specific commercial products, company names, and research innovations related to UWOC technology, highlighting their features and capabilities.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_5
+CODE_NAME: Acoustic Modem Core Characteristics
+DESCRIPTION: Describes the fundamental properties and general use of acoustic modems, highlighting their range capabilities and inherent latency due to the speed of sound.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_6
+CODE_NAME: Acoustic Modem Specific Features & Applications
+DESCRIPTION: Details the key characteristics of acoustic modems relevant for control signals, such as reliability over distance, command and control functions, and versatility in applications.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_7
+CODE_NAME: Acoustic Modem Product Examples & Innovations
+DESCRIPTION: Lists specific commercial products, company names, and research innovations related to acoustic modem technology, detailing their performance and features.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_8
+CODE_NAME: Other Communication Technologies
+DESCRIPTION: Introduces and briefly describes alternative or emerging underwater communication technologies beyond UWOC and acoustic modems, such as RF communication.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_9
+CODE_NAME: Comparative Summary & Recommendation
+DESCRIPTION: Provides a concluding summary that compares the main technologies (UWOC and Acoustic Modems) and offers recommendations based on application requirements, particularly the trade-off between latency and range.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_10
+CODE_NAME: External References/Citations
+DESCRIPTION: Lists external sources, research papers, or company websites cited by the chatbot to support its information.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_11
+CODE_NAME: Chatbot Specific Formatting/Structure
+DESCRIPTION: Refers to structural elements or introductory/concluding phrases specific to a chatbot's response format, including numbered lists, bolding for emphasis, or direct links, that frame the content.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_12
+CODE_NAME: Technology Limitations/Trade-offs
+DESCRIPTION: Highlights the inherent limitations or trade-offs associated with a particular technology, such as range restrictions for UWOC due to absorption and scattering.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_13
+CODE_NAME: Hybrid & Wired Solutions
+DESCRIPTION: Discusses communication solutions that combine different technologies (hybrid systems) or use physical cables (wired Ethernet) for specific scenarios, often for balancing range, bandwidth, and latency.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_14
+CODE_NAME: Direct Product/Company Listing
+DESCRIPTION: A concise list of specific products or companies without extensive descriptive text, often serving as a summary of mentioned entities or a source list.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_15
+CODE_NAME: Tabular Comparison
+DESCRIPTION: Presents information in a structured table format to compare different technologies or products based on various criteria like latency, data rate, range, and best use cases.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_16
+CODE_NAME: User Query for Specifics
+DESCRIPTION: The chatbot prompts the user for more specific requirements or context to tailor its recommendations or provide further assistance.
+
+CODE_ID: query_01kj5dwc8ee8gagc7f3htc6hq7::Code_17
+CODE_NAME: Magnetic Induction Technology
+DESCRIPTION: Describes Magnetic Induction systems as an alternative low-latency communication method, including its characteristics, advantages (e.g., stability in murky water), and limitations (e.g., short range).
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_1
+CODE_NAME: RF_Limitations_Underwater
+DESCRIPTION: Explains why standard radio frequency (Wi-Fi) signals are ineffective in water due to absorption and scattering.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_2
+CODE_NAME: Core_Communication_Technologies
+DESCRIPTION: Introduces the main alternative technologies for underwater communication (e.g., acoustic, optical, magnetic induction).
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_3
+CODE_NAME: Technology_Mechanism
+DESCRIPTION: Describes how a specific underwater communication technology works.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_4
+CODE_NAME: Technology_Performance_Characteristics
+DESCRIPTION: Details the operational attributes of a technology, such as range, bandwidth, latency, robustness, and power consumption (includes pros and cons).
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_5
+CODE_NAME: Environmental_Factors_Impact
+DESCRIPTION: Discusses how water conditions (clarity, turbidity, salinity, temperature, obstacles) affect a technology's performance.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_6
+CODE_NAME: Optimal_Use_Cases
+DESCRIPTION: Identifies the best applications or scenarios for a particular communication technology.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_7
+CODE_NAME: Hybrid_System_Approach
+DESCRIPTION: Recommends combining different communication technologies to leverage their strengths and overcome individual limitations.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_8
+CODE_NAME: Network_Design_Principles
+DESCRIPTION: Covers architectural considerations like topologies (e.g., mesh), protocols, relay nodes, and synchronization for underwater networks.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_9
+CODE_NAME: Robot_System_Integration
+DESCRIPTION: Addresses the hardware, software, and power management requirements for integrating communication capabilities into robots.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_10
+CODE_NAME: Project_Planning_Considerations
+DESCRIPTION: Lists key questions or factors to evaluate when designing an underwater network for a specific project.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_11
+CODE_NAME: Specific_Product_Vendor_Mentions
+DESCRIPTION: Refers to actual companies, products, or commercial solutions available for underwater communication.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_12
+CODE_NAME: Practical_Implementation_Steps
+DESCRIPTION: Provides actionable guidance or steps for building, configuring, and testing an underwater network.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_13
+CODE_NAME: System_Challenges_Costs
+DESCRIPTION: Discusses inherent difficulties, limitations, or estimated costs associated with implementing these underwater communication systems.
+
+CODE_ID: query_01kj5dy69ye8gagc86nkp2hqb5::Code_14
+CODE_NAME: Information_Sources_Attribution
+DESCRIPTION: Cites research papers, surveys, or external websites as sources of information.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_1
+CODE_NAME: Enhanced Mobility & Access (Wireless ROV)
+DESCRIPTION: Highlights the primary advantage of wireless ROVs due to the absence of a tether, leading to greater freedom of movement, extended reach, and ability to navigate complex or confined spaces without entanglement risks.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_2
+CODE_NAME: Operational Efficiency & Safety (Wireless ROV)
+DESCRIPTION: Describes how wireless ROVs improve operational aspects by simplifying setup, reducing deployment time, minimizing human intervention in hazardous environments, and lowering the risk of equipment or tank damage.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_3
+CODE_NAME: Wireless ROV Technical Constraints
+DESCRIPTION: Addresses the inherent limitations of wireless ROV technology, such as reliance on battery life for operational duration and potential challenges with data transmission quality or range, especially in specific environments.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_4
+CODE_NAME: Comparative Strengths of Tethered ROVs
+DESCRIPTION: Outlines the specific advantages where tethered ROVs still outperform wireless systems, primarily concerning continuous power supply and highly reliable, high-speed data transmission for extended or deep missions.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_5
+CODE_NAME: Context-Dependent Solution Selection
+DESCRIPTION: Emphasizes that the choice between wireless and tethered ROVs is not absolute but depends on specific project requirements, environmental factors (e.g., tank size, complexity, liquid type), and desired data outcomes.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_6
+CODE_NAME: Specificity & Authority Reinforcement
+DESCRIPTION: Captures instances where the AI provides concrete examples, product names, certifications, or real-world application contexts to enhance the credibility and depth of the information.
+
+CODE_ID: query_01kj5jqkgre8gages2pnxg0nqr::Code_7
+CODE_NAME: Conversational Interaction & Query
+DESCRIPTION: Identifies parts of the response where the AI engages the user directly, often by asking a follow-up question to gather more specific information or offer further assistance.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_1
+CODE_NAME: Problem_Statement_Underwater_Wireless
+DESCRIPTION: Describes the fundamental challenge of achieving wireless communication, especially video transmission, through water due to its physical properties and attenuation of radio waves.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_2
+CODE_NAME: Technology_Category_Identification
+DESCRIPTION: Introduces or lists the main types of viable underwater wireless communication technologies.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_3
+CODE_NAME: Optical_Communication_Mechanism
+DESCRIPTION: Explains the operational principles of optical communication, including the type of light used and how data is transmitted.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_4
+CODE_NAME: General_Technology_Characterization
+DESCRIPTION: Provides a broad description or overall assessment of a technology's nature, suitability, or status without detailing specific advantages, limitations, or mechanisms.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_5
+CODE_NAME: Technology_Advantages
+DESCRIPTION: Highlights the benefits, strengths, or positive attributes of a specific underwater communication technology.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_6
+CODE_NAME: Performance_Metrics_and_Specs
+DESCRIPTION: Provides quantitative data, numerical values, or specific technical specifications related to the performance of a communication technology, such as range, data rates, bandwidth, or video quality.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_7
+CODE_NAME: Technology_Limitations
+DESCRIPTION: Describes the drawbacks, challenges, constraints, or negative aspects of a specific underwater communication technology.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_8
+CODE_NAME: Specific_Brand_Product_Reference
+DESCRIPTION: Mentions particular companies, their products, systems, or specific achievements by name, indicating real-world examples or market presence.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_9
+CODE_NAME: Application_Context_and_Use_Cases
+DESCRIPTION: Describes practical scenarios, specific tasks, or operational environments where a communication technology is applied or is particularly relevant.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_10
+CODE_NAME: Acoustic_Communication_Mechanism
+DESCRIPTION: Explains the operational principles of acoustic communication, detailing how sound waves are used to transmit data underwater.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_11
+CODE_NAME: Comparative_Analysis_of_Technologies
+DESCRIPTION: Directly compares different underwater communication methods, often highlighting their relative strengths, weaknesses, or trade-offs against each other.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_12
+CODE_NAME: RF_Communication_Mechanism
+DESCRIPTION: Explains the operational principles or inherent behavior of Radio Frequency (RF) communication in water, often detailing why it is ineffective or limited.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_13
+CODE_NAME: Solution_Recommendation_Guidance
+DESCRIPTION: Offers advice, conclusions, or recommendations on the most suitable communication technology based on specific user requirements, environmental conditions, or desired outcomes.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_14
+CODE_NAME: Hybrid_Communication_Strategies
+DESCRIPTION: Describes approaches that combine two or more different communication methods or technologies to overcome individual limitations or achieve broader capabilities.
+
+CODE_ID: query_01khxkx7skecxarbync2vtzj13::Code_15
+CODE_NAME: Tethered_Alternative_Mention
+DESCRIPTION: Discusses tethered solutions as a contrast, alternative, or complementary approach to wireless communication for underwater applications.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_1
+CODE_NAME: Introduction_to_Alternatives
+DESCRIPTION: General framing of the problem and the existence of alternatives to heavy work-class ROVs for simple visual checks.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_2
+CODE_NAME: General_Benefits_of_Alternatives
+DESCRIPTION: Overarching advantages of these lighter tools, such as cost-effectiveness, ease of deployment, and efficiency, without detailing specific tool characteristics.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_3
+CODE_NAME: Observation_Class_ROVs_Characteristics
+DESCRIPTION: Specific features, capabilities, and applications of Observation-Class ROVs.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_4
+CODE_NAME: Operational_Advantages
+DESCRIPTION: Benefits related to physical attributes (size, portability), deployment speed, agility, maneuverability, and ease of use.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_5
+CODE_NAME: Visual_Data_Focus
+DESCRIPTION: Emphasis on the quality and type of visual data collected (HD cameras, real-time feeds, GVI/CVI).
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_6
+CODE_NAME: Cost_Reduction
+DESCRIPTION: Explicit mentions of lower costs, cost savings, or reduced financial requirements.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_7
+CODE_NAME: Diverse_Application_Areas
+DESCRIPTION: The range of environments or structures where these tools can be applied.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_8
+CODE_NAME: Specific_Brand_Mentions
+DESCRIPTION: Direct mentions of commercial brands or manufacturers.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_9
+CODE_NAME: Underwater_Drones_Characteristics
+DESCRIPTION: Specific features, capabilities, and applications of Underwater Drones.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_10
+CODE_NAME: Safety_Enhancement
+DESCRIPTION: Benefits related to improving safety for personnel or reducing human risk.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_11
+CODE_NAME: AUVs_Characteristics
+DESCRIPTION: Specific features, capabilities, and applications of Autonomous Underwater Vehicles (AUVs).
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_12
+CODE_NAME: Operational_Constraints
+DESCRIPTION: Limitations or trade-offs associated with certain alternative tools.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_13
+CODE_NAME: Other_Specialized_Inspection_Tools
+DESCRIPTION: Descriptions of additional, distinct inspection tools mentioned (e.g., borescopes, robotic crawlers, diver-operated cameras, tethered cameras, access robots, mounted cameras).
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_14
+CODE_NAME: Contextual_Recommendation_Criteria
+DESCRIPTION: Factors influencing the choice of the right alternative (e.g., depth, complexity, environment).
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_15
+CODE_NAME: Chatbot_Engagement
+DESCRIPTION: Instances where the chatbot prompts the user for more information or offers further assistance.
+
+CODE_ID: query_01kj5e84dzeh18wys2za3hxk4k::Code_16
+CODE_NAME: Comparative_Suitability
+DESCRIPTION: Direct comparisons of performance or suitability between different alternatives or against heavy ROVs/divers.
+
+CODE_ID: query_01kj5dzys0fq99jbyn8wdsnk0m::Code_1
+CODE_NAME: Untethered Autonomous Inspection Concept
+DESCRIPTION: Introduces and defines the core concept of autonomous underwater vehicles (AUVs) and similar robots performing hull inspections without physical tethers or extensive traditional setups.
+
+CODE_ID: query_01kj5dzys0fq99jbyn8wdsnk0m::Code_2
+CODE_NAME: Operational Capabilities & Technology
+DESCRIPTION: Describes the specific technical features, sensors, navigation methods, data output, and operational mechanisms that enable untethered hull inspections. This includes 3D mapping, sonar use, autonomous navigation patterns, and adhesion technologies.
+
+CODE_ID: query_01kj5dzys0fq99jbyn8wdsnk0m::Code_3
+CODE_NAME: Key Advantages & Benefits
+DESCRIPTION: Enumerates the primary advantages and positive outcomes of using untethered autonomous systems for hull inspections, such as cost reduction, enhanced safety, efficiency, and comprehensive data quality.
+
+CODE_ID: query_01kj5dzys0fq99jbyn8wdsnk0m::Code_4
+CODE_NAME: Specific Robot & Company Examples
+DESCRIPTION: Lists particular AUV models, hull-crawling robots, and the companies involved in their development, testing, or deployment for untethered hull inspection tasks.
+
+CODE_ID: query_01kj5dzys0fq99jbyn8wdsnk0m::Code_5
+CODE_NAME: Challenges & Future Development
+DESCRIPTION: Addresses the current limitations, technical difficulties, and areas of ongoing research and development for untethered autonomous hull inspection systems.
+
+CODE_ID: query_01kj5dzys0fq99jbyn8wdsnk0m::Code_6
+CODE_NAME: Comparison with Traditional Methods
+DESCRIPTION: Provides a comparative analysis between untethered autonomous robots and conventional hull inspection techniques, such as tethered ROVs or human divers, highlighting differences in operational requirements, setup, and limitations.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_1
+CODE_NAME: Introductory_Context
+DESCRIPTION: General statements providing background information or setting the stage for the list of companies.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_2
+CODE_NAME: Company_Specialization
+DESCRIPTION: Describes the primary area of expertise or core business focus of a company within the subsea technology domain.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_3
+CODE_NAME: Product_Service_Detail
+DESCRIPTION: Specific names, types, or descriptions of products, systems, solutions, or services offered by a company.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_4
+CODE_NAME: Application_Domain
+DESCRIPTION: The specific industries, environments, or use cases where a company's technology or services are applied.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_5
+CODE_NAME: Technological_Attribute
+DESCRIPTION: Highlights specific technical features, innovative aspects, or advanced capabilities of a company's offerings.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_6
+CODE_NAME: Credibility_Indicator
+DESCRIPTION: Information that establishes a company's reputation, expertise, market position, or academic/financial backing (e.g., 'world-leading,' 'spin-off,' 'patented,' funding, awards, years of experience).
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_7
+CODE_NAME: Geographic_Origin
+DESCRIPTION: Explicit mention of a company's location, headquarters, or national affiliation.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_8
+CODE_NAME: Broader_Industry_Link
+DESCRIPTION: Mentions of companies with involvement in related but not exclusively subsea sectors, or general industry context that broadens the scope beyond direct subsea specialization.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_9
+CODE_NAME: AI_System_Meta_Commentary
+DESCRIPTION: The AI system providing commentary on the search process, industry characteristics, limitations of information, or contextualizing the results.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_10
+CODE_NAME: User_Interaction_Prompt
+DESCRIPTION: The AI system inviting further interaction, clarification, or offering to provide more details to the user.
+
+CODE_ID: query_01kj5e7gp3eh18wyqx30x2v6ap::Code_11
+CODE_NAME: Categorical_Summary
+DESCRIPTION: A concise overview or grouping of the companies' contributions to the subsea sector, often summarizing their collective impact.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_1
+CODE_NAME: Solution Contextualization
+DESCRIPTION: The answer emphasizes that the optimal solution is not universal but depends on specific project parameters (e.g., data volume, latency, budget).
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_2
+CODE_NAME: Primary Solution Recommendation
+DESCRIPTION: The chatbot explicitly identifies a particular technology (e.g., fiber optics) as the most effective or leading choice for high-speed data offloading.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_3
+CODE_NAME: Technology Mechanism Description
+DESCRIPTION: Explains the fundamental operational principles or how a specific communication technology works.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_4
+CODE_NAME: Performance Advantages
+DESCRIPTION: Highlights the positive attributes and capabilities of a technology, focusing on metrics like bandwidth, data rates, latency, and reliability.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_5
+CODE_NAME: Operational Considerations/Limitations
+DESCRIPTION: Discusses the practical challenges, drawbacks, constraints, or trade-offs associated with implementing or using a technology (e.g., cost, range, real-time capability).
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_6
+CODE_NAME: Specific Application Scenario
+DESCRIPTION: Describes the ideal or recommended use cases, environmental conditions, or operational contexts for a particular technology.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_7
+CODE_NAME: Alternative/Complementary Technology
+DESCRIPTION: Presents other communication methods that serve different purposes, act as backups, or address specific niche requirements where primary solutions are not suitable.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_8
+CODE_NAME: Hybrid System Approach
+DESCRIPTION: Suggests combining multiple communication technologies to leverage their individual strengths and overcome limitations.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_9
+CODE_NAME: Product/Vendor Specific Example
+DESCRIPTION: Mentions specific commercial products, systems, or companies as concrete illustrations of a technology in practice.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_10
+CODE_NAME: Concluding Summary
+DESCRIPTION: Provides a final overview, reiteration of key recommendations, or a synthesis of the discussed solutions.
+
+CODE_ID: query_01khxkwqhjfzxr7x0nfhwdn55x::Code_11
+CODE_NAME: User Engagement/Follow-up
+DESCRIPTION: The chatbot prompts the user for further interaction, clarification, or specific information to continue the conversation.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_1
+CODE_NAME: Primary_Solution_Identification
+DESCRIPTION: Identifies Underwater Optical Wireless Communication (UOWC) or optical modems as the main solution for high data rate underwater communication.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_2
+CODE_NAME: Optical_Communication_Mechanism_Description
+DESCRIPTION: Explains the fundamental principle of optical communication, such as using light waves or specific spectrums.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_3
+CODE_NAME: Optical_Performance_Metrics_DataRate
+DESCRIPTION: Details the high data transfer rates achievable with optical communication, often with specific numerical values.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_4
+CODE_NAME: Optical_Key_Advantage_LowLatency
+DESCRIPTION: Highlights low latency as a significant benefit of optical communication due to faster signal travel.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_5
+CODE_NAME: Optical_Key_Advantage_Security
+DESCRIPTION: Describes the security benefits of UOWC, such as low observability and focused beams.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_6
+CODE_NAME: Optical_Communication_Applications
+DESCRIPTION: Lists specific use cases and applications where optical communication excels.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_7
+CODE_NAME: Optical_Communication_Limitations
+DESCRIPTION: Explains the inherent drawbacks of optical communication, such as absorption, scattering, and sensitivity to water clarity/turbidity.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_8
+CODE_NAME: Acoustic_Limitations_and_Strengths_Comparative
+DESCRIPTION: Discusses the limitations of acoustic modems for high data rates while acknowledging their strengths for long-distance communication.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_9
+CODE_NAME: Acoustic_Limitation_LowBandwidth
+DESCRIPTION: Explains that low bandwidth is a primary reason for acoustic modems' limited data rates.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_10
+CODE_NAME: Acoustic_Limitation_HighLatency
+DESCRIPTION: Highlights high latency as a drawback of acoustic communication due to slower sound travel in water.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_11
+CODE_NAME: Acoustic_Limitation_EnvironmentalFactors
+DESCRIPTION: Mentions environmental factors that negatively impact acoustic signal reliability and data rates.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_12
+CODE_NAME: RF_Communication_General_Unsuitability
+DESCRIPTION: States that Radio Frequency (RF) communication is generally not suitable for high data rates over significant underwater distances.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_13
+CODE_NAME: RF_Limitation_HighAttenuation
+DESCRIPTION: Explains the rapid attenuation of radio waves in water, especially saltwater, due to its electrical conductivity.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_14
+CODE_NAME: RF_Limitation_LimitedRange_LowDataRate
+DESCRIPTION: Describes the trade-off between penetration depth and data rate for RF, noting limited range for high frequencies.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_15
+CODE_NAME: Hybrid_Advanced_Systems_Exploration
+DESCRIPTION: Mentions ongoing research and development into hybrid systems or advanced signal processing techniques to improve underwater communication.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_16
+CODE_NAME: Summary_Reinforcement_of_Primary_Solution
+DESCRIPTION: A concluding statement that reiterates UOWC as the most promising solution for high data rates, often with a brief comparison.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_17
+CODE_NAME: Comparative_Overview_Table_Detailed
+DESCRIPTION: Presents a structured comparison of different communication aspects (data rate, range, applications, depth rating) in a tabular format.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_18
+CODE_NAME: Optical_System_Performance_Summary
+DESCRIPTION: Summarizes the performance and suitability of optical systems for specific scenarios, often contrasting with acoustic.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_19
+CODE_NAME: Commercial_Research_Examples_Specific
+DESCRIPTION: Provides specific examples of commercial products, companies, or research institutions involved in optical communication, often with performance figures.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_20
+CODE_NAME: Comparative_Overview_Table_Including_Other_Methods
+DESCRIPTION: Presents a structured comparison table that includes optical, acoustic, and other less common communication methods.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_21
+CODE_NAME: Acoustic_Performance_Pushing_Limits
+DESCRIPTION: Mentions specific examples of high-frequency acoustic modems attempting to achieve higher data rates, but still falling short of optical.
+
+CODE_ID: query_01kj5e6h48exvsxrkbavg4x27g::Code_22
+CODE_NAME: User_Query_Clarification_Request
+DESCRIPTION: The chatbot asks the user for more specific details to tailor the recommendation.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_1
+CODE_NAME: Underwater Environment Constraints
+DESCRIPTION: Describes the fundamental difficulties and unique challenges of transmitting signals and data underwater, such as the poor propagation of radio waves, signal attenuation, scattering, and absorption.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_2
+CODE_NAME: Cabled Transmission Technology
+DESCRIPTION: Details the use of physical cables, particularly fiber optics, for subsea data and video transmission, including their advantages, components, and operational considerations.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_3
+CODE_NAME: Wireless Optical Transmission Technology
+DESCRIPTION: Explains the method of using light (lasers) for wireless data and video transmission through water, including specific technologies, advantages, and challenges.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_4
+CODE_NAME: Acoustic Transmission Technology
+DESCRIPTION: Describes the use of sound waves for wireless data and video transmission underwater, outlining its advantages, challenges, and ongoing developments.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_5
+CODE_NAME: System Components & Infrastructure
+DESCRIPTION: Lists and describes the essential hardware and software components required to establish and operate a real-time subsea video feed system.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_6
+CODE_NAME: Performance Limitations & Challenges
+DESCRIPTION: Identifies specific technical hurdles and performance degradations that make real-time subsea video transmission difficult, such as bandwidth constraints, latency, signal attenuation, and environmental noise.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_7
+CODE_NAME: Technological Advancements & Solutions
+DESCRIPTION: Highlights current innovations, emerging technologies, and strategic approaches designed to overcome the challenges and improve the capabilities of subsea video transmission.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_8
+CODE_NAME: Brand/Product Specific Mention
+DESCRIPTION: Direct references to specific companies, their products, or named technologies, often serving as examples or recommendations.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_9
+CODE_NAME: Comparative Analysis of Methods
+DESCRIPTION: Sections that explicitly compare different communication methods or solutions based on their characteristics, performance, or suitability for various scenarios.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_10
+CODE_NAME: Summary & Key Recommendation
+DESCRIPTION: Concluding statements that summarize the main findings, provide a primary recommendation for the most effective solution, or advocate for a particular approach.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_11
+CODE_NAME: AI Response Framing/Guidance
+DESCRIPTION: Elements of the chatbot's response that structure the answer, introduce sections, provide navigational cues, or offer further interaction.
+
+CODE_ID: query_01kj59exf6e8gaga18tjr6q6mz::Code_12
+CODE_NAME: External Reference/Citation
+DESCRIPTION: Direct citations, links, or references to external sources, academic papers, or industry websites used to support the information provided.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_1
+CODE_NAME: Affirmative Response & Overview
+DESCRIPTION: Initial confirmation that wireless underwater video transmission is possible, along with a general introduction to the methods.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_2
+CODE_NAME: Technology Categorization
+DESCRIPTION: Identification and listing of the primary communication technologies used for underwater video transmission.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_3
+CODE_NAME: Mechanism Description
+DESCRIPTION: Explanation of how a specific communication technology works at a fundamental level.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_4
+CODE_NAME: Performance Advantages
+DESCRIPTION: Description of the benefits, strengths, or positive attributes of a particular communication technology.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_5
+CODE_NAME: Performance Limitations
+DESCRIPTION: Description of the drawbacks, challenges, or constraints associated with a specific communication technology.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_6
+CODE_NAME: Quantitative Performance Metrics
+DESCRIPTION: Specific numerical data, statistics, or measurements related to the performance (e.g., speed, range, data rates, frames per second) of a technology.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_7
+CODE_NAME: Commercial & Research Examples
+DESCRIPTION: Mentions of specific companies, products, systems, or research achievements that demonstrate the application of the technologies.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_8
+CODE_NAME: Comparative Summary & Recommendation
+DESCRIPTION: Concluding statements that compare the different technologies, highlight their trade-offs, and often provide recommendations for specific use cases.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_9
+CODE_NAME: Source Citation
+DESCRIPTION: Explicit listing of external sources or references used to support the information provided.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_10
+CODE_NAME: User Engagement & Clarification
+DESCRIPTION: Chatbot prompts or questions aimed at engaging the user further, clarifying their needs, or offering additional information.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_11
+CODE_NAME: Niche Application/Ineffectiveness
+DESCRIPTION: Description of a technology that is generally impractical or has very limited utility for the specific query (e.g., video transmission) due to inherent limitations.
+
+CODE_ID: query_01kj5dxrtwe8gagc7je26297g5::Code_12
+CODE_NAME: Alternative/Hybrid Approaches
+DESCRIPTION: Discussion of less common, experimental, or combined communication methods beyond the primary optical and acoustic technologies.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_1
+CODE_NAME: General Introduction/Context Setting
+DESCRIPTION: Initial framing of the answer, defining the scope of the discussion about thrusters for low-drag and high-efficiency subsea movement.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_2
+CODE_NAME: Technical Feature Explanation
+DESCRIPTION: Detailed description of a specific thruster design, component, or technology, often explaining its mechanism or construction.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_3
+CODE_NAME: Performance Attribute/Benefit
+DESCRIPTION: Description of the functional advantages, outcomes, or performance metrics resulting from a particular design or technology, such as efficiency, low drag, reliability, maneuverability, or pressure tolerance.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_4
+CODE_NAME: Specific Company/Product Mention
+DESCRIPTION: Direct reference to a named company, institution, or specific product as an example, illustration of a feature, or as a recommendation.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_5
+CODE_NAME: Design Principle/Approach
+DESCRIPTION: Broader conceptual strategies, methodologies, or categories of design applied to achieve efficiency and low-drag, such as hydrodynamic optimization, direct drive systems, or minimal moving parts.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_6
+CODE_NAME: Material/Construction Detail
+DESCRIPTION: Specifics about materials used, sealing mechanisms, or structural aspects of thruster construction.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_7
+CODE_NAME: Control and Optimization Mechanisms
+DESCRIPTION: Reference to advanced control systems, algorithms, or strategies used to optimize propulsion speed, direction, or overall efficiency.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_8
+CODE_NAME: Comparative Product Listing
+DESCRIPTION: Presentation of multiple products or solutions, often from different manufacturers, in a structured format (e.g., a table) detailing their features, applications, and sometimes sources.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_9
+CODE_NAME: Source Citation/Attribution
+DESCRIPTION: Explicit references to external sources, citations, or links provided within the text to support claims or provide further information.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_10
+CODE_NAME: User Interaction/Offer of Further Help
+DESCRIPTION: The chatbot's direct engagement with the user, offering to provide more information, asking a follow-up question, or soliciting further interaction.
+
+CODE_ID: query_01khxm0geke8grj864xp71z474::Code_11
+CODE_NAME: Biomimetic Design
+DESCRIPTION: A specific design approach that mimics natural organisms or biological processes to achieve propulsion or efficiency.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_1
+CODE_NAME: ROV_Suitability_and_Benefits_Overview
+DESCRIPTION: Initial confirmation of ROV suitability for challenging environments, highlighting general benefits like safety, efficiency, and cost-effectiveness over traditional methods.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_2
+CODE_NAME: Physical_Design_for_Confined_Spaces
+DESCRIPTION: Describes the physical attributes of ROVs that enable navigation in tight and challenging environments, including compact size, maneuverability, specific diameter capabilities, and locomotion systems.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_3
+CODE_NAME: Extended_Operational_Range
+DESCRIPTION: Focuses on the capability of ROVs to operate over long distances, primarily through long tether cables or advanced communication systems.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_4
+CODE_NAME: Advanced_Sensor_Integration
+DESCRIPTION: Details the various advanced sensors and imaging technologies integrated into ROVs for data collection, including high-definition cameras, different types of sonar, non-destructive testing (NDT) capabilities, and other optional tools.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_5
+CODE_NAME: Operational_Efficiency_and_Safety_Benefits
+DESCRIPTION: Elaborates on the practical advantages of using ROVs, such as reducing risks to human personnel, faster deployment, reduced downtime, and the ability to inspect without dewatering.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_6
+CODE_NAME: Specific_Application_and_Problem_Detection
+DESCRIPTION: Highlights particular use cases for ROVs, especially in power plant cooling water intake tunnels, and the types of issues they can detect (e.g., blockages, corrosion, structural damage).
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_7
+CODE_NAME: Specific_Product_Examples_and_Manufacturers
+DESCRIPTION: Provides concrete examples of ROV manufacturers and specific models, often including their key specifications or intended applications.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_8
+CODE_NAME: Source_Attribution_and_Links
+DESCRIPTION: Refers to the explicit citation of sources, including direct links to manufacturers or product pages, enhancing credibility and providing further reference.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_9
+CODE_NAME: User_Engagement_and_Further_Assistance
+DESCRIPTION: Instances where the AI chatbot offers to provide more tailored information or asks clarifying questions to guide the user further.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_10
+CODE_NAME: Operational_Considerations_and_Design_Variations
+DESCRIPTION: Discusses specific operational aspects or design choices, such as free-swimming versus wheeled crawlers, and their implications for different environments or avoiding issues like sediment stirring.
+
+CODE_ID: query_01kj5e1r5zexvsxrbzhamkh482::Code_11
+CODE_NAME: Distinction_from_Non_Professional_Solutions
+DESCRIPTION: Differentiates professional-grade ROVs from less capable, non-industrial alternatives like DIY solutions, highlighting the limitations of the latter.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_1
+CODE_NAME: Introductory Framing
+DESCRIPTION: Provides an initial overview, sets the geographic and sectoral context, or summarizes the key companies and their general purpose.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_2
+CODE_NAME: Entity Identification
+DESCRIPTION: Identifies specific companies, products, services, or research projects related to underwater robotics.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_3
+CODE_NAME: Core Technology & Functionality
+DESCRIPTION: Describes the fundamental technology, design, or primary function of the robotic solutions or research projects.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_4
+CODE_NAME: Technical Specifications & Capabilities
+DESCRIPTION: Provides detailed technical attributes, performance metrics, and specific operational capabilities of the robotic systems.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_5
+CODE_NAME: Specific Application Contexts
+DESCRIPTION: Details the particular industries, environments, or tasks where the underwater robotics are applied.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_6
+CODE_NAME: Value Proposition & Impact
+DESCRIPTION: Articulates the advantages, positive outcomes, or broader impact of using the robotic solutions, such as improved safety, efficiency, or environmental benefits.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_7
+CODE_NAME: Categorization Header
+DESCRIPTION: A heading or introductory phrase that categorizes the subsequent information, often distinguishing between types of solutions or examples.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_8
+CODE_NAME: Solution Type Differentiation
+DESCRIPTION: Explicitly categorizes or differentiates between commercially available products/companies and research projects or prototypes.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_9
+CODE_NAME: Call to Action & Resources
+DESCRIPTION: Provides links for further information, lists sources, or poses a question to the user.
+
+CODE_ID: query_01khxkywmkfk5ak1erddpew5z8::Code_10
+CODE_NAME: Chatbot Interaction
+DESCRIPTION: Direct interaction from the chatbot, such as asking a clarifying question to the user.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_1
+CODE_NAME: Industry Context & Overview
+DESCRIPTION: General introductory statements about the industry, country's role, or the overall market landscape for underwater communication in Switzerland.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_2
+CODE_NAME: Company Identification & Basic Info
+DESCRIPTION: Naming of specific companies, along with their location, founding year, or a brief introductory phrase.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_3
+CODE_NAME: Market Leadership & Prominence
+DESCRIPTION: Statements highlighting a company's leading position, prominence, or significant standing within the underwater communication market, often using terms like "leading player" or "forefront."
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_4
+CODE_NAME: Core Technology & Specialization
+DESCRIPTION: Description of the primary technological focus or area of expertise of a company, such as optical communication, ROVs, or lightwave technologies.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_5
+CODE_NAME: Product & System Details
+DESCRIPTION: Specific names and descriptions of products, systems, or series developed by the companies.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_6
+CODE_NAME: Technical Specifications & Capabilities
+DESCRIPTION: Quantifiable performance metrics, technical features, and operational capabilities of the technologies or products.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_7
+CODE_NAME: Applications & Use Cases
+DESCRIPTION: Practical scenarios, industries, or tasks where the companies' technologies are applied.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_8
+CODE_NAME: Industry Standard & Collaboration
+DESCRIPTION: Mentions of a company's involvement in developing industry standards, participating in industry groups, or significant collaborations.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_9
+CODE_NAME: External Validation & Endorsement
+DESCRIPTION: Information indicating external recognition, partnerships with notable entities, or academic origins that bolster a company's credibility.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_10
+CODE_NAME: Comparative Market Context
+DESCRIPTION: Information that places Swiss companies within a broader market context, compares them to global players, or notes the relative prominence of other companies.
+
+CODE_ID: query_01kj5jrhqjf20scahr4xkafdtt::Code_11
+CODE_NAME: Chatbot Interaction & Formatting
+DESCRIPTION: Text related to chatbot's direct interaction with the user (e.g., offering help, asking questions), structural elements like source lists, or purely formatting characters.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_1
+CODE_NAME: Integrated System Recommendation
+DESCRIPTION: Highlights the necessity of combining multiple advanced technologies for optimal performance in challenging underwater environments.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_2
+CODE_NAME: Robotic Inspection Platforms
+DESCRIPTION: Identifies Remotely Operated Vehicles (ROVs) and Autonomous Underwater Vehicles (AUVs) as the primary uncrewed platforms for underwater inspection.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_3
+CODE_NAME: Sonar Imaging for Low Visibility
+DESCRIPTION: Explains how sonar technology serves as the main visual tool in turbid or zero-visibility water where optical cameras are ineffective.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_4
+CODE_NAME: Sonar Capabilities & Applications
+DESCRIPTION: Details the specific functions and uses of various sonar types, such as creating acoustic imagery, mapping, detecting objects, and identifying features.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_5
+CODE_NAME: Acoustic Positioning for GPS-Denied Environments
+DESCRIPTION: Describes acoustic technologies as essential for tracking and navigating underwater where GPS signals cannot penetrate.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_6
+CODE_NAME: Types of Acoustic Positioning Systems
+DESCRIPTION: Differentiates between various acoustic positioning systems like USBL, LBL, and SBL, outlining their characteristics and applications.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_7
+CODE_NAME: Inertial Navigation Systems (INS) & Augmentation
+DESCRIPTION: Explains the role of INS units (gyroscopes, accelerometers) for continuous, independent navigation, often augmented by Doppler Velocity Logs (DVLs) for drift correction and sensor fusion for enhanced accuracy.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_8
+CODE_NAME: Safety & Efficiency Benefits
+DESCRIPTION: Highlights the advantages of using robotic platforms, such as reducing risks to human divers and improving operational efficiency.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_9
+CODE_NAME: Operational Modes of Robotic Platforms
+DESCRIPTION: Distinguishes between the control and operational characteristics of ROVs (tethered, real-time) and AUVs (autonomous, pre-programmed).
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_10
+CODE_NAME: Comparative Analysis of Methods
+DESCRIPTION: Provides a structured comparison of different underwater inspection methods, outlining their strengths and limitations.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_11
+CODE_NAME: Specific Product/Company Mentions
+DESCRIPTION: Refers to particular brands, models, or companies specializing in underwater inspection technologies.
+
+CODE_ID: query_01kj5e1793e8gagc92ztjpzmb0::Code_12
+CODE_NAME: Alternative Imaging Technologies
+DESCRIPTION: Mentions other imaging technologies, such as LiDAR, and their applicability or limitations in underwater environments.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_1
+CODE_NAME: Introduction to Robotic Inspection Benefits
+DESCRIPTION: Initial framing of the overall advantages of robotic solutions for vessel inspections, focusing on time, safety, and data quality.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_2
+CODE_NAME: Categorization of Robotic Technologies
+DESCRIPTION: Identification and listing of different types of robotic systems used for vessel inspections.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_3
+CODE_NAME: Efficiency and Time-Saving Mechanisms
+DESCRIPTION: Specific methods and functionalities of robotic systems that directly contribute to reducing inspection time and increasing operational efficiency.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_4
+CODE_NAME: Enhanced Safety through Robotics
+DESCRIPTION: How robotic solutions mitigate risks and improve safety for personnel by eliminating human exposure to hazardous environments.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_5
+CODE_NAME: Improved Data Collection and Analysis
+DESCRIPTION: The capabilities of robots to collect high-quality, detailed, and diverse data, often in real-time, supporting better assessment and decision-making.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_6
+CODE_NAME: Operational Continuity and Downtime Reduction
+DESCRIPTION: The ability of robotic inspections to allow vessels to remain operational or reduce the need for costly shutdowns, thereby minimizing downtime.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_7
+CODE_NAME: Access to Difficult and Confined Spaces
+DESCRIPTION: The advantage of robots in reaching areas that are challenging, dangerous, or impossible for human inspectors, such as vertical structures, complex geometries, or confined tanks.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_8
+CODE_NAME: Specific Product, Company, or Project Examples
+DESCRIPTION: Concrete instances of companies, products, or research projects that demonstrate the application of robotic inspection technologies.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_9
+CODE_NAME: Cost Reduction through Robotic Adoption
+DESCRIPTION: The financial benefits associated with using robotic inspection systems, such as eliminating dry-docking costs, scaffolding, or reducing labor expenses.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_10
+CODE_NAME: Support for Predictive Maintenance and Early Detection
+DESCRIPTION: How robotic inspections contribute to identifying issues early and providing data that supports proactive maintenance strategies.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_11
+CODE_NAME: Regulatory Compliance Facilitation
+DESCRIPTION: The role of robotic inspections in helping vessels meet specific industry regulations, such as biosecurity standards.
+
+CODE_ID: query_01kj5e43xwexvsxrc51ns3yk90::Code_12
+CODE_NAME: Concluding Summary of Benefits
+DESCRIPTION: A final statement reiterating the overall advantages and positive outcomes of adopting robotic inspection solutions.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_1
+CODE_NAME: General Introduction & Scope Definition
+DESCRIPTION: Initial framing of the topic, defining the purpose and context of the tools discussed.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_2
+CODE_NAME: Tool Categorization & Overview
+DESCRIPTION: High-level classification of underwater inspection tools into distinct types or categories, often presented as a list or section header.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_3
+CODE_NAME: Technical Capabilities & Features
+DESCRIPTION: Detailed explanation of the functionalities, technical specifications, and operational features of specific tools or tool categories.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_4
+CODE_NAME: Application & Use Cases
+DESCRIPTION: Description of the specific environments, structures, or tasks where the tools are effectively utilized.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_5
+CODE_NAME: Advantages & Benefits
+DESCRIPTION: Explanation of the positive outcomes, efficiencies, or safety improvements offered by the use of specific tools.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_6
+CODE_NAME: Specific Method/Type Enumeration (Generic)
+DESCRIPTION: Listing and brief description of sub-types or specific methods within a broader tool category, without mentioning specific brands or products.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_7
+CODE_NAME: Product/Brand Specific Examples
+DESCRIPTION: Direct mention of specific company products, models, or brands as examples of the tools discussed.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_8
+CODE_NAME: Comparative Data & Structured Information
+DESCRIPTION: Presentation of information in a structured format, such as a table, comparing different tools based on various criteria.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_9
+CODE_NAME: Selection Criteria & Contextual Factors
+DESCRIPTION: Discussion of the factors or considerations that influence the choice and applicability of different inspection tools.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_10
+CODE_NAME: Call to Action & Further Interaction
+DESCRIPTION: Prompts or questions inviting the user to ask for more specific information or to provide additional context for refined recommendations.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_11
+CODE_NAME: External Reference/Hyperlink
+DESCRIPTION: Inclusion of a direct hyperlink to an external website, often associated with a specific tool or brand.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_12
+CODE_NAME: Citation Markers
+DESCRIPTION: Numerical markers indicating sources or references, typically without a corresponding bibliography.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_13
+CODE_NAME: Concluding Summary/Reinforcement
+DESCRIPTION: A final statement summarizing the overall approach or reinforcing the importance of combining tools.
+
+CODE_ID: query_01kj5e3695fq99jbzhneq73qsw::Code_14
+CODE_NAME: General Recommendation/Best Practice
+DESCRIPTION: General advice or identification of commonly effective tool combinations or approaches, sometimes serving as an introductory recommendation.
+
+OUTPUT FORMAT
+============
+Return only a valid JSON array.
+Do not use markdown fences.
+Each item must be an object with exactly these keys:
+- "theme_name": string
+- "description": string
+- "code_ids": array of strings
+Keep descriptions concise.

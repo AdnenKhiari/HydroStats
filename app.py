@@ -6,7 +6,7 @@ import json
 import pathlib
 import re
 import urllib.parse
-from typing import Dict, List
+from typing import Dict, List, Optional
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -534,6 +534,7 @@ _PAGE_URL_MAP = {
     "explorer": "📋 Explorer",
     "stats":    "📊 Hydromea Stats",
     "tags":     "🗂️ Aggregated Tags",
+    "themes":   "🧩 Theme Generation",
 }
 _PAGE_KEY_MAP = {v: k for k, v in _PAGE_URL_MAP.items()}
 
@@ -582,6 +583,80 @@ def _load_tagged_answers(experiment: str) -> Dict[str, dict]:
             if isinstance(payload, dict):
                 out[str(answer_id)] = payload
     return out
+
+
+@st.cache_data(show_spinner=False)
+def _load_theme_generation_analysis(experiment: str) -> Optional[dict]:
+    """Load one experiment's Step 3 theme-generation payload."""
+    file_path = pathlib.Path(__file__).parent / "data" / experiment / "theme_generation_analysis.json"
+    if not file_path.exists():
+        return None
+    try:
+        raw = json.loads(file_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    if isinstance(raw, list) and raw and isinstance(raw[0], dict):
+        return raw[0]
+    if isinstance(raw, dict):
+        return raw
+    return None
+
+
+def _build_theme_generation_frames(experiment: str) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+    """Return (themes_df, codes_df, payload) for one experiment."""
+    payload = _load_theme_generation_analysis(experiment) or {}
+    themes = payload.get("themes") or []
+    source_codes = payload.get("source_codes") or []
+
+    source_index: Dict[str, dict] = {}
+    for code in source_codes:
+        if not isinstance(code, dict):
+            continue
+        code_id = str(code.get("code_id", "")).strip()
+        if code_id:
+            source_index[code_id] = code
+
+    theme_rows: List[dict] = []
+    code_rows: List[dict] = []
+    for idx, theme in enumerate(themes, start=1):
+        if not isinstance(theme, dict):
+            continue
+
+        theme_name = str(theme.get("theme_name", "")).strip() or f"Theme {idx}"
+        description = str(theme.get("description", "")).strip()
+        raw_code_ids = theme.get("code_ids") or []
+        code_ids = [str(code_id).strip() for code_id in raw_code_ids if str(code_id).strip()]
+        question_ids = {
+            str(source_index.get(code_id, {}).get("question_id", "")).strip()
+            for code_id in code_ids
+            if source_index.get(code_id)
+        }
+        question_ids.discard("")
+
+        theme_rows.append({
+            "theme_rank": idx,
+            "theme_name": theme_name,
+            "description": description,
+            "code_count": len(code_ids),
+            "question_count": len(question_ids),
+        })
+
+        for order, code_id in enumerate(code_ids, start=1):
+            source = source_index.get(code_id, {})
+            code_rows.append({
+                "theme_rank": idx,
+                "theme_name": theme_name,
+                "description": description,
+                "code_order": order,
+                "question_id": str(source.get("question_id", "")).strip(),
+                "code_id": code_id,
+                "code_name": str(source.get("code_name", "")).strip(),
+                "tag": str(source.get("tag", "")).strip(),
+                "code_description": str(source.get("description", "")).strip(),
+                "representative_excerpt": str(source.get("representative_excerpt", "")).strip(),
+            })
+
+    return pd.DataFrame(theme_rows), pd.DataFrame(code_rows), payload
 
 
 def _compute_span_counts(lines: List[dict]) -> Dict[str, int]:
@@ -774,7 +849,7 @@ with st.sidebar:
     st.divider()
 
     _PAGE = st.radio(
-        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags"],
+        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags", "🧩 Theme Generation"],
         key="nav_page",
         label_visibility="collapsed",
     )
@@ -858,6 +933,161 @@ st.query_params.from_dict(_url_params)
 # ─────────────────────────────────────────────────────────────────────────────
 # Stats page (shown when _PAGE == "📊 Hydromea Stats")
 # ─────────────────────────────────────────────────────────────────────────────
+if _PAGE == "🧩 Theme Generation":
+    st.markdown("### Theme Generation Analysis")
+    st.caption(
+        "Inspect Step 3 grouped themes for the selected version, including coverage, "
+        "source questions, and the underlying Step 2 codes."
+    )
+
+    _themes_df, _codes_df, _theme_payload = _build_theme_generation_frames(_cur_exp)
+    if not _theme_payload:
+        st.info("No `theme_generation_analysis.json` file was found for this version.")
+        st.stop()
+
+    _theme_count = int(len(_themes_df))
+    _question_count = int(_theme_payload.get("question_count", 0))
+    _code_count = int(_theme_payload.get("code_count", 0))
+    _assigned_code_count = int(_codes_df["code_id"].nunique()) if not _codes_df.empty else 0
+
+    _m1, _m2, _m3, _m4 = st.columns(4)
+    _m1.metric("Themes", _theme_count)
+    _m2.metric("Questions", _question_count)
+    _m3.metric("Step 2 codes", _code_count)
+    _m4.metric("Codes assigned", _assigned_code_count)
+
+    if _themes_df.empty:
+        st.warning("The theme-generation file exists, but no themes were found in it.")
+        st.stop()
+
+    _chart_col, _table_col = st.columns([1.15, 1.85], gap="large")
+    with _chart_col:
+        st.markdown("**Theme sizes**")
+        _chart_df = _themes_df.sort_values(["code_count", "theme_name"], ascending=[False, True]).copy()
+        _height = max(320, 70 + 42 * len(_chart_df))
+        fig = px.bar(
+            _chart_df,
+            x="code_count",
+            y="theme_name",
+            orientation="h",
+            text="code_count",
+            color="question_count",
+            color_continuous_scale="Blues",
+            height=_height,
+        )
+        fig.update_traces(textposition="outside")
+        fig.update_layout(
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            margin=dict(l=0, r=0, t=10, b=0),
+            xaxis_title="Assigned Step 2 codes",
+            yaxis_title="",
+            coloraxis_colorbar_title="Questions",
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+    with _table_col:
+        st.markdown("**Theme summary table**")
+        _summary_df = _themes_df.rename(columns={
+            "theme_rank": "#",
+            "theme_name": "Theme",
+            "description": "Description",
+            "code_count": "Codes",
+            "question_count": "Questions",
+        })
+        st.dataframe(_summary_df, use_container_width=True, hide_index=True)
+
+    st.divider()
+
+    _search_col, _sort_col = st.columns([1.7, 1.1], gap="large")
+    with _search_col:
+        _theme_search = st.text_input(
+            "Search themes or codes",
+            placeholder="theme name, code name, code id, question id...",
+            key="theme_generation_search",
+        )
+    with _sort_col:
+        _sort_mode = st.selectbox(
+            "Sort themes",
+            ["Largest first", "Smallest first", "A-Z"],
+            key="theme_generation_sort",
+        )
+
+    _theme_view = _themes_df.copy()
+    if _sort_mode == "Largest first":
+        _theme_view = _theme_view.sort_values(["code_count", "theme_name"], ascending=[False, True])
+    elif _sort_mode == "Smallest first":
+        _theme_view = _theme_view.sort_values(["code_count", "theme_name"], ascending=[True, True])
+    else:
+        _theme_view = _theme_view.sort_values(["theme_name"], ascending=[True])
+
+    _needle = (_theme_search or "").strip().lower()
+    if _needle:
+        _matching_themes = set()
+        if not _codes_df.empty:
+            _matching_code_rows = _codes_df[[
+                "theme_name",
+                "code_id",
+                "question_id",
+                "code_name",
+                "code_description",
+                "representative_excerpt",
+            ]].fillna("").astype(str).agg(" ".join, axis=1).str.lower()
+            _matching_themes.update(_codes_df.loc[_matching_code_rows.str.contains(re.escape(_needle), regex=True), "theme_name"].tolist())
+
+        _matching_theme_rows = _theme_view[["theme_name", "description"]].fillna("").astype(str).agg(" ".join, axis=1).str.lower()
+        _matching_themes.update(_theme_view.loc[_matching_theme_rows.str.contains(re.escape(_needle), regex=True), "theme_name"].tolist())
+        _theme_view = _theme_view[_theme_view["theme_name"].isin(_matching_themes)].copy()
+
+    st.caption(f"Showing {_theme_view.shape[0]} of {_themes_df.shape[0]} themes for {_cur_exp}.")
+
+    for _theme_row in _theme_view.itertuples(index=False):
+        _theme_codes = _codes_df[_codes_df["theme_name"] == _theme_row.theme_name].copy()
+        _theme_codes = _theme_codes.sort_values(["question_id", "code_order", "code_id"], ascending=[True, True, True])
+        _header = f"{_theme_row.theme_name} ({int(_theme_row.code_count)} codes · {int(_theme_row.question_count)} questions)"
+        with st.expander(_header, expanded=False):
+            if _theme_row.description:
+                st.markdown(_theme_row.description)
+
+            _question_ids = [qid for qid in _theme_codes["question_id"].dropna().unique().tolist() if qid]
+            if _question_ids:
+                _query_links: List[str] = []
+                for _question_id in _question_ids:
+                    _query_obj = corpus.queries.get(_question_id)
+                    _label = (_query_obj.text if _query_obj else _question_id).strip()
+                    if len(_label) > 96:
+                        _label = _label[:93] + "..."
+                    _qs = urllib.parse.urlencode({
+                        "exp": _cur_exp,
+                        "qid": _question_id,
+                        "page": "explorer",
+                    })
+                    _query_links.append(f"<a href='?{_qs}'>{_html.escape(_label)}</a>")
+                st.markdown(
+                    "<div style='font-size:12px;color:#64748b;margin:6px 0 10px;'>"
+                    "Source questions: " + " &nbsp;·&nbsp; ".join(_query_links) + "</div>",
+                    unsafe_allow_html=True,
+                )
+
+            _display_df = _theme_codes.rename(columns={
+                "question_id": "Question ID",
+                "code_id": "Code ID",
+                "code_name": "Code Name",
+                "tag": "Tag",
+                "code_description": "Code Description",
+                "representative_excerpt": "Representative Excerpt",
+            })[[
+                "Question ID",
+                "Code ID",
+                "Code Name",
+                "Tag",
+                "Code Description",
+                "Representative Excerpt",
+            ]]
+            st.dataframe(_display_df, use_container_width=True, hide_index=True)
+
+    st.stop()
+
 if _PAGE == "🗂️ Aggregated Tags":
     st.markdown("### Aggregated Tags")
     st.caption(

@@ -1,0 +1,80 @@
+You are conducting STEP 3 — Group Codes Into Emerging Themes for one website version.
+
+RESEARCH CONTEXT
+You are acting as a qualitative research assistant specialized in thematic analysis, digital marketing, online brand visibility, AI-generated search systems, and Generative Engine Optimization (GEO).
+
+The broader research project examines how website content optimization influences company visibility in AI-generated search and chatbot responses.
+
+WORKFLOW CONTEXT
+- STEP 1: Familiarization and thematic interpretation of grouped AI-generated answers.
+- STEP 2: Initial open coding of the original grouped answers.
+- STEP 3: After coding, regroup related Step 2 codes into broader emerging themes at the version level.
+
+YOUR TASK
+You will receive all Step 2 codebook entries for one version.
+
+Each codebook entry includes:
+- a unique code_id,
+- the source question_id,
+- the original Step 2 tag,
+- a code_name,
+- a description,
+- and a representative_excerpt.
+
+Your job is to regroup similar, overlapping, or near-duplicate Step 2 codes into broader higher-level themes.
+
+These themes must:
+- emerge from the data,
+- reflect meaningful recurring patterns,
+- and explain visibility behaviors within AI-generated responses.
+
+The themes may differ across website versions.
+
+METHODOLOGICAL ORIENTATION
+- Work inductively but at a higher level of abstraction than Step 2.
+- Merge codes that clearly describe the same broader idea, even if they use different wording.
+- Distinguish genuinely different conceptual families.
+- Prefer analytically meaningful themes over superficial lexical similarity.
+- Think of Step 3 as axial regrouping or consolidation of the Step 2 code space.
+- Allow new themes to emerge at any point if the code corpus suggests them.
+- Allow coexistence of both positive and negative visibility themes when the version contains both.
+
+WHAT A GOOD STEP 3 THEME SHOULD DO
+- capture a broader recurring concept,
+- explain how multiple Step 2 codes relate to each other,
+- remain concise but analytically useful,
+- help prepare later cross-version synthesis,
+- and explain how the grouped codes relate to AI-generated visibility.
+
+For each theme:
+- provide a clear title,
+- explain the meaning of the theme,
+- identify the included code_ids,
+- and explain how the theme relates to AI-generated visibility.
+
+IMPORTANT RULES
+- Use only the provided code_ids when assigning codes to themes.
+- Do not invent code_ids.
+- Only group codes together when there is a defensible conceptual relationship.
+- Theme descriptions should explain the common concept linking the grouped Step 2 codes.
+- Overlapping themes are allowed when analytically necessary, but use overlap sparingly and only when it is genuinely defensible.
+
+CODING BEHAVIOR TO PREFER
+- Merge near-duplicate codes.
+- Merge codes that differ only in granularity when they point to the same broader concept.
+- Create themes that can support later comparative analysis across versions.
+- Use clear, interpretable theme names.
+- Surface meaningful recurring visibility behaviors, not just lexical similarity.
+- Let broader themes emerge even when they were not anticipated in advance.
+
+CODING BEHAVIOR TO AVOID
+- Do not simply repeat Step 2 code names as Step 3 themes one-for-one.
+- Do not group codes just because they share one keyword.
+- Do not create too many tiny themes unless the corpus genuinely demands it.
+- Do not ignore obvious consolidation opportunities.
+- Do not force all themes to be positive, or all themes to be negative.
+- Do not suppress overlapping themes when overlap is analytically important.
+
+Return only a valid JSON array and no surrounding prose.
+Do not wrap the JSON in markdown code fences.
+Keep theme descriptions concise.

@@ -275,17 +275,11 @@ class GeminiBatchProcessor:
             self._tagger._cached_system()
         )
         gemini_tool = self._gemini_provider._to_gemini_tool(_TOOL_DEFINITION)
-
-        config = self._types.GenerateContentConfig(
-            system_instruction=system_text,
-            tools=[gemini_tool],
-            tool_config=self._types.ToolConfig(
-                function_calling_config=self._types.FunctionCallingConfig(
-                    mode="ANY",
-                    allowed_function_names=[_TOOL_DEFINITION["name"]],
-                )
-            ),
-            max_output_tokens=self.max_tokens,
+        config = self._gemini_provider.build_generate_config(
+            system_text=system_text,
+            gemini_tools=[gemini_tool],
+            tool_name=_TOOL_DEFINITION["name"],
+            max_tokens=self.max_tokens,
         )
 
         return self._types.InlinedRequest(

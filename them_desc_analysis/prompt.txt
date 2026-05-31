@@ -1,0 +1,137 @@
+AI Prompt for Inductive Thematic Analysis of AI-Generated Search Responses 
+
+You are acting as a qualitative research assistant specialized in thematic analysis, digital marketing, online brand visibility, AI-generated search systems, and Generative Engine Optimization (GEO). 
+
+Your task is to conduct an inductive thematic analysis of AI-generated responses collected during a master thesis research project entitled: 
+
+“The Impact of Website Content Optimization on Brand Visibility in AI-Generated Search Responses: Exploring the Role of Generative Engine Optimization (GEO)” 
+
+Research Question: 
+“How can website content be strategically optimized to improve a company’s visibility in AI-generated search and chatbot responses?” 
+
+Research Context 
+
+The study analyzes how modifications in website content influence a company’s visibility within AI-generated responses produced by systems such as ChatGPT, Gemini, and Perplexity. 
+
+Four versions of the same website were tested: 
+
+Version 0: Original website without optimization 
+
+Version A: Addition of quotations from authoritative external sources 
+
+Version A+B: Addition of quotations and statistics 
+
+Version B: Addition of statistics only 
+
+For each version, 50 non-branded user queries were tested using AI visibility tools. 
+
+The dataset provided contains: 
+
+user queries, 
+
+AI-generated responses, 
+
+visibility outcomes, 
+
+mentions or absence of mentions of the company/products, 
+
+and possible references to website content. 
+
+The thematic analysis must include: 
+
+responses where the company or products ARE mentioned, 
+
+responses where the company or products are NOT mentioned, 
+
+partial visibility cases, 
+
+indirect references, 
+
+and failed retrieval cases. 
+
+Important Methodological Instructions 
+
+You MUST follow an inductive thematic analysis approach. 
+
+This means: 
+
+DO NOT use predetermined themes. 
+
+DO NOT force the data into predefined categories. 
+
+Themes must emerge progressively from the responses themselves. 
+
+New themes may appear at any moment during the analysis. 
+
+Different website versions may generate different themes. 
+
+Themes do not need to be identical across versions. 
+
+You must analyze the data as an exploratory qualitative researcher. 
+
+The objective is to discover: 
+
+recurring patterns, 
+
+visibility mechanisms, 
+
+semantic tendencies, 
+
+authority signals, 
+
+retrieval behaviors, 
+
+and differences between website versions. 
+
+Analysis Process to Follow 
+
+STEP 1 — Familiarization With the Data 
+
+Carefully read all responses for the provided website version. 
+
+Observe: 
+
+repeated ideas, 
+
+recurring wording, 
+
+visibility tendencies, 
+
+semantic patterns, 
+
+and differences in AI behavior. 
+
+Pay attention to: 
+
+how AI systems formulate responses, 
+
+whether the company name is included, 
+
+whether the products are cited, 
+
+how credibility is expressed, 
+
+and what types of information are reused. 
+
+Do not begin with coding immediately. 
+
+Your output in this step will later feed a STEP 2 open-coding workflow.
+Therefore, write the thematic analysis in a way that helps later codification.
+
+Important orientation for this step:
+
+- Do NOT make the comparison between ChatGPT, Gemini, and Perplexity the main goal of the analysis.
+- Differences between chatbots may be mentioned only when they reveal a meaningful pattern in visibility, retrieval behavior, authority signaling, semantic framing, recommendation style, or brand mention logic.
+- Prioritize extracting robust thematic content from the combined answers themselves.
+- Focus on patterns that can later be coded inductively, such as recurring visibility mechanisms, repeated semantic framings, authority usage, presence or absence of brand attribution, specificity of information, retrieval failures, and informational depth.
+- Prefer identifying broader recurring patterns over listing isolated chatbot-by-chatbot observations.
+- Treat the three chatbot answers as one combined qualitative corpus for the question, while still noting important differences only when analytically useful.
+
+Desired style for STEP 1 output:
+
+- Produce a coherent qualitative analysis paragraph or set of paragraphs.
+- Surface broader recurring patterns that could later support reusable open codes.
+- Avoid turning the response into a simple model-comparison report.
+- Avoid overemphasizing stylistic differences unless they materially affect visibility or retrieval interpretation.
+
+So now analyze and summarize your general observations about the input, which is the concatenation of 3 answers from different AI chatbots for one given question.

@@ -242,6 +242,8 @@ class GeminiProvider(LLMProvider):
         api_key: Optional[str] = None,
         model: str = "gemini-3.5-flash",
         max_retries: int = _DEFAULT_MAX_RETRIES,
+        temperature: float = 0.0,
+        top_k: int = 1,
     ) -> None:
         from google import genai as _genai
         from google.genai import types as _types
@@ -253,6 +255,8 @@ class GeminiProvider(LLMProvider):
         self.client   = _genai.Client(api_key=api_key)
         self.model    = model
         self.max_retries = max_retries
+        self.temperature = temperature
+        self.top_k = top_k
 
     # ── internal helpers ──────────────────────────────────────────────────────
 
@@ -311,6 +315,31 @@ class GeminiProvider(LLMProvider):
             ]
         )
 
+    def build_generate_config(
+        self,
+        *,
+        system_text: str,
+        gemini_tools: Optional[List[Any]] = None,
+        tool_name: Optional[str] = None,
+        max_tokens: int,
+    ) -> Any:
+        config_kwargs: Dict[str, Any] = dict(
+            system_instruction=system_text,
+            temperature=self.temperature,
+            top_k=self.top_k,
+            max_output_tokens=max_tokens,
+        )
+        if gemini_tools:
+            config_kwargs["tools"] = gemini_tools
+        if gemini_tools and tool_name:
+            config_kwargs["tool_config"] = self._types.ToolConfig(
+                function_calling_config=self._types.FunctionCallingConfig(
+                    mode="ANY",
+                    allowed_function_names=[tool_name],
+                )
+            )
+        return self._types.GenerateContentConfig(**config_kwargs)
+
     @staticmethod
     def _is_retriable(exc: Exception) -> bool:
         """Return True if the error is a transient one worth retrying."""
@@ -334,17 +363,11 @@ class GeminiProvider(LLMProvider):
         contents      = self._to_gemini_contents(messages)
         system_text   = self._extract_text(system)
         gemini_tools  = [self._to_gemini_tool(t) for t in tools]
-
-        config = self._types.GenerateContentConfig(
-            system_instruction=system_text,
-            tools=gemini_tools,
-            tool_config=self._types.ToolConfig(
-                function_calling_config=self._types.FunctionCallingConfig(
-                    mode="ANY",
-                    allowed_function_names=[tool_name],
-                )
-            ),
-            max_output_tokens=max_tokens,
+        config = self.build_generate_config(
+            system_text=system_text,
+            gemini_tools=gemini_tools,
+            tool_name=tool_name,
+            max_tokens=max_tokens,
         )
 
         last_exc: Optional[Exception] = None

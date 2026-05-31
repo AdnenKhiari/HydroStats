@@ -527,13 +527,19 @@ def build_corpus(
 
     report = ParsingReport()
     if answer_files is None:
+        def _is_answer_export_filename(filename: str) -> bool:
+            lower = filename.lower()
+            return lower.endswith(".txt") and (
+                ".answers." in lower or ".responses_" in lower
+            )
+
         if experiment is not None:
-            # Load every .txt file from the selected experiment folder only.
+            # Load only real answer export .txt files from the selected experiment folder.
             exp_dir = os.path.join(_DATA, experiment)
             answer_files = sorted(
                 os.path.join(exp_dir, f)
                 for f in os.listdir(exp_dir)
-                if f.endswith(".txt") and os.path.isfile(os.path.join(exp_dir, f))
+                if _is_answer_export_filename(f) and os.path.isfile(os.path.join(exp_dir, f))
             )
         else:
             # Legacy fallback: scan all known experiment subdirs in order.
@@ -547,7 +553,7 @@ def build_corpus(
                 if not os.path.isdir(d):
                     continue
                 for f in sorted(os.listdir(d)):
-                    if not f.endswith(".txt"):
+                    if not _is_answer_export_filename(f):
                         continue
                     p = os.path.join(d, f)
                     if os.path.isfile(p) and p not in seen:
