@@ -12,15 +12,18 @@ from typing import Dict, List
 @dataclass
 class ThemeSourceCode:
     """One Step 2 codebook entry, identified within a version-level corpus."""
+    version: str
     code_id: str
     question_id: str
     tag: str
     code_name: str
     description: str
     representative_excerpt: str
+    prompt_id: str = ""
 
     def to_dict(self) -> Dict[str, str]:
         return {
+            "version": self.version,
             "code_id": self.code_id,
             "question_id": self.question_id,
             "tag": self.tag,
@@ -38,7 +41,7 @@ class ThemeGenerationCorpus:
 
     @property
     def question_count(self) -> int:
-        return len({code.question_id for code in self.source_codes})
+        return len({(code.version, code.question_id) for code in self.source_codes})
 
 
 @dataclass

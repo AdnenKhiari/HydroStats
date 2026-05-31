@@ -15,6 +15,30 @@ from .models import ThemeGenerationCorpus, ThemeSourceCode
 logger = logging.getLogger(__name__)
 
 
+def _local_code_id(question_id: str, tag: str) -> str:
+    return f"{question_id}::{tag}"
+
+
+def _scoped_code_id(version: str, question_id: str, tag: str) -> str:
+    return f"{version}::{question_id}::{tag}"
+
+
+def _with_prompt_ids(source_codes: List[ThemeSourceCode]) -> List[ThemeSourceCode]:
+    assigned: List[ThemeSourceCode] = []
+    for index, code in enumerate(source_codes, start=1):
+        assigned.append(ThemeSourceCode(
+            version=code.version,
+            code_id=code.code_id,
+            prompt_id=f"C{index}",
+            question_id=code.question_id,
+            tag=code.tag,
+            code_name=code.code_name,
+            description=code.description,
+            representative_excerpt=code.representative_excerpt,
+        ))
+    return assigned
+
+
 def _load_codification_file(path: Path) -> List[Dict[str, object]]:
     if not path.exists():
         raise FileNotFoundError(path)
@@ -29,6 +53,7 @@ def load_version(
     version: str,
     *,
     question_ids: Optional[List[str]] = None,
+    scoped_code_ids: bool = False,
 ) -> ThemeGenerationCorpus:
     data_root = Path(data_root)
     codification_path = data_root / version / "codification_analysis.json"
@@ -57,8 +82,10 @@ def load_version(
             representative_excerpt = str(entry.get("representative_excerpt", "")).strip()
             if not tag or not code_name:
                 continue
+            code_id = _scoped_code_id(version, question_id, tag) if scoped_code_ids else _local_code_id(question_id, tag)
             source_codes.append(ThemeSourceCode(
-                code_id=f"{question_id}::{tag}",
+                version=version,
+                code_id=code_id,
                 question_id=question_id,
                 tag=tag,
                 code_name=code_name,
@@ -67,7 +94,7 @@ def load_version(
             ))
 
     logger.info("Loaded %d Step 2 codebook entries from version '%s'", len(source_codes), version)
-    return ThemeGenerationCorpus(version=version, source_codes=source_codes)
+    return ThemeGenerationCorpus(version=version, source_codes=_with_prompt_ids(source_codes))
 
 
 def load_versions(
@@ -75,6 +102,7 @@ def load_versions(
     versions: Optional[List[str]] = None,
     *,
     question_ids: Optional[List[str]] = None,
+    scoped_code_ids: bool = False,
 ) -> List[ThemeGenerationCorpus]:
     data_root = Path(data_root)
     if versions is None:
@@ -85,5 +113,35 @@ def load_versions(
 
     corpora: List[ThemeGenerationCorpus] = []
     for version in versions:
-        corpora.append(load_version(data_root, version, question_ids=question_ids))
+        corpora.append(load_version(
+            data_root,
+            version,
+            question_ids=question_ids,
+            scoped_code_ids=scoped_code_ids,
+        ))
     return corpora
+
+
+def combine_versions(
+    data_root: str | Path,
+    versions: List[str],
+    *,
+    question_ids: Optional[List[str]] = None,
+) -> ThemeGenerationCorpus:
+    combined_codes: List[ThemeSourceCode] = []
+    for version in versions:
+        corpus = load_version(
+            data_root,
+            version,
+            question_ids=question_ids,
+            scoped_code_ids=True,
+        )
+        combined_codes.extend(corpus.source_codes)
+
+    combined_label = "ALL_VERSIONS"
+    logger.info(
+        "Loaded %d Step 2 codebook entries across %d versions into combined Step 3 corpus",
+        len(combined_codes),
+        len(versions),
+    )
+    return ThemeGenerationCorpus(version=combined_label, source_codes=_with_prompt_ids(combined_codes))

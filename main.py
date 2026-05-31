@@ -481,7 +481,7 @@ _WORKSPACE = os.path.dirname(os.path.abspath(__file__))
 _DATA      = os.path.join(_WORKSPACE, "data")
 
 _EXPERIMENT_ORDER  = ["Baseline V0", "V1", "V2", "V1+2"]
-_EXCLUDED_FOLDERS  = {"question_themes"}
+_EXCLUDED_FOLDERS  = {"question_themes", "ALL_VERSIONS"}
 
 
 def list_experiments() -> List[str]:

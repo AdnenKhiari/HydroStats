@@ -1,0 +1,124 @@
+20:59:02  INFO      codification_analysis.data_loader  Loaded 1 codification inputs from version 'Baseline V0'
+20:59:04  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+20:59:05  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao "HTTP/1.1 200 OK"
+20:59:20  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao "HTTP/1.1 200 OK"
+20:59:36  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao "HTTP/1.1 200 OK"
+20:59:51  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao "HTTP/1.1 200 OK"
+21:00:06  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao "HTTP/1.1 200 OK"
+21:00:23  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao "HTTP/1.1 200 OK"
+
+════════════════════════════════════════════════════════════
+  Version: Baseline V0
+════════════════════════════════════════════════════════════
+  Submitting 1 codification jobs to Gemini Batch API ...
+  Batch name : batches/zwiw1eav0zt35o6opdv2amr4nquk4aopavao
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+Traceback (most recent call last):
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 206, in connect_tcp
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/socket.py", line 841, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/socket.py", line 976, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 268, in handle_request
+    raise exc
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 251, in handle_request
+    response = connection.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 99, in handle_request
+    raise exc
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 76, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 205, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/opt/homebrew/anaconda3/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adnenkhiari/Documents/nawnaw/run_codification.py", line 115, in <module>
+    main()
+  File "/Users/adnenkhiari/Documents/nawnaw/run_codification.py", line 103, in main
+    results = processor.process(items, verbose=verbose)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adnenkhiari/Documents/nawnaw/codification_analysis/batch_processor.py", line 104, in process
+    batch = self.client.batches.get(name=batch.name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/google/genai/batches.py", line 1829, in get
+    response = self._api_client.request('get', path, request_dict, http_options)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/google/genai/_api_client.py", line 1537, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/google/genai/_api_client.py", line 1332, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/tenacity/__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/google/genai/_api_client.py", line 1308, in _request_once
+    response = self._httpx_client.send(httpx_request, stream=stream)  # type: ignore[union-attr]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/anaconda3/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/opt/homebrew/anaconda3/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known

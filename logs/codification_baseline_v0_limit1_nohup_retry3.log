@@ -1,0 +1,37 @@
+23:00:18  INFO      codification_analysis.data_loader  Loaded 1 codification inputs from version 'Baseline V0'
+23:00:20  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+23:00:21  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:00:37  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:00:53  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:01:09  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:01:25  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:01:40  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:01:56  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:02:12  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:02:28  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj "HTTP/1.1 200 OK"
+23:02:28  WARNING   codification_analysis.codifier  Line-count mismatch for Baseline V0 / query_01khx473s4fvhaahrv5239dcws; falling back to <null> wrapping
+23:02:28  INFO      codification_analysis.pipeline  Saved 1 results to /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/codification_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: Baseline V0
+════════════════════════════════════════════════════════════
+  Submitting 1 codification jobs to Gemini Batch API ...
+  Batch name : batches/iv5bvnouvhb38evfu3qyi21ss38wsomy6yjj
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 1/1 codifications succeeded
+
+  ✓ 1 results saved → /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/codification_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 1
+────────────────────────────────────────────────────────────
+

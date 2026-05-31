@@ -1,0 +1,33 @@
+20:54:14  INFO      codification_analysis.data_loader  Loaded 1 codification inputs from version 'Baseline V0'
+20:54:17  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+20:54:17  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:54:32  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:54:48  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:55:03  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:55:19  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:55:34  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:55:50  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1 "HTTP/1.1 200 OK"
+20:55:50  WARNING   codification_analysis.codifier  Line-count mismatch for Baseline V0 / query_01khx473s4fvhaahrv5239dcws; falling back to <null> wrapping
+20:55:50  INFO      codification_analysis.pipeline  Saved 1 results to /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/codification_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: Baseline V0
+════════════════════════════════════════════════════════════
+  Submitting 1 codification jobs to Gemini Batch API ...
+  Batch name : batches/hfffh8mv75rh7k5a2ywfbh6bq4o9fgaluar1
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 1/1 codifications succeeded
+
+  ✓ 1 results saved → /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/codification_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 1
+────────────────────────────────────────────────────────────
+

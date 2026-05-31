@@ -1,0 +1,327 @@
+
+============================================================
+Step 1: Thematic analysis on all versions
+============================================================
+
+[Step 1] Version: Baseline V0
+10:17:08  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:17:08  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:17:23  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:17:39  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:17:54  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:18:10  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:18:25  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:18:41  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:18:57  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/ppz6li987dsb5x8eajur9ofowijworvbsizs "HTTP/1.1 200 OK"
+10:18:58  WARNING   them_desc_analysis.batch_processor  Gemini batch error for Baseline V0 / query_01khx4p984fzxr7jxn9jntxjft: details=None code=4 message='The request timed out. Please try again.'
+10:18:58  WARNING   them_desc_analysis.batch_processor  Gemini batch error for Baseline V0 / query_01khx44wpeenark5c6htxexdzp: details=None code=4 message='The request timed out. Please try again.'
+10:18:58  WARNING   them_desc_analysis.batch_processor  Gemini batch error for Baseline V0 / query_01kj5jqkgre8gages2pnxg0nqr: details=None code=4 message='The request timed out. Please try again.'
+10:18:58  INFO      them_desc_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/thematic_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: Baseline V0
+════════════════════════════════════════════════════════════
+  Submitting 50 thematic analyses to Gemini Batch API ...
+  Batch name : batches/ppz6li987dsb5x8eajur9ofowijworvbsizs
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 46/50 analyses succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/thematic_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+[Step 1] Version: V1
+10:19:02  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:19:02  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:19:17  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:19:33  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:19:48  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:20:04  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:20:19  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:20:35  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:20:51  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk "HTTP/1.1 200 OK"
+10:20:54  INFO      them_desc_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/V1/thematic_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: V1
+════════════════════════════════════════════════════════════
+  Submitting 50 thematic analyses to Gemini Batch API ...
+  Batch name : batches/aaax3er0kqslzz549o8zc6c3anmpdl27vxyk
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 48/50 analyses succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/V1/thematic_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+[Step 1] Version: V2
+10:20:58  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:20:58  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:21:13  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:21:29  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:21:45  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:22:00  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:22:15  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:22:31  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:22:47  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5 "HTTP/1.1 200 OK"
+10:22:52  INFO      them_desc_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/V2/thematic_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: V2
+════════════════════════════════════════════════════════════
+  Submitting 50 thematic analyses to Gemini Batch API ...
+  Batch name : batches/vemok4d9j23bhpmq1kjartn0486hxjpbxut5
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 48/50 analyses succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/V2/thematic_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+[Step 1] Version: V1+2
+10:22:56  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:22:56  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:23:11  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:23:27  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:23:42  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:23:58  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:24:13  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:24:29  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:24:45  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2 "HTTP/1.1 200 OK"
+10:24:46  INFO      them_desc_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/V1+2/thematic_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: V1+2
+════════════════════════════════════════════════════════════
+  Submitting 50 thematic analyses to Gemini Batch API ...
+  Batch name : batches/hgx2hetmdw4unnlkq90ci1ik7vl56gwaj7v2
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 48/50 analyses succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/V1+2/thematic_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+============================================================
+Step 2: Codification on all versions
+============================================================
+
+[Step 2] Version: Baseline V0
+10:24:47  INFO      codification_analysis.data_loader  Loaded 50 codification inputs from version 'Baseline V0'
+10:24:50  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:24:50  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:25:06  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:25:21  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:25:37  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:25:52  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:26:08  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:26:23  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:26:39  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:26:55  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1 "HTTP/1.1 200 OK"
+10:26:59  WARNING   codification_analysis.codifier  Missing tagged_text for Baseline V0 / query_01khx47q6aeh7r8m9zmh3dhsc9; falling back to <null> wrapping
+10:26:59  WARNING   codification_analysis.codifier  Missing tagged_text for Baseline V0 / query_01kj5e4q6rfq99jbzwfdyq2dhv; falling back to <null> wrapping
+10:26:59  WARNING   codification_analysis.codifier  Missing tagged_text for Baseline V0 / query_01khxkx7skecxarbync2vtzj13; falling back to <null> wrapping
+10:26:59  WARNING   codification_analysis.codifier  Missing tagged_text for Baseline V0 / query_01khxm0geke8grj864xp71z474; falling back to <null> wrapping
+10:26:59  INFO      codification_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/codification_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: Baseline V0
+════════════════════════════════════════════════════════════
+  Submitting 50 codification jobs to Gemini Batch API ...
+  Batch name : batches/f0mc5p2m7ux1ueecw5r3efse169qsiaiddb1
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 46/50 codifications succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/Baseline V0/codification_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+[Step 2] Version: V1
+10:27:00  INFO      codification_analysis.data_loader  Loaded 50 codification inputs from version 'V1'
+10:27:03  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:27:04  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:27:19  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:27:35  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:27:50  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:28:06  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:28:21  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:28:37  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:28:53  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n "HTTP/1.1 200 OK"
+10:28:57  WARNING   codification_analysis.codifier  Missing tagged_text for V1 / query_01khxkwf9qenarkd2qgn97x5cs; falling back to <null> wrapping
+10:28:57  WARNING   codification_analysis.codifier  Missing tagged_text for V1 / query_01kj5e4q6rfq99jbzwfdyq2dhv; falling back to <null> wrapping
+10:28:57  WARNING   codification_analysis.codifier  Missing tagged_text for V1 / query_01kj5e55qrexvsxrcf48875e2e; falling back to <null> wrapping
+10:28:57  INFO      codification_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/V1/codification_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: V1
+════════════════════════════════════════════════════════════
+  Submitting 50 codification jobs to Gemini Batch API ...
+  Batch name : batches/pfvm2omap0t0uak0zh7kz8qz606t12h4bq7n
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 47/50 codifications succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/V1/codification_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+[Step 2] Version: V2
+10:28:58  INFO      codification_analysis.data_loader  Loaded 50 codification inputs from version 'V2'
+10:29:01  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:29:01  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:29:17  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:29:32  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:29:48  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:30:03  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:30:19  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:30:34  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:30:50  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:31:06  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334 "HTTP/1.1 200 OK"
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01khx4m85dfvpvdfc4m3kdk3m7; falling back to <null> wrapping
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01khx43k1reh7r8m98qymgneng; falling back to <null> wrapping
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01kc1eb6e3eh4a6hza9hx357jh; falling back to <null> wrapping
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01khxkwf9qenarkd2qgn97x5cs; falling back to <null> wrapping
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01kj5e3695fq99jbzhneq73qsw; falling back to <null> wrapping
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01kj5dwc8ee8gagc7f3htc6hq7; falling back to <null> wrapping
+10:31:09  WARNING   codification_analysis.codifier  Missing tagged_text for V2 / query_01kj5e1793e8gagc92ztjpzmb0; falling back to <null> wrapping
+10:31:09  INFO      codification_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/V2/codification_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: V2
+════════════════════════════════════════════════════════════
+  Submitting 50 codification jobs to Gemini Batch API ...
+  Batch name : batches/cb0inuhcyt954bvv0fcbza52jdmoiezw3334
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 43/50 codifications succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/V2/codification_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+[Step 2] Version: V1+2
+10:31:11  INFO      codification_analysis.data_loader  Loaded 50 codification inputs from version 'V1+2'
+10:31:14  INFO      httpx  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:batchGenerateContent "HTTP/1.1 200 OK"
+10:31:14  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:31:29  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:31:45  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:32:00  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:32:16  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:32:31  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:32:47  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:33:03  INFO      httpx  HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc "HTTP/1.1 200 OK"
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01khxjh8fge8grj7yqa94y52xv; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01khx473s4fvhaahrv5239dcws; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01khx4c12jecxbrt5j3nb1e6ar; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01kj5e94azexvsxrkxqmnrq3dr; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01kj5jqkgre8gages2pnxg0nqr; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01khxkx7skecxarbync2vtzj13; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01kj5dy69ye8gagc86nkp2hqb5; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01kj5dwc8ee8gagc7f3htc6hq7; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01kj5eaevmfq99jc0ysccfp93z; falling back to <null> wrapping
+10:33:09  WARNING   codification_analysis.codifier  Missing tagged_text for V1+2 / query_01kj5dzys0fq99jbyn8wdsnk0m; falling back to <null> wrapping
+10:33:09  INFO      codification_analysis.pipeline  Saved 50 results to /Users/adnenkhiari/Documents/nawnaw/data/V1+2/codification_analysis.json
+
+════════════════════════════════════════════════════════════
+  Version: V1+2
+════════════════════════════════════════════════════════════
+  Submitting 50 codification jobs to Gemini Batch API ...
+  Batch name : batches/uqzf65q7tquadfsmszwkhg2daf463iy91aqc
+  Polling every 15s until complete ...
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_PENDING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_RUNNING]  None
+  [JOB_STATE_SUCCEEDED]  None
+  Done: 40/50 codifications succeeded
+
+  ✓ 50 results saved → /Users/adnenkhiari/Documents/nawnaw/data/V1+2/codification_analysis.json
+
+────────────────────────────────────────────────────────────
+  Done. Total results saved: 50
+────────────────────────────────────────────────────────────
+
+
+============================================================
+All steps completed successfully
+============================================================
