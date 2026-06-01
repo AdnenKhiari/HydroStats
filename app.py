@@ -482,7 +482,7 @@ def _expand_bracket_citation_numbers(raw_text: str) -> List[int]:
 def _count_brand_text_references(text: str, brand_source_idxs: List[int]) -> int:
     brand_idx_set = set(brand_source_idxs or [])
     if not text:
-        return 0
+        return len(brand_idx_set)
 
     url_hits = sum(1 for match in _BRAND_URL_RE.finditer(text) if _is_brand_domain_url(match.group(0)))
     markdown_duplicate_hits = 0
@@ -491,7 +491,7 @@ def _count_brand_text_references(text: str, brand_source_idxs: List[int]) -> int
         target_text = match.group(2).strip()
         if _normalized_brand_url(label_text) and _normalized_brand_url(label_text) == _normalized_brand_url(target_text):
             markdown_duplicate_hits += 1
-    url_hits -= markdown_duplicate_hits
+    url_hits = max(0, url_hits - markdown_duplicate_hits)
 
     if not brand_idx_set:
         return url_hits
@@ -500,7 +500,8 @@ def _count_brand_text_references(text: str, brand_source_idxs: List[int]) -> int
     for match in _BRACKET_CITATION_RE.finditer(text):
         citation_numbers = _expand_bracket_citation_numbers(match.group(1))
         bracket_hits += sum(1 for number in citation_numbers if number in brand_idx_set)
-    return url_hits + bracket_hits
+
+    return url_hits + bracket_hits + len(brand_idx_set)
 
 def compute_answer_metrics(ans: Answer) -> dict:
     """
@@ -539,6 +540,7 @@ def compute_answer_metrics(ans: Answer) -> dict:
         + metrics["product_mention_count"]
         + metrics["hydromea_text_reference_count"]
     )
+    metrics["global_mentioned"] = metrics["global_score"] > 0
     return metrics
 
 
@@ -574,6 +576,8 @@ FILTER_SPECS: List[dict] = [
      "fn": lambda m: m["sourced"]},
     {"key": "mentioned", "label": "Hydromea cited",   "icon": "💬", "group": "Hydromea", "color": "#2563eb",
      "fn": lambda m: m["mentioned"]},
+    {"key": "global_mentioned", "label": "Global Mentioned", "icon": "🌐", "group": "Hydromea", "color": "#ea580c",
+     "fn": lambda m: m.get("global_mentioned", False)},
 ]
 # ── Auto-append product mention + product sourced specs from _PRODUCT_PATTERNS ──
 for _pp in _PRODUCT_PATTERNS:
@@ -957,8 +961,10 @@ def _build_tag_partition_rows(corpus: LinkedCorpus, experiment: str) -> tuple[pd
             "provider_label": provider_meta["label"],
             "theme": query_theme(query.text) or "❓ Unmatched",
             "hydromea_mentioned": bool(metric["mentioned"]),
+            "global_mentioned": bool(metric.get("global_mentioned", False)),
             "hydromea_sourced": bool(metric["sourced"]),
             "mention_bucket": "Mentioned" if metric["mentioned"] else "Not Mentioned",
+            "global_mention_bucket": "Global Mentioned" if metric.get("global_mentioned", False) else "Global Not Mentioned",
             "source_bucket": "Sourced" if metric["sourced"] else "Unsourced",
         }
         for cat in TAG_PARTITION_CATEGORIES:
@@ -1830,7 +1836,7 @@ if _PAGE == "📊 Hydromea Stats":
     with _cohort_col:
         cohort_scope = st.radio(
             "Cohort scope",
-            ["All queries", "Hydromea Mentioned", "Direct Relevance to page changes"],
+            ["All queries", "Hydromea Mentioned", "Global Mentioned", "Direct Relevance to page changes"],
             index=0,
             horizontal=False,
         )
@@ -1861,6 +1867,9 @@ if _PAGE == "📊 Hydromea Stats":
             # Mentioned-only comparison in each version independently.
             tag_current_view = tag_current_df[tag_current_df["hydromea_mentioned"]].copy()
             tag_baseline_view = tag_baseline_df[tag_baseline_df["hydromea_mentioned"]].copy()
+        elif cohort_scope == "Global Mentioned" and not tag_current_df.empty:
+            tag_current_view = tag_current_df[tag_current_df["global_mentioned"]].copy()
+            tag_baseline_view = tag_baseline_df[tag_baseline_df["global_mentioned"]].copy()
         elif cohort_scope == "Direct Relevance to page changes":
             _cur_metrics = _load_metrics_index(_cur_exp)
             _base_metrics = _load_metrics_index(_BL_EXP) if _BL_EXP in EXPERIMENTS else {}
@@ -1891,6 +1900,11 @@ if _PAGE == "📊 Hydromea Stats":
                 "Hydromea Mentioned compares current answers where hydromea is mentioned "
                 "against baseline answers where hydromea is mentioned."
             )
+        elif cohort_scope == "Global Mentioned":
+            st.info(
+                "Global Mentioned compares current answers whose global score is greater than 0 "
+                "against baseline answers whose global score is greater than 0."
+            )
         elif cohort_scope == "Direct Relevance to page changes":
             st.info(
                 "Direct Relevance to page changes keeps only answers whose sources include at least one "
@@ -1909,9 +1923,12 @@ if _PAGE == "📊 Hydromea Stats":
             # Already filtered to answers where hydromea was mentioned, so all are "Mentioned"
             tag_current_view["analysis_mention_bucket"] = "Mentioned"
             tag_baseline_view["analysis_mention_bucket"] = "Mentioned"
+        elif cohort_scope == "Global Mentioned":
+            tag_current_view["analysis_mention_bucket"] = "Global Mentioned"
+            tag_baseline_view["analysis_mention_bucket"] = "Global Mentioned"
         else:
-            tag_current_view["analysis_mention_bucket"] = tag_current_view["mention_bucket"]
-            tag_baseline_view["analysis_mention_bucket"] = tag_baseline_view["mention_bucket"]
+            tag_current_view["analysis_mention_bucket"] = tag_current_view["global_mention_bucket"]
+            tag_baseline_view["analysis_mention_bucket"] = tag_baseline_view["global_mention_bucket"]
 
         _k1, _k2, _k3 = st.columns(3)
         _k1.metric("Current answers included", int(len(tag_current_view)))
@@ -2430,12 +2447,12 @@ if _PAGE == "📊 Hydromea Stats":
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
 
-    # ── Answers by Hydromea Mention ──────────────────────────────────────────
+    # ── Answers by Global Mention ────────────────────────────────────────────
     st.markdown("---")
-    st.markdown("### Answers by Hydromea Mention")
+    st.markdown("### Answers by Global Mention")
     st.caption(
-        "One row per Version × AI Model. Answers are split by whether the response text "
-        "mentions 'hydromea' (case-insensitive)."
+        "One row per Version × AI Model. Answers are split by whether the computed global score "
+        "is greater than 0."
     )
 
     _mention_rows: list = []
@@ -2444,42 +2461,42 @@ if _PAGE == "📊 Hydromea Stats":
         _exp_metrics = _load_metrics_index(_exp)
         _exp_products = sorted(p for p in _exp_corpus.by_product if not p.startswith("_"))
 
-        _all3_mentioned_parts: list[str] = []
-        _all3_not_mentioned_parts: list[str] = []
+        _all3_global_mentioned_parts: list[str] = []
+        _all3_global_not_mentioned_parts: list[str] = []
 
         for _prod in _exp_products:
             _pm = PRODUCT_META.get(_prod, _DMETA)
-            _mentioned_parts: list[str] = []
-            _not_mentioned_parts: list[str] = []
+            _global_mentioned_parts: list[str] = []
+            _global_not_mentioned_parts: list[str] = []
 
             for _aid in _exp_corpus.by_product.get(_prod, []):
                 _ans = _exp_corpus.answers[_aid]
                 _resp = (_ans.response or "").strip()
                 if not _resp:
                     continue
-                if _exp_metrics[_aid]["mentioned"]:
-                    _mentioned_parts.append(_resp)
-                    _all3_mentioned_parts.append(_resp)
+                if _exp_metrics[_aid].get("global_mentioned"):
+                    _global_mentioned_parts.append(_resp)
+                    _all3_global_mentioned_parts.append(_resp)
                 else:
-                    _not_mentioned_parts.append(_resp)
-                    _all3_not_mentioned_parts.append(_resp)
+                    _global_not_mentioned_parts.append(_resp)
+                    _all3_global_not_mentioned_parts.append(_resp)
 
             _mention_rows.append({
                 "Version": _exp,
                 "AI Model": _pm["label"],
-                "Mentioned": "\n<--><--><-->\n".join(_mentioned_parts),
-                "Not Mentioned": "\n<--><--><-->\n".join(_not_mentioned_parts),
+                "Global Mentioned": "\n<--><--><-->\n".join(_global_mentioned_parts),
+                "Global Not Mentioned": "\n<--><--><-->\n".join(_global_not_mentioned_parts),
             })
 
         # Virtual "All 3" row — combines all chatbots for this version
         _mention_rows.append({
             "Version": _exp,
             "AI Model": "All 3",
-            "Mentioned": "\n<--><--><-->\n".join(_all3_mentioned_parts),
-            "Not Mentioned": "\n<--><--><-->\n".join(_all3_not_mentioned_parts),
+            "Global Mentioned": "\n<--><--><-->\n".join(_all3_global_mentioned_parts),
+            "Global Not Mentioned": "\n<--><--><-->\n".join(_all3_global_not_mentioned_parts),
         })
 
-    _mention_df = pd.DataFrame(_mention_rows, columns=["Version", "AI Model", "Mentioned", "Not Mentioned"])
+    _mention_df = pd.DataFrame(_mention_rows, columns=["Version", "AI Model", "Global Mentioned", "Global Not Mentioned"])
     st.dataframe(
         _mention_df,
         use_container_width=True,
@@ -2487,8 +2504,8 @@ if _PAGE == "📊 Hydromea Stats":
         column_config={
             "Version": st.column_config.TextColumn("Version", width="small"),
             "AI Model": st.column_config.TextColumn("AI Model", width="small"),
-            "Mentioned": st.column_config.TextColumn("Mentioned", width="large"),
-            "Not Mentioned": st.column_config.TextColumn("Not Mentioned", width="large"),
+            "Global Mentioned": st.column_config.TextColumn("Global Mentioned", width="large"),
+            "Global Not Mentioned": st.column_config.TextColumn("Global Not Mentioned", width="large"),
         },
     )
 
@@ -2598,7 +2615,7 @@ if _PAGE == "📊 Hydromea Stats":
                     "Answer":                           (_ans.response or "").strip(),
                     "Hydromea Mention Count":           _m.get("hydromea_mention_count", 0),
                     "# Products Mentioned":             _m.get("product_mention_count", 0),
-                    "Hydromea URL/Bracket Count":       _m.get("hydromea_text_reference_count", 0),
+                    "Hydromea URI/Source Count":        _m.get("hydromea_text_reference_count", 0),
                     "Global Score":                     _m.get("global_score", 0),
                 })
 
@@ -2606,7 +2623,7 @@ if _PAGE == "📊 Hydromea Stats":
         "Version", "AI Model", "Question", "Answer",
         "Hydromea Mention Count",
         "# Products Mentioned",
-        "Hydromea URL/Bracket Count",
+        "Hydromea URI/Source Count",
         "Global Score",
     ]
     _feat_df = pd.DataFrame(_feat_rows, columns=_feat_cols)
@@ -2622,7 +2639,7 @@ if _PAGE == "📊 Hydromea Stats":
             "Answer":                     st.column_config.TextColumn("Answer",                     width="large"),
             "Hydromea Mention Count":     st.column_config.NumberColumn("Hydromea Mention Count",  width="small"),
             "# Products Mentioned":       st.column_config.NumberColumn("# Products Mentioned",    width="small"),
-            "Hydromea URL/Bracket Count": st.column_config.NumberColumn("Hydromea URL/Bracket",    width="small"),
+            "Hydromea URI/Source Count":  st.column_config.NumberColumn("Hydromea URI/Source",     width="small"),
             "Global Score":               st.column_config.NumberColumn("Global Score",              width="small"),
         },
     )
@@ -2859,6 +2876,7 @@ for col, product in zip(cols, active_products):
         source_position_raw = _m["source_position"]
         source_position_str = "N/A" if source_position_raw in (None, -1) else str(source_position_raw)
         citation_count      = _m["citation_count"]
+        global_mentioned_str = "Yes" if _m.get("global_mentioned") else "No"
         ans_date     = (ans.timing.get("created_at") or "")[:10] or "—"
         report_key   = ans.run_context.get("visibility_report_key", "—")
 
@@ -2869,6 +2887,7 @@ for col, product in zip(cols, active_products):
     <div class="stat-pill">📚 <strong>{total_src}</strong> sources</div>
     <div class="stat-pill">📍 Source Position <strong>{source_position_str}</strong></div>
     <div class="stat-pill">🔢 Sourced Count <strong>{citation_count}</strong></div>
+        <div class="stat-pill">🌐 Global Mentioned <strong>{global_mentioned_str}</strong></div>
   </div>
   <hr style="border:none;border-top:1px solid #f3f4f6;margin:.6rem 0 .9rem">
   <div class="response-body">
