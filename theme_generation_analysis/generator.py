@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import json
 import logging
-import re
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -21,14 +20,12 @@ _PROMPT_FILE = _MODULE_DIR / "prompt.txt"
 
 logger = logging.getLogger(__name__)
 
-_PROMPT_ID_RANGE_RE = re.compile(r"^(C\d+)-(C\d+)$")
-
 class ThemeGenerator:
     def __init__(
         self,
         api_key: Optional[str] = None,
         model: str = "gemini-2.5-flash",
-        max_tokens: int = 65535,
+        max_tokens: int = 65536,
         rpm_limit: float = 1.0,
         prompt_file: Optional[str | Path] = None,
         provider: Optional[LLMProvider] = None,
@@ -70,7 +67,7 @@ class ThemeGenerator:
         ]
         for code in corpus.source_codes:
             lines.extend([
-                f"CODE_ID: {code.prompt_id or code.code_id}",
+                f"CODE_ID: {code.code_id}",
                 f"CODE_NAME: {code.code_name}",
                 f"DESCRIPTION: {code.description}",
                 "",
@@ -83,13 +80,10 @@ class ThemeGenerator:
             "Each item must be an object with exactly these keys:",
             '- "theme_name": string',
             '- "description": string',
-            '- "code_ids": array of strings using either individual IDs like C12 or inclusive ranges like C12-C34',
-            "Keep descriptions detailed but compact.",
+            '- "code_ids": array of strings',
+            "Keep descriptions concise.",
         ])
         return "\n".join(lines).strip()
-
-    def build_user_message(self, corpus: ThemeGenerationCorpus) -> str:
-        return self._build_user_message(corpus)
 
     @staticmethod
     def _strip_code_fences(text: str) -> str:
@@ -155,32 +149,11 @@ class ThemeGenerator:
         return []
 
     @staticmethod
-    def _expand_prompt_id(raw_code_id: str) -> List[str]:
-        normalized = raw_code_id.strip()
-        if not normalized:
-            return []
-
-        match = _PROMPT_ID_RANGE_RE.fullmatch(normalized)
-        if not match:
-            return [normalized]
-
-        start_label, end_label = match.groups()
-        start_num = int(start_label[1:])
-        end_num = int(end_label[1:])
-        if end_num < start_num:
-            return [normalized]
-
-        return [f"C{value}" for value in range(start_num, end_num + 1)]
-
-    @staticmethod
     def _normalize_themes(
         raw_themes: List[Dict[str, Any]],
         source_codes: List[ThemeSourceCode],
     ) -> List[GeneratedTheme]:
-        prompt_to_code_id = {
-            (code.prompt_id or code.code_id): code.code_id
-            for code in source_codes
-        }
+        valid_ids = {code.code_id for code in source_codes}
         themes: List[GeneratedTheme] = []
         for entry in raw_themes:
             if not isinstance(entry, dict):
@@ -193,11 +166,9 @@ class ThemeGenerator:
 
             code_ids: List[str] = []
             for code_id in raw_ids:
-                expanded_ids = ThemeGenerator._expand_prompt_id(str(code_id))
-                for normalized_id in expanded_ids:
-                    actual_code_id = prompt_to_code_id.get(normalized_id)
-                    if actual_code_id and actual_code_id not in code_ids:
-                        code_ids.append(actual_code_id)
+                normalized_id = str(code_id).strip()
+                if normalized_id in valid_ids and normalized_id not in code_ids:
+                    code_ids.append(normalized_id)
 
             if not code_ids:
                 continue

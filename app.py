@@ -380,6 +380,125 @@ def brand_idxs(ans: Answer) -> List[int]:
             result.append(i)
     return result
 
+
+_HYDROMEA_MENTION_RE = re.compile(r"\bhydromea\b", re.IGNORECASE)
+_ANY_URL_RE = re.compile(
+    r"\b(?:https?://|www\.|(?:[\w-]+\.)+[a-z]{2,})[^\s<>)\]}]*",
+    re.IGNORECASE,
+)
+_BRAND_URL_RE = re.compile(
+    r"\b(?:https?://)?(?:www\.)?(?:[\w-]+\.)*hydromea\.(?:com|ch)(?:/[^\s<>)\]}]*)?",
+    re.IGNORECASE,
+)
+_MARKDOWN_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+_BRACKET_CITATION_RE = re.compile(r"\[(\d+(?:\s*[-,]\s*\d+)*)\]")
+
+
+def _normalize_url_candidate(raw_url: str) -> str:
+    candidate = (raw_url or "").strip().rstrip(".,;:!?)]}")
+    if not candidate:
+        return ""
+    if not re.match(r"^[a-z]+://", candidate, re.IGNORECASE):
+        candidate = f"https://{candidate}"
+    return candidate
+
+
+def _is_brand_domain_url(raw_url: str) -> bool:
+    candidate = _normalize_url_candidate(raw_url)
+    if not candidate:
+        return False
+    parsed = urllib.parse.urlparse(candidate)
+    hostname = _nh(parsed.netloc)
+    normalized = candidate.lower()
+    return hostname in BRAND_DOMAINS or any(domain in normalized for domain in BRAND_DOMAINS)
+
+
+def _normalized_brand_url(raw_url: str) -> str:
+    candidate = _normalize_url_candidate(raw_url)
+    if not candidate:
+        return ""
+    parsed = urllib.parse.urlparse(candidate)
+    hostname = _nh(parsed.netloc)
+    if hostname not in BRAND_DOMAINS and not any(domain in candidate.lower() for domain in BRAND_DOMAINS):
+        return ""
+    path = parsed.path or ""
+    if path != "/":
+        path = path.rstrip("/")
+    normalized = urllib.parse.urlunparse(
+        (
+            parsed.scheme.lower() or "https",
+            hostname,
+            path,
+            parsed.params,
+            parsed.query,
+            "",
+        )
+    )
+    return normalized
+
+
+def _count_hydromea_mentions(text: str) -> int:
+    if not text:
+        return 0
+
+    url_spans = [
+        (match.start(), match.end(), _is_brand_domain_url(match.group(0)))
+        for match in _ANY_URL_RE.finditer(text)
+    ]
+    mention_count = 0
+    for match in _HYDROMEA_MENTION_RE.finditer(text):
+        match_start = match.start()
+        inside_non_brand_url = any(
+            start <= match_start < end and not is_brand_url
+            for start, end, is_brand_url in url_spans
+        )
+        if not inside_non_brand_url:
+            mention_count += 1
+    return mention_count
+
+
+def _expand_bracket_citation_numbers(raw_text: str) -> List[int]:
+    numbers: List[int] = []
+    for piece in (raw_text or "").split(","):
+        token = piece.strip()
+        if not token:
+            continue
+        if "-" in token:
+            start_text, end_text = token.split("-", 1)
+            if start_text.strip().isdigit() and end_text.strip().isdigit():
+                start_num = int(start_text.strip())
+                end_num = int(end_text.strip())
+                if start_num <= end_num:
+                    numbers.extend(range(start_num, end_num + 1))
+                    continue
+        if token.isdigit():
+            numbers.append(int(token))
+    return numbers
+
+
+def _count_brand_text_references(text: str, brand_source_idxs: List[int]) -> int:
+    brand_idx_set = set(brand_source_idxs or [])
+    if not text:
+        return 0
+
+    url_hits = sum(1 for match in _BRAND_URL_RE.finditer(text) if _is_brand_domain_url(match.group(0)))
+    markdown_duplicate_hits = 0
+    for match in _MARKDOWN_LINK_RE.finditer(text):
+        label_text = match.group(1).strip()
+        target_text = match.group(2).strip()
+        if _normalized_brand_url(label_text) and _normalized_brand_url(label_text) == _normalized_brand_url(target_text):
+            markdown_duplicate_hits += 1
+    url_hits -= markdown_duplicate_hits
+
+    if not brand_idx_set:
+        return url_hits
+
+    bracket_hits = 0
+    for match in _BRACKET_CITATION_RE.finditer(text):
+        citation_numbers = _expand_bracket_citation_numbers(match.group(1))
+        bracket_hits += sum(1 for number in citation_numbers if number in brand_idx_set)
+    return url_hits + bracket_hits
+
 def compute_answer_metrics(ans: Answer) -> dict:
     """
     Single source of truth for all per-answer metrics.
@@ -387,9 +506,11 @@ def compute_answer_metrics(ans: Answer) -> dict:
     """
     _bi   = brand_idxs(ans)
     _text = ans.response or ""
+    _hydromea_mention_count = _count_hydromea_mentions(_text)
     metrics: dict = {
         "sourced":         bool(_bi),
-        "mentioned":       "hydromea" in _text.lower(),
+        "mentioned":       _hydromea_mention_count > 0,
+        "hydromea_mention_count": _hydromea_mention_count,
         "source_position": _bi[0] if _bi else -1,
         "citation_count":  len(_bi),
         "n_sources":       ans.run_context.get("stats", {}).get("totalSources", len(ans.sources)),
@@ -408,6 +529,12 @@ def compute_answer_metrics(ans: Answer) -> dict:
     # Total occurrences of any product mention across all patterns
     metrics["product_mention_count"] = sum(
         metrics[f'product_{p["key"]}_count'] for p in _PRODUCT_PATTERNS
+    )
+    metrics["hydromea_text_reference_count"] = _count_brand_text_references(_text, _bi)
+    metrics["global_score"] = (
+        metrics["hydromea_mention_count"]
+        + metrics["product_mention_count"]
+        + metrics["hydromea_text_reference_count"]
     )
     return metrics
 
@@ -2129,7 +2256,7 @@ if _PAGE == "📊 Hydromea Stats":
     st.markdown("### Per-Question Features Table")
     st.caption(
         "One row per Question × AI Model × Version. "
-        "Focuses on product mentions, Hydromea source count, and source URLs."
+        "Focuses on the shared per-answer Hydromea/product count metrics."
     )
 
     _feat_rows: list = []
@@ -2145,37 +2272,23 @@ if _PAGE == "📊 Hydromea Stats":
                 _q   = _exp_corpus.queries.get(_ans.query_id or "")
                 _m   = _exp_metrics[_aid]
 
-                # Which product names were matched
-                _prod_names = ", ".join(
-                    p["label"].split()[0]           # e.g. "DiskDrive", "Luma", "Exray"
-                    for p in _PRODUCT_PATTERNS
-                    if _m.get(f'product_{p["key"]}')
-                )
-
-                # Hydromea source URLs via brand_idxs (1-based)
-                _hydro_urls = " | ".join(
-                    _ans.sources[i - 1].get("url", "")
-                    for i in (_m.get("brand_idxs") or [])
-                    if i <= len(_ans.sources)
-                )
-
                 _feat_rows.append({
-                    "Version":               _exp,
-                    "AI Model":              _pm["label"],
-                    "Question":              _q.text if _q else "",
-                    "Answer":                (_ans.response or "").strip(),
-                    "Hydromea Mentioned":    1 if _m.get("mentioned") else 0,
-                    "Products Mentioned":    _prod_names,
-                    "Num Products Mentioned": _m.get("product_mention_count", 0),
-                    "Hydromea Source Count": _m.get("citation_count", 0),
-                    "Hydromea Sources":      _hydro_urls,
+                    "Version":                          _exp,
+                    "AI Model":                         _pm["label"],
+                    "Question":                         _q.text if _q else "",
+                    "Answer":                           (_ans.response or "").strip(),
+                    "Hydromea Mention Count":           _m.get("hydromea_mention_count", 0),
+                    "# Products Mentioned":             _m.get("product_mention_count", 0),
+                    "Hydromea URL/Bracket Count":       _m.get("hydromea_text_reference_count", 0),
+                    "Global Score":                     _m.get("global_score", 0),
                 })
 
     _feat_cols = [
         "Version", "AI Model", "Question", "Answer",
-        "Hydromea Mentioned",
-        "Products Mentioned", "Num Products Mentioned",
-        "Hydromea Source Count", "Hydromea Sources",
+        "Hydromea Mention Count",
+        "# Products Mentioned",
+        "Hydromea URL/Bracket Count",
+        "Global Score",
     ]
     _feat_df = pd.DataFrame(_feat_rows, columns=_feat_cols)
 
@@ -2184,15 +2297,14 @@ if _PAGE == "📊 Hydromea Stats":
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Version":               st.column_config.TextColumn("Version",   width="small"),
-            "AI Model":              st.column_config.TextColumn("AI Model",  width="small"),
-            "Question":              st.column_config.TextColumn("Question",  width="medium"),
-            "Answer":                st.column_config.TextColumn("Answer",    width="large"),
-            "Hydromea Mentioned":    st.column_config.NumberColumn("Hydromea Mentioned", width="small"),
-            "Products Mentioned":    st.column_config.TextColumn("Products Mentioned",     width="small"),
-            "Num Products Mentioned":st.column_config.NumberColumn("# Products",           width="small"),
-            "Hydromea Source Count": st.column_config.NumberColumn("Hydromea Src Count",   width="small"),
-            "Hydromea Sources":      st.column_config.TextColumn("Hydromea Sources",       width="medium"),
+            "Version":                    st.column_config.TextColumn("Version",                    width="small"),
+            "AI Model":                   st.column_config.TextColumn("AI Model",                   width="small"),
+            "Question":                   st.column_config.TextColumn("Question",                   width="medium"),
+            "Answer":                     st.column_config.TextColumn("Answer",                     width="large"),
+            "Hydromea Mention Count":     st.column_config.NumberColumn("Hydromea Mention Count",  width="small"),
+            "# Products Mentioned":       st.column_config.NumberColumn("# Products Mentioned",    width="small"),
+            "Hydromea URL/Bracket Count": st.column_config.NumberColumn("Hydromea URL/Bracket",    width="small"),
+            "Global Score":               st.column_config.NumberColumn("Global Score",              width="small"),
         },
     )
 
@@ -2205,7 +2317,10 @@ if _PAGE == "📊 Hydromea Stats":
         _feat_ws.column_dimensions["B"].width = 14
         _feat_ws.column_dimensions["C"].width = 50
         _feat_ws.column_dimensions["D"].width = 100
-        _feat_ws.column_dimensions["H"].width = 60
+        _feat_ws.column_dimensions["E"].width = 22
+        _feat_ws.column_dimensions["F"].width = 22
+        _feat_ws.column_dimensions["G"].width = 24
+        _feat_ws.column_dimensions["H"].width = 18
         _opx = __import__("openpyxl").styles.Alignment(wrap_text=True, vertical="top")
         for _feat_row in _feat_ws.iter_rows(min_row=2):
             _feat_row[3].alignment = _opx

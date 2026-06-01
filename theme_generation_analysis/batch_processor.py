@@ -9,7 +9,7 @@ import json
 import logging
 import time
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 from answer_analysis.providers import GeminiProvider
 
@@ -33,7 +33,7 @@ class GeminiThemeGenerationBatchProcessor:
         self,
         api_key: Optional[str] = None,
         model: str = "gemini-2.5-flash",
-        max_tokens: int = 65535,
+        max_tokens: int = 65536,
         prompt_file: Optional[str] = None,
     ) -> None:
         from google import genai as _genai
@@ -51,27 +51,6 @@ class GeminiThemeGenerationBatchProcessor:
             max_tokens=max_tokens,
             prompt_file=prompt_file,
         )
-
-    def _call_with_retry(self, func: Callable[[], Any], *, action: str) -> Any:
-        last_exc: Optional[Exception] = None
-        for attempt in range(self._gemini_provider.max_retries + 1):
-            try:
-                return func()
-            except Exception as exc:
-                if not self._gemini_provider._is_retriable(exc):
-                    raise
-                last_exc = exc
-                wait = min(2 ** attempt, 30)
-                logger.warning(
-                    "Gemini batch %s transient error (attempt %d/%d) — retrying in %ds … (%s)",
-                    action,
-                    attempt + 1,
-                    self._gemini_provider.max_retries + 1,
-                    wait,
-                    exc,
-                )
-                time.sleep(wait)
-        raise RuntimeError(f"Gemini batch {action} failed after retries") from last_exc
 
     def _build_inlined_request(self, corpus: ThemeGenerationCorpus) -> Any:
         messages = [{"role": "user", "content": self._generator._build_user_message(corpus)}]
@@ -159,20 +138,14 @@ class GeminiThemeGenerationBatchProcessor:
         if verbose:
             print(f"  Submitting {len(requests)} theme-generation jobs to Gemini Batch API ...")
 
-        batch = self._call_with_retry(
-            lambda: self.client.batches.create(model=self.model, src=requests),
-            action="create",
-        )
+        batch = self.client.batches.create(model=self.model, src=requests)
 
         if verbose:
             print(f"  Batch name : {batch.name}")
             print(f"  Polling every {poll_interval}s until complete ...")
 
         while True:
-            batch = self._call_with_retry(
-                lambda: self.client.batches.get(name=batch.name),
-                action="poll",
-            )
+            batch = self.client.batches.get(name=batch.name)
             state_name = batch.state.name if batch.state else "UNKNOWN"
             if verbose:
                 print(f"  [{state_name}]  {batch.completion_stats}")
