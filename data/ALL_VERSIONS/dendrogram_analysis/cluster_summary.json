@@ -1,0 +1,1011 @@
+{
+  "clusters": [
+    {
+      "cluster_label": 15,
+      "size": 552,
+      "mean_probability": 0.9967416386338246,
+      "centroid_x": 5.345825672149658,
+      "centroid_y": 6.968236923217773,
+      "version_counts": {
+        "Baseline V0": 111,
+        "V1": 152,
+        "V1+2": 138,
+        "V2": 151
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_3",
+          "code_name": "Absence of Specific Product Detail",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Advanced_Capability",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Affirmative Confirmation",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Alternative Product Focus & Comparison",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "Application Context",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Application-Specific Optimization",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "ApplicationAreas",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Application_Context",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 5,
+      "size": 431,
+      "mean_probability": 0.9691289191043782,
+      "centroid_x": 7.677987098693848,
+      "centroid_y": 2.1297740936279297,
+      "version_counts": {
+        "Baseline V0": 109,
+        "V1": 105,
+        "V1+2": 105,
+        "V2": 112
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "AI_ML_Integration",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "AUV_Confirmation_and_Purpose",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "AUV_Limitations_Challenges",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "AUV_vs_ROV_Distinction",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_11",
+          "code_name": "Additional ROV Mentions & Contextual Notes",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Advanced Inspection Technologies",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Advanced_Sensing_Technologies",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "Alternative_Tool_Categories",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 10,
+      "size": 320,
+      "mean_probability": 0.9834429282154336,
+      "centroid_x": 2.1063361167907715,
+      "centroid_y": 2.3734028339385986,
+      "version_counts": {
+        "Baseline V0": 77,
+        "V1": 107,
+        "V1+2": 49,
+        "V2": 87
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Acoustic Communication Characteristics",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Acoustic Communication Limitations",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_3",
+          "code_name": "Acoustic Communication Mechanism & Benefits",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Acoustic Communication Profile",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Acoustic Communication Specifics",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_3",
+          "code_name": "Acoustic Wireless Communication Limitations",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "Affirmative Introduction",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Ancillary Device - Debris Management",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 13,
+      "size": 157,
+      "mean_probability": 0.9904630934231887,
+      "centroid_x": 7.341619491577148,
+      "centroid_y": 8.197100639343262,
+      "version_counts": {
+        "Baseline V0": 38,
+        "V1": 47,
+        "V1+2": 32,
+        "V2": 40
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "AI Interaction Context",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "AI_Conversational_Prompt",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Chatbot Engagement",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "Chatbot Engagement/Offer",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_6",
+          "code_name": "Chatbot Interaction & Follow-up",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_11",
+          "code_name": "Chatbot Interaction/Clarification",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Chatbot Interaction/Guidance",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_12",
+          "code_name": "Chatbot Interactive Element",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 4,
+      "size": 79,
+      "mean_probability": 0.8268355438380416,
+      "centroid_x": 9.470930099487305,
+      "centroid_y": 8.72530746459961,
+      "version_counts": {
+        "Baseline V0": 23,
+        "V1": 16,
+        "V1+2": 19,
+        "V2": 21
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_10",
+          "code_name": "External Reference/Attribution",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_10",
+          "code_name": "External Source Attribution",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "Further Information & Source Provision",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_10",
+          "code_name": "Source Attribution",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "Source Attribution (Detailed)",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Source Attribution (General)",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_12",
+          "code_name": "Source_Attribution",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "Source_Attribution",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 8,
+      "size": 55,
+      "mean_probability": 0.4612674476388271,
+      "centroid_x": -1.769391655921936,
+      "centroid_y": 4.225032806396484,
+      "version_counts": {
+        "Baseline V0": 16,
+        "V1": 16,
+        "V1+2": 12,
+        "V2": 11
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "General Performance Metrics",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "UWOC_High_Bandwidth_Capability",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "UWOC_System_Architecture",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_9",
+          "code_name": "Applications_Use_Cases",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_10",
+          "code_name": "Performance_Metrics_Data",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_2",
+          "code_name": "Technology_Description",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_3",
+          "code_name": "UWOC Specific Features & Performance",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1+2",
+          "tag": "Code_9",
+          "code_name": "Brand_Product_Reference",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 0,
+      "size": 39,
+      "mean_probability": 0.7489356564157453,
+      "centroid_x": -1.1327718496322632,
+      "centroid_y": 7.246098518371582,
+      "version_counts": {
+        "Baseline V0": 13,
+        "V1": 10,
+        "V1+2": 8,
+        "V2": 8
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_10",
+          "code_name": "Data Optimization Strategy",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Hybrid Communication Strategy",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_12",
+          "code_name": "Alternative/Hybrid Approaches",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_8",
+          "code_name": "Hybrid System Approach",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_14",
+          "code_name": "Hybrid_Communication_Strategies",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_7",
+          "code_name": "Hybrid_System_Approach",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1+2",
+          "tag": "Code_5",
+          "code_name": "Hybrid Communication Solutions",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1+2",
+          "tag": "Code_12",
+          "code_name": "Hybrid_Communication_Strategy",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 12,
+      "size": 36,
+      "mean_probability": 0.6138700765186612,
+      "centroid_x": 1.0614110231399536,
+      "centroid_y": 4.534312725067139,
+      "version_counts": {
+        "Baseline V0": 10,
+        "V1": 9,
+        "V1+2": 6,
+        "V2": 11
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_13",
+          "code_name": "Component_Sensitivity_and_Lifetime",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Method_Limitations_and_Performance",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "Performance Optimization Techniques",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Performance Specifications and Range Limitations",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "Video Compression & Encoding Strategies",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_7",
+          "code_name": "Optical_Communication_Limitations",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_10",
+          "code_name": "Video Compression & Codecs",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1+2",
+          "tag": "Code_10",
+          "code_name": "Limitation_Operational_Constraint",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 6,
+      "size": 30,
+      "mean_probability": 0.9925382633716074,
+      "centroid_x": 5.278264999389648,
+      "centroid_y": 0.7453125715255737,
+      "version_counts": {
+        "Baseline V0": 6,
+        "V1": 11,
+        "V1+2": 8,
+        "V2": 5
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "AI & Data Analytics for Prediction",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Data_Output_Analysis",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Efficiency & Time Savings",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_11",
+          "code_name": "Operational Context and Challenges",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Planning_Implementation_Considerations",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_6",
+          "code_name": "Proactive Maintenance Enablement",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_9",
+          "code_name": "Cost Reduction through Robotic Adoption",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_6",
+          "code_name": "Data_Analytics_and_Digitalization",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 1,
+      "size": 27,
+      "mean_probability": 0.9616022441290286,
+      "centroid_x": 0.04797983169555664,
+      "centroid_y": 10.775818824768066,
+      "version_counts": {
+        "Baseline V0": 10,
+        "V1": 2,
+        "V1+2": 10,
+        "V2": 5
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Enhanced Durability & Lifespan",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Improved Reliability & Performance",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "ReliabilityMaintenanceBenefit",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "Thermal_Management_Strategies",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_4",
+          "code_name": "Performance Benefit - Reliability & Durability",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_7",
+          "code_name": "Reliability_Maintenance_Benefit",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1+2",
+          "tag": "Code_4",
+          "code_name": "Design_Feature_Durability_Reliability",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1+2",
+          "tag": "Code_3",
+          "code_name": "Enhanced Reliability & Longevity",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 7,
+      "size": 22,
+      "mean_probability": 1.0,
+      "centroid_x": 2.494694232940674,
+      "centroid_y": 11.770035743713379,
+      "version_counts": {
+        "Baseline V0": 4,
+        "V1": 6,
+        "V1+2": 9,
+        "V2": 3
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_4",
+          "code_name": "Alternative Propulsion - Biomimetic",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_6",
+          "code_name": "Alternative Propulsion - Water-jet/Jet Drive",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_6",
+          "code_name": "Contrast External Components",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Propeller Design - Hubless/Rim-driven",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_11",
+          "code_name": "Biomimetic Design",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_5",
+          "code_name": "Biomimetic Propeller Design",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_8",
+          "code_name": "Enhanced Operational Benefits",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_3",
+          "code_name": "Hub-less/Rim-Driven Propeller Design",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 11,
+      "size": 19,
+      "mean_probability": 0.9016774029406962,
+      "centroid_x": 2.0638670921325684,
+      "centroid_y": 5.196495056152344,
+      "version_counts": {
+        "Baseline V0": 5,
+        "V1": 8,
+        "V1+2": 1,
+        "V2": 5
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "Optical Communication Mechanism & Benefits",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_2",
+          "code_name": "Optical Communication Performance Advantages",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "Optical Communication Specifics",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_12",
+          "code_name": "Pointing_and_Alignment_Requirement",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_6",
+          "code_name": "Optical Communication Advantages",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_5",
+          "code_name": "Optical Communication Principle",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_3",
+          "code_name": "Optical_Communication_Mechanism",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_2",
+          "code_name": "Optical_Communication_Mechanism_Description",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 9,
+      "size": 18,
+      "mean_probability": 0.9820558100058562,
+      "centroid_x": 2.840874195098877,
+      "centroid_y": 0.19205227494239807,
+      "version_counts": {
+        "Baseline V0": 7,
+        "V1": 7,
+        "V1+2": 4
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "General System Overview & Context",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "Magnetic Induction Communication Profile",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "Strategic Planning & Procurement",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "System Components & Architecture",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_5",
+          "code_name": "Acoustic Positioning for GPS-Denied Environments",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_14",
+          "code_name": "Broader_Organizational_Strategies",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_3",
+          "code_name": "Electromagnetic & Inductive Methods",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_5",
+          "code_name": "Inductive Coupling Details",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 14,
+      "size": 17,
+      "mean_probability": 1.0,
+      "centroid_x": 3.636113166809082,
+      "centroid_y": 5.027461528778076,
+      "version_counts": {
+        "Baseline V0": 4,
+        "V1": 4,
+        "V1+2": 5,
+        "V2": 4
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_6",
+          "code_name": "Comparative Advantage & Problem Solving",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_6",
+          "code_name": "Comparative Analysis & Trade-offs",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "Comparative Assessment",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_7",
+          "code_name": "Contextual Factors",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_9",
+          "code_name": "Comparative Analysis of Methods",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_10",
+          "code_name": "Comparative Performance & Trade-offs",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_9",
+          "code_name": "Comparative_Summary_Overview",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_1",
+          "code_name": "Solution Contextualization",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 3,
+      "size": 16,
+      "mean_probability": 0.9993228979870081,
+      "centroid_x": 6.553850173950195,
+      "centroid_y": 9.232694625854492,
+      "version_counts": {
+        "Baseline V0": 6,
+        "V1": 5,
+        "V1+2": 1,
+        "V2": 4
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_5",
+          "code_name": "Contextual Introduction/Framing",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_16",
+          "code_name": "General Introduction/Context",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "General_Introduction",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "Introductory Framing",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_1",
+          "code_name": "Introductory Framing",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_8",
+          "code_name": "Introductory_Contextualization",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_1",
+          "code_name": "Introduction_and_Context",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_1",
+          "code_name": "Introductory Framing",
+          "cluster_probability": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_label": 2,
+      "size": 13,
+      "mean_probability": 0.9407066514116599,
+      "centroid_x": 1.9691007137298584,
+      "centroid_y": 7.613924980163574,
+      "version_counts": {
+        "Baseline V0": 4,
+        "V1": 6,
+        "V1+2": 1,
+        "V2": 2
+      },
+      "top_codes": [
+        {
+          "version": "Baseline V0",
+          "tag": "Code_11",
+          "code_name": "Concluding Summary",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_9",
+          "code_name": "Concluding_Summary_Recommendation",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_13",
+          "code_name": "Summary and Concluding Remarks",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "Baseline V0",
+          "tag": "Code_11",
+          "code_name": "Summary/Recommendation",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_10",
+          "code_name": "Concluding Summary",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_13",
+          "code_name": "Concluding Summary/Reinforcement",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_9",
+          "code_name": "Concluding_Summary",
+          "cluster_probability": 1.0
+        },
+        {
+          "version": "V1",
+          "tag": "Code_10",
+          "code_name": "Summary & Key Recommendation",
+          "cluster_probability": 1.0
+        }
+      ]
+    }
+  ]
+}

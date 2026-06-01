@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-06-01T09:03:06.413868+00:00",
+  "scope": "ALL_VERSIONS",
+  "model_name": "qwen3-embedding:0.6b",
+  "n_records": 1978,
+  "n_clusters_excluding_noise": 16,
+  "noise_ratio": 0.0743174924165824,
+  "versions": [
+    "Baseline V0",
+    "V1",
+    "V1+2",
+    "V2"
+  ],
+  "umap": {
+    "n_components": 2,
+    "n_neighbors": 15,
+    "min_dist": 0.01,
+    "metric": "cosine",
+    "densmap": true
+  },
+  "hdbscan": {
+    "min_cluster_size": 12,
+    "min_samples": 1,
+    "cluster_selection_epsilon": 0.3,
+    "relative_validity": 0.06824221701408836
+  }
+}

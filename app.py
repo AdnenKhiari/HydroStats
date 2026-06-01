@@ -7,8 +7,11 @@ import pathlib
 import re
 import urllib.parse
 from typing import Dict, List, Optional
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import plotly.express as px
+from scipy.cluster.hierarchy import dendrogram
 import streamlit as st
 import streamlit.components.v1 as _components
 from main import Answer, LinkedCorpus, build_corpus, list_experiments
@@ -662,6 +665,7 @@ _PAGE_URL_MAP = {
     "stats":    "📊 Hydromea Stats",
     "tags":     "🗂️ Aggregated Tags",
     "themes":   "🧩 Theme Generation",
+    "dendrogram": "🌳 Dendrogram Analysis",
 }
 _PAGE_KEY_MAP = {v: k for k, v in _PAGE_URL_MAP.items()}
 
@@ -784,6 +788,67 @@ def _build_theme_generation_frames(experiment: str) -> tuple[pd.DataFrame, pd.Da
             })
 
     return pd.DataFrame(theme_rows), pd.DataFrame(code_rows), payload
+
+
+@st.cache_data(show_spinner=False)
+def _load_dendrogram_analysis() -> Optional[dict]:
+    """Load the cross-version dendrogram analysis bundle exported from the notebook."""
+    bundle_path = pathlib.Path(__file__).parent / "data" / "ALL_VERSIONS" / "dendrogram_analysis" / "bundle.json"
+    if not bundle_path.exists():
+        return None
+    try:
+        raw = json.loads(bundle_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    return raw if isinstance(raw, dict) else None
+
+
+def _build_dendrogram_frames() -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+    """Return (points_df, cluster_summary_df, payload) for the cross-version bundle."""
+    payload = _load_dendrogram_analysis() or {}
+    points_df = pd.DataFrame(payload.get("points") or [])
+    cluster_summary_df = pd.DataFrame(payload.get("cluster_summary") or [])
+
+    if not points_df.empty:
+        points_df["cluster_label"] = pd.to_numeric(points_df["cluster_label"], errors="coerce").fillna(-1).astype(int)
+        points_df["cluster_probability"] = pd.to_numeric(points_df["cluster_probability"], errors="coerce").fillna(0.0)
+        points_df["umap_x"] = pd.to_numeric(points_df["umap_x"], errors="coerce")
+        points_df["umap_y"] = pd.to_numeric(points_df["umap_y"], errors="coerce")
+        points_df["cluster_name"] = points_df["cluster_label"].apply(
+            lambda value: "Noise" if value < 0 else f"Cluster {value}"
+        )
+
+    if not cluster_summary_df.empty:
+        cluster_summary_df["cluster_label"] = pd.to_numeric(
+            cluster_summary_df["cluster_label"], errors="coerce"
+        ).fillna(-1).astype(int)
+        cluster_summary_df["cluster_name"] = cluster_summary_df["cluster_label"].apply(
+            lambda value: "Noise" if value < 0 else f"Cluster {value}"
+        )
+
+    return points_df, cluster_summary_df, payload
+
+
+def _build_cluster_label_map(cluster_summary_df: pd.DataFrame) -> Dict[int, str]:
+    """Build short human-readable labels for clusters from their top example codes."""
+    label_map: Dict[int, str] = {}
+    if cluster_summary_df.empty:
+        return label_map
+
+    for row in cluster_summary_df.itertuples(index=False):
+        cluster_id = int(getattr(row, "cluster_label", -1))
+        top_codes = getattr(row, "top_codes", []) or []
+        names: List[str] = []
+        for code in top_codes:
+            if not isinstance(code, dict):
+                continue
+            code_name = str(code.get("code_name", "")).strip()
+            if code_name and code_name not in names:
+                names.append(code_name)
+            if len(names) == 2:
+                break
+        label_map[cluster_id] = " / ".join(names) if names else f"Cluster {cluster_id}"
+    return label_map
 
 
 def _compute_span_counts(lines: List[dict]) -> Dict[str, int]:
@@ -976,7 +1041,7 @@ with st.sidebar:
     st.divider()
 
     _PAGE = st.radio(
-        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags", "🧩 Theme Generation"],
+        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags", "🧩 Theme Generation", "🌳 Dendrogram Analysis"],
         key="nav_page",
         label_visibility="collapsed",
     )
@@ -1060,6 +1125,260 @@ st.query_params.from_dict(_url_params)
 # ─────────────────────────────────────────────────────────────────────────────
 # Stats page (shown when _PAGE == "📊 Hydromea Stats")
 # ─────────────────────────────────────────────────────────────────────────────
+if _PAGE == "🌳 Dendrogram Analysis":
+    st.markdown("### Dendrogram Analysis")
+    st.caption(
+        "Cross-version code clustering exported from the notebook. This page always uses "
+        "the shared ALL_VERSIONS artifact bundle."
+    )
+
+    _points_df, _cluster_summary_df, _dendro_payload = _build_dendrogram_frames()
+    if not _dendro_payload or _points_df.empty:
+        st.info(
+            "No dendrogram-analysis bundle was found. Run the export step at the end of the notebook "
+            "to generate data/ALL_VERSIONS/dendrogram_analysis/."
+        )
+        st.stop()
+
+    _manifest = _dendro_payload.get("manifest") or {}
+    _all_versions = sorted(_points_df["version"].dropna().astype(str).unique().tolist())
+    _all_clusters = sorted(label for label in _points_df["cluster_label"].unique().tolist() if int(label) >= 0)
+    _cluster_label_map = _build_cluster_label_map(_cluster_summary_df)
+
+    _m1, _m2, _m3, _m4 = st.columns(4)
+    _m1.metric("Codes", int(_manifest.get("n_records", len(_points_df))))
+    _m2.metric("Clusters", int(_manifest.get("n_clusters_excluding_noise", len(_all_clusters))))
+    _m3.metric("Noise", f"{100.0 * float(_manifest.get('noise_ratio', 0.0)):.1f}%")
+    _m4.metric("Versions", len(_manifest.get("versions") or _all_versions))
+
+    st.markdown(
+        "<div style='font-size:12px;color:#64748b;margin:8px 0 16px;'>"
+        f"Model: {_html.escape(str(_manifest.get('model_name', 'unknown')))}"
+        f" &nbsp;·&nbsp; UMAP neighbors: {_html.escape(str((_manifest.get('umap') or {}).get('n_neighbors', 'n/a')))}"
+        f" &nbsp;·&nbsp; HDBSCAN min cluster size: {_html.escape(str((_manifest.get('hdbscan') or {}).get('min_cluster_size', 'n/a')))}"
+        "</div>",
+        unsafe_allow_html=True,
+    )
+
+    _flt1, _flt2, _flt3, _flt4 = st.columns([1.5, 1.3, 0.8, 1.4], gap="large")
+    with _flt1:
+        _version_sel = st.multiselect(
+            "Versions",
+            options=_all_versions,
+            default=_all_versions,
+            key="dendrogram_versions",
+        )
+    with _flt2:
+        _cluster_sel = st.multiselect(
+            "Clusters",
+            options=_all_clusters,
+            default=_all_clusters,
+            format_func=lambda value: f"Cluster {value}",
+            key="dendrogram_clusters",
+        )
+    with _flt3:
+        _show_noise = st.toggle("Show noise", value=False, key="dendrogram_show_noise")
+    with _flt4:
+        _search_term = st.text_input(
+            "Search codes",
+            placeholder="code name, tag, description...",
+            key="dendrogram_search",
+        )
+
+    _filtered_points = _points_df.copy()
+    if _version_sel:
+        _filtered_points = _filtered_points[_filtered_points["version"].isin(_version_sel)].copy()
+    if _cluster_sel:
+        _allowed_clusters = set(int(value) for value in _cluster_sel)
+        if _show_noise:
+            _allowed_clusters.add(-1)
+        _filtered_points = _filtered_points[_filtered_points["cluster_label"].isin(_allowed_clusters)].copy()
+    elif not _show_noise:
+        _filtered_points = _filtered_points[_filtered_points["cluster_label"] >= 0].copy()
+
+    _needle = (_search_term or "").strip().lower()
+    if _needle:
+        _haystack = _filtered_points[["tag", "code_name", "description", "representative_excerpt"]].fillna("").astype(str).agg(" ".join, axis=1).str.lower()
+        _filtered_points = _filtered_points[_haystack.str.contains(re.escape(_needle), regex=True)].copy()
+
+    if _filtered_points.empty:
+        st.warning("No points match the current dendrogram filters.")
+        st.stop()
+
+    _filtered_points["cluster_name"] = _filtered_points["cluster_label"].apply(
+        lambda value: "Noise" if int(value) < 0 else f"Cluster {int(value)}"
+    )
+    _filtered_points["cluster_short_label"] = _filtered_points["cluster_label"].apply(
+        lambda value: "Noise" if int(value) < 0 else _cluster_label_map.get(int(value), f"Cluster {int(value)}")
+    )
+    _filtered_points["cluster_display_name"] = _filtered_points.apply(
+        lambda row: row["cluster_name"] if int(row["cluster_label"]) < 0 else f"{row['cluster_name']} · {row['cluster_short_label']}",
+        axis=1,
+    )
+    _color_order = [f"Cluster {value}" for value in _all_clusters]
+    if _show_noise or (_filtered_points["cluster_label"] < 0).any():
+        _color_order.append("Noise")
+
+    _centroid_labels = (
+        _filtered_points[_filtered_points["cluster_label"] >= 0]
+        .groupby(["cluster_label", "cluster_name", "cluster_short_label"], as_index=False)[["umap_x", "umap_y"]]
+        .mean()
+        .sort_values("cluster_label")
+    )
+
+    _chart_col, _heatmap_col = st.columns([1.8, 1.0], gap="large")
+    with _chart_col:
+        st.markdown("**UMAP projection**")
+        _scatter = px.scatter(
+            _filtered_points,
+            x="umap_x",
+            y="umap_y",
+            color="cluster_name",
+            symbol="version",
+            category_orders={"cluster_name": _color_order},
+            hover_data={
+                "version": True,
+                "question_id": True,
+                "tag": True,
+                "code_name": True,
+                "description": True,
+                "cluster_short_label": True,
+                "cluster_probability": ":.3f",
+                "umap_x": ":.3f",
+                "umap_y": ":.3f",
+                "cluster_name": False,
+                "cluster_display_name": False,
+            },
+            opacity=0.82,
+            height=640,
+            color_discrete_sequence=px.colors.qualitative.Alphabet,
+        )
+        _scatter.update_traces(marker=dict(size=8, line=dict(width=0.4, color="white")))
+        for _row in _centroid_labels.itertuples(index=False):
+            _scatter.add_annotation(
+                x=float(_row.umap_x),
+                y=float(_row.umap_y),
+                text=f"C{int(_row.cluster_label)}",
+                showarrow=False,
+                bgcolor="rgba(255,255,255,0.88)",
+                bordercolor="rgba(31,41,55,0.25)",
+                borderwidth=1,
+                font=dict(size=10, color="#1f2937"),
+                xanchor="center",
+                yanchor="middle",
+            )
+        _scatter.update_layout(
+            legend_title_text="Cluster",
+            margin=dict(l=0, r=0, t=10, b=0),
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+        )
+        st.plotly_chart(_scatter, use_container_width=True)
+
+    with _heatmap_col:
+        st.markdown("**Cluster × version**")
+        _heatmap_source = _filtered_points[_filtered_points["cluster_label"] >= 0].copy()
+        if _heatmap_source.empty:
+            st.info("No clustered points remain under the current filters.")
+        else:
+            _heatmap_df = (
+                _heatmap_source.groupby(["cluster_label", "version"]).size()
+                .unstack(fill_value=0)
+                .reindex(index=sorted(_heatmap_source["cluster_label"].unique()), fill_value=0)
+            )
+            _heatmap = px.imshow(
+                _heatmap_df,
+                labels={"x": "Version", "y": "Cluster", "color": "Codes"},
+                aspect="auto",
+                color_continuous_scale="Blues",
+                height=640,
+            )
+            _heatmap.update_layout(margin=dict(l=0, r=0, t=10, b=0))
+            st.plotly_chart(_heatmap, use_container_width=True)
+
+    with st.expander("Hierarchy overview", expanded=False):
+        _dendrogram_payload = _dendro_payload.get("dendrogram") or {}
+        _linkage_values = _dendrogram_payload.get("linkage_matrix") or []
+        _leaf_labels = _dendrogram_payload.get("leaf_labels") or []
+        if not _linkage_values or not _leaf_labels:
+            st.info("The exported bundle does not include the notebook dendrogram payload.")
+        else:
+            _linkage_matrix = np.asarray(_linkage_values, dtype=float)
+            _fig, _ax = plt.subplots(figsize=(18, 8))
+            dendrogram(
+                _linkage_matrix,
+                labels=_leaf_labels,
+                leaf_rotation=90,
+                leaf_font_size=8,
+                above_threshold_color="#4C72B0",
+                ax=_ax,
+            )
+            _ax.set_title("Hierarchical Dendrogram of Codebook Embeddings", fontsize=14, fontweight="bold")
+            _ax.set_xlabel("Code entry")
+            _ax.set_ylabel("Cosine distance")
+            st.pyplot(_fig, use_container_width=True)
+            plt.close(_fig)
+            st.caption("This is the same dendrogram exported from the notebook, using the original embedding-space linkage tree.")
+
+    st.markdown("**Cluster catalog**")
+    _catalog_source = _filtered_points[_filtered_points["cluster_label"] >= 0].copy()
+    if _catalog_source.empty:
+        st.info("No non-noise clusters remain under the current filters.")
+    else:
+        _cluster_order = (
+            _catalog_source.groupby("cluster_label").size().sort_values(ascending=False).index.tolist()
+        )
+        _left_col, _right_col = st.columns(2, gap="large")
+        for _idx, _cluster_id in enumerate(_cluster_order):
+            _target_col = _left_col if _idx % 2 == 0 else _right_col
+            _subset = _catalog_source[_catalog_source["cluster_label"] == _cluster_id].copy()
+            _subset = _subset.sort_values(["cluster_probability", "version", "code_name"], ascending=[False, True, True])
+            _version_line = " · ".join(
+                f"{version}: {count}" for version, count in _subset["version"].value_counts().sort_index().items()
+            )
+            _cluster_short_label = _cluster_label_map.get(int(_cluster_id), f"Cluster {_cluster_id}")
+            with _target_col:
+                with st.expander(f"Cluster {_cluster_id} · {_cluster_short_label} · {len(_subset)} codes", expanded=False):
+                    st.caption(_version_line)
+                    st.dataframe(
+                        _subset[["question_id", "tag", "version", "code_name", "description", "cluster_short_label"]].rename(columns={
+                            "question_id": "Query ID",
+                            "tag": "Code ID",
+                            "version": "Version",
+                            "code_name": "Name",
+                            "description": "Description",
+                            "cluster_short_label": "Cluster Name",
+                        }),
+                        use_container_width=True,
+                        hide_index=True,
+                    )
+
+    st.markdown("**Filtered points**")
+    _download_df = _filtered_points[[
+        "question_id",
+        "tag",
+        "version",
+        "code_name",
+        "description",
+        "cluster_short_label",
+    ]].copy()
+    _download_df = _download_df.rename(columns={
+        "question_id": "Query ID",
+        "tag": "Code ID",
+        "version": "Version",
+        "code_name": "Name",
+        "description": "Description",
+        "cluster_short_label": "Cluster Name",
+    })
+    st.download_button(
+        "Download filtered points as CSV",
+        data=_download_df.to_csv(index=False).encode("utf-8"),
+        file_name="dendrogram_filtered_points.csv",
+        mime="text/csv",
+    )
+    st.dataframe(_download_df, use_container_width=True, hide_index=True)
+    st.stop()
+
 if _PAGE == "🧩 Theme Generation":
     st.markdown("### Theme Generation Analysis")
     st.caption(
