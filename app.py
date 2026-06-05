@@ -670,6 +670,7 @@ _PAGE_URL_MAP = {
     "tags":     "🗂️ Aggregated Tags",
     "themes":   "🧩 Theme Generation",
     "dendrogram": "🌳 Dendrogram Analysis",
+    "wordcloud": "☁️ Word Cloud",
 }
 _PAGE_KEY_MAP = {v: k for k, v in _PAGE_URL_MAP.items()}
 
@@ -1047,7 +1048,7 @@ with st.sidebar:
     st.divider()
 
     _PAGE = st.radio(
-        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags", "🧩 Theme Generation", "🌳 Dendrogram Analysis"],
+        "nav", ["📋 Explorer", "📊 Hydromea Stats", "🗂️ Aggregated Tags", "🧩 Theme Generation", "🌳 Dendrogram Analysis", "☁️ Word Cloud"],
         key="nav_page",
         label_visibility="collapsed",
     )
@@ -2765,6 +2766,124 @@ if _PAGE == "📊 Hydromea Stats":
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
 
+# ─────────────────────────────────────────────────────────────────────────────
+# Word Cloud page
+# ─────────────────────────────────────────────────────────────────────────────
+if _PAGE == "☁️ Word Cloud":
+    import re as _re
+    import numpy as _np
+    from matplotlib.colors import LinearSegmentedColormap as _LSC
+    from wordcloud import WordCloud as _WC, STOPWORDS as _WC_STOPS
+    try:
+        from nltk.corpus import stopwords as _nltk_sw
+        _NLTK_STOPS = set(_nltk_sw.words("english"))
+    except Exception:
+        _NLTK_STOPS = set()
+
+    _CUSTOM_STOPS = {
+        "can", "also", "use", "used", "using", "well", "one", "two", "three",
+        "many", "much", "often", "provide", "provides", "provided", "offering",
+        "offer", "offers", "include", "includes", "including", "example",
+        "examples", "typically", "usually", "generally", "such", "may", "might",
+        "need", "needs", "required", "requires", "allow", "allows", "ensure",
+        "ensures", "help", "helps", "make", "makes", "made", "note", "however",
+        "therefore", "additionally", "furthermore", "key", "important", "based",
+        "specific", "especially", "various", "several", "certain", "different",
+        "available", "designed", "system", "systems", "solution", "solutions",
+        "technology", "technologies", "high", "low", "large", "small", "long",
+        "short", "query", "user", "summary", "sources", "source", "information",
+        "first", "second", "third", "fourth", "fifth",
+    }
+    _ALL_STOPS = _NLTK_STOPS | _WC_STOPS | _CUSTOM_STOPS
+
+    def _wc_clean(text: str) -> str:
+        text = _re.sub(r"!\[.*?\]\(.*?\)", " ", text)
+        text = _re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
+        text = _re.sub(r"https?://\S+", " ", text)
+        text = _re.sub(r"\*{1,3}([^*]+)\*{1,3}", r"\1", text)
+        text = _re.sub(r"^#{1,6}\s*", " ", text, flags=_re.MULTILINE)
+        text = _re.sub(r"<[^>]+>", " ", text)
+        text = _re.sub(r"\d+", " ", text)
+        text = _re.sub(r"[^a-zA-Z\s]", " ", text)
+        text = _re.sub(r"\s+", " ", text).strip().lower()
+        return " ".join(w for w in text.split() if w not in _ALL_STOPS and len(w) > 2)
+
+    _SPHINX_CMAP    = _LSC.from_list("sphinx_blue",  ["#1565c0", "#1e88e5", "#42a5f5", "#90caf9"])
+    _NO_GLOBAL_CMAP = _LSC.from_list("sphinx_slate", ["#475569", "#64748b", "#94a3b8", "#cbd5e1"])
+
+    # Circular mask (1000×1000 square canvas)
+    _sz = 1000
+    _yy, _xx = _np.ogrid[:_sz, :_sz]
+    _cc = _sz // 2
+    _circle_mask = _np.full((_sz, _sz), 255, dtype=_np.uint8)
+    _circle_mask[(_xx - _cc) ** 2 + (_yy - _cc) ** 2 <= (_cc - 4) ** 2] = 0
+
+    def _make_wc(text, cmap, max_words):
+        return _WC(
+            mask=_circle_mask,
+            background_color="white",
+            stopwords=_ALL_STOPS,
+            max_words=max_words,
+            min_font_size=9,
+            max_font_size=110,
+            collocations=False,
+            colormap=cmap,
+            prefer_horizontal=1.0,
+            relative_scaling=0.45,
+            random_state=42,
+        ).generate(text)
+
+    # ── Header ────────────────────────────────────────────────────────────────
+    st.markdown(
+        '<h1 style="margin-bottom:2px;">☁️ Word Cloud — All Versions</h1>'
+        '<p style="color:#64748b;font-size:15px;margin-top:0;">'
+        'Aggregated chatbot answers across all providers · '
+        '<strong style="color:#1565c0;">top row = Global Mentioned</strong> · '
+        '<strong style="color:#475569;">bottom row = Not Mentioned</strong></p>',
+        unsafe_allow_html=True,
+    )
+
+    _max_words = st.slider("Max words per cloud", 10, 150, 30, 5)
+    st.divider()
+
+    # ── Build text blobs: experiment → {True: str, False: str} ───────────────
+    _texts: dict = {}
+    for _vexp in EXPERIMENTS:
+        _v_corpus  = _load(_vexp)
+        _v_metrics = _load_metrics_index(_vexp)
+        _yes, _no  = [], []
+        for _vans in _v_corpus.answers.values():
+            _vm = _v_metrics.get(_vans.answer_id, {})
+            (_yes if _vm.get("global_mentioned", False) else _no).append(_vans.response or "")
+        _texts[_vexp] = {
+            True:  _wc_clean(" ".join(_yes)),
+            False: _wc_clean(" ".join(_no)),
+        }
+
+    # ── Render one row of 4 clouds ────────────────────────────────────────────
+    def _render_row(label: str, color: str, flag: bool, cmap) -> None:
+        st.markdown(
+            f'<h3 style="color:{color};margin-bottom:6px;">{label}</h3>',
+            unsafe_allow_html=True,
+        )
+        _cols = st.columns(len(EXPERIMENTS))
+        for _col, _vexp in zip(_cols, EXPERIMENTS):
+            with _col:
+                _blob = _texts[_vexp][flag]
+                if not _blob.strip():
+                    st.caption(f"**{_vexp}** — no data")
+                    continue
+                _fig, _ax = plt.subplots(figsize=(5, 5), facecolor="white")
+                _ax.imshow(_make_wc(_blob, cmap, _max_words), interpolation="bilinear")
+                _ax.axis("off")
+                _ax.set_title(_vexp, fontsize=13, fontweight="bold", color=color, pad=8)
+                plt.tight_layout()
+                st.pyplot(_fig, use_container_width=True)
+                plt.close(_fig)
+
+    _render_row("🌐 Global Mentioned  (score > 0)", "#1565c0", True,  _SPHINX_CMAP)
+    st.divider()
+    _render_row("⬜ Global Not Mentioned  (score = 0)", "#1565c0", False, _SPHINX_CMAP)
     st.stop()  # Don't render the explorer below
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2961,6 +3080,121 @@ for col, product in zip(cols, active_products):
                 st.markdown("".join(_src_html), unsafe_allow_html=True)
         else:
             st.caption("No sources attached.")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Word Cloud page
+# ─────────────────────────────────────────────────────────────────────────────
+if _PAGE == "☁️ Word Cloud":
+    import re as _re
+    import numpy as _np
+    from matplotlib.colors import LinearSegmentedColormap as _LSC
+    from wordcloud import WordCloud as _WC, STOPWORDS as _WC_STOPS
+    try:
+        from nltk.corpus import stopwords as _nltk_sw
+        _NLTK_STOPS = set(_nltk_sw.words("english"))
+    except Exception:
+        _NLTK_STOPS = set()
+
+    _CUSTOM_STOPS = {
+        "can", "also", "use", "used", "using", "well", "one", "two", "three",
+        "many", "much", "often", "provide", "provides", "provided", "offering",
+        "offer", "offers", "include", "includes", "including", "example",
+        "examples", "typically", "usually", "generally", "such", "may", "might",
+        "need", "needs", "required", "requires", "allow", "allows", "ensure",
+        "ensures", "help", "helps", "make", "makes", "made", "note", "however",
+        "therefore", "additionally", "furthermore", "key", "important", "based",
+        "specific", "especially", "various", "several", "certain", "different",
+        "available", "designed", "system", "systems", "solution", "solutions",
+        "technology", "technologies", "high", "low", "large", "small", "long",
+        "short", "query", "user", "summary", "sources", "source", "information",
+        "first", "second", "third", "fourth", "fifth",
+    }
+    _ALL_STOPS = _NLTK_STOPS | _WC_STOPS | _CUSTOM_STOPS
+
+    def _wc_clean(text: str) -> str:
+        text = _re.sub(r"!\[.*?\]\(.*?\)", " ", text)
+        text = _re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
+        text = _re.sub(r"https?://\S+", " ", text)
+        text = _re.sub(r"\*{1,3}([^*]+)\*{1,3}", r"\1", text)
+        text = _re.sub(r"^#{1,6}\s*", " ", text, flags=_re.MULTILINE)
+        text = _re.sub(r"<[^>]+>", " ", text)
+        text = _re.sub(r"\d+", " ", text)
+        text = _re.sub(r"[^a-zA-Z\s]", " ", text)
+        text = _re.sub(r"\s+", " ", text).strip().lower()
+        return " ".join(w for w in text.split() if w not in _ALL_STOPS and len(w) > 2)
+
+    _SPHINX_CMAP    = _LSC.from_list("sphinx_blue",  ["#1565c0", "#1e88e5", "#42a5f5", "#90caf9"])
+    _NO_GLOBAL_CMAP = _LSC.from_list("sphinx_slate", ["#475569", "#64748b", "#94a3b8", "#cbd5e1"])
+
+    # Circular mask (1000×1000 square canvas)
+    _sz = 1000
+    _yy, _xx = _np.ogrid[:_sz, :_sz]
+    _cc = _sz // 2
+    _circle_mask = _np.full((_sz, _sz), 255, dtype=_np.uint8)
+    _circle_mask[(_xx - _cc) ** 2 + (_yy - _cc) ** 2 <= (_cc - 4) ** 2] = 0
+
+    def _make_wc(text, cmap, max_words):
+        return _WC(
+            mask=_circle_mask,
+            background_color="white",
+            stopwords=_ALL_STOPS,
+            max_words=max_words,
+            min_font_size=9,
+            max_font_size=110,
+            collocations=False,
+            colormap=cmap,
+            prefer_horizontal=1.0,
+            relative_scaling=0.45,
+            random_state=42,
+        ).generate(text)
+
+    # ── Header ────────────────────────────────────────────────────────────────
+    st.markdown(
+        '<h1 style="margin-bottom:2px;">☁️ Word Cloud — All Versions</h1>'
+        '<p style="color:#64748b;font-size:15px;margin-top:0;">'
+        'Aggregated chatbot answers across all providers · '
+        '<strong style="color:#1565c0;">top row = Global Mentioned</strong> · '
+        '<strong style="color:#475569;">bottom row = Not Mentioned</strong></p>',
+        unsafe_allow_html=True,
+    )
+
+    _max_words = st.slider("Max words per cloud", 10, 150, 30, 5)
+    st.divider()
+
+    # ── Build text blobs: experiment → {True: str, False: str} ───────────────
+    _texts: dict = {}
+    for _vexp in EXPERIMENTS:
+        _v_corpus  = _load(_vexp)
+        _v_metrics = _load_metrics_index(_vexp)
+        _yes, _no  = [], []
+        for _vans in _v_corpus.answers.values():
+            _vm = _v_metrics.get(_vans.answer_id, {})
+            (_yes if _vm.get("global_mentioned", False) else _no).append(_vans.response or "")
+        _texts[_vexp] = {
+            True:  _wc_clean(" ".join(_yes)),
+            False: _wc_clean(" ".join(_no)),
+        }
+
+    # ── Render one row of 4 clouds ────────────────────────────────────────────
+    def _render_row(label: str, color: str, flag: bool, cmap) -> None:
+        st.markdown(
+            f'<h3 style="color:{color};margin-bottom:6px;">{label}</h3>',
+            unsafe_allow_html=True,
+        )
+        _cols = st.columns(len(EXPERIMENTS))
+        for _col, _vexp in zip(_cols, EXPERIMENTS):
+            with _col:
+                _blob = _texts[_vexp][flag]
+                if not _blob.strip():
+                    st.caption(f"**{_vexp}** — no data")
+                    continue
+                _fig, _ax = plt.subplots(figsize=(5, 5), facecolor="white")
+                _ax.imshow(_make_wc(_blob, cmap, _max_words), interpolation="bilinear")
+                _ax.axis("off")
+                _ax.set_title(_vexp, fontsize=13, fontweight="bold", color=color, pad=8)
+                plt.tight_layout()
+                st.pyplot(_fig, use_container_width=True)
+                plt.close(_fig)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Footer
