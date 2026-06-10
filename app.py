@@ -2873,13 +2873,23 @@ if _PAGE == "☁️ Word Cloud":
                 if not _blob.strip():
                     st.caption(f"**{_vexp}** — no data")
                     continue
+                _wc_obj = _make_wc(_blob, cmap, _max_words)
                 _fig, _ax = plt.subplots(figsize=(5, 5), facecolor="white")
-                _ax.imshow(_make_wc(_blob, cmap, _max_words), interpolation="bilinear")
+                _ax.imshow(_wc_obj, interpolation="bilinear")
                 _ax.axis("off")
                 _ax.set_title(_vexp, fontsize=13, fontweight="bold", color=color, pad=8)
                 plt.tight_layout()
                 st.pyplot(_fig, use_container_width=True)
                 plt.close(_fig)
+                _word_counts = {}
+                for _w in _blob.split():
+                    _word_counts[_w] = _word_counts.get(_w, 0) + 1
+                _freq_df = pd.DataFrame(
+                    [{"Word": w, "Frequency": c} for w, c in _word_counts.items()
+                     if w in _wc_obj.words_],
+                ).sort_values("Frequency", ascending=False).reset_index(drop=True)
+                _freq_df.index += 1
+                st.dataframe(_freq_df, use_container_width=True, height=250)
 
     _render_row("🌐 Global Mentioned  (score > 0)", "#1565c0", True,  _SPHINX_CMAP)
     st.divider()
@@ -3188,13 +3198,23 @@ if _PAGE == "☁️ Word Cloud":
                 if not _blob.strip():
                     st.caption(f"**{_vexp}** — no data")
                     continue
+                _wc_obj = _make_wc(_blob, cmap, _max_words)
                 _fig, _ax = plt.subplots(figsize=(5, 5), facecolor="white")
-                _ax.imshow(_make_wc(_blob, cmap, _max_words), interpolation="bilinear")
+                _ax.imshow(_wc_obj, interpolation="bilinear")
                 _ax.axis("off")
                 _ax.set_title(_vexp, fontsize=13, fontweight="bold", color=color, pad=8)
                 plt.tight_layout()
                 st.pyplot(_fig, use_container_width=True)
                 plt.close(_fig)
+                _word_counts = {}
+                for _w in _blob.split():
+                    _word_counts[_w] = _word_counts.get(_w, 0) + 1
+                _freq_df = pd.DataFrame(
+                    [{"Word": w, "Frequency": c} for w, c in _word_counts.items()
+                     if w in _wc_obj.words_],
+                ).sort_values("Frequency", ascending=False).reset_index(drop=True)
+                _freq_df.index += 1
+                st.dataframe(_freq_df, use_container_width=True, height=250)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Footer
