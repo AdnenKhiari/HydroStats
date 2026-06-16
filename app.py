@@ -1753,6 +1753,62 @@ if _PAGE == "📊 Hydromea Stats":
         ]
         st.markdown("\n".join(_info_rows))
 
+    # ── Answer Length Statistics ──────────────────────────────────────────────
+    st.markdown("### Answer Length Statistics")
+    st.caption("Paragraph = non-empty block separated by a blank line. Word = whitespace-separated token.")
+
+    def _count_paragraphs(text: str) -> int:
+        return sum(1 for p in text.split("\n\n") if p.strip())
+
+    def _count_words(text: str) -> int:
+        return len(text.split())
+
+    _all_answer_texts: list[str] = []
+    for _stat_exp in EXPERIMENTS:
+        _stat_corpus = _load(_stat_exp)
+        for _stat_ans in _stat_corpus.answers.values():
+            _stat_resp = (_stat_ans.response or "").strip()
+            if _stat_resp:
+                _all_answer_texts.append(_stat_resp)
+
+    if _all_answer_texts:
+        _stat_concat = "\n\n".join(_all_answer_texts)
+        _stat_paras  = [_count_paragraphs(t) for t in _all_answer_texts]
+        _stat_words  = [_count_words(t) for t in _all_answer_texts]
+
+        _len_stats_df = pd.DataFrame([
+            {
+                "Scope": f"All {len(_all_answer_texts)} answers (concatenated)",
+                "Total Number of Paragraphs": _count_paragraphs(_stat_concat),
+                "Total Number of Words":      _count_words(_stat_concat),
+            },
+            {
+                "Scope": "Min (across individual answers)",
+                "Total Number of Paragraphs": min(_stat_paras),
+                "Total Number of Words":      min(_stat_words),
+            },
+            {
+                "Scope": "Max (across individual answers)",
+                "Total Number of Paragraphs": max(_stat_paras),
+                "Total Number of Words":      max(_stat_words),
+            },
+        ])
+
+        st.dataframe(
+            _len_stats_df,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Scope":                        st.column_config.TextColumn("Scope",                        width="large"),
+                "Total Number of Paragraphs":   st.column_config.NumberColumn("Total Number of Paragraphs", width="medium"),
+                "Total Number of Words":        st.column_config.NumberColumn("Total Number of Words",      width="medium"),
+            },
+        )
+    else:
+        st.info("No answers loaded.")
+
+    st.markdown("---")
+
     # ── Build per-provider summary from FILTER_SPECS ──────────────────────────
     st.markdown("### Provider snapshot")
     summary = []
